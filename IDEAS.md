@@ -64,6 +64,7 @@ modern javascript developent needs its own toolchain to organize small and large
 - debugging (source maps)
 - Webpack/Rollup/Snowpack bundlers
 - babel
+- testing - karma/selenium, jest, jasmine, mocha
 
 ## Advanced Topics (lab/practical part)
  - Worklets (parallelism), ServiceWorker, CSS Houdini (paintlets), Audiolets
