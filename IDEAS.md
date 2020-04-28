@@ -7,7 +7,7 @@
 
 ## HTML
  - Basics (HTML5)
- - HTML5 syntax (DOCTYPE)
+ - HTML5 syntax (DOCTYPE) Ruby Markup
  - Element semantics
  - ARIA - Accessibility
 
