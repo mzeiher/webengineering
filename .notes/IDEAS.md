@@ -7,7 +7,7 @@
 
 ## HTML
  - Basics (HTML5)
- - HTML5 syntax (DOCTYPE)
+ - HTML5 syntax (DOCTYPE) Ruby Markup
  - Element semantics
  - ARIA - Accessibility
 
@@ -50,6 +50,7 @@
    - Couch/MongoDB
    - (Postgress/My)SQL
  - "Serverless" Gatsby, Next, Zeit, 
+ - SSR (https://developers.google.com/web/updates/2019/02/rendering-on-the-web)
 
 ## Frameworks and Libraries
 General overwview over the most popular frameworks, how they work and differences
