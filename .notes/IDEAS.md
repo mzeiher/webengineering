@@ -67,7 +67,7 @@ modern javascript developent needs its own toolchain to organize small and large
 - testing - karma/selenium, jest, jasmine, mocha
 
 ## Advanced Topics (lab/practical part)
- - Worklets (parallelism), ServiceWorker, CSS Houdini (paintlets), Audiolets
+ - Worklets (parallelism), ServiceWorker (PWA, notification triggers, https://medium.com/@amberovsky/crdt-conflict-free-replicated-data-types-b4bfc8459d26), CSS Houdini (paintlets), Audiolets
  - Rendering techniques (Server Side Rendering, Client Side Rendering and everything in between)
  - WebGL/WebGPU
  - Project FUGU APIs (WebUSB, WebSerial, WebFileAPI, ShareAPI, ContactAPI, Object Recognition API, etc)

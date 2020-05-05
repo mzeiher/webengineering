@@ -1,0 +1,23 @@
+{
+  "name": "webengineering",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mzeiher/webengineering.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mzeiher/webengineering/issues"
+  },
+  "homepage": "https://github.com/mzeiher/webengineering#readme",
+  "devDependencies": {
+    "vuepress": "^1.4.1"
+  }
+}
