@@ -1,8 +1,6 @@
 const numbers = [];
 for(let i = 0; i < 1000000; i++) {
-  //numbers.push(Math.round(Math.random() * 2)+1);
-  //numbers.push(2);
-  numbers.push(1);
+  numbers.push(Math.round(Math.random() * 2)+1);
 }
 const filter = (value) => value % 2 === 0;
 const map = (value) => value*value;

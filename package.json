@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/mzeiher/webengineering#readme",
   "devDependencies": {
-    "vuepress": "^1.4.1"
-  }
+    "vuepress": "^1.4.1",
+    "element-ui": "^2.13.1"
+  },
+  "dependencies": {}
 }
