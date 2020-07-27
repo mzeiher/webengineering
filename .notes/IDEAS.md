@@ -27,7 +27,7 @@
  - Versions (es3, es5, es6, es2015-2019)
  - Module system (>=es6)
  - Typescript/Flow/ReasonML ;)
- - JS object model, functions and scope (class as syntactic sugar for prototype inheritance) "this (scope and semantic this)" explained
+ - JS object model, functions and scope (class as syntactic sugar for prototype inheritance) "this (scope and lexical this)" explained
  - functional vs imperative pradigm for programming
  - Arrays (map/reduce) Arrays vs. ArrayLike
  - Promises/async/await
@@ -59,6 +59,9 @@ General overwview over the most popular frameworks, how they work and difference
  - lit-html/hyper-html/lighter-html
  - vue (hopefully 3)
  - svelte
+
+## Security
+ - XSS, Injection, secure store
 
 ## Modern JS Toolchain
 modern javascript developent needs its own toolchain to organize small and large projects, enabling shiping the best bundle for customers and increase developer experience
