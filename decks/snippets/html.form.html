@@ -1,0 +1,18 @@
+<form action="/action.do" method="GET">
+    <p>
+    <fieldset>
+        <legend>What is better <abbr title="This field is mandatory" aria-label="required">*</abbr></legend>
+        <input type="radio" required name="better" id="r1" value="one"><label for="r1">One</label>
+        <input type="radio" required name="better" id="r2" value="two"><label for="r2">Two</label>
+    </fieldset>
+    </p>
+    <p>
+        <label for="n1">Whats you age</label>
+        <input type="number" min="12" max="120" step="1" id="n1" name="age" pattern="\d+">
+    </p>
+    <p>
+        <label for="n1">Whats you name</label>
+        <input type="text" id="n1" name="name" pattern="[a-zA-Z ]+">
+    </p>
+    <button type="submit">Submit</button><button type="reset">Reset</button>
+</form>

@@ -1,0 +1,686 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>web engineering 101</title>
+
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/sick.css" id="theme">
+
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+
+  <link rel="stylesheet" href="common.css">
+
+  <link rel="stylesheet" href="fontawesome/all.css">
+
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>web engineering 101</h1>
+      </section>
+      <section>
+        <h2>about me</h2>
+        <div class="r-hstack">
+          <img src="assets/profile.jpg" height="200" class="round">
+          <ul>
+            <li>Mathis Zeiher</li>
+            <li>Software Engineer <a href="http://www.sick.com">@SICK AG</a></li>
+            <li>In the field for way to long...</li>
+          </ul>
+        </div>
+        <div class="r-hstack margin-10" style="font-size: 2em;">
+          <a href="mailto:mathis@bitschubser.dev">
+            <i class="fas fa-fw fa-at"></i>
+          </a>
+          <a href="https://github.com/mzeiher">
+            <i class="fab fa-fw fa-github"></i>
+          </a>
+          <a href="https://twitter.com/bitschubser_">
+            <i class="fab fa-fw fa-twitter"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/mathis-zeiher-51b74a180/">
+            <i class="fab fa-fw fa-linkedin"></i>
+          </a>
+        </div>
+      </section>
+
+      <section>
+        <p>All the slides are available here: <a href="https://mzeiher.github.io/webengineering/">https://mzeiher.github.io/webengineering/</a></p>
+        <p><small>pull requests are highly appreciated 😀</small></p>
+      </section>
+      <section>
+        <h2>what about you?</h2>
+      </section>
+
+
+      <section>
+        <section data-background-image="./assets/bg.jpeg">
+          <h1>goals</h1>
+        </section>
+        <section>
+          <h2>Course Goals</h2>
+          <img class="r-stretch" src="assets/approximate_knowledge.jpg" />
+          <ul class="sources">
+            <li>http://www.quickmeme.com/meme/3tnh3f</li>
+          </ul>
+        </section>
+        <section>
+          <h2>course goals</h2>
+          <ul>
+            <li>Overview of existing technologies in webengineering</li>
+            <li>Able to say "it depends..." and pick the tools which suit the best for the job</li>
+            <li>Able to look things up (no one expects from you that you know everything)</li>
+            <li>Wild ride through heaps of technologies</li>
+            <li>Fun while learning</li>
+            <li>Outlook to the future</li>
+          </ul>
+        </section>
+        <section>
+          <h2>whats not in the course</h2>
+          <ul>
+            <li>Fanboiism/Fangirlism</li>
+            <li>Thoughtleadership</li>
+            <li>Framework/Technology wars</li>
+          </ul>
+        </section>
+        <section>
+          <h2>disclaimer</h2>
+          <ul>
+            <li><span class="highlight"><i class="fas fa-comment-dots"></i>Comments are highly subjective</span></li>
+            <li><span class="highlight"><i class="fab fa-twitter"></i>Interesting people to follow</span></li>
+            <li><span class="highlight"><i class="fas fa-play-circle"></i>Interesting videos to watch</span></li>
+            <li><span class="highlight"><i class="fas fa-link"></i>Interesting links to read</span></li>
+          </ul>
+        </section>
+        <section>
+          <h2>good resources</h2>
+          <ul>
+            <li><a href="https://developer.mozilla.org/en-US/">Mozilla Developer Network</a></li>
+            <li><a href="https://www.youtube.com/user/ChromeDevelopers">Chrome Webcast</a></li>
+            <li><a href="https://caniuse.com/">caniuse.com</a></li>
+            <li><a href="https://web.dev/">web.dev</a></li>
+            <li><a href="https://twitter.com">❗twitter.com</a></li>
+          </ul>
+        </section>
+      </section>
+
+
+      <section>
+        <section data-background-image="./assets/bg.jpeg">
+          <h1>what?</h1>
+        </section>
+        <section>
+          <h2>what: introduction</h2>
+          <ul>
+            <li>Who is who (w3c, CSSWG, WHATWG, WICG, ES262, TC39 and others)</li>
+            <li>History of webengineering</li>
+            <li>Engines (blink, webkit, quantum (mozilla))</li>
+          </ul>
+        </section>
+        <section>
+          <h2>what: HTML</h2>
+          <ul>
+            <li>Basics (HTML5)</li>
+            <li>HTML5 syntax (DOCTYPE) Ruby Markup</li>
+            <li>Element semantics</li>
+            <li>ARIA - Accessibility</li>
+          </ul>
+        </section>
+        <section>
+          <h2>what: CSS</h2>
+          <ul>
+            <li>The CSS cascade, selectors and specificity</li>
+            <li>Layout models (box model, inline/block, float, flex and grid)</li>
+            <li>containing blocks, block formatting context, stacking context</li>
+            <li>animations</li>
+            <li>media queries</li>
+          </ul>
+        </section>
+        <section>
+          <h2>what: DOM/CSSOM</h2>
+          <ul>
+            <li>DOM (Document Object Model) (DOM manipulation, EventTarget, ShadowDom, cutom-elements)</li>
+            <li>CSS object model</li>
+          </ul>
+        </section>
+        <section>
+          <h2>what: javascript</h2>
+          <ul>
+            <li>ES262 basics</li>
+            <li>Versions (es3, es5, es6, es2015-2019)</li>
+            <li>Module system (>=es6)</li>
+            <li>Typescript/Flow/ReasonML ;)</li>
+            <li>JS object model, functions and scope (class as syntactic sugar for prototype inheritance) "this (scope
+              and
+              lexical this)" explained</li>
+          </ul>
+        </section>
+        <section>
+          <h2>what: javascript - advanced</h2>
+          <ul>
+            <li>functional and oo paradigm for programming</li>
+            <li>Arrays (map/reduce) Arrays and ArrayLike</li>
+            <li>Promises/async/await</li>
+            <li>Generator functions and iterators</li>
+            <li>the javascript event loop explained (micro/macro task)</li>
+          </ul>
+        </section>
+        <section>
+          <h2>what: communication protocols</h2>
+          <ul>
+            <li>HTTP, HTTP/2, HTTP/3</li>
+            <li>REST (GraphQL) (XMLHttpRequest, fetch)</li>
+            <li>CORS, security concepts</li>
+            <li>Websockets</li>
+            <li>WebRTC</li>
+          </ul>
+        </section>
+        <section>
+          <h2>what: backend technologies and stacks</h2>
+          <ul>
+            <li>Node (JS) (Apollo for GraphQL, epxress)</li>
+            <li>JavaEE (Spring</li>
+            <li>Go/Rust</li>
+            <li>PHP</li>
+            <li>Ruby</li>
+            <li>LAMP (Linux Apache MySQL PHP)</li>
+          </ul>
+        </section>
+        <section>
+          <h2>what: backend technologies and stacks</h2>
+          <ul>
+            <li>Databases NoSQL, SQL, Document Stores, Big Table</li>
+            <li>"Serverless" Gatsby, Next, Zeit, </li>
+            <li>SSR (https://developers.google.com/web/updates/2019/02/rendering-on-the-web)</li>
+          </ul>
+        </section>
+        <section>
+          <h2>what: frameworks and libraries</h2>
+          General overview over the most popular frameworks, how they work and differences
+          <ul>
+            <li>(p)react (class based and hooks (also how they work ;))</li>
+            <li>Angular</li>
+            <li>vue (hopefully 3), svelte, Stencil</li>
+            <li>lit-html/hyper-html/lighter-html</li>
+          </ul>
+        </section>
+        <section>
+          <h2>what: security and authentication</h2>
+          <ul>
+            <li>XSS, Injection, secure store</li>
+            <li>OAuth/OpenID</li>
+          </ul>
+        </section>
+        <section>
+          <h2>what: modern js tool chain</h2>
+          modern javascript development needs its own tool chain to organize small and large projects, enabling shiping
+          the
+          best bundle for customers and increase developer experience
+          <ul>
+            <li>debugging (source maps)</li>
+            <li>Webpack/Rollup/Snowpack bundlers</li>
+            <li>babel</li>
+            <li>testing - karma/selenium, jest, jasmine, mocha</li>
+          </ul>
+        </section>
+        <section>
+          <h2>what: advanced topics</h2>
+          <ul>
+            <li>Worklets (parallelism), ServiceWorker (PWA, notification triggers,
+              https://medium.com/@amberovsky/crdt-conflict-free-replicated-data-types-b4bfc8459d26), CSS Houdini
+              (paintlets),
+              Audiolets</li>
+            <li>Rendering techniques (Server Side Rendering, Client Side Rendering and everything in between)</li>
+            <li>WebGL/WebGPU</li>
+          </ul>
+        </section>
+        <section>
+          <h2>what: advanced topics</h2>
+          <ul>
+            <li>Project FUGU APIs (WebUSB, WebSerial, WebFileAPI, ShareAPI, ContactAPI, Object Recognition API, etc)
+            </li>
+            <li>React Native, Electron for writing client applications/apps</li>
+            <li>Webassembly (WASM, WASI)</li>
+          </ul>
+        </section>
+      </section>
+      <section data-background-image="./assets/bg.jpeg">
+        <h1>lets start...</h1>
+      </section>
+
+
+      <section>
+        <section data-background-image="./assets/bg.jpeg">
+          <h1>who is who</h1>
+        </section>
+        <section>
+          <img src="assets/isoc.webp" class="r-stretch" />
+          <ul class="sources">
+            <li>https://www.slideshare.net/PeterREgli/internet-organization</li>
+          </ul>
+        </section>
+        <section>
+          <img src="assets/whoiswho.idraw.png" class="r-stretch" />
+        </section>
+        <section>
+          <h2>who is who: w3c</h2>
+          <blockquote>The World Wide Web Consortium (W3C) is an international community that develops open
+            standards to ensure the long-term growth of the Web.</blockquote>
+          <ul>
+            <li>WebRTC, Websocket Protocol API/IDL (Protcol itself by IETF)</li>
+            <li>Publishes drafts which are agreed upon in the WICG</li>
+            <li>Does a lot more... semantic web, web of things, etc</li>
+          </ul>
+        </section>
+        <section>
+          <h2>who is who: w3c - CSSWG</h2>
+          <ul>
+            <li>Brings us all the nice things</li>
+            <li>Animation, Layouting</li>
+            <li>The how in a HTML page</li>
+            <li>CSS Houdini</li>
+          </ul>
+        </section>
+        <section>
+          <h2>who is who: w3c - WHATWG</h2>
+          <ul>
+            <li>Defines the HTML specification</li>
+            <li>The what in a HTML page</li>
+            <li>Reason why we don't need jQuery anymore (DOM APIs)</li>
+          </ul>
+        </section>
+        <section>
+          <h2>who is who: w3c - WICG</h2>
+          <ul>
+            <li>Participation of implementors for new APIs/Technologies</li>
+            <li>WebUSB, WebBluetooth, WebRTC, Serviceworker, Orientation API all originated here, once
+              enough traction the RFC will move to w3c</li>
+            <li>Warning! take it with a grain of <a
+                href="https://twitter.com/BrendanEich/status/1146329506329743362">salt</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>who is who: ES262/ECMA International</h2>
+          <ul>
+            <li>Releases anual Language Specification</li>
+            <li>Provides es262 test suite for js engine implementers</li>
+            <li>Javascript is not the only implementation of ES262, Actionscript is also one</li>
+          </ul>
+        </section>
+        <section>
+          <h2>who is who: ECMA - TC39</h2>
+          <ul>
+            <li>Proposes/Specifies new Langauge features</li>
+            <li>Consists of implementers, developers, academics...</li>
+          </ul>
+        </section>
+        <section>
+          <h2>who is who: ICANN</h2>
+          <ul>
+            <li>Supports and maintains the databases for namespaces and numbers in the internet</li>
+            <li>Introduces and manages top level domains</li>
+            <li>Saved us from the .org sale (see ISOC)</li>
+          </ul>
+        </section>
+        <section>
+          <h2>who is who: ICANN - IANA</h2>
+          <ul>
+            <li>Manages DNS Root Zone</li>
+            <li>Manages IP Addresses, autonomous systems numbers, Internet Protocol numbers/symbols and
+              ports</li>
+            <li>Dleegates name registering to local registries (RIRs) (RIPE, ARIN, APNIC, etc)</li>
+          </ul>
+        </section>
+        <section>
+          <h2>who is who: IETF</h2>
+          <ul>
+            <li>Responsible for the tehnical side of the internet</li>
+            <li>HTTP/1 -/2 -/3, HTTPS</li>
+            <li>TCP/IP</li>
+            <li>Serializations like CBOR</li>
+          </ul>
+        </section>
+        <section>
+          <h2>who is who: ITU</h2>
+          <ul>
+            <li>Brought us nice things like ASN.1, X509 (used in TLS/Certificates)</li>
+          </ul>
+        </section>
+        <section>
+          <h2>who is who: ISOC</h2>
+          <ul>
+            <li>Tries to hold it all together</li>
+            <li>Brought us the .org sale <a
+                href="http://www.theregister.com/2020/02/19/dot_org_sale_isoc_advice/">"scandal"</a>
+            </li>
+          </ul>
+        </section>
+      </section>
+
+
+      <section>
+        <section data-background-image="./assets/bg.jpeg">
+          <h1>small excursion - the internet</h1>
+        </section>
+        <section>
+          <img src="assets/internet.webp" class="r-stretch" />
+          <blockquote>this jen, is the internet <sup>[1]</sup></blockquote>
+          <ul class="sources">
+            <li>[1] https://www.imdb.com/title/tt1320786/?ref_=ttep_ep4</li>
+          </ul>
+        </section>
+        <section>
+          <h2>internet</h2>
+          <ul>
+            <li>Belongs to no-one, but governed by ISOC et all.</li>
+            <li>The www is only an application on top of the internet</li>
+            <li>IP based, pacakge sitching based inter connected network</li>
+          </ul>
+        </section>
+        <section>
+          <h2>providers</h2>
+          <ul>
+            <li>Providers are separated in Tiers, maintain automated systems and are interconnected via IXP
+              (DE-CIX)</li>
+            <li>Tier 1: AT&T, Century Link (Level3), Deutsche Telecom (Only exchange traffic with other Tier
+              1
+              providers)</li>
+            <li>Tier 2: Vodafone, Comcast, Local telcos (deliver internet traffic to end customers)</li>
+            <li>Tier 3: small ISPs</li>
+            <li>IP based, package switching based inter connected network</li>
+          </ul>
+        </section>
+        <section>
+          <h2>osi</h2>
+          <ul>
+            <li>Application Layer</li>
+            <li>7: Application (HTTP, TLS...)</li>
+            <li>6: Presentation, 5: Session (PPTP)</li>
+            <li>Transport Layer</li>
+            <li>4: Transport (TCP, UDP)</li>
+            <li>3: Network Layer (IP)</li>
+            <li>2: Data Link Layer (IEEE 802.X)</li>
+            <li>1: Physical Layer (IEEE 802.X, RS-232, ...)</li>
+          </ul>
+        </section>
+        <section>
+          <h2>ip</h2>
+          <ul>
+            <li>THE Protocol used for routing on the internet</li>
+            <li>IPv4: 32bit Address in 4 8bit tuples: 1.2.3.4</li>
+            <li>IPv6: 128bit Address in 8 32bit tuples: ffff:ffff:...:ffff</li>
+          </ul>
+        </section>
+        <section>
+          <h2>DNS</h2>
+          <ul>
+            <li>Domain Name System</li>
+            <li>Translates domain names into IP addresses</li>
+          </ul>
+        </section>
+        <section>
+          <h2>ports</h2>
+          <ul>
+            <li>Multiple enpoints on a single host</li>
+            <li>16bit unsined integer (Ranging from 0 to 65535)</li>
+          </ul>
+        </section>
+      </section>
+
+
+      <section>
+        <section data-background-image="./assets/bg.jpeg">
+          <h1>engines</h1>
+        </section>
+        <section>
+          <h2>Trident/Chakra</h2>
+          <h3>the one who won't go away</h3>
+          <ul style="font-size: 80%;">
+            <li>Also known as Internet Explorer 11</li>
+            <li>Still used to much in corporate environments</li>
+            <li>Only browser for older embedded Windows Systems or Scada Application</li>
+            <li>Available as embeddable Active X control (successor will be WebView2)</li>
+            <li>On embedded systems only if you're lucky otherwise stripped down mshtml.dll</li>
+            <li>MS will drop support fir IE11 in Teams on 30.11.2020 and for MS365 on 17.08.2021</li>
+          </ul>
+        </section>
+        <section>
+          <h2>EdgeHTML/Chakra core</h2>
+          <h3>the one who was replaced</h3>
+          <ul>
+            <li>Used in older Edge Versions</li>
+            <li>No longer relevant</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Blink/V8</h2>
+          <h3>the current ruler</h3>
+          <ul>
+            <li>Fork of WebKit</li>
+            <li>Used by Google Chrome, MS Edge, Brave, Opera</li>
+            <li>Current de-facto Standard</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Webkit/Nitro</h2>
+          <h3>the one used by Apple</h3>
+          <ul>
+            <li>Used on all MacOS and iOS devices</li>
+            <li>Used by all other browsers on iOS (apple does not allow to ship own engine)</li>
+            <li>Good integration for embedded devices (QTWebKit)</li>
+            <li>
+              <span class="highlight"><i class="fas fa-comment-dots"></i>The new IE <sup>[1]</sup></span>
+            </li>
+          </ul>
+          <div class="r-stretch"></div>
+          <ul class="sources">
+            <li>[1] https://dev.to/nektro/safari-is-the-new-internet-explorer-1df0</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Gecko, Quantum/Spidermonkey</h2>
+          <h3>the one who broad us rust</h3>
+          <ul>
+            <li>Mozilla Firefox</li>
+            <li>Currently in some kind of niche</li>
+            <li>Reason we have Rust today 🦀</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Other implementations</h2>
+          <ul>
+            <li>Flow Browser - Only rendering Engine, uses Spidermonkey for JS</li>
+            <li>Modabble XS - Embeddable JS Engine</li>
+          </ul>
+        </section>
+        <section>
+          <h2>market share</h2>
+          <img src="assets/marketshare.png" class="r-stretch" />
+        </section>
+      </section>
+
+
+      <section>
+        <section data-background-image="./assets/bg.jpeg">
+          <h1>history lesson</h1>
+        </section>
+        <section>
+          <h2>a brief history of web</h2>
+          <ul>
+            <li>All started with Tim Berners-Lee ~1989 [WWW](https://de.wikipedia.org/wiki/World_Wide_Web)</li>
+            <li>Basis HyperText ~1931</li>
+            <li>Webserver - URL - <b>H</b>yper<b>T</b>ext<b>M</b>arkup<b>L</b>anguage</li>
+            <li>Only 10 years later .com bubble burst</li>
+            <li>only satic content until 1995 Netscape Navigator (Brendan Eich) designed LiveScript</li>
+            <li>styling came 1996 with CSS1 specification</li>
+          </ul>
+        </section>
+        <section>
+          <h2>a brief history of web - the 90ies</h2>
+          <ul>
+            <li>1989 First Webserver/URL/HTML invented</li>
+            <li>1995 LiveScript (which became ECMAScript)</li>
+            <li>1995 PHP1 (PERL scripts)</li>
+            <li>1996 CSS1</li>
+            <li>1997 PHP3 (complete rewrite)</li>
+            <li>1997 ES1 Javascript 1st Release</li>
+            <li>1999 JSP</li>
+            <li>1999 ES3 Release</li>
+          </ul>
+        </section>
+        <section>
+          <h2>a brief history of web - the 00</h2>
+          <ul style="font-size: 70%;">
+            <li>2001 IE 6 (Trident Engine)</li>
+            <li>2002 Mozilla (FireFox)</li>
+            <li>The first JS framework/lib flood: Dojo( 2005) YUI (2006), JQuery (2006), MooTools (2007) will become a
+              problem later <a href="https://davidwalsh.name/recursive-array-flat">Flatten Discussion</a></li>
+            <li>GWT (crosscompile) frameworks: (Vaadin 2007, Google GWT 2006)</li>
+            <li>ServerSide Frameworks: Ruby on Rails (2005), Django Python (2005), CakePHP (2005))</li>
+            <li>CMS: Wordpress (2005), Joomla! (2005), Django CMS (2005)</li>
+            <li>2008 Google Chrome (WebKit)</li>
+            <li>2009 ES5 released</li>
+          </ul>
+          </script>
+        </section>
+        <section>
+          <h2>a brief history of web - the 10</h2>
+          <ul style="font-size: 70%;">
+            <li>2012 starting of custom elements standard</li>
+            <li>2013 IE 11</li>
+            <li>2013 Chrome forks WebKit as Blink as new Layout Engine</li>
+            <li>SPAs getting big, second framework flood (let the games begin): AngularJS 2010, Ember 2011, React 2013,
+              Vue 2014, Angular 2016, Svelte 2016, preact 2015</li>
+            <li>2015 HTML5, since then living standard</li>
+            <li>2015 ES6 (ES2015) start of the ES20XX naming</li>
+            <li>2016 Custom Elements released</li>
+            <li>2020 Edgeium (only 3 engines left, WebKit, Blink, Quantum)</li>
+          </ul>
+        </section>
+      </section>
+
+
+      <section>
+        <section data-background-image="./assets/bg.jpeg">
+          <h1>oh boi...</h1>
+          <h2>how things have changed</h2>
+        </section>
+        <section>
+          <h2>oh boi...</h2>
+          <ul>
+            <li>Google removed "don't be evil" from slogan <sup><a
+                  href="https://gizmodo.com/google-removes-nearly-all-mentions-of-dont-be-evil-from-1826153393">[1]</a></sup>
+            </li>
+            <li>A bookstore is one of the biggest cloud providers <sup><a
+                  href="https://www.channele2e.com/channel-partners/csps/cloud-market-share-2020-amazon-aws-microsoft-azure-google-ibm/">[2]</a></sup>
+            </li>
+            <li>Microsoft has a decent browser <sup><a href="https://www.microsoft.com/en-us/edge">[3]</a></sup></li>
+            <li>Apple is the new Internet Explorer and built a walled garden <sup><a
+                  href="https://arstechnica.com/information-technology/2015/06/op-ed-safari-is-the-new-internet-explorer/">[4]</a><a
+                  href="https://arstechnica.com/gaming/2020/08/impending-apple-ban-an-existential-threat-to-the-unreal-engine-epic-says/">[5]</a></sup>
+            </li>
+            <li>Mozilla struggles <sup><a
+                  href="https://thenextweb.com/insights/2020/08/11/mozilla-firefox-layoffs-250-employees/">[6]</a></sup>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>the past...</h2>
+          <h3>simple and robust</h3>
+          <ul>
+            <li><span style="font-weight: bold">L</span>inux</li>
+            <li><span style="font-weight: bold">A</span>pache</li>
+            <li><span style="font-weight: bold">M</span>ySQL</li>
+            <li><span style="font-weight: bold">P</span>HP/Perl</li>
+          </ul>
+        </section>
+        <section>
+          <h2>All you needed</h2>
+          <ul>
+            <li>Texteditor/Netscape Composer/MS Frontpage</li>
+            <li>Webspace</li>
+            <li>FTP</li>
+          </ul>
+          <div class="r-stretch">
+            <img class="fragment" style="height: 90%" src="assets/geocities.gif" />
+          </div>
+          <ul class="sources">
+            <li>https://www.kuropixel.com/geocities-sites/</li>
+          </ul>
+        </section>
+        <section>
+          <h2>What happened?</h2>
+          <img class="r-stretch" src="assets/could-should.jpg" />
+          <ul class="sources">
+            <li>https://jennburke.com/2015/10/16/just-because-you-can-doesnt-mean-you-should/</li>
+          </ul>
+        </section>
+        <section>
+          <h2>modern toolbox</h2>
+          <ul>
+            <li>Serverless, AWS, Azure, GCP, Cloudflare, K8s, K3s, docker, Terraform</li>
+            <li>Lambdas, Fargate, Elastic Lode Balancing</li>
+            <li>DynamoDB, Spanner, Bigtable, Hadoop, NoSQL</li>
+            <li>Polyglot Application Frameworks, Microservices, node.js</li>
+            <li>Javascript, Typescript, Babel, Webpack, Rollup, Snowpack</li>
+            <li>(p)react, Angular, svelte, Vue</li>
+          </ul>
+        </section>
+        <section>
+          <h2>and for what?</h2>
+          <div class="r-stretch">
+            <img class="fragment" style="height: 90%" src="assets/geocities.gif" />
+          </div>
+          <ul class="sources">
+            <li>https://www.kuropixel.com/geocities-sites/</li>
+          </ul>
+        </section>
+        <section>
+          <h2>modern architecture</h2>
+          <div class="r-stretch">
+            <img class="" style="height: 90%" src="assets/tryingtoexplain.jpg" />
+          </div>
+          <ul class="sources">
+            <li>https://dev.to/forsureitsme/comment/9kbc</li>
+          </ul>
+        </section>
+        <section>
+          <h2>back to the course goals</h2>
+          <ul>
+            <li>Overview of existing technologies in webengineering</li>
+            <li>Wild ride through heaps of technologies</li>
+          </ul>
+        </section>
+      </section>
+    </div>
+  </div>
+
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script src="plugin/markdown/markdown.js"></script>
+  <script src="plugin/highlight/highlight.js"></script>
+  <script src="plugin/chalkboard/plugin.js"></script>
+  <script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      width: 1280,
+      height: 720,
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard]
+    });
+  </script>
+</body>
+
+</html>

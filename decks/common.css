@@ -1,0 +1,58 @@
+code.inline {
+    background-color: lightgrey;
+}
+
+.round {
+    border-radius: 100%;
+}
+
+.margin-10>* {
+    margin: 10px;
+}
+
+.box-shadow {
+    box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
+}
+
+ul.sources {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    margin: 0;
+    padding: 0;
+
+    font-size: 0.3em;
+}
+
+ul.sources>li {
+    list-style: none;
+}
+
+span.highlight {
+    background-color: lightgrey;
+    color: currentColor;
+    line-height: 1.5em;
+}
+
+span.highlight > i {
+    margin: 0 5px;
+}
+
+.warning {
+    background-color: khaki;
+}
+
+pre.center {
+    text-align: center;
+    font-size: 1em;
+}
+
+:root {
+    --light-cyan: #E0FEFE;
+    --periwinkle: #C7CEEA;
+    --pale-orange: #FFDAC1;
+    --salmon-pink: #FF9AA2;
+    --light-yellow: #FFFFD8;
+    --magic-mint: #B5EAD7;
+}

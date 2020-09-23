@@ -1,0 +1,890 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>html</title>
+
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/sick.css" id="theme">
+
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+
+  <link rel="stylesheet" href="common.css">
+
+  <link rel="stylesheet" href="fontawesome/all.css">
+
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>html</h1>
+      </section>
+      <section>
+        <div class="r-stretch r-stack">
+          <img style="position: absolute; left:50px; top: 100px; height: 400px;" class="box-shadow"
+            src="assets/website.webp" />
+          <img style="position: absolute; right:50px; top: 40px; height: 400px;" class="fragment box-shadow"
+            src="assets/website2.webp" />
+          <img style="position: absolute; left:200px; bottom: 100px; height: 400px;;" class="fragment box-shadow"
+            src="assets/website3.webp" />
+        </div>
+      </section>
+      </section>
+      <section>
+        <h2>resources</h2>
+        <ul>
+          <li><a href="https://html.spec.whatwg.org/multipage/"><span class="highlight"><i
+                  class="fas fa-link"></i>Current specification</span></a></li>
+          <li><a href="https://github.com/whatwg"><span class="highlight"><i class="fab fa-github"></i>WHATWG</span></a>
+          </li>
+          <li><a href="https://www.w3schools.com/"><span class="highlight"><i
+                  class="fas fa-link"></i>w3schools</span></a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><span class="highlight"><i
+                  class="fas fa-link"></i>HTML on MDN</span></a></li>
+        </ul>
+      </section>
+      <section>
+        <section data-background-image="./assets/bg.jpeg">
+          <h2>what is html?</h2>
+        </section>
+        <section>
+          <b>Hypertext</b> refers to the links that connect multiple web pages to one another
+        </section>
+        <section>
+          <b>Markup language</b> to describe the structure of a website, can be enhanced by CSS to describe appearance
+          and javascript to add functionality
+          <p>Other markup languages:</p>
+          <ul>
+            <li>YAML</li>
+            <li>Markdown</li>
+            <li>LaTex</li>
+          </ul>
+        </section>
+        <section>
+          Influenced by SGML, thus <b>NOT</b> XML
+        </section>
+        <section>
+          Latest release HTML5.2 (now a living standard)
+        </section>
+        <section>
+          HTML5 was driven independently by the WHATWG and later merged into the w3c
+        </section>
+        <section>
+          MIME Type: text/html
+        </section>
+        <section>
+          DOM is the data representation of the structure of HTML
+        </section>
+      </section>
+
+
+      <section>
+        <section data-background-image="./assets/bg.jpeg">
+          <h2>distinction to xml</h2>
+        </section>
+        <section>
+          not all tags must be closed (e.g. link tag)
+        </section>
+        <section>
+          HTML attributes and elements are not case sensitive (will be important later for custom elements)
+        </section>
+        <section>
+          allows attribute minimization/shortening <code class="inline">&lt;option selected /&gt;</code> is valid and
+          does not need a value)
+        </section>
+        <section>
+          The HTML parser supports foreign content, for example SVG, MathML but these must be valid XML bacause the HTML
+          parser switches to XML mode
+        </section>
+        <section>
+          <h3>further reading</h3>
+          <a href="https://wiki.whatwg.org/wiki/HTML_vs._XHTML"><span class="highlight"><i
+                class="fas fa-link"></i>https://wiki.whatwg.org/wiki/HTML_vs._XHTML</span></a>
+        </section>
+      </section>
+
+
+      <section>
+        <section data-background-image="./assets/bg.jpeg">
+          <h2>&lt;!DOCTYPE&gt;</h2>
+        </section>
+        <section>
+          Information for the html parser how to parse the document and for the browser to change the document mode
+        </section>
+        <section>
+          If the document should be parsed as XML/XHTML a <code
+            class="inline">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code> annotation should be used prior to
+          DOCTYPE
+        </section>
+        <section>
+          <code class="inline">&lt;!DOCTYPE html&gt;</code> is usually the only one which should be used, all other are
+          legacy and should not be used anymore
+        </section>
+        <section>
+          Important for IE11 document mode selection<sup><a
+              hreg="https://docs.microsoft.com/en-us/internet-explorer/ie11-deploy-guide/img-ie11-docmode-lg">[1]</a></sup>
+        </section>
+      </section>
+
+
+      <section>
+        <section data-background-image="./assets/bg.jpeg">
+          <h2>general structure</h2>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code  class="hljs" data-line-numbers data-code="snippets/html.structure.html">
+          </code></pre>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code  class="hljs" data-line-numbers="1" data-code="snippets/html.structure.html">
+          </code></pre>
+          DOCTYPE declaration
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code  class="hljs" data-line-numbers="3-16" data-code="snippets/html.structure.html">
+          </code></pre>
+          html head section
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code  class="hljs" data-line-numbers="4" data-code="snippets/html.structure.html">
+          </code></pre>
+          charset to use, will be pre-fetched by the parser
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code  class="hljs" data-line-numbers="5" data-code="snippets/html.structure.html">
+          </code></pre>
+          meta information, can be used to describe your content for search engine optimization (SEO)
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code  class="hljs" data-line-numbers="6" data-code="snippets/html.structure.html">
+          </code></pre>
+          Title of the web page, will be displayed in the browsers tab
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code  class="hljs" data-line-numbers="7" data-code="snippets/html.structure.html">
+          </code></pre>
+          Reference to an external stylesheet, notice that the tag is not closed
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code  class="hljs" data-line-numbers="8-12" data-code="snippets/html.structure.html">
+          </code></pre>
+          embedded CSS stylesheet declaration
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code" class="language-html"><code class="hljs" data-code="snippets/html.structure.html" data-line-numbers="13-15">
+          </code></pre>
+          embedded Javascript declaration
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code" class="language-html"><code class="hljs" data-code="snippets/html.structure.html" data-line-numbers="17-22">
+          </code></pre>
+          HTML body, the content of the html document starts here
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code" class="language-html"><code class="hljs" data-code="snippets/html.structure.html" data-line-numbers="18">
+          </code></pre>
+          Comment node
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code" class="language-html"><code class="hljs" data-code="snippets/html.structure.html" data-line-numbers="19,21">
+          </code></pre>
+          HTML <code class="inline">div</code> tag node
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code" class="language-html"><code class="hljs" data-code="snippets/html.structure.html" data-line-numbers="20">
+          </code></pre>
+          text content node
+        </section>
+      </section>
+
+
+      <section>
+        <section data-background-image="./assets/bg.jpeg">
+          <h2>elements</h2>
+        </section>
+        <section>
+          Elements follow a semantic and should be used according to the semantic of the used tag
+        </section>
+        <section data-background-image="assets/htmlflowchart.png" data-background-size="contain">
+        </section>
+        <section>
+          Tags follow a semantic and should be used according to the semantic of the used tag
+        </section>
+        <section data-auto-animate>
+          <h3>anatomy of a element</h3>
+          <div data-id="code">
+            <code class="hljs">&lt;div id="test"&gt;text&lt;/div&gt;</code>
+            <code class="hljs">&lt;img id="test"/&gt;</code>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <div data-id="code">
+            <code
+              class="hljs"><span class="hljs-keyword">&lt;</span>div id="test"<span class="hljs-keyword">&gt;</span>text&lt;/div&gt;</code>
+            <code class="hljs"><span class="hljs-keyword">&lt;</span>img id="test"/&gt;</code>
+          </div>
+          <p>start tag</p>
+        </section>
+        <section data-auto-animate>
+          <div data-id="code">
+            <code
+              class="hljs">&lt;div id="test"&gt;text<span class="hljs-keyword">&lt;/</span>div<span class="hljs-keyword">&gt;</span></code>
+            <code class="hljs">&lt;img id="test"<span class="hljs-keyword">/&gt;</span></code>
+          </div>
+          <p>end tag</p>
+        </section>
+        <section data-auto-animate>
+          <div data-id="code">
+            <code
+              class="hljs">&lt;<span class="hljs-keyword">div</span> id="test"&gt;text&lt;/<span class="hljs-keyword">div</span>&gt;</code>
+            <code class="hljs">&lt;<span class="hljs-keyword">img</span> id="test"/&gt;</code>
+          </div>
+          <p>tag name</p>
+        </section>
+        <section data-auto-animate>
+          <div data-id="code">
+            <code class="hljs">&lt;div <span class="hljs-keyword">id=</span>"test"&gt;text&lt;/div&gt;</code>
+            <code class="hljs">&lt;img <span class="hljs-keyword">id=</span>"test"/&gt;</code>
+          </div>
+          <p>attribute</p>
+        </section>
+        <section data-auto-animate>
+          <div data-id="code">
+            <code class="hljs">&lt;div id=<span class="hljs-keyword">"test"</span>&gt;text&lt;/div&gt;</code>
+            <code class="hljs">&lt;img id=<span class="hljs-keyword">"test"</span>/&gt;</code>
+          </div>
+          <p>attribute value</p>
+        </section>
+        <section data-auto-animate>
+          <div data-id="code">
+            <code class="hljs">&lt;div id="test"&gt;<span class="hljs-keyword">text</span>&lt;/div&gt;</code>
+            <code class="hljs">&lt;img id="test"/&gt;</code>
+          </div>
+          <p>content/children</p>keep in mind, not all tags can hold children
+        </section>
+        <section>
+          <h3>There are different content categories for tags</h3>
+        </section>
+        <section>
+          <h3>Structural elements</h3>
+          <code class="inline">html, head, body</code>
+        </section>
+        <section>
+          <h3>Metadata elements and Instructions</h3>
+          <code class="inline">meta, link, title, etc...</code>
+        </section>
+        <section>
+          <h3>Flow content elements</h3>
+          <code class="inline">div, input, span, p, h1, etc...</code>
+        </section>
+        <section>
+          <h3>Structuring content elements</h3>
+          <code class="inline">main, nav, aside, etc...</code>
+        </section>
+        <section>
+          <h3>Media/embedded content elements</h3>
+          <code class="inline">img, object, video, script, style`</code>
+        </section>
+        <section>
+          <h3>Foreign content tags</h3>
+          <code class="inline">svg, mathml</code>
+        </section>
+        <section>
+          <h3>custom elements</h3>
+          <p>all elements that have a <code class="inline">-</code> in the tag-name are treated as custom elements</p>
+          <pre><code data-trim class="html">
+            <my-customelement custom-attribute="test">content</my-customelement>
+          </code></pre>
+        </section>
+        <section data-background-image="assets/periodictable.png" data-background-size="contain"
+          data-background-color="black">
+        </section>
+        <section>
+          <p>A more complete list of available content categories can be found <a
+              href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">here</a></p>
+        </section>
+        <section data-auto-animate="">
+          <h3>Identifying elements in the tree</h3>
+          <code data-id="code" class="hljs">&lt;div id="test"&gt;text&lt;/div&gt;</code>
+        </section>
+        <section data-auto-animate="">
+          <code data-id="code"
+            class="hljs">&lt;div <span class="hljs-keyword">id="test"</span>&gt;text&lt;/div&gt;</code>
+          <p>elements can be identified via the <code class="inline">id</code> attribute</p>
+          <p><code>&lt;label for="" /&gt;</code> and <code>&lt;a href="#id" /&gt;</code> use id for reference</p>
+          <p class="warning"><i class="fas fa-exclamation-triangle"></i> the id must be unique within a html document
+          </p>
+        </section>
+        <section data-auto-animate="">
+          <code data-id="code"
+            class="hljs">&lt;div <span class="hljs-keyword">class="test"</span>&gt;text&lt;/div&gt;</code>
+          <p>elements can also be identified via the <code class="inline">class</code> attribute</p>
+        </section>
+        <section data-auto-animate="">
+          <code data-id="code" class="hljs">&lt;<span class="hljs-keyword">div</span>&gt;text&lt;/div&gt;</code>
+          <p>elements can be identified via the tag</p>
+        </section>
+        <section data-auto-animate="">
+          <p>there are more ways which will be explained when we get to CSS queries</p>
+        </section>
+        <section>
+          <h3>attributes</h3>
+          attributes are used to configure a element and can change its behaviour
+        </section>
+        <section data-auto-animate>
+          <code class="hljs" data-id="code">
+            div <span class="hljs-keyword">attr="string value"</span>&gt;&lt;/div&gt;
+          </code>
+          <p>attributes can only contain string values</p>
+          <p>every built-in attribute maps to a specific element property in the DOM API</p>
+        </section>
+        <section data-auto-animate>
+          <code class="hljs" data-id="code">
+            &lt;input type="checkbox" <span class="hljs-keyword">checked disabled</span> /&gt;
+          </code>
+          <p>the value can also be ommited</p>
+        </section>
+        <section data-auto-animate>
+          <code class="hljs" data-id="code">
+            &lt;div <span class="hljs-keyword">style="color: #0f0"</span>&gt;&lt;/div&gt;
+          </code>
+          <p><code class="inline">style</code> lets you inline css for a specific element</p>
+          <p class="warning"><i class="fas fa-exclamation-triangle"></i> this should be used sparce, always try to use
+            classes and style via css selectors</p>
+        </section>
+        <section>
+          <h3>data attributes</h3>
+          <code data-id="code" class="hljs">&lt;div data-...="content"&gt;text&lt;/div&gt;</code>
+          <p><code class="inline">data-</code> attributes can be used to add custom attributes to elements</p>
+          <p>later with custom elements you can also define your own attributes</p>
+        </section>
+      </section>
+
+
+      <section>
+        <section data-background-image="./assets/bg.jpeg">
+          <h2>layouts</h2>
+        </section>
+        <section>
+          <h3>block elements</h3>
+          <div class="r-stack">
+            <div style="border: 1px solid #000; width: 400px;">
+              <div style="height: 20px; margin: 10px; background-color: var(--periwinkle);">
+              </div>
+              <div style="height: 20px; margin: 10px; background-color: var(--pale-orange);">
+              </div>
+              <div style="height: 20px; margin: 10px; background-color: var(--salmon-pink);">
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <p>corresponds to CSS <code class="inline">display: block;</code></p>
+          <p>takes up all available horizontal space given by parent element</p>
+          <p>the next element will be layouted under the block scoped element</p>
+        </section>
+        <section>
+          <h3>inline elements</h3>
+          <div class="r-stack">
+            <div style="border: 1px solid #000; padding: 10px; width: 400px; text-align: left;">
+              <span
+                style="display: inline-block; width: 80px; line-height: 10px; background-color: var(--periwinkle);">&nbsp;</span>
+              <span
+                style="display: inline-block; width: 150px; line-height: 40px; background-color: var(--pale-orange);">&nbsp;</span>
+              <span
+                style="display: inline-block; width: 90px; line-height: 30px; background-color: var(--magic-mint);">&nbsp;</span>
+              <span
+                style="display: inline-block; width: 150px; line-height: 15px; background-color: var(--salmon-pink);">&nbsp;</span>
+              </span>
+            </div>
+          </div>
+        </section>
+        <section>
+          <p>corresponds to CSS <code class="inline">display: inline;</code></p>
+          <p>inline elements are vertically aligned to the middle</p>
+          <p>inline elements can not have a height or width set, unless they are defined as <code
+              class="inline">inline-block</code> elements</p>
+        </section>
+        <section>
+          <p>all whitespace characters between inline elements are trimmed to a single white space character</p>
+          <pre><code class="html" ><span>one</span><span>two</span></code></pre>
+          <p>is rendered as <span>one</span><span>two</span></p>
+          <pre><code class="html" data-trim>
+              <span>one</span>
+              <span>two</span>
+            </code></pre>
+          <p>is rendered as <span>one</span> <span>two</span></p>
+        </section>
+        <section>
+          <h3>table</h3>
+          <style>
+            table.table-sample {
+              border: none;
+              padding: 5px;
+              border: 1px solid black;
+              border-collapse: unset;
+            }
+
+            table.table-sample th,
+            table.table-sample td {
+              height: 20px;
+              width: 50px;
+              border: 5px solid white;
+            }
+
+            table.table-sample th {
+              background-color: var(--magic-mint);
+            }
+
+            table.table-sample td {
+              background-color: var(--salmon-pink);
+            }
+
+            table.table-sample tfoot td {
+              background-color: var(--light-cyan);
+            }
+          </style>
+          <table class="table-sample">
+            <thead>
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tfoot>
+          </table>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code class="html" data-trim data-code="snippets/html.table.html">
+          </code></pre>
+          <p>a table consists of multiple elements</p>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code class="html" data-trim data-code="snippets/html.table.html" data-line-numbers="2-6">
+          </code></pre>
+          <p>a <code class="inline">thead</code> element (can be omitted)</p>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code class="html" data-trim data-code="snippets/html.table.html" data-line-numbers="7-14">
+          </code></pre>
+          <p>a <code class="inline">tbody</code> element which contains the table body (can be omitted)</p>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code class="html" data-trim data-code="snippets/html.table.html" data-line-numbers="15-19">
+          </code></pre>
+          <p>a <code class="inline">tfoot</code> element (can be omitted)</p>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code class="html" data-trim data-code="snippets/html.table.html" data-line-numbers="3,5,8,10,11,13,16,18">
+          </code></pre>
+          <p>table rows</p>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code class="html" data-trim data-code="snippets/html.table.html" data-line-numbers="4">
+          </code></pre>
+          <p>table header cells</p>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code class="html" data-trim data-code="snippets/html.table.html" data-line-numbers="9,12,17">
+          </code></pre>
+          <p>table cells</p>
+        </section>
+        <section>
+          <p>more layouts later when we talk about CSS</p>
+        </section>
+      </section>
+
+
+
+      <section>
+        <section data-background-image="./assets/bg.jpeg">
+          <h2>text formatting</h2>
+        </section>
+        <section>
+          <p>Text formatting is done via special inline tags</p>
+          <pre><code class="html" data-trim>
+<p>
+  <i>Text</i><sub>is</sub><b>rendered</b><sup>like</sup> this
+</p>
+          </code></pre>
+          <p><i style="font-style: italic;">Text</i><sub>is</sub><b>rendered</b><sup>like</sup> this</p>
+        </section>
+        <section>
+          <h3><code>ruby</code> element</h3>
+          <pre><code class="html" data-trim data-code="snippets/html.ruby.html"></code></pre>
+          <p>Text formatting especially for east asian languages</p>
+          <p>
+            <span>with ruby code:</span>
+            <ruby>
+              漢 <rp>(</rp>
+              <rt>kan</rt>
+              <rp>)</rp>
+              字 <rp>(</rp>
+              <rt>ji</rt>
+              <rp>)</rp>
+            </ruby>
+          </p>
+          <p>without ruby code: 漢 (kan) 字 (ji)</p>
+        </section>
+        <section>
+          <h3><code>bdo</code> element</h3>
+          <p>Helpfull if you mix languages written in different directions</p>
+          <pre><code class="html"><p>hello <bdo dir="rtl">hello</bdo></p></code></pre>
+          <p>hello <bdo dir="rtl">hello</bdo></p>
+        </section>
+      </section>
+
+
+
+      <section>
+        <section data-background-image="./assets/bg.jpeg">
+          <h2>links</h2>
+        </section>
+        <section>
+          <p>the reason why its called <b>HyperText</b>MakupLanguage</p>
+        </section>
+        <section>
+          <p>Links are defined with the <code class="inline">a</code> tag</p>
+          <p><small>a stands for "anchor"</small></p>
+        </section>
+        <section>
+          <p>with links you can navigate to content within a web page or reference to external content</p>
+        </section>
+        <section>
+          <p>the content to which the link points is defined in the <code class="inline">href</code> attribute of the
+            <code class="inline">a</code> element</p>
+          <p><small>href stands for "hyper reference"</small></p>
+        </section>
+        <section>
+          <h3>navigating within document</h3>
+        </section>
+        <section>
+          <p>to navigate within a document to a element it needs to be referenceable by the <code
+              class="inline">id</code> attribute</p>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code data-code="snippets/html.link.html" data-line-numbers="2"></code></pre>
+          <p>define an unique <code class="inline">id</code> at an element</p>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code data-code="snippets/html.link2.html" data-line-numbers="2,5"></code></pre>
+          <p>now you can link to this element by referencing to <code class="inline">#&lt;value of id&gt;</code>. The
+            browser should automatically jump to the referenced element once the link is clicked</p>
+        </section>
+        <section>
+          <h3>link to external content</h3>
+        </section>
+        <section>
+          <p>it is also possible to link to content either on the same host or somewhere else on the internet</p>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code data-code="snippets/html.link.external.html" data-line-numbers="1"></code></pre>
+          <p>You can link to content on another server, in this case the browser will open a new window or load the web
+            page in the same window depending on the content of the <code class="inline">target</code> attribute</p>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code data-code="snippets/html.link.external.html" data-line-numbers="2"></code></pre>
+          <p>You can link to content which is relative to the current open web page location</p>
+          <p><small>in this case, if your current location is <code
+                class="inline">https://example.com/info/info.html</code>
+              the link will point to <code class="inline">https://example.com/info/about.html</code></small></p>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code data-code="snippets/html.link.external.html" data-line-numbers="3"></code></pre>
+          <p>You can link to content which is relative to the current host</p>
+          <p><small>in this case, if your current location is <code
+                class="inline">https://example.com/info/info.html</code>
+              the link will point to <code class="inline">https://example.com/about.html</code></small></p>
+        </section>
+      </section>
+
+
+      <section>
+        <section data-background-image="./assets/bg.jpeg">
+          <h2>embedding content</h2>
+        </section>
+        <section>
+          <p>same as with links you can embed content hosted somewhere on the internet or relative to your current
+            location</p>
+        </section>
+        <section data-auto-animate>
+          <pre
+            data-id="code"><code class="html" data-code="snippets/html.embed.img.html" data-line-numbers="1"></code></pre>
+          <p>You can link to content on another server, in this case the browser will load the image and siplay it</p>
+          <p><small>the <code class="inline">alt</code> attribute should alway be set due to accessibility reasons, it
+              describes the image</small></p>
+        </section>
+        <section data-auto-animate>
+          <pre
+            data-id="code"><code  class="html" data-code="snippets/html.embed.img.html" data-line-numbers="2"></code></pre>
+          <p>You can display images which are relative to the current open web page location</p>
+          <p><small>in this case, if your current location is <code
+                class="inline">https://example.com/info/info.html</code>
+              the link will point to <code class="inline">https://example.com/info/image.png</code></small></p>
+        </section>
+        <section data-auto-animate>
+          <pre
+            data-id="code"><code  class="html" data-code="snippets/html.embed.img.html" data-line-numbers="3"></code></pre>
+          <p>You can display images which are relative to the current host</p>
+          <p><small>in this case, if your current location is <code
+                class="inline">https://example.com/info/info.html</code>
+              the link will point to <code class="inline">https://example.com/assets/image.png</code></small></p>
+        </section>
+        <section>
+          <h3>Responsive images</h3>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code  class="html" data-code="snippets/html.responsive.img.html"></code></pre>
+        </section>
+        <section data-auto-animate>
+          <pre
+            data-id="code"><code  class="html" data-code="snippets/html.responsive.img.html" data-line-numbers="2"></code></pre>
+          <p>If the available viewport is larger than 800px use the large images, for highdpi monitors use the
+            large@2xjpg</p>
+        </section>
+        <section data-auto-animate>
+          <pre
+            data-id="code"><code  class="html" data-code="snippets/html.responsive.img.html" data-line-numbers="3"></code></pre>
+          <p>If the available viewport is larger than 400px use the medium images, for highdpi monitors use the
+            medium@2xjpg</p>
+        </section>
+        <section data-auto-animate>
+          <pre
+            data-id="code"><code  class="html" data-code="snippets/html.responsive.img.html" data-line-numbers="4"></code></pre>
+          <p>otherwise use the small images, for highdpi monitors use the small@2xjpg</p>
+        </section>
+        <section data-auto-animate>
+          <pre
+            data-id="code"><code  class="html" data-code="snippets/html.responsive.img.html" data-line-numbers="5"></code></pre>
+          <p>as a fallback or if <code class="inline">srcsets</code> are not supported use the fallback.jpg image</p>
+        </section>
+        <section>
+          <h3>other content</h3>
+        </section>
+        <section>
+          <pre
+            data-id="code"><code  class="html" data-code="snippets/html.embed.video.html" data-line-numbers=""></code></pre>
+          <p>You can embed video content, also with <code class="inline">srcsets</code></p>
+        </section>
+        <section>
+          <pre
+            data-id="code"><code  class="html" data-code="snippets/html.embed.audio.html" data-line-numbers=""></code></pre>
+          <p>You can embed audio content, also with <code class="inline">srcsets</code></p>
+        </section>
+        <section>
+          <pre
+            data-id="code"><code  class="html" data-code="snippets/html.embed.svg.html" data-line-numbers=""></code></pre>
+          <p>You can embed <code class="inline">svg</code></p>
+          <p>
+            <svg width="100" height="100">
+              <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+            </svg>
+          </p>
+        </section>
+        <section>
+          <p>and many more some other content</p>
+        </section>
+      </section>
+
+
+      <section>
+        <section data-background-image="./assets/bg.jpeg">
+          <h2>forms</h2>
+        </section>
+        <section>
+          <h3>form controls</h3>
+          <style>
+            div.form-sample {
+              width: 250px;
+              border: 1px solid black;
+              padding: 5px;
+              margin: 0 auto;
+              text-align: left;
+            }
+          </style>
+          <div class="form-sample">
+            <div>
+              <span style="display: inline-block; background-color: lightgray; height: 20px; width: 100px;"></span>
+              <span style="display: inline-block; border: 1px solid black; height: 20px; width: 100px;"></span>
+            </div>
+            <div>
+              <span style="display: inline-block; background-color: lightgray; height: 20px; width: 100px;"></span>
+              <span style="display: inline-block; border: 1px solid black; height: 20px; width: 20px;"></span>
+            </div>
+            <div>
+              <span style="display: inline-block; background-color: lightgray; height: 20px; width: 100px;"></span>
+              <span style="display: inline-block; border: 1px solid black; height: 20px; width: 100px;"></span>
+            </div>
+            <div>
+              <span style="display: inline-block; background-color: lightgray; height: 20px; width: 100px;"></span>
+              <span style="display: inline-block; border: 1px solid black; height: 20px; width: 100px;"></span>
+            </div>
+          </div>
+        </section>
+        <section>
+          <input type="button">
+          <input type="reset">
+          <input type="submit">
+          <input type="checkbox">
+          <input type="color">
+          <input type="time">
+          <input type="date">
+          <input type="datetime-local">
+          <input type="week">
+          <input type="email">
+          <input type="file">
+          <input type="hidden">
+          <input type="image">
+          <input type="month">
+          <input type="number">
+          <input type="password">
+          <input type="radio">
+          <input type="range">
+          <input type="search">
+          <input type="tel">
+          <input type="text">
+          <input type="url">
+          <select>
+            <option>one</option>
+            <option>two</option>
+          </select>
+          <input list="browsers" id="myBrowser" name="myBrowser" />
+          <datalist id="browsers">
+            <option value="Chrome">
+            <option value="Firefox">
+            <option value="Internet Explorer">
+            <option value="Opera">
+            <option value="Safari">
+            <option value="Microsoft Edge">
+          </datalist>
+          <p>there are plenty to choose from</p>
+        </section>
+        <section>
+          <p>HTML supports a lot of form handling out of the box without the need of javascript</p>
+        </section>
+        <section>
+          <h3><code>form</code> element</h3>
+        </section>
+        <section>
+          <p>the <code class="inline">form</code> element acts as a wrapper around form controls, supports form
+            validation and can execute a specified action</p>
+          <p><small>form controls can also be bound with the <code class="inline">form</code> attribute to a specific
+              form, linked by the elements id</small></p>
+          <p><small>the <code class="inline">autocomplete</code> attribute tells the browser to fill out form elements
+              with previous entered values</small></p>
+        </section>
+        <section>
+          <p>the <code class="inline">form</code> is able to perform the action specified in the attribute <code
+              class="inline">action</code></p>
+        </section>
+        <section>
+          <p><code class="inline">&lt;input type="submit"&gt;</code> within a <code class="inline">form</code> can
+            trigger validation and if everything is valid the action</p>
+          <p><code class="inline">&lt;input type="reset"&gt;</code> within a <code class="inline">form</code> can reset
+            the form</p>
+          <p><small>with the <code class="inline">type</code> attribute of the <code class="inline">button</code>
+              element you can also specify what the button triggers</small></p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/html.form.html"></code></pre>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/html.form.html" data-line-numbers="1"></code></pre>
+          <p>you can set the URL which is called after a submit, method <code class="inline">GET</code> will send the
+            form values as query parameters after the URL, <code class="inline">POST</code> will send send them in a
+            form-data encoded POST body</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/html.form.html" data-line-numbers="5,6"></code></pre>
+          <p>radio button controls within a form are matched by name, if multiple controls with the same name exists the
+            form value will be the value of the currently selected</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/html.form.html" data-line-numbers="14,15"></code></pre>
+          <p>labels can be associated with form controls via the form controls' id</p>
+        </section>
+        <section>
+          <form action="/action.do" method="GET" style="font-size: 14px;">
+            <p>
+            <fieldset>
+              <legend>What is better <abbr title="This field is mandatory" aria-label="required">*</abbr></legend>
+              <input type="radio" required name="better" id="r1" value="one"><label for="r1">One</label>
+              <input type="radio" required name="better" id="r2" value="two"><label for="r2">Two</label>
+            </fieldset>
+            </p>
+            <p>
+              <label for="n1">Whats you age</label>
+              <input type="number" min="12" max="120" step="1" id="n1" name="age" pattern="\d+">
+            </p>
+            <p>
+              <label for="n2">Whats you name</label>
+              <input type="text" id="n2" name="name" pattern="[a-zA-Z ]+">
+            </p>
+            <button type="submit">Submit</button><button type="reset">Reset</button>
+          </form>
+        </section>
+        <section>
+          <p>
+          more on forms <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form">here</a>
+          </p>
+        </section>
+      </section>
+
+
+
+      <section>
+        <section data-background-image="./assets/bg.jpeg">
+          <h2>aria</h2>
+        </section>
+      </section>
+    </div>
+  </div>
+
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script src="plugin/markdown/markdown.js"></script>
+  <script src="plugin/highlight/highlight.js"></script>
+  <script src="plugin/chalkboard/plugin.js"></script>
+  <script src="plugin/externalcode/externalcode.js"></script>
+  <script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      width: 1280,
+      height: 720,
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [Externalcode, RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard]
+    });
+  </script>
+</body>
+
+</html>

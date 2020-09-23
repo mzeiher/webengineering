@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>reveal.js</title>
+
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/sick.css" id="theme">
+
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+
+  <link rel="stylesheet" href="common.css">
+
+  <link rel="stylesheet" href="fontawesome/all.css">
+
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>javascript</h1>
+      </section>
+      <section>
+        <section>
+          <h2>Hoisting</h2>
+          <blockquote>
+            Definition of hoist<br />
+            <br />
+            transitive verb<br />
+            <br />
+            1: LIFT, RAISE<br />
+            especially : to raise into position by or as if by means of tackle<br />
+            hoist a flag
+          </blockquote>
+          <a href="https://developer.mozilla.org/en-US/docs/Glossary/Hoisting"><span class="highlight"><i class="fas fa-link"></i>Hoisting on MDN</span></a>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code data-trim data-line-numbers>
+            <script type="text/template">
+              "use strict";
+              (function() {
+                alert(typeof func); // prints 'function'
+
+                function func() {
+
+                }
+
+                alert(typeof func); // prints 'function'
+              })()
+            </script>
+          </code></pre>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code data-trim data-line-numbers="3-5">
+            <script type="text/template">
+              "use strict";
+              (function() {
+                function func() {
+
+                }
+
+                alert(typeof func); // prints 'function'
+
+
+                alert(typeof func); // prints 'function'
+              })()
+            </script>
+          </code></pre>
+          <span><code class="inline">function</code> declarations will be hoisted in scope</span>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code data-trim data-line-numbers>
+              <script type="text/template">
+                "use strict";
+                (function() {
+                  alert(typeof func); // prints 'undefined'
+    
+                  var func = function() {
+    
+                  }
+    
+                  alert(typeof func); // prints 'function'
+                })()
+              </script>
+            </code></pre>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code data-trim data-line-numbers="3,6-8">
+              <script type="text/template">
+                "use strict";
+                (function() {
+                  var func;
+                  alert(typeof func); // prints 'undefined'
+    
+                  func = function() {
+    
+                  }
+    
+                  alert(typeof func); // prints 'function'
+                })()
+              </script>
+            </code></pre>
+          <span><code class="inline">var</code> will be hoisted in scope but not initialized</span>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code data-trim data-line-numbers>
+              <script type="text/template">
+                // throws ReferenceError: Cannot access 'func' 
+                // before initialization
+                "use strict";
+                (function() {
+                  alert(typeof func);
+    
+                  let func = function() {
+    
+                  }
+    
+                  alert(typeof func); // prints 'function'
+                })()
+              </script>
+            </code></pre>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code data-trim data-line-numbers="7">
+              <script type="text/template">
+                // throws ReferenceError: Cannot access 'func' 
+                // before initialization
+                "use strict";
+                (function() {
+                  alert(typeof func);
+    
+                  let func = function() {
+    
+                  }
+    
+                  alert(typeof func); // prints 'function'
+                })()
+              </script>
+            </code></pre>
+          <span><code class="inline">let</code> and <code class="inline">const</code> will not be hoisted</span>
+        </section>
+        <section>
+          <h3>conclusion</h3>
+          <ul>
+            <li>Only declarations are hoisted</li>
+            <li>...with the exception of <code class="inline">let</code> and <code class="inline">const</code></li>
+          </ul>
+        </section>
+      </section>
+    </div>
+  </div>
+
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script src="plugin/markdown/markdown.js"></script>
+  <script src="plugin/highlight/highlight.js"></script>
+  <script src="plugin/chalkboard/plugin.js"></script>
+  <script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      width: 1280,
+      height: 720,
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard]
+    });
+  </script>
+</body>
+
+</html>
