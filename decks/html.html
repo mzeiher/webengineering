@@ -277,7 +277,7 @@
           <code class="inline">html, head, body</code>
         </section>
         <section>
-          <h3>Metadatan elements and Instructions</h3>
+          <h3>Metadata elements and Instructions</h3>
           <code class="inline">meta, link, title, etc...</code>
         </section>
         <section>
@@ -829,6 +829,15 @@
           <pre data-id="code"><code data-code="snippets/html.form.html" data-line-numbers="14,15"></code></pre>
           <p>labels can be associated with form controls via the form controls' id</p>
         </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/html.form.html" data-line-numbers="5,6"></code></pre>
+          <p>form controls can be marked as required, thus preventing the form from submission if the controls have no valid value</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/html.form.html" data-line-numbers="11,15"></code></pre>
+          <p>some form controls can valdiate against a pattern or a specific value range</p>
+          <p><small class="warning">an empty string is treated as a matching pattern unless the required attribute is set</small></p>
+        </section>
         <section>
           <form action="/action.do" method="GET" style="font-size: 14px;">
             <p>
@@ -848,6 +857,9 @@
             </p>
             <button type="submit">Submit</button><button type="reset">Reset</button>
           </form>
+        </section>
+        <section>
+          you can create own form associated custom elements <a href="https://web.dev/more-capable-form-controls/">https://web.dev/more-capable-form-controls/</a>
         </section>
         <section>
           <p>

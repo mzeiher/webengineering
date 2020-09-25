@@ -79,3 +79,6 @@ modern javascript developent needs its own toolchain to organize small and large
  - React Native, Electron for writing client applications/apps
  - Webassembly (WASM, WASI)
  - OAuth/OpenID
+
+http/2 push could be disabled?
+https://bugs.chromium.org/p/chromium/issues/detail?id=773219#c11
