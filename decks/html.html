@@ -185,7 +185,7 @@
         <section data-auto-animate>
           <pre data-id="code" class="language-html"><code class="hljs" data-code="snippets/html.structure.html" data-line-numbers="17-22">
           </code></pre>
-          HTML body, the content of the html document starts here
+          HTML body, the visible content of the html document starts here
         </section>
         <section data-auto-animate>
           <pre data-id="code" class="language-html"><code class="hljs" data-code="snippets/html.structure.html" data-line-numbers="18">
@@ -212,13 +212,13 @@
         <section>
           Elements follow a semantic and should be used according to the semantic of the used tag
         </section>
-        <section data-background-image="assets/htmlflowchart.png" data-background-size="contain">
+        <section data-background-image="assets/htmlflowchart.png" data-background-size="contain"> <!-- there is a "yes-bubble" missing after/below "is it required to understand the current content?" -->
         </section>
         <section>
           Tags follow a semantic and should be used according to the semantic of the used tag
         </section>
         <section data-auto-animate>
-          <h3>anatomy of a element</h3>
+          <h3>anatomy of an element</h3> <!-- https://www.grammar.com/a-vs-an-when-to-use/ ;) -->
           <div data-id="code">
             <code class="hljs">&lt;div id="test"&gt;text&lt;/div&gt;</code>
             <code class="hljs">&lt;img id="test"/&gt;</code>
@@ -277,7 +277,7 @@
           <code class="inline">html, head, body</code>
         </section>
         <section>
-          <h3>Metadata elements and Instructions</h3>
+          <h3>Metadatan elements and Instructions</h3>
           <code class="inline">meta, link, title, etc...</code>
         </section>
         <section>
@@ -290,7 +290,7 @@
         </section>
         <section>
           <h3>Media/embedded content elements</h3>
-          <code class="inline">img, object, video, script, style`</code>
+          <code class="inline">img, object, video, script, style</code>
         </section>
         <section>
           <h3>Foreign content tags</h3>
@@ -319,7 +319,7 @@
             class="hljs">&lt;div <span class="hljs-keyword">id="test"</span>&gt;text&lt;/div&gt;</code>
           <p>elements can be identified via the <code class="inline">id</code> attribute</p>
           <p><code>&lt;label for="" /&gt;</code> and <code>&lt;a href="#id" /&gt;</code> use id for reference</p>
-          <p class="warning"><i class="fas fa-exclamation-triangle"></i> the id must be unique within a html document
+          <p class="warning"><i class="fas fa-exclamation-triangle"></i> the id must be unique within an html document
           </p>
         </section>
         <section data-auto-animate="">
@@ -336,11 +336,11 @@
         </section>
         <section>
           <h3>attributes</h3>
-          attributes are used to configure a element and can change its behaviour
+          attributes are used to configure an element and can change its behaviour
         </section>
         <section data-auto-animate>
           <code class="hljs" data-id="code">
-            div <span class="hljs-keyword">attr="string value"</span>&gt;&lt;/div&gt;
+            &lt;div <span class="hljs-keyword">attr="string value"</span>&gt;&lt;/div&gt;
           </code>
           <p>attributes can only contain string values</p>
           <p>every built-in attribute maps to a specific element property in the DOM API</p>
@@ -349,7 +349,7 @@
           <code class="hljs" data-id="code">
             &lt;input type="checkbox" <span class="hljs-keyword">checked disabled</span> /&gt;
           </code>
-          <p>the value can also be ommited</p>
+          <p>the value can also be ommited</p> <!-- that an empty atribute value is implicitly an empty string as value -->
         </section>
         <section data-auto-animate>
           <code class="hljs" data-id="code">
@@ -386,9 +386,9 @@
           </div>
         </section>
         <section>
-          <p>corresponds to CSS <code class="inline">display: block;</code></p>
+          <p>corresponds to CSS <code class="inline">display: block;</code></p> <!-- either start with "a block element" or you have to use plural "are corresponding -->
           <p>takes up all available horizontal space given by parent element</p>
-          <p>the next element will be layouted under the block scoped element</p>
+          <p>the next element will be layouted below the block scoped element</p>
         </section>
         <section>
           <h3>inline elements</h3>
@@ -585,7 +585,7 @@
           <h3>navigating within document</h3>
         </section>
         <section>
-          <p>to navigate within a document to a element it needs to be referenceable by the <code
+          <p>to navigate within a document to an element it needs to be referenceable by the <code
               class="inline">id</code> attribute</p>
         </section>
         <section data-auto-animate>
@@ -636,7 +636,7 @@
         <section data-auto-animate>
           <pre
             data-id="code"><code class="html" data-code="snippets/html.embed.img.html" data-line-numbers="1"></code></pre>
-          <p>You can link to content on another server, in this case the browser will load the image and siplay it</p>
+          <p>You can link to content on another server, in this case the browser will load the image and display it</p>
           <p><small>the <code class="inline">alt</code> attribute should alway be set due to accessibility reasons, it
               describes the image</small></p>
         </section>
@@ -708,7 +708,7 @@
           </p>
         </section>
         <section>
-          <p>and many more some other content</p>
+          <p>and many more some other content</p> <!-- I do not understand this sentence :p -->
         </section>
       </section>
 
