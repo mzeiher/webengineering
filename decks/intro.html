@@ -99,7 +99,6 @@
           <p><span class="highlight"><i class="fab fa-twitter"></i>Interesting people to follow</span></p>
           <p><span class="highlight"><i class="fas fa-play-circle"></i>Interesting videos to watch</span></p>
           <p><span class="highlight"><i class="fas fa-link"></i>Interesting links to read</span></p>
-          </ul>
         </section>
         <section>
           <h3>good resources</h3>
@@ -109,8 +108,7 @@
           <p><a href="https://www.youtube.com/user/ChromeDevelopers">Chrome Webcast</a></p>
           <p><a href="https://caniuse.com/">caniuse.com</a></p>
           <p><a href="https://web.dev/">web.dev</a></p>
-          <p><a href="https://twitter.com">❗twitter.com</a></p>
-          </ul>
+          <p><a href="https://twitter.com">twitter.com</a></p>
         </section>
       </section>
 
@@ -256,6 +254,8 @@
           <h3>w3c</h3>
           <blockquote>The World Wide Web Consortium (W3C) is an international community that develops open
             standards to ensure the long-term growth of the Web.</blockquote>
+        </section>
+        <section>
           <p>WebRTC, Websocket Protocol API/IDL (Protcol itself by IETF)</p>
           <p>Publishes drafts which are agreed upon in the WICG</p>
           <p>Does a lot more... semantic web, web of things, etc</p>
@@ -274,7 +274,7 @@
           <p>Reason why we don't need jQuery anymore (DOM APIs)</p>
         </section>
         <section>
-          <h3>who is who: w3c - WICG</h3>
+          <h3>w3c - WICG</h3>
           <p>Participation of implementors for new APIs/Technologies</p>
           <p>WebUSB, WebBluetooth, WebRTC, Serviceworker, Orientation API all originated here, once
             enough traction the RFC will move to w3c</p>
@@ -317,7 +317,7 @@
           <p>Brought us nice things like ASN.1, X509 (used in TLS/Certificates)</p>
         </section>
         <section>
-          <h3>who is who: ISOC</h3>
+          <h3>ISOC</h3>
           <p>Tries to hold it all together</p>
           <p>Brought us the .org sale <a
               href="http://www.theregister.com/2020/02/19/dot_org_sale_isoc_advice/">"scandal"</a>
@@ -328,68 +328,200 @@
 
       <section>
         <section data-background-image="./assets/bg.jpeg">
-          <h1>small excursion - the internet</h1>
+          <h2>the internet</h2>
         </section>
-        <section>
-          <img src="assets/internet.webp" class="r-stretch" />
-          <blockquote>this jen, is the internet <sup>[1]</sup></blockquote>
+        <section data-background-color="#000">
+          <img src="assets/Internet_map_1024.jpg" class="r-stretch" />
           <ul class="sources">
-            <li>[1] https://www.imdb.com/title/tt1320786/?ref_=ttep_ep4</li>
+            <li>https://en.wikipedia.org/wiki/Internet</li>
           </ul>
         </section>
         <section>
-          <h2>internet</h2>
-          <ul>
-            <li>Belongs to no-one, but governed by ISOC et all.</li>
-            <li>The www is only an application on top of the internet</li>
-            <li>IP based, pacakge sitching based inter connected network</li>
+          <blockquote>Internet is the global system of interconnected computer networks that uses the Internet
+            protocol suite (TCP/IP) to communicate between networks and devices.
+            <b>It is a network of networks</b></blockquote>
+          <ul class="sources">
+            <li>https://en.wikipedia.org/wiki/Internet</li>
           </ul>
         </section>
         <section>
-          <h2>providers</h2>
-          <ul>
-            <li>Providers are separated in Tiers, maintain automated systems and are interconnected via IXP
-              (DE-CIX)</li>
-            <li>Tier 1: AT&T, Century Link (Level3), Deutsche Telecom (Only exchange traffic with other Tier
-              1
-              providers)</li>
-            <li>Tier 2: Vodafone, Comcast, Local telcos (deliver internet traffic to end customers)</li>
-            <li>Tier 3: small ISPs</li>
-            <li>IP based, package switching based inter connected network</li>
+          <h3>what is the internet</h3>
+          <p>IP based, package switched inter connected network</p>
+          <p>Belongs to no-one, but governed by ISOC et all.</p>
+          <p>The www is only an application on top of the internet</p>
+        </section>
+        <section>
+          <h3>providers</h3>
+          <p>Providers provide the access to the internet, maintain automated systems and are interconnected via IXP
+            (e.g DE-CIX)</p>
+        </section>
+        <section>
+          <img src="assets/Tier-1-vs-Tier-2-768x541.png" class="r-stretch" />
+          <ul class="sources">
+            <li>https://elite.net.uk/what-is-the-difference-between-a-tier-1-and-tier-2-provider/</li>
           </ul>
         </section>
         <section>
-          <h2>osi</h2>
-          <ul>
-            <li>Application Layer</li>
-            <li>7: Application (HTTP, TLS...)</li>
-            <li>6: Presentation, 5: Session (PPTP)</li>
-            <li>Transport Layer</li>
-            <li>4: Transport (TCP, UDP)</li>
-            <li>3: Network Layer (IP)</li>
-            <li>2: Data Link Layer (IEEE 802.X)</li>
-            <li>1: Physical Layer (IEEE 802.X, RS-232, ...)</li>
+          <p>Tier 1: AT&T, Century Link (Level3), Deutsche Telecom (Only exchange traffic with other Tier
+            1
+            providers)</p>
+          <p>Tier 2: Vodafone, Comcast, Local telcos (deliver internet traffic to end customers)</p>
+          <p>Tier 3: small ISPs</p>
+        </section>
+        <section>
+          <h3>osi</h3>
+          <style>
+            .osi-table {
+              font-size: 0.7em;
+            }
+
+            .osi-table tr {
+              border: 5px solid white;
+            }
+
+            .osi-table td[colspan] {
+              text-align: center;
+            }
+
+            .osi-table .application {
+              background-color: var(--magic-mint);
+            }
+
+            .osi-table .internet {
+              background-color: var(--light-cyan);
+            }
+
+            .osi-table .transport {
+              background-color: var(--periwinkle);
+            }
+
+            .osi-table .access {
+              background-color: var(--salmon-pink);
+            }
+          </style>
+          <table class="osi-table">
+            <tbody>
+              <tr class="application">
+                <td colspan="3">Application</td>
+              </tr>
+              <tr class="application">
+                <td>7</td>
+                <td>Application</td>
+                <td>HTTP, TLS</td>
+              </tr>
+              <tr class="application">
+                <td>6</td>
+                <td>Presentation</td>
+                <td>ASN.1</td>
+              </tr>
+              <tr class="application">
+                <td>5</td>
+                <td>Session</td>
+                <td>PPTP</td>
+              </tr>
+              <tr class="transport">
+                <td colspan="3">Transport</td>
+              </tr>
+              <tr class="transport">
+                <td>4</td>
+                <td>Transport</td>
+                <td>TCP, UDP</td>
+              </tr>
+              <tr class="internet">
+                <td colspan="3">Internet</td>
+              </tr>
+              <tr class="internet">
+                <td>3</td>
+                <td>Network Layer</td>
+                <td>IP</td>
+              </tr>
+              <tr class="access">
+                <td colspan="3">Network Access</td>
+              </tr>
+              <tr class="access">
+                <td>2</td>
+                <td>Data Link Layer</td>
+                <td>IEEE 802.X</td>
+              </tr>
+              <tr class="access">
+                <td>1</td>
+                <td>Physical Layer</td>
+                <td>IEEE 802.X, RS-232, ...</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section>
+          <h3>DNS</h3>
+        </section>
+        <section>
+          <p>http://www.google.com</p>
+          <p>=</p>
+          <p>v6/2a00:1450:4001:802::200e v4/172.217.18.174</p>
+        </section>
+        <section>
+          <p>Domain Name System</p>
+          <p>Translates domain names into IP addresses</p>
+        </section>
+        <section>
+          <h3>ip</h3>
+        </section>
+        <section>
+          <img src="assets/routing-diagram.svg" class="r-stretch" />
+          <ul class="sources">
+            <li>
+              https://www.cloudflare.com/resources/images/slt3lc6tev37/5biqo5wm6nM8GSmiNyiAnl/b6b5c9befeda6ba99b4380d84953de18/routing-diagram.svg
+            </li>
           </ul>
         </section>
         <section>
-          <h2>ip</h2>
-          <ul>
-            <li>THE Protocol used for routing on the internet</li>
-            <li>IPv4: 32bit Address in 4 8bit tuples: 1.2.3.4</li>
-            <li>IPv6: 128bit Address in 8 32bit tuples: ffff:ffff:...:ffff</li>
-          </ul>
+          <p>THE Protocol used for routing on the internet</p>
         </section>
         <section>
-          <h2>DNS</h2>
-          <ul>
-            <li>Domain Name System</li>
-            <li>Translates domain names into IP addresses</li>
-          </ul>
+          <style>
+            .ip-table {
+              font-size: 0.7em;
+            }
+
+            .ip-table td {
+              border: 5px solid white;
+              background-color: var(--magic-mint);
+            }
+          </style>
+          <h4>IPv4</h4>
+          <p>32bit Address in 4 8bit tuples: 1.2.3.4</p>
+          <table class="ip-table">
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+          </table>
+          <h4>IPv6</h4>
+          <p>128bit Address in 8 32bit tuples: ffff:ffff:...:ffff</p>
+          <table class="ip-table">
+            <tr>
+              <td>0x0000</td>
+              <td>0x0000</td>
+              <td>0x0000</td>
+              <td>0x0000</td>
+              <td>0x0000</td>
+              <td>0x0000</td>
+              <td>0x0000</td>
+              <td>0x0000</td>
+            </tr>
+          </table>
         </section>
         <section>
-          <h2>ports</h2>
+          <h3>ports</h3>
+        </section>
+        <section>
+          <img src="assets/portmapping.svg" class="r-stretch" />
+        </section>
+        <section>
           <ul>
-            <li>Multiple enpoints on a single host</li>
+            <li>Multiple endpoints on a single host</li>
             <li>16bit unsined integer (Ranging from 0 to 65535)</li>
           </ul>
         </section>
@@ -410,9 +542,11 @@
           </div>
         </section>
         <section>
-          <h2>Trident/Chakra</h2>
-          <h3>the one who won't go away</h3>
-          <ul style="font-size: 80%;">
+          <h3>Trident/Chakra</h3>
+          <p><small>the one who won't go away</small></p>
+        </section>
+        <section>
+          <ul>
             <li>Also known as Internet Explorer 11</li>
             <li>Still used to much in corporate environments</li>
             <li>Only browser for older embedded Windows Systems or Scada Application</li>
@@ -422,16 +556,20 @@
           </ul>
         </section>
         <section>
-          <h2>EdgeHTML/Chakra core</h2>
-          <h3>the one who was replaced</h3>
+          <h3>EdgeHTML/Chakra core</h3>
+          <p><small>the one who was replaced</small></p>
+        </section>
+        <section>
           <ul>
             <li>Used in older Edge Versions</li>
             <li>No longer relevant</li>
           </ul>
         </section>
         <section>
-          <h2>Blink/V8</h2>
-          <h3>the current ruler</h3>
+          <h3>Blink/V8</h3>
+          <p><small>the current ruler</small></p>
+        </section>
+        <section>
           <ul>
             <li>Fork of WebKit</li>
             <li>Used by Google Chrome, MS Edge, Brave, Opera</li>
@@ -439,8 +577,10 @@
           </ul>
         </section>
         <section>
-          <h2>Webkit/Nitro</h2>
-          <h3>the one used by Apple</h3>
+          <h3>Webkit/Nitro</h3>
+          <p><small>the one used by Apple</small></p>
+        </section>
+        <section>
           <ul>
             <li>Used on all MacOS and iOS devices</li>
             <li>Used by all other browsers on iOS (apple does not allow to ship own engine)</li>
@@ -449,14 +589,15 @@
               <span class="highlight"><i class="fas fa-comment-dots"></i>The new IE <sup>[1]</sup></span>
             </li>
           </ul>
-          <div class="r-stretch"></div>
           <ul class="sources">
             <li>[1] https://dev.to/nektro/safari-is-the-new-internet-explorer-1df0</li>
           </ul>
         </section>
         <section>
-          <h2>Gecko, Quantum/Spidermonkey</h2>
-          <h3>the one who broad us rust</h3>
+          <h3>Gecko, Quantum/Spidermonkey</h3>
+          <p><small>the one who broad us rust</small></p>
+        </section>
+        <section>
           <ul>
             <li>Mozilla Firefox</li>
             <li>Currently in some kind of niche</li>
@@ -464,14 +605,17 @@
           </ul>
         </section>
         <section>
-          <h2>Other implementations</h2>
+          <h3>Other implementations</h3>
+          <p><small>honorable mentions</small></p>
+        </section>
+        <section>
           <ul>
             <li>Flow Browser - Only rendering Engine, uses Spidermonkey for JS</li>
             <li>Modabble XS - Embeddable JS Engine</li>
           </ul>
         </section>
         <section>
-          <h2>market share</h2>
+          <h3>market share</h3>
           <img src="assets/marketshare.png" class="r-stretch" />
         </section>
       </section>

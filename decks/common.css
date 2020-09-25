@@ -30,8 +30,7 @@ ul.sources>li {
 }
 
 span.highlight {
-    background-color: lightgrey;
-    color: currentColor;
+    background-color: #E5F1F8;
     line-height: 1.5em;
 }
 
