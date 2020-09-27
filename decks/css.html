@@ -447,8 +447,10 @@
           <h3>attribute selector</h3>
         </section>
         <section>
-          <p>The attribute selector <code class="inline">[attribute=""]</code> matches all elements which have the attribute with a specific value</p>
-          <small>The attribute selector support multiple function to match the attribute value<sup><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors">[1]</a></sup></small>
+          <p>The attribute selector <code class="inline">[attribute=""]</code> matches all elements which have the
+            attribute with a specific value</p>
+          <small>The attribute selector support multiple function to match the attribute value<sup><a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors">[1]</a></sup></small>
           <pre><code data-code="snippets/css.selectors.attribute.css"></code></pre>
           <pre><code class="language-html" data-code="snippets/css.selectors.selectormatch.html" data-line-numbers="3"></code></pre>
         </section>
@@ -456,8 +458,10 @@
           <h3>pseudo selector</h3>
         </section>
         <section>
-          <p>The pseudo selector <code class="inline">:pseudo()</code> matches all elements which mach the specified pseudo selector</p>
-          <small>There is a wide range of available pseudo selectors<sup><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">[1]</a></sup></small>
+          <p>The pseudo selector <code class="inline">:pseudo()</code> matches all elements which mach the specified
+            pseudo selector</p>
+          <small>There is a wide range of available pseudo selectors<sup><a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">[1]</a></sup></small>
           <pre><code data-code="snippets/css.selectors.pseudo.css"></code></pre>
           <pre><code class="language-html" data-code="snippets/css.selectors.selectormatch.html" data-line-numbers="4"></code></pre>
         </section>
@@ -468,7 +472,8 @@
           <p>selectors can be combined to narrow the space of elements to apply the rule</p>
         </section>
         <section>
-          <p>Selectors can be combined with the operators <code class="inline">,</code>, <code class="inline">+</code>, <code class="inline">~</code>, <code class="inline">&nbsp;</code>, <code class="inline">&gt;</code></p>
+          <p>Selectors can be combined with the operators <code class="inline">,</code>, <code class="inline">+</code>,
+            <code class="inline">~</code>, <code class="inline">&nbsp;</code>, <code class="inline">&gt;</code></p>
         </section>
         <section>
           <h3>concatenation or "logical and"</h3>
@@ -524,21 +529,401 @@
       </section>
       <section>
         <section data-background-image="./assets/bg.jpeg">
-          <h2>Selector Specificity</h2>
+          <h2>Specificity and the Cascade</h2>
           <h3>or why the hell is my text not red?</h3>
         </section>
         <section>
+          <p>User Agent Stylesheet</p>
+          <p>
+            <i class="fas fa-arrow-down" style="vertical-align: middle;"></i>
+            <small style="vertical-align: middle;">is overwritten by</small>
+            <i class="fas fa-arrow-down" style="vertical-align: middle;"></i>
+          </p>
+          <p>Author Style Sheet</p>
+        </section>
+        <section>
+          <p>If multiple selectors match and contain contradicting properties there is a hierarchy which properties will
+            be applied for the element</p>
+          <pre><code class="language-html" data-trim>
+            <style>
+              p { color: black;}
+              .yellow { color: yellow;}
+              #red { color: red};
+            </style>
+            <p id="red" class="yellow">text</p>
+          </code></pre>
+        </section>
+        <style>
+          .specificity-table {
+            font-size: 0.7em;
+          }
+
+          .specificity-table td {
+            border: 5px solid transparent;
+            background-color: lightgrey;
+          }
+
+          .specificity-table td:nth-child(3) {
+            background-color: var(--magic-mint);
+          }
+
+          .specificity-table td:nth-child(4) {
+            background-color: var(--periwinkle);
+          }
+
+          .specificity-table td:nth-child(5) {
+            background-color: var(--pale-orange);
+          }
+        </style>
+        <section>
+          <p>First the specificity will be calculated</p>
+          <table class="specificity-table">
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+          </table>
+        </section>
+        <section data-background-color="var(--pale-orange)">
+          <p>Every matching <b>type</b> selector <code class="inline">div</code> and pseudo element <code
+              class="inline">::before</code> will increase the type specificity</p>
+          <table class="specificity-table">
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>+1</td>
+            </tr>
+          </table>
+        </section>
+        <section data-background-color="var(--periwinkle)">
+          <p>Every matching <b>class</b> selector <code class="inline">.class</code>, attribute selector <code
+              class="inline">[attr~=""]</code> and pseudo class (<code class="inline">:hover</code>) will increase the
+            class specificity</p>
+          <table class="specificity-table">
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>+1</td>
+              <td>0</td>
+            </tr>
+          </table>
+        </section>
+        <section data-background-color="var(--magic-mint)">
+          <p>Every matching <b>id</b> selector <code class="inline">#id</code> will increase the id specificity</p>
+          <table class="specificity-table">
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>+1</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+          </table>
+        </section>
+        <section>
+          <p>Every property declaration on the <code class="inline">style</code> attribute will increase the style
+            specificity</p>
+          <table class="specificity-table">
+            <tr>
+              <td>0</td>
+              <td>+1</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+          </table>
+        </section>
+        <section>
+          <p>Every property with <code class="inline">!important</code> will increase the important specificity</p>
+          <p><small>you probably never need important, and if there is always another solution</small></p>
+          <table class="specificity-table">
+            <tr>
+              <td>+1</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+          </table>
+        </section>
+        <section data-auto-animate="">
+          <p>If there is a tie on specificity ...</p>
+          <pre data-id="code"><code data-trim data-line-numbers="">
+            <style>
+              div#id.class1 { /* specificity 0 0 1 1 1 */
+                background-color: blue;
+              }
+              div#id.class2 { /* specificity 0 0 1 1 1 */
+                background-color: red;
+              }
+            </style>
+            <!-- both css selectors match the element -->
+            <div id="id" class="class1 class2">text</div>
+          </code></pre>
+        </section>
+        <section data-auto-animate="">
+          <p>... then the last rule defined will overwrite the preceding rules</p>
+          <pre data-id="code"><code data-trim data-line-numbers="5-7, 10">
+            <style>
+              div#id.class1 { /* specificity 0 0 1 1 1 */
+                background-color: blue;
+              }
+              div#id.class2 { /* specificity 0 0 1 1 1 */
+                background-color: red;
+              }
+            </style>
+            <!-- both css selectors match the element -->
+            <div id="id" class="class1 class2">text</div>
+          </code></pre>
+        </section>
+        <section>
+          <p>User Agent Stylesheet</p>
+          <p>
+            <i class="fas fa-arrow-down" style="vertical-align: middle;"></i>
+            <small style="vertical-align: middle;">is overwritten by</small>
+            <i class="fas fa-arrow-down" style="vertical-align: middle;"></i>
+          </p>
+          <p>Author Style Sheet</p>
+          <p>
+            <i class="fas fa-arrow-down" style="vertical-align: middle;"></i>
+            <small style="vertical-align: middle;">is overwritten by</small>
+            <i class="fas fa-arrow-down" style="vertical-align: middle;"></i>
+          </p>
+          <p>Specificity and Cascade</p>
+          <p>
+            <i class="fas fa-arrow-down" style="vertical-align: middle;"></i>
+            <small style="vertical-align: middle;">is overwritten by</small>
+            <i class="fas fa-arrow-down" style="vertical-align: middle;"></i>
+          </p>
+          <p>Element Style</p>
+          <p>
+            <i class="fas fa-arrow-down" style="vertical-align: middle;"></i>
+            <small style="vertical-align: middle;">is overwritten by</small>
+            <i class="fas fa-arrow-down" style="vertical-align: middle;"></i>
+          </p>
+          <p>!important</p>
+        </section>
+        <section>
+          <h3>Inheritance</h3>
+        </section>
+        <section>
+          <p>Some properties will be inherited from the parent elements (<code class="inline">color</code>, <code
+              class="inline">font</code>, etc)</p>
+          <pre><code class="language-html" data-trim>
+            <style>
+              .red {
+                color: red;
+              }
+            </style>
+            <div>
+              <p>
+                <span>I will be black</span><span class="red">I will be red</span>
+              </p>
+              <p class="red">
+                <span>I will inherit color from my parent</span>
+                <span style="color: black">I will be black again</span>
+              </p>
+            </div>
+          </code></pre>
+        </section>
+        <section>
+          <style>
+            .red {
+              color: red;
+            }
+          </style>
+          <div>
+            <p>
+              <span>I will be black</span><span class="red">I will be red</span>
+            </p>
+            <p class="red">
+              <span>I will inherit color from my parent</span>
+              <span style="color: black">I will be black again</span>
+            </p>
+          </div>
+        </section>
+        <section>
+          <h3>More Information</h3>
+          <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity"><span class="highlight"><i
+                  class="fas fa-link"></i>Specificity on MDN</span></a></p>
 
         </section>
       </section>
       <section>
         <section data-background-image="./assets/bg.jpeg">
-          <h2>Units</h2>
+          <h2>Values, Units and Functions</h2>
         </section>
         <section>
-
+          <p>a css property can have one or multiple values, these values can be of different type</p>
+          <pre><code class="language-css" data-trim>
+            div {
+              height: 23px;
+              border: 1px solid #fff;
+              color: rgba(10,255,142, 0.5);
+            }
+          </code></pre>
+        </section>
+        <section>
+          <h3>number</h3>
+        </section>
+        <section>
+          <p>number types can be used either as direct values for specific properties</p>
+          <pre><code data-trim class="language-css">
+            flex: 1 1 auto;
+          </code></pre>
+          <p>or as arguments for functions</p>
+          <pre><code data-trim class="language-css">
+            color rgb(0, 0, 0);
+          </code></pre>
+        </section>
+        <section>
+          <h3>string</h3>
+        </section>
+        <section>
+          <p>strings can also be used as values</p>
+          <p><small>If the string does not contain spaces, the <code class="inline">"</code> can be omitted</small></p>
+          <pre><code data-trim class="language-css">
+            border-type: solid;
+          </code></pre>
+          <pre><code data-trim class="language-css">
+            content: "my content";
+          </code></pre>
+        </section>
+        <section>
+          <h3>lengths</h3>
+        </section>
+        <section>
+          <p>There are two types of length, absolute lengths and relative lengths</p>
+        </section>
+        <section>
+          <h4>Absolute lengths</h4>
+          <p>Absolute lengths do not relate to anything else and are usually always the same size</p>
+        </section>
+        <section>
+          <table>
+            <thead>
+              <tr>
+                <th>unit</th>
+                <th>name</th>
+                <th>equivalent to</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code class="inline">cm</code></td>
+                <td>Centimeters</td>
+                <td>1cm = 96px/2.54</td>
+              </tr>
+              <tr>
+                <td><code class="inline">mm</code></td>
+                <td>Millimeters</td>
+                <td>1mm = 1/10th of 1cm</td>
+              </tr>
+              <tr>
+                <td><code class="inline">Q</code></td>
+                <td>Quarter-millimeters</td>
+                <td>1Q = 1/40th of 1cm</td>
+              </tr>
+              <tr>
+                <td><code class="inline">in</code></td>
+                <td>Inches</td>
+                <td>1in = 2.54cm = 96px</td>
+              </tr>
+              <tr>
+                <td><code class="inline">pc</code></td>
+                <td>Picas</td>
+                <td>1pc = 1/6th of 1in</td>
+              </tr>
+              <tr>
+                <td><code class="inline">pt</code></td>
+                <td>Points</td>
+                <td>1pt = 1/72th of 1in</td>
+              </tr>
+              <tr>
+                <td><code class="inline">px</code></td>
+                <td>Pixel</td>
+                <td>1px = 1/96th of 1in</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section>
+          <h4>Relative lengths</h4>
+          <p>Relative lengths are relative to something else, for example the parent element, the viewport or the root element</p>
+        </section>
+        <section>
+          <table style="font-size: 0.7em;">
+            <thead>
+             <tr>
+              <th>Unit</th>
+              <th>Relative to</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+              <td><code>em</code></td>
+              <td>Font size of the parent, in the case of typographical properties like <code><a href="/en-US/docs/Web/CSS/font-size">font-size</a></code>, and font size of the element itself, in the case of other properties like <code><a href="/en-US/docs/Web/CSS/width">width</a></code>.</td>
+             </tr>
+             <tr>
+              <td><code>ex</code></td>
+              <td>x-height of the element's font.</td>
+             </tr>
+             <tr>
+              <td><code>ch</code></td>
+              <td>The advance measure (width) of the glyph "0" of the element's font.</td>
+             </tr>
+             <tr>
+              <td><code>rem</code></td>
+              <td>Font size of the root element.</td>
+             </tr>
+             <tr>
+              <td><code>lh</code></td>
+              <td>Line height of the element.</td>
+             </tr>
+             <tr>
+              <td><code>vw</code></td>
+              <td>1% of the viewport's width.</td>
+             </tr>
+             <tr>
+              <td><code>vh</code></td>
+              <td>1% of the viewport's height.</td>
+             </tr>
+             <tr>
+              <td><code>vmin</code></td>
+              <td>1% of the viewport's smaller dimension.</td>
+             </tr>
+             <tr>
+              <td><code>vmax</code></td>
+              <td>1% of the viewport's larger dimension.</td>
+             </tr>
+            </tbody>
+           </table>
+        </section>
+        <section>
+          <h3>Percentages</h3>
+        </section>
+        <section>
+          <h3>Colors</h3>
+        </section>
+        <section>
+          <h3>Functions</h3>
+        </section>
+        <section>
+          <h3>Special values</h3>
+        </section>
+        <section>
+          <p><code class="inline">inherit</code>, <code class="inline">unset</code>, <code class="inline">initial</code>
+          </p>
         </section>
       </section>
+
+
       <section>
         <section data-background-image="./assets/bg.jpeg">
           <h2>Custom Properties/Variables</h2>
@@ -547,17 +932,44 @@
 
         </section>
       </section>
+
+
       <section>
         <section data-background-image="./assets/bg.jpeg">
-          <h2>Functions</h2>
+          <h2>CSS Positioning and Layouts</h2>
+        </section>
+        <section>
+          <h3>Box Model</h3>
+        </section>
+        <section>
+          <h3>Positioning</h3>
+        </section>
+        <section>
+          <h3>Stacking Context</h3>
+        </section>
+        <section>
+          <h3>Float</h3>
+        </section>
+        <section>
+          <h3>Flex Layout</h3>
+        </section>
+        <section>
+          <h3>Grid Layout</h3>
+        </section>
+      </section>
+      <section>
+        <section data-background-image="./assets/bg.jpeg">
+          <h2>Media Queries</h2>
         </section>
         <section>
 
         </section>
       </section>
+
+
       <section>
         <section data-background-image="./assets/bg.jpeg">
-          <h2>CSS Layouts</h2>
+          <h2>Scope</h2>
         </section>
         <section>
 

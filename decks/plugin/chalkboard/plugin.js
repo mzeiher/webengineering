@@ -112,7 +112,6 @@ const initChalkboard = function(Reveal){
 	}
 
 	function configure( config ) {
-		debugger;
 		if ( config.boardmarkerWidth || config.penWidth ) boardmarkerWidth = config.boardmarkerWidth || config.penWidth;
 		if ( config.chalkWidth ) chalkWidth = config.chalkWidth;
 		if ( "chalkEffect" in config ) chalkEffect = config.chalkEffect;
