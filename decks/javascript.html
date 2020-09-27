@@ -27,6 +27,14 @@
         <h1>javascript</h1>
       </section>
       <section>
+        <section>
+          <h2>Interessting ressources</h2>
+        </section>
+        <section>
+          <a href="https://2ality.com/">Axel Rauschmayer</a>
+        </section>
+      </section>
+      <section>
         <section data-background-image="./assets/bg.jpeg">
           <h2>Hoisting</h2>
         </section>
@@ -40,110 +48,43 @@
             especially : to raise into position by or as if by means of tackle<br />
             hoist a flag
           </blockquote>
-          <a href="https://developer.mozilla.org/en-US/docs/Glossary/Hoisting"><span class="highlight"><i class="fas fa-link"></i>Hoisting on MDN</span></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Glossary/Hoisting"><span class="highlight"><i
+                class="fas fa-link"></i>Hoisting on MDN</span></a>
         </section>
         <section data-auto-animate>
-          <pre data-id="code"><code data-trim data-line-numbers>
-            <script type="text/template">
-              "use strict";
-              (function() {
-                alert(typeof func); // prints 'function'
-
-                function func() {
-
-                }
-
-                alert(typeof func); // prints 'function'
-              })()
-            </script>
+          <pre data-id="code"><code data-trim data-line-numbers data-code="snippets/javascript.hoisting.1.js">
           </code></pre>
         </section>
         <section data-auto-animate>
-          <pre data-id="code"><code data-trim data-line-numbers="3-5">
-            <script type="text/template">
-              "use strict";
-              (function() {
-                function func() {
-
-                }
-
-                alert(typeof func); // prints 'function'
-
-
-                alert(typeof func); // prints 'function'
-              })()
-            </script>
+          <pre data-id="code"><code data-trim data-line-numbers="5-6" data-code="snippets/javascript.hoisting.1.js">
+          </code></pre>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code data-trim data-line-numbers="3-4" data-code="snippets/javascript.hoisting.2.js">
           </code></pre>
           <span><code class="inline">function</code> declarations will be hoisted in scope</span>
         </section>
         <section data-auto-animate>
-          <pre data-id="code"><code data-trim data-line-numbers>
-              <script type="text/template">
-                "use strict";
-                (function() {
-                  alert(typeof func); // prints 'undefined'
-    
-                  var func = function() {
-    
-                  }
-    
-                  alert(typeof func); // prints 'function'
-                })()
-              </script>
+          <pre data-id="code"><code data-trim data-line-numbers data-code="snippets/javascript.hoisting.3.js">
             </code></pre>
         </section>
         <section data-auto-animate>
-          <pre data-id="code"><code data-trim data-line-numbers="3,6-8">
+          <pre data-id="code"><code data-trim data-line-numbers="5-6" data-code="snippets/javascript.hoisting.3.js">
+            </code></pre>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code data-trim data-line-numbers="3,6-7" data-code="snippets/javascript.hoisting.4.js">
               <script type="text/template">
-                "use strict";
-                (function() {
-                  var func;
-                  alert(typeof func); // prints 'undefined'
-    
-                  func = function() {
-    
-                  }
-    
-                  alert(typeof func); // prints 'function'
-                })()
               </script>
             </code></pre>
           <span><code class="inline">var</code> will be hoisted in scope but not initialized</span>
         </section>
         <section data-auto-animate>
-          <pre data-id="code"><code data-trim data-line-numbers>
-              <script type="text/template">
-                // throws ReferenceError: Cannot access 'func' 
-                // before initialization
-                "use strict";
-                (function() {
-                  alert(typeof func);
-    
-                  let func = function() {
-    
-                  }
-    
-                  alert(typeof func); // prints 'function'
-                })()
-              </script>
+          <pre data-id="code"><code data-trim data-line-numbers data-code="snippets/javascript.hoisting.5.js">
             </code></pre>
         </section>
         <section data-auto-animate>
-          <pre data-id="code"><code data-trim data-line-numbers="7">
-              <script type="text/template">
-                // throws ReferenceError: Cannot access 'func' 
-                // before initialization
-                "use strict";
-                (function() {
-                  alert(typeof func);
-    
-                  let func = function() {
-    
-                  }
-    
-                  alert(typeof func); // prints 'function'
-                })()
-              </script>
+          <pre data-id="code"><code data-trim data-line-numbers="7" data-code="snippets/javascript.hoisting.5.js">
             </code></pre>
           <span><code class="inline">let</code> and <code class="inline">const</code> will not be hoisted</span>
         </section>
@@ -155,6 +96,12 @@
           </ul>
         </section>
       </section>
+      <section>
+        <section>
+          <h2>TC 39</h2>
+        </section>
+        <section>https://exploringjs.com/impatient-js/ch_history.html#tc39-process</section>
+      </section>
     </div>
   </div>
 
@@ -163,6 +110,7 @@
   <script src="plugin/markdown/markdown.js"></script>
   <script src="plugin/highlight/highlight.js"></script>
   <script src="plugin/chalkboard/plugin.js"></script>
+  <script src="plugin/externalcode/externalcode.js"></script>
   <script>
     // More info about initialization & config:
     // - https://revealjs.com/initialization/
@@ -173,7 +121,13 @@
       width: 1280,
       height: 720,
       // Learn about plugins: https://revealjs.com/plugins/
-      plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard]
+      plugins: [Externalcode, RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard],
+      chalkboard: {
+        boardmarkerWidth: 3,
+        chalkWidth: 3,
+        chalkEffect: 0,
+        theme: "whiteboard"
+      }
     });
   </script>
 </body>
