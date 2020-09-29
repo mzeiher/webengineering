@@ -47,6 +47,11 @@ pre.center {
     font-size: 1em;
 }
 
+small i.fas, 
+small i.fab {
+    vertical-align: baseline;
+}
+
 :root {
     --light-cyan: #E0FEFE;
     --periwinkle: #C7CEEA;

@@ -854,59 +854,118 @@
           </table>
         </section>
         <section>
+          <h4>Pixel and retina resolutions</h4>
+          <p>A CSS pixel does not map to a native pixel</p>
+          <p>The size of a CSS pixel dependes on the DPI of the users hardware and the scaling factor of the operating
+            system</p>
+          <p><small>the html <code class="inline">canvas</code> element and the cavnas' drawing API uses native
+              pixels!</small></p>
+        </section>
+        <section>
           <h4>Relative lengths</h4>
-          <p>Relative lengths are relative to something else, for example the parent element, the viewport or the root element</p>
+          <p>Relative lengths are relative to something else, for example the parent element, the viewport or the root
+            element</p>
         </section>
         <section>
           <table style="font-size: 0.7em;">
             <thead>
-             <tr>
-              <th>Unit</th>
-              <th>Relative to</th>
-             </tr>
+              <tr>
+                <th>Unit</th>
+                <th>Relative to</th>
+              </tr>
             </thead>
             <tbody>
-             <tr>
-              <td><code>em</code></td>
-              <td>Font size of the parent, in the case of typographical properties like <code><a href="/en-US/docs/Web/CSS/font-size">font-size</a></code>, and font size of the element itself, in the case of other properties like <code><a href="/en-US/docs/Web/CSS/width">width</a></code>.</td>
-             </tr>
-             <tr>
-              <td><code>ex</code></td>
-              <td>x-height of the element's font.</td>
-             </tr>
-             <tr>
-              <td><code>ch</code></td>
-              <td>The advance measure (width) of the glyph "0" of the element's font.</td>
-             </tr>
-             <tr>
-              <td><code>rem</code></td>
-              <td>Font size of the root element.</td>
-             </tr>
-             <tr>
-              <td><code>lh</code></td>
-              <td>Line height of the element.</td>
-             </tr>
-             <tr>
-              <td><code>vw</code></td>
-              <td>1% of the viewport's width.</td>
-             </tr>
-             <tr>
-              <td><code>vh</code></td>
-              <td>1% of the viewport's height.</td>
-             </tr>
-             <tr>
-              <td><code>vmin</code></td>
-              <td>1% of the viewport's smaller dimension.</td>
-             </tr>
-             <tr>
-              <td><code>vmax</code></td>
-              <td>1% of the viewport's larger dimension.</td>
-             </tr>
+              <tr>
+                <td><code class="inline">em</code></td>
+                <td>Font size of the parent, in the case of typographical properties like
+                  <code><a href="/en-US/docs/Web/CSS/font-size">font-size</a></code>, and font size of the element
+                  itself, in the case of other properties like
+                  <code><a href="/en-US/docs/Web/CSS/width">width</a></code>.</td>
+              </tr>
+              <tr>
+                <td><code class="inline">ex</code></td>
+                <td>x-height of the element's font.</td>
+              </tr>
+              <tr>
+                <td><code class="inline">ch</code></td>
+                <td>The advance measure (width) of the glyph "0" of the element's font.</td>
+              </tr>
+              <tr>
+                <td><code class="inline">rem</code></td>
+                <td>Font size of the root element.</td>
+              </tr>
+              <tr>
+                <td><code class="inline">lh</code></td>
+                <td>Line height of the element.</td>
+              </tr>
+              <tr>
+                <td><code class="inline">vw</code></td>
+                <td>1% of the viewport's width.</td>
+              </tr>
+              <tr>
+                <td><code class="inline">vh</code></td>
+                <td>1% of the viewport's height.</td>
+              </tr>
+              <tr>
+                <td><code class="inline">vmin</code></td>
+                <td>1% of the viewport's smaller dimension.</td>
+              </tr>
+              <tr>
+                <td><code class="inline">vmax</code></td>
+                <td>1% of the viewport's larger dimension.</td>
+              </tr>
             </tbody>
-           </table>
+          </table>
+        </section>
+        <section>
+          <h4>relative sizes explained</h4>
+          <pre><code class="language-html" data-code="snippets/css.units.em.html"></code></pre>
+          <p><span>
+              normal size
+              <span style="font-size: 2em;">
+                double size
+                <span style="font-size: 0.5em;"> normal size again</span>
+              </span>
+            </span>
+          </p>
+        </section>
+        <section>
+          <h4>vh and mobile devices</h4>
+          <blockquote><b>vh unit</b><br />
+            Equal to 1% of the height of the initial containing block.</blockquote>
+          <p>On Safari vh is calculated with the navigation bar extended and does not recalculate on scrolling</p>
+        </section>
+        <section>
+          <img src="assets/vhbug.webp" class="r-stretch" />
+          <p><span class="highlight"><i class="fas fa-link"></i><a
+                href="https://css-tricks.com/the-trick-to-viewport-units-on-mobile/"></a>The trick to viewport units on
+              mobile</span></p>
+          </p>
         </section>
         <section>
           <h3>Percentages</h3>
+          <p><code class="inline">%</code>-percent values are always relative to the same property of the parent element</p>
+          <p><code class="inline">font-size: 50%</code> is relativ to the parents <code class="inline">font-size</code></p>
+          <p><code class="inline">width: 50%</code> is relativ to the parents calculated width</p>
+        </section>
+        <section>
+          <style>
+            .unitsample {
+              border: 2px solid black;
+            }
+            .unitsample > div {
+              background-color: var(--periwinkle);
+              margin: 10px;
+              height: 1.5em;
+            }
+          </style>
+          <div class="unitsample">
+            <div style="width: 10em;">10em</div>
+            <div style="width: 150px;">100px</div>
+            <div style="width: 50%">50%</div>
+            <div style="width: 5cm">5cm</div>
+
+          </div>
         </section>
         <section>
           <h3>Colors</h3>
@@ -942,19 +1001,48 @@
           <h3>Box Model</h3>
         </section>
         <section>
-          <h3>Positioning</h3>
+          <h3>block layout</h3>
+          <div class="r-stack">
+            <div style="border: 1px solid #000; width: 400px;">
+              <div style="height: 20px; margin: 10px; background-color: var(--periwinkle);">
+              </div>
+              <div style="height: 20px; margin: 10px; background-color: var(--pale-orange);">
+              </div>
+              <div style="height: 20px; margin: 10px; background-color: var(--salmon-pink);">
+              </div>
+            </div>
+          </div>
         </section>
         <section>
-          <h3>Stacking Context</h3>
-        </section>
-        <section>
-          <h3>Float</h3>
+          <h3>inline layout</h3>
+          <div class="r-stack">
+            <div style="border: 1px solid #000; padding: 10px; width: 400px; text-align: left;">
+              <span
+                style="display: inline-block; width: 80px; line-height: 10px; background-color: var(--periwinkle);">&nbsp;</span>
+              <span
+                style="display: inline-block; width: 150px; line-height: 40px; background-color: var(--pale-orange);">&nbsp;</span>
+              <span
+                style="display: inline-block; width: 90px; line-height: 30px; background-color: var(--magic-mint);">&nbsp;</span>
+              <span
+                style="display: inline-block; width: 150px; line-height: 15px; background-color: var(--salmon-pink);">&nbsp;</span>
+              </span>
+            </div>
+          </div>
         </section>
         <section>
           <h3>Flex Layout</h3>
         </section>
         <section>
           <h3>Grid Layout</h3>
+        </section>
+        <section>
+          <h3>Float</h3>
+        </section>
+        <section>
+          <h3>Positioning</h3>
+        </section>
+        <section>
+          <h3>Stacking Context</h3>
         </section>
       </section>
       <section>
