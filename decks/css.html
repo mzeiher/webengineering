@@ -1053,6 +1053,20 @@
           <h3>Box Model</h3>
         </section>
         <section>
+          <pre><code class="language-html" data-trim>
+              <div style="border: 1em solid black; margin: 1em; padding: 1em">
+                Text
+              </div>
+          </code></pre>
+          <div class="r-stack">
+            <div style="background-color: var(--periwinkle);width: 400px;">
+              <div style="background-color: var(--light-yellow); border: 1em solid var(--salmon-pink); margin: 1em; padding: 1em">
+                <span style="background-color: var(--magic-mint);">Text</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
           <div style="background-color: var(--periwinkle); padding: 0em 1em 1em 1em; display: inline-block;">
             Margin<br />
             <div style="background-color: var(--salmon-pink); padding: 0em 1em 1em 1em; display: inline-block;">
@@ -1065,7 +1079,7 @@
               </div>
             </div>
           </div>
-          <p><code class="inline">width</code> and <code class="inline">width</code> properties always apply to the
+          <p><code class="inline">width</code> and <code class="inline">height</code> properties always apply to the
             elements box-sizing</p>
         </section>
         <section>
