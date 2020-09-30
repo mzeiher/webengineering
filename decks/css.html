@@ -466,7 +466,7 @@
           <pre><code class="language-html" data-code="snippets/css.selectors.selectormatch.html" data-line-numbers="4"></code></pre>
         </section>
         <section>
-          <h3>Concatenating selectors</h3>
+          <h3>Combination of selectors</h3>
         </section>
         <section>
           <p>selectors can be combined to narrow the space of elements to apply the rule</p>
@@ -862,7 +862,7 @@
         <section>
           <h4>Pixel and retina resolutions</h4>
           <p>A CSS pixel does not map to a native pixel</p>
-          <p>The size of a CSS pixel dependes on the DPI of the users hardware and the scaling factor of the operating
+          <p>The size of a CSS pixel depends on the DPI of the users hardware and the scaling factor of the operating
             system</p>
         </section>
         <section>
@@ -950,11 +950,11 @@
           <h3>Percentages</h3>
           <p><code class="inline">%</code>-percent values are always relative to the same property of the parent element
           </p>
-          <p><code class="inline">font-size: 50%</code> is relativ to the parents <code class="inline">font-size</code>
+          <p><code class="inline">font-size: 50%</code> is relative to the parents <code class="inline">font-size</code>
           </p>
-          <p><code class="inline">width: 50%</code> is relativ to the parents width</p>
+          <p><code class="inline">width: 50%</code> is relative to the parents containing block size</p>
           <p><small><code class="inline">width</code> and <code class="inline">height</code> are relative to the parents
-              available content area (see box model)</small></p>
+              available content area (containing block)</small></p>
         </section>
         <section>
           <style>
@@ -1060,71 +1060,112 @@
           </code></pre>
           <div class="r-stack">
             <div style="background-color: var(--periwinkle);width: 400px;">
-              <div style="background-color: var(--light-yellow); border: 1em solid var(--salmon-pink); margin: 1em; padding: 1em">
+              <div
+                style="background-color: var(--light-yellow); border: 1em solid var(--salmon-pink); margin: 1em; padding: 1em">
                 <span style="background-color: var(--magic-mint);">Text</span>
               </div>
             </div>
           </div>
         </section>
         <section>
+          <p>the box model affects the layouting of an element and the calculated <code class="inline">width</code> or
+            <code class="inline">height</code> of an element</p>
+        </section>
+        <section>
           <div style="background-color: var(--periwinkle); padding: 0em 1em 1em 1em; display: inline-block;">
-            Margin<br />
+            margin-box<br />
             <div style="background-color: var(--salmon-pink); padding: 0em 1em 1em 1em; display: inline-block;">
-              Border<br />
+              border-box<br />
               <div style="background-color: var(--light-yellow); padding: 0em 1em 1em 1em; display: inline-block;">
-                Padding<br />
+                padding-box<br />
                 <div style="background-color: var(--magic-mint); padding: 0.2em; display: inline-block;">
-                  Content
+                  content-box
                 </div>
               </div>
             </div>
           </div>
-          <p><code class="inline">width</code> and <code class="inline">height</code> properties always apply to the
-            elements box-sizing</p>
+          <p>the box model consists of 4 boxes, the margin box, border box, padding box and content box</p>
         </section>
         <section>
           <div style="background-color: var(--periwinkle); padding: 0em 1em 1em 1em; display: inline-block;">
-            Margin<br />
+            <code class="inline">margin: &lt;value&gt;</code><br />
             <div style="background-color: var(--salmon-pink); padding: 0em 1em 1em 1em; display: inline-block;">
-              Border<br />
+              <code class="inline">border: &lt;value&gt;</code><br />
               <div style="background-color: var(--light-yellow); padding: 0em 1em 1em 1em; display: inline-block;">
-                Padding<br />
+                <code class="inline">padding: &lt;value&gt;</code><br />
+                <div style="background-color: var(--magic-mint); padding: 0.2em; display: inline-block;">
+                  <code class="inline">width, height</code>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p>the sizes of the different box dimensions can be set with the css properties <code
+              class="inline">margin</code>, <code class="inline">border</code>, <code class="inline">padding</code>,
+            <code class="inline">width</code> and <code class="inline">height</code></p>
+        </section>
+        <section>
+          <div style="background-color: var(--periwinkle); padding: 0em 1em 1em 1em; display: inline-block;">
+            <code class="inline">margin: &lt;value&gt;</code><br />
+            <div style="background-color: var(--salmon-pink); padding: 0em 1em 1em 1em; display: inline-block;">
+              <code class="inline">border: &lt;value&gt;</code><br />
+              <div style="background-color: var(--light-yellow); padding: 0em 1em 1em 1em; display: inline-block;">
+                <code class="inline">padding: &lt;value&gt;</code><br />
                 <div
                   style="border: 4px solid black; background-color: var(--magic-mint); padding: 0.2em; display: inline-block;">
-                  Content
+                  &lt;content&gt;
                 </div>
               </div>
             </div>
           </div>
-          <p><code class="inline">box-sizing: content-box;</code> (default)</p>
+          <p><code class="inline">box-sizing: content-box;</code> is the default box model for elements and applies the
+            set <code class="inline">height</code> or <code class="inline">width</code> to the content box</p>
         </section>
         <section>
           <div style="background-color: var(--periwinkle); padding: 0em 1em 1em 1em; display: inline-block;">
-            Margin<br />
+            <code class="inline">margin: &lt;value&gt;</code><br />
             <div
               style="border: 4px solid black; background-color: var(--salmon-pink); padding: 0em 1em 1em 1em; display: inline-block;">
-              Border<br />
+              <code class="inline">border: &lt;value&gt;</code><br />
               <div style="background-color: var(--light-yellow); padding: 0em 1em 1em 1em; display: inline-block;">
-                Padding<br />
+                <code class="inline">padding: &lt;value&gt;</code><br />
                 <div style="background-color: var(--magic-mint); padding: 0.2em; display: inline-block;">
-                  Content
+                  &lt;content&gt;
                 </div>
               </div>
             </div>
           </div>
-          <p><code class="inline">box-sizing: border-box;</code> (should be the default for every page)</p>
+          <p><code class="inline">box-sizing: border-box;</code> takes the elements <code class="inline">padding</code>
+            and <code class="inline">border</code> box into account while layouting the element with a set <code
+              class="inline">width</code> or <code class="inline">height</code></p>
         </section>
         <section>
           <div
-            style="width: 700px; margin: 10px auto; box-sizing: content-box; background-color: var(--magic-mint); border: 30px solid black;">
-            width: 700px, content-box</div>
-          <p>With <code class="inline">content-box</code> the <code class="inline">width</code> only applies to the
-            content box of the element</p>
+            style="width: 700px; border: 5px dashed black; border-top: none; margin: 10px auto; box-sizing: border-box;">
+            700 px</div>
           <div
-            style="width: 700px; margin: 10px auto; box-sizing: border-box; background-color: var(--magic-mint); border: 30px solid black;">
-            width: 700px, border-box</div>
-          <p>With <code class="inline">border-box</code> the <code class="inline">width</code> applies to the content
-            box and includes the border of the element</p>
+            style="width: 700px; margin: 10px auto; box-sizing: content-box; background-color: var(--magic-mint); border: 30px solid var(--salmon-pink);">
+            width: 700px, border: 30px</div>
+          <p>With <code class="inline">content-box</code> the <code class="inline">width</code> only applies to the
+            content box of the element, so the elements calculated width after layouting is 700px + padding + border,
+            and the content box width 700px</p>
+        </section>
+        <section>
+          <div
+            style="width: 700px; border: 5px dashed black; border-top: none; margin: 10px auto; box-sizing: border-box;">
+            700 px</div>
+          <div
+            style="width: 700px; margin: 10px auto; box-sizing: border-box; background-color: var(--magic-mint); border: 30px solid var(--salmon-pink);">
+            width: 700px, border: 30px</div>
+          <p>With <code class="inline">border-box</code> the <code class="inline">width</code> applies to the border
+            box and includes the border and padding of the element, so the elements calculated width is 700px, and the
+            content box width 700px - margin - padding</p>
+        </section>
+        <section>
+          <h3>containing-block</h3>
+          <p>the size and position of an element are defined by the containing block, different properties change the
+            containing block which is used to calculate an elements dimensions</p>
+          <p><small>a percent value for <code class="inline">width</code> usually take the ancestors content-box as the
+              containing block a calculates the width relative to the ancestors content-box</small></p>
         </section>
         <section>
           <h3>block layout</h3>
@@ -1138,6 +1179,12 @@
               </div>
             </div>
           </div>
+        </section>
+        <section>
+          <p>default for block elements (<code class="inline">p</code>, <code class="inline">div</code>, ...)</p>
+          <p>can be set with the css property <code class="inline">display: block;</code></p>
+          <p>always take up all available width of the parents content-box</p>
+          <p>block elements will alway stack vertically</p>
         </section>
         <section>
           <h3>inline layout</h3>
@@ -1156,32 +1203,253 @@
           </div>
         </section>
         <section>
+          <p>default for inline elements (<code class="inline">span</code>, <code class="inline">sup</code>, ...)</p>
+          <p>can be set with the css property <code class="inline">display: inline;</code></p>
+          <p><code class="inline">width</code> and <code class="inline">height</code> have no effect (with the exception
+            of <code class="inline">display: inline-block;</code></p>
+          <p>inline elements will vertically align per default to the baseline and wrap if the horizontal space exceeds
+            the available horizontal space of the ancestors content-box</p>
+        </section>
+        <section>
           <h3>Flex Layout</h3>
+          <div class="r-stack">
+            <div style="border: 1px solid #000; padding: 10px; width: 300px; text-align: left; color: lightgray;">
+              <div
+                style="display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; align-content: stretch; align-items: flex-start;">
+                <div style="flex: 0 1 30px; background-color: var(--magic-mint); margin: 5px; height: 30px">&nbsp;</div>
+                <div style="flex: 1 1 auto; background-color: var(--salmon-pink); margin: 5px; height: 30px">&nbsp;
+                </div>
+                <div style="flex: 0 1 auto; background-color: var(--pale-orange); margin: 5px; height: 30px;">&nbsp;
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <p><code class="inline">display: flex</code> lets you control the vertical or horizontal distribution and
+            alignment of block level elements</p>
+          <p>used for more dynamic and responsive layouts</p>
+          <p><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"><span class="highlight"><i
+                  class="fas fa-link"></i>A complete guide to flexbox</span></a></p>
         </section>
         <section>
           <h3>Grid Layout</h3>
+          <div class="r-stack">
+            <div style="border: 1px solid #000; padding: 10px; width: 300px; text-align: left; color: lightgray;">
+              <div
+                style="display: grid; grid-template-columns: 40px 50px auto 50px 40px; grid-template-rows: 25% 100px auto; gap: 10px 10px">
+                <div
+                  style="grid-column-start: 1; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="grid-column-start: 2; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="grid-column-start: 3; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="grid-column-start: 4; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="grid-column-start: 5; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="grid-column-start: 1; grid-column-end: span 3; grid-row-start: 2; grid-row-end: span 1; background-color: var(--salmon-pink);">
+                  &nbsp;</div>
+                <div
+                  style="grid-column-start: 3; grid-column-end: span 2; grid-row-start: 3; grid-row-end: span 2; background-color: var(--pale-orange);">
+                  &nbsp;</div>
+              </div>
+            </div>
+        </section>
+        <section>
+          <p><code class="inline">display: grid</code> lets you align block elements according to a defined grid</p>
+          <p>perfect layout for multi dimensional layouts</p>
+          <p><code class="inline">table</code> on stereoids</p>
+          <p><a href="https://css-tricks.com/snippets/css/complete-guide-grid/"><span class="highlight"><i
+                  class="fas fa-link"></i>A complete guide to grid</span></a></p>
         </section>
         <section>
           <h3>Float</h3>
           <div class="r-stack">
             <div style="border: 1px solid #000; padding: 10px; width: 300px; text-align: left; color: lightgray;">
               <span style="font-size: 0.8em;">
-                <div style="margin: 5px; float: left; height: 80px; width: 80px; background-color: var(--periwinkle);">&nbsp;</div>
+                <div style="margin: 5px; float: left; height: 80px; width: 80px; background-color: var(--periwinkle);">
+                  &nbsp;</div>
                 ███ █ ██ █ ███ ██ ███ ██ ████ █ ██ ███ ██
               </span>
             </div>
           </div>
         </section>
         <section>
+          <p>float will remove the element from the normal flow and wrap the following content around the element</p>
+          <p>a float value other than <code class="inline">none</code> will automatically apply a <code
+              class="inline">display: block;</code> to the element</p>
+          <p><small>should only be used to control flow of content, for everything else use grid or flexbox</small></p>
+        </section>
+        <section>
           <h3>Positioning</h3>
+        </section>
+        <section>
+          CSS has several modes to position elements within the containing block of its ancestor
+        </section>
+        <section>
+          <h3>static</h3>
+          <p>default position for block level elements</p>
+        </section>
+        <section>
+          <h3>relative</h3>
+          <p>Same as <code class="inline">static</code> but children elements with an absolute positioning will use the
+            containing-block of the relative element to position them selfs</p>
+        </section>
+        <section>
+          <h3>absolute</h3>
+          <p>positions the element relative to the nearest ancestors containing-block which has the position <code
+              class="inline">relative</code>, <code class="inline">absolute</code> or <code class="inline">fixed</code>
+          </p>
+        </section>
+        <section>
+          <h3>fixed</h3>
+          <p>positions the element relative to the viewport or to the nearest ancestors containing which has a <code
+              class="inline">transform</code>, <code class="inline">perspective</code>, <code
+              class="inline">filter</code></p>
+          <p><small><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block"><span
+                  class="highlight"><i class="fas fa-link"></i>Containing block explained</span></a></small></p>
         </section>
         <section>
           <h3>Stacking Context</h3>
         </section>
+        <section>
+          <p>The stacking context defines the order in which elements that overlap will drawn and is defined by the
+            order and depth of the elements within the HTMLs DOM</p>
+        </section>
+        <section>
+          <style>
+            .stacking {
+              font-size: 0.3em;
+              border: 1px solid black;
+              width: 600px;
+              height: 600px;
+
+              margin: auto;
+              position: relative;
+              text-align: left;
+            }
+
+            .stacking div {
+              opacity: 0.7;
+              position: relative;
+            }
+
+            .stacking h1 {
+              font: inherit;
+              font-weight: bold;
+              padding: 0;
+            }
+
+            .stacking #div1,
+            .stacking #div2 {
+              border: 1px dashed #696;
+              padding: 10px;
+              background-color: #cfc;
+            }
+
+            .stacking #div1 {
+              z-index: 5;
+              margin-bottom: 190px;
+            }
+
+            .stacking #div2 {
+              z-index: 2;
+            }
+
+            .stacking #div3 {
+              z-index: 4;
+              opacity: 1;
+              position: absolute;
+              top: 40px;
+              left: 180px;
+              width: 330px;
+              border: 1px dashed #900;
+              background-color: #fdd;
+              padding: 40px 20px 20px;
+            }
+
+            .stacking #div4,
+            .stacking #div5 {
+              border: 1px dashed #996;
+              background-color: #ffc;
+            }
+
+            .stacking #div4 {
+              z-index: 6;
+              margin-bottom: 15px;
+              padding: 25px 10px 5px;
+            }
+
+            .stacking #div5 {
+              z-index: 1;
+              margin-top: 15px;
+              padding: 5px 10px;
+            }
+
+            .stacking #div6 {
+              z-index: 3;
+              position: absolute;
+              top: 20px;
+              left: 180px;
+              width: 150px;
+              height: 125px;
+              border: 1px dashed #009;
+              padding-top: 125px;
+              background-color: #ddf;
+              text-align: center;
+            }
+          </style>
+          <div class="r-stretch">
+            <div class="stacking">
+              <div id="div1">
+                <h1>Division Element #1</h1>
+                <code>position: relative;<br/>
+              z-index: 5;</code>
+              </div>
+
+              <div id="div2">
+                <h1>Division Element #2</h1>
+                <code>position: relative;<br/>
+              z-index: 2;</code>
+              </div>
+
+              <div id="div3">
+                <div id="div4">
+                  <h1>Division Element #4</h1>
+                  <code>position: relative;<br/>
+                z-index: 6;</code>
+                </div>
+
+                <h1>Division Element #3</h1>
+                <code>position: absolute;<br/>
+              z-index: 4;</code>
+
+                <div id="div5">
+                  <h1>Division Element #5</h1>
+                  <code>position: relative;<br/>
+                z-index: 1;</code>
+                </div>
+
+                <div id="div6">
+                  <h1>Division Element #6</h1>
+                  <code>position: absolute;<br/>
+                z-index: 3;</code>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
       <section>
         <section data-background-image="./assets/bg.jpeg">
-          <h2>Media Queries</h2>
+          <h2>Responsive Designs</h2>
         </section>
         <section>
 
