@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>web engineering 101</title>
+
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/sick.css" id="theme">
+
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+
+  <link rel="stylesheet" href="common.css">
+
+  <link rel="stylesheet" href="fontawesome/all.css">
+
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>communication protocols</h1>
+      </section>
+
+
+      
+      <section>
+        <section data-background-image="./assets/bg.jpeg">
+          <h2>HTTP</h2>
+        </section>
+        <section>
+          <h3>HTTP 1.1</h3>
+        </section>
+        <section>
+          <h3>HTTP 2/SPDY</h3>
+          <p>https://twitter.com/jaffathecake/status/1308389934039007233, https://bugs.chromium.org/p/chromium/issues/detail?id=773219#c11</p>
+        </section>
+        <section>
+          <h3>HTTP 3/QUIC</h3>
+        </section>
+        <section>
+          <h3>Server Sent Events</h3>
+        </section>
+      </section>
+
+
+
+      <section>
+        <section data-background-image="./assets/bg.jpeg">
+          <h2>Web Sockets</h2>
+        </section>
+      </section>
+
+
+
+      <section>
+        <section data-background-image="./assets/bg.jpeg">
+          <h2>CORS</h2>
+        </section>
+      </section>
+
+
+
+      <section>
+        <section data-background-image="./assets/bg.jpeg">
+          <h2>REST, GraphQL</h2>
+        </section>
+        <section>
+          <h3>Communication Strategies</h3>
+        </section>
+        <section>
+          <h3>Poll, Long Poll, Push</h3>
+        </section>
+      </section>
+
+
+
+      <section>
+        <section data-background-image="./assets/bg.jpeg">
+          <h2>WEBRTC</h2>
+        </section>
+      </section>
+    </div>
+  </div>
+
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script src="plugin/markdown/markdown.js"></script>
+  <script src="plugin/highlight/highlight.js"></script>
+  <script src="plugin/chalkboard/plugin.js"></script>
+  <script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      width: 1280,
+      height: 720,
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard],
+      chalkboard: {
+        boardmarkerWidth: 3,
+        chalkWidth: 3,
+        chalkEffect: 0,
+        theme: "whiteboard"
+      }
+    });
+
+  </script>
+</body>
+
+</html>
