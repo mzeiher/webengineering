@@ -1,0 +1,174 @@
+@import url(./../decks/dist/theme/fonts/open-sans/open-sans.css);
+
+:root {
+    --background-color: #fff;
+    --main-font: Open Sans, Helvetica, sans-serif;
+    --main-font-size: 14px;
+    --main-color: #2C3133;
+    --block-margin: 20px;
+    --heading-margin: 0 0 20px 0;
+    --heading-font: Open Sans, Helvetica, sans-serif;
+    --heading-color: #737F85;
+    --heading-line-height: 1.2;
+    --heading-letter-spacing: normal;
+    --heading-text-transform: uppercase;
+    --heading-text-shadow: none;
+    --heading-font-weight: 600;
+    --heading1-color: #007CC1;
+    --heading2-color: #007CC1;
+    --heading1-text-shadow: none;
+    --heading1-size: 2.5em;
+    --heading2-size: 1.6em;
+    --heading3-size: 1.3em;
+    --heading4-size: 1em;
+    --code-font: monospace;
+    --link-color: #007CC1;
+    --link-color-hover: #009DF4;
+    --selection-background-color: #98bdef;
+    --selection-color: #fff; 
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v4.0 | 20180602
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+  display: block;
+}
+
+html {
+    font-family: "Open Sans", Helvetica, sans-serif;
+    color: var(--main-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+    padding-top: 0.4rem;
+    padding-bottom: 0.8rem;
+}
+
+h1 {
+    color: var(--heading1-color);
+
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+h2 {
+    color: var(--heading2-color);
+    font-size: 1.4em;
+    font-weight: bold;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: left;
+}
+
+h4 {
+    font-size: 1em;
+    font-weight: bold;
+    text-align: left;
+}
+
+p {
+    margin-bottom: 1.5em;
+    line-height: 1.5em;
+}
+
+.content {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-bottom: 4em;
+    min-height: 100%;
+}
+
+code {
+    font-family: monospace;
+    text-transform: none; 
+}
+
+code.inline {
+    background-color: lightgrey;
+}
+
+pre code {
+    display: block;
+    padding: 5px;
+    overflow: auto;
+    word-wrap: normal; 
+}
+
+blockquote {
+    display: block;
+    position: relative;
+    width: 70%;
+    margin: 20px auto;
+    padding: 5px 5px 5px 20px;
+    font-style: italic;
+    border-left: 5px solid #007CC1;
+    text-align: left;
+}
+
+.deck {
+    position: relative;
+    width: 100%;
+    border: none;
+    padding-top: 56.25%;
+    margin-bottom: 1.5em;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.deck > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+a {
+    color: var(--link-color,#007CC1);
+    text-decoration: none;
+    transition: color .15s ease; 
+}
+  
+a:hover {
+    color: var(--link-color-hover,#009DF4);
+    text-shadow: none;
+    border: none; 
+}
+
+span.highlight {
+    background-color: #E5F1F8;
+    line-height: 1.5em;
+}
