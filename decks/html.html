@@ -185,7 +185,7 @@
         <section data-auto-animate>
           <pre data-id="code" class="language-html"><code class="hljs" data-code="snippets/html.structure.html" data-line-numbers="17-22">
           </code></pre>
-          HTML body, the content of the html document starts here
+          HTML body, the visible content of the html document starts here
         </section>
         <section data-auto-animate>
           <pre data-id="code" class="language-html"><code class="hljs" data-code="snippets/html.structure.html" data-line-numbers="18">
@@ -218,7 +218,7 @@
           Tags follow a semantic and should be used according to the semantic of the used tag
         </section>
         <section data-auto-animate>
-          <h3>anatomy of a element</h3>
+          <h3>anatomy of an element</h3>
           <div data-id="code">
             <code class="hljs">&lt;div id="test"&gt;text&lt;/div&gt;</code>
             <code class="hljs">&lt;img id="test"/&gt;</code>
@@ -290,7 +290,7 @@
         </section>
         <section>
           <h3>Media/embedded content elements</h3>
-          <code class="inline">img, object, video, script, style`</code>
+          <code class="inline">img, object, video, script, style</code>
         </section>
         <section>
           <h3>Foreign content tags</h3>
@@ -319,7 +319,7 @@
             class="hljs">&lt;div <span class="hljs-keyword">id="test"</span>&gt;text&lt;/div&gt;</code>
           <p>elements can be identified via the <code class="inline">id</code> attribute</p>
           <p><code>&lt;label for="" /&gt;</code> and <code>&lt;a href="#id" /&gt;</code> use id for reference</p>
-          <p class="warning"><i class="fas fa-exclamation-triangle"></i> the id must be unique within a html document
+          <p class="warning"><i class="fas fa-exclamation-triangle"></i> the id must be unique within aa html document
           </p>
         </section>
         <section data-auto-animate="">
@@ -336,11 +336,11 @@
         </section>
         <section>
           <h3>attributes</h3>
-          attributes are used to configure a element and can change its behaviour
+          attributes are used to configure an element and can change its behaviour and appearance
         </section>
         <section data-auto-animate>
           <code class="hljs" data-id="code">
-            div <span class="hljs-keyword">attr="string value"</span>&gt;&lt;/div&gt;
+            &lt;div <span class="hljs-keyword">attr="string value"</span>&gt;&lt;/div&gt;
           </code>
           <p>attributes can only contain string values</p>
           <p>every built-in attribute maps to a specific element property in the DOM API</p>
@@ -386,9 +386,8 @@
           </div>
         </section>
         <section>
-          <p>corresponds to CSS <code class="inline">display: block;</code></p>
           <p>takes up all available horizontal space given by parent element</p>
-          <p>the next element will be layouted under the block scoped element</p>
+          <p>the next element will be layouted below the block scoped element</p>
         </section>
         <section>
           <h3>inline elements</h3>
@@ -407,7 +406,6 @@
           </div>
         </section>
         <section>
-          <p>corresponds to CSS <code class="inline">display: inline;</code></p>
           <p>inline elements are vertically aligned to the middle</p>
           <p>inline elements can not have a height or width set, unless they are defined as <code
               class="inline">inline-block</code> elements</p>
@@ -585,7 +583,7 @@
           <h3>navigating within document</h3>
         </section>
         <section>
-          <p>to navigate within a document to a element it needs to be referenceable by the <code
+          <p>to navigate within a document to an element it needs to be referenceable by the <code
               class="inline">id</code> attribute</p>
         </section>
         <section data-auto-animate>
@@ -636,7 +634,7 @@
         <section data-auto-animate>
           <pre
             data-id="code"><code class="html" data-code="snippets/html.embed.img.html" data-line-numbers="1"></code></pre>
-          <p>You can link to content on another server, in this case the browser will load the image and siplay it</p>
+          <p>You can link to content on another server, in this case the browser will load the image and display it</p>
           <p><small>the <code class="inline">alt</code> attribute should alway be set due to accessibility reasons, it
               describes the image</small></p>
         </section>
@@ -708,7 +706,11 @@
           </p>
         </section>
         <section>
-          <p>and many more some other content</p>
+          <pre><code data-trim>
+            <iframe src="./content.html"></iframe>
+          </code></pre>
+          <p>With iframes it is possible to embedd other content within your web site, the embedded content is isolated from your web page</p>
+          <p><small>There is a new proposal which will take iframes to the next level <a href="https://github.com/WICG/portals"><i class="fab fa-github"></i>HTML Portals</a></small></p>
         </section>
       </section>
 
