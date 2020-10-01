@@ -172,3 +172,10 @@ span.highlight {
     background-color: #E5F1F8;
     line-height: 1.5em;
 }
+
+ol,
+dl,
+ul {
+  text-align: left;
+  margin: 0 2em 1.5em 2em; 
+}
