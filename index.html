@@ -20,13 +20,13 @@
             })
             document.querySelectorAll('.deck iframe[loading="lazy"]').forEach((iframe) => {
                 const loadingDiv = document.createElement('div');
-                Object.assign(loadingDiv.style, { 
+                Object.assign(loadingDiv.style, {
                     left: "50%",
                     top: "50%",
                     width: "auto",
                     height: "auto",
                 });
-                loadingDiv.innerHTML ='<a href="" style="display: inline-block; transform: translateX(-50%) translateY(-50%);">Click to load slides</a>';
+                loadingDiv.innerHTML = '<a href="" style="display: inline-block; transform: translateX(-50%) translateY(-50%);">Click to load slides</a>';
                 loadingDiv.querySelector('a').addEventListener('click', (event) => {
                     event.preventDefault();
                     event.stopPropagation();
@@ -45,7 +45,8 @@
         <p></p>
         <h2>Topics</h2>
         <h3>Introduction</h3>
-        <p>The introduction covers a brief overview over the topic web engineering, the organizations involved with the internet and the web and a brief history</p>
+        <p>The introduction covers a brief overview over the topic web engineering, the organizations involved with the
+            internet and the web and a brief history</p>
         <a href="decks/intro.html" target="_blank"><span class="highlight"><i class="fas fa-link"></i>open
                 slide</span></a>
         <div class="deck">
@@ -55,12 +56,13 @@
         <p>This topic covers the basics of HTML, its use, syntax, layouts and form handling</p>
         <h4>Exercises</h4>
         <ol>
-            <li><a href="./exercises/html/basic-structure.html">Basic Structure</a></li>
-            <li><a href="./exercises/html/anchor-element.html">Anchor Element</a></li>
-            <li><a href="./exercises/html/anchor-element-extern.html">Anchor Element with External content</a></li>
-            <li><a href="./exercises/html/responsive-images.html">Responsive Images</a></li>
-            <li><a href="./exercises/html/formdata.html">Basic Forms</a></li>
-            <li><a href="./exercises/html/formdata-validation.html">Form Validation</a></li>
+            <li id="ex-html-basic"><a href="./exercises/html/basic-structure.html">Basic Structure</a></li>
+            <li id="ex-html-anchor"><a href="./exercises/html/anchor-element.html">Anchor Element</a></li>
+            <li id="ex-html-anchor-ex"><a href="./exercises/html/anchor-element-extern.html">Anchor Element with
+                    External content</a></li>
+            <li id="ex-html-images"><a href="./exercises/html/responsive-images.html">Responsive Images</a></li>
+            <li id="ex-html-form"><a href="./exercises/html/formdata.html">Basic Forms</a></li>
+            <li id="ex-html-form-valid"><a href="./exercises/html/formdata-validation.html">Form Validation</a></li>
         </ol>
         <a href="decks/html.html" target="_blank"><span class="highlight"><i class="fas fa-link"></i>open
                 slide</span></a>
@@ -75,7 +77,8 @@
             <iframe data-src="decks/css.html" loading="lazy"></iframe>
         </div>
         <h3>Javascript</h3>
-        <p>This topic covers the basics of javascript, lopps, conditions, function, variables, hoisting, scope, protoype inheritance</p>
+        <p>This topic covers the basics of javascript, lopps, conditions, function, variables, hoisting, scope, protoype
+            inheritance</p>
         <a href="decks/javascript.html" target="_blank"><span class="highlight"><i class="fas fa-link"></i>open
                 slide</span></a>
         <div class="deck">
