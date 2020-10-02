@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <form action="http://127.0.0.1:8081/url" enctype="application/x-www-form-urlencoded">
+        <table>
+            <tr>
+                <td><label for="forename">Forename</label></td>
+                <td><input id="forename" name="forename" type="text" /></td>
+            </tr>
+            <tr>
+                <td><label for="surname">Surname</label></td>
+                <td><input id="surname" name="surname" type="text" /></td>
+            </tr>
+            <tr>
+                <td><label for="gender">Gender</label></td>
+                <td>
+                    <select id="gender" name="gender" value="1">
+                        <option value="1">Don't tell</option>
+                        <option value="2">divers</option>
+                        <option value="3">male</option>
+                        <option value="4">female</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><label for="notes">Notes</label></td>
+            </tr>
+            <tr>
+                <td colspan="2"><textarea id="notes" name="notes"></textarea></td>
+            </tr>
+        </table>
+        <button type="submit">Submit</button>
+        <button type="reset">Rest</button>
+    </form>
+</body>
+
+</html>
