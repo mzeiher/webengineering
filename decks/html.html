@@ -863,7 +863,53 @@
           </form>
         </section>
         <section>
-          encodings multipart/form-data
+          <h3>Encodings</h3>
+          <p>There are different methods to encode the data you are sending with a form</p>
+          <p>The encoding can be set with the <code class="inline">enctype</code> attribute</p>
+        </section>
+        <section>
+          <p><code class="inline">application/x-www-form-urlencoded</code> is the default encoding</p>
+          <p><small>This is the only encoding which works for GET requests, for all others use POST or PUT</small></p>
+          <pre><code class="language-html" data-trim>
+            <form method="GET" action="/submit">
+              <input name="firstname" value="hagbard" />
+              <input name="lastname" value="celine" />
+            </form>
+          </code></pre>
+          <p>this form will be URL encoded and the values of the form fields will be sent as URL query parameter name=value pairs</p>
+          <pre><code lang="language-http" data-trim>
+            GET /submit?firstname=hagbard&lastname=celine
+          </code></pre>
+        </section>
+        <section>
+          <p><code class="inline">multipart/form-data</code> should be used if you have more complex forms or values that can't be URL encoded like files</p>
+          <pre><code class="language-html" data-trim>
+            <form method="POST" action="/submit" enctype="multipart/form-data">
+              <input name="firstname" value="hagbard" />
+              <input name="lastname" value="celine" />
+              <input name="avatar" type="file" />
+            </form>
+          </code></pre>
+          <p>this encoding type will encode the form data in the request body</p>
+          <pre><code lang="language-http" data-trim>
+            POST /submit
+            Content-Type: multipart/formdata; boundary=---boundary
+
+            ---boundary
+            Content-Disposition: form-data; name="username"
+
+            hagbard
+            ---boundary
+            ...
+          </code></pre>
+        </section>
+        <section>
+          <p><code class="inline">text/plain</code> is new for html5 but not much used</p>
+          <p><small>can be ignored for now</small></p>
+          <blockquote>
+            Payloads using the text/plain format are intended to be human readable. They are not reliably interpretable by computer, as the format is ambiguous (for example, there is no way to distinguish a literal newline in a value from the newline at
+the end of the value).<sup><a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#text/plain-encoding-algorithm">[1]</a></sup>
+          </blockquote>
         </section>
         <section>
           you can create own form associated custom elements <a href="https://web.dev/more-capable-form-controls/">https://web.dev/more-capable-form-controls/</a>
