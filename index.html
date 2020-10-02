@@ -20,8 +20,12 @@
             })
             document.querySelectorAll('.deck iframe[loading="lazy"]').forEach((iframe) => {
                 const loadingDiv = document.createElement('div');
-                loadingDiv.style.top = "50%";
-                loadingDiv.style.left = "50%";
+                Object.assign(loadingDiv.style, { 
+                    left: "50%",
+                    top: "50%",
+                    width: "auto",
+                    height: "auto",
+                });
                 loadingDiv.innerHTML ='<a href="" style="display: inline-block; transform: translateX(-50%) translateY(-50%);">Load Slide</a>';
                 loadingDiv.querySelector('a').addEventListener('click', (event) => {
                     event.preventDefault();
@@ -53,6 +57,7 @@
         <ol>
             <li><a href="./exercises/html/basic-structure.html">Basic Structure</a></li>
             <li><a href="./exercises/html/anchor-element.html">Anchor Element</a></li>
+            <li><a href="./exercises/html/anchor-element-extern.html">Anchor Element with External content</a></li>
         </ol>
         <a href="decks/html.html" target="_blank"><span class="highlight"><i class="fas fa-link"></i>open
                 slide</span></a>

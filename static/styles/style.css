@@ -85,6 +85,17 @@ p {
     min-height: 100%;
 }
 
+.content > img {
+    max-width: 90%;
+}
+
+hr {
+    border: none;
+    border-bottom: 2px solid #007CC1;
+    width: 80%;
+    margin: 1em auto;
+}
+
 code {
     font-family: monospace;
     text-transform: none; 
