@@ -1,32 +1,5 @@
 @import url(./../../decks/dist/theme/fonts/open-sans/open-sans.css);
-
-:root {
-    --background-color: #fff;
-    --main-font: Open Sans, Helvetica, sans-serif;
-    --main-font-size: 14px;
-    --main-color: #2C3133;
-    --block-margin: 20px;
-    --heading-margin: 0 0 20px 0;
-    --heading-font: Open Sans, Helvetica, sans-serif;
-    --heading-color: #737F85;
-    --heading-line-height: 1.2;
-    --heading-letter-spacing: normal;
-    --heading-text-transform: uppercase;
-    --heading-text-shadow: none;
-    --heading-font-weight: 600;
-    --heading1-color: #007CC1;
-    --heading2-color: #007CC1;
-    --heading1-text-shadow: none;
-    --heading1-size: 2.5em;
-    --heading2-size: 1.6em;
-    --heading3-size: 1.3em;
-    --heading4-size: 1em;
-    --code-font: monospace;
-    --link-color: #007CC1;
-    --link-color-hover: #009DF4;
-    --selection-background-color: #98bdef;
-    --selection-color: #fff; 
-}
+@import url(./theme.css);
 
 /* http://meyerweb.com/eric/tools/css/reset/
    v4.0 | 20180602
@@ -60,8 +33,9 @@ footer, header, hgroup, main, menu, nav, section {
 }
 
 html {
-    font-family: "Open Sans", Helvetica, sans-serif;
+    font-family: var(--main-font);
     color: var(--main-color);
+    background-color: var(--background-color);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -73,7 +47,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     color: var(--heading1-color);
 
-    font-size: 1.8em;
+    font-size: var(--heading1-size);
     font-weight: bold;
     text-align: center;
 
@@ -81,19 +55,19 @@ h1 {
 
 h2 {
     color: var(--heading2-color);
-    font-size: 1.4em;
+    font-size: var(--heading2-size);
     font-weight: bold;
     text-align: center;
 }
 
 h3 {
-    font-size: 1.2em;
+    font-size: var(--heading3-size);
     font-weight: bold;
     text-align: left;
 }
 
 h4 {
-    font-size: 1em;
+    font-size: var(--heading4-size);
     font-weight: bold;
     text-align: left;
 }
@@ -173,7 +147,7 @@ a:hover {
 }
 
 span.highlight {
-    background-color: #E5F1F8;
+    background-color: var(--highlight-background);
     line-height: 1.5em;
 }
 

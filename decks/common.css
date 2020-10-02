@@ -30,7 +30,7 @@ ul.sources>li {
 }
 
 span.highlight {
-    background-color: #E5F1F8;
+    background-color: var(--highlight-background);
     line-height: 1.5em;
 }
 
