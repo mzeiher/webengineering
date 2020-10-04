@@ -60,3 +60,11 @@ small i.fab {
     --light-yellow: #FFFFD8;
     --magic-mint: #B5EAD7;
 }
+
+.code-frame {
+    box-shadow: 0 6px 30px rgba(0,0,0,0.3);
+    border-radius: 6px;
+    font-size: 0.8em;
+    font-family: monospace;
+    padding: 10px;
+}

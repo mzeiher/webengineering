@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="dist/theme/sick.css" id="theme">
 
   <!-- Theme used for syntax highlighted code -->
-  <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+  <link rel="stylesheet" href="plugin/highlight/tomorrow.css" id="highlight-theme">
 
   <link rel="stylesheet" href="common.css">
 
@@ -221,13 +221,13 @@
         </section>
         <section data-auto-animate>
           <h3>anatomy of an element</h3>
-          <div data-id="code">
+          <div class="code-frame" data-id="code">
             <code class="hljs">&lt;div id="test"&gt;text&lt;/div&gt;</code>
             <code class="hljs">&lt;img id="test"/&gt;</code>
           </div>
         </section>
         <section data-auto-animate>
-          <div data-id="code">
+          <div class="code-frame" data-id="code">
             <code
               class="hljs"><span class="hljs-keyword">&lt;</span>div id="test"<span class="hljs-keyword">&gt;</span>text&lt;/div&gt;</code>
             <code class="hljs"><span class="hljs-keyword">&lt;</span>img id="test"/&gt;</code>
@@ -235,7 +235,7 @@
           <p>start tag</p>
         </section>
         <section data-auto-animate>
-          <div data-id="code">
+          <div class="code-frame" data-id="code">
             <code
               class="hljs">&lt;div id="test"&gt;text<span class="hljs-keyword">&lt;/</span>div<span class="hljs-keyword">&gt;</span></code>
             <code class="hljs">&lt;img id="test"<span class="hljs-keyword">/&gt;</span></code>
@@ -243,7 +243,7 @@
           <p>end tag</p>
         </section>
         <section data-auto-animate>
-          <div data-id="code">
+          <div class="code-frame" data-id="code">
             <code
               class="hljs">&lt;<span class="hljs-keyword">div</span> id="test"&gt;text&lt;/<span class="hljs-keyword">div</span>&gt;</code>
             <code class="hljs">&lt;<span class="hljs-keyword">img</span> id="test"/&gt;</code>
@@ -251,21 +251,21 @@
           <p>tag name</p>
         </section>
         <section data-auto-animate>
-          <div data-id="code">
+          <div class="code-frame" data-id="code">
             <code class="hljs">&lt;div <span class="hljs-keyword">id=</span>"test"&gt;text&lt;/div&gt;</code>
             <code class="hljs">&lt;img <span class="hljs-keyword">id=</span>"test"/&gt;</code>
           </div>
           <p>attribute</p>
         </section>
         <section data-auto-animate>
-          <div data-id="code">
+          <div class="code-frame" data-id="code">
             <code class="hljs">&lt;div id=<span class="hljs-keyword">"test"</span>&gt;text&lt;/div&gt;</code>
             <code class="hljs">&lt;img id=<span class="hljs-keyword">"test"</span>/&gt;</code>
           </div>
           <p>attribute value</p>
         </section>
         <section data-auto-animate>
-          <div data-id="code">
+          <div class="code-frame" data-id="code">
             <code class="hljs">&lt;div id="test"&gt;<span class="hljs-keyword">text</span>&lt;/div&gt;</code>
             <code class="hljs">&lt;img id="test"/&gt;</code>
           </div>
@@ -317,20 +317,22 @@
           <code data-id="code" class="hljs">&lt;div id="test"&gt;text&lt;/div&gt;</code>
         </section>
         <section data-auto-animate="">
-          <code data-id="code"
-            class="hljs">&lt;div <span class="hljs-keyword">id="test"</span>&gt;text&lt;/div&gt;</code>
+          <div class="code-frame" data-id="code">
+            <code class="hljs">&lt;div <span class="hljs-keyword">id="test"</span>&gt;text&lt;/div&gt;</code></div>
           <p>elements can be identified via the <code class="inline">id</code> attribute</p>
           <p><code>&lt;label for="" /&gt;</code> and <code>&lt;a href="#id" /&gt;</code> use id for reference</p>
           <p class="warning"><i class="fas fa-exclamation-triangle"></i> the id must be unique within aa html document
           </p>
         </section>
         <section data-auto-animate="">
-          <code data-id="code"
-            class="hljs">&lt;div <span class="hljs-keyword">class="test"</span>&gt;text&lt;/div&gt;</code>
+          <div class="code-frame" data-id="code">
+            <code class="hljs">&lt;div <span class="hljs-keyword">class="test"</span>&gt;text&lt;/div&gt;</code>
+          </div>
           <p>elements can also be identified via the <code class="inline">class</code> attribute</p>
         </section>
         <section data-auto-animate="">
-          <code data-id="code" class="hljs">&lt;<span class="hljs-keyword">div</span>&gt;text&lt;/div&gt;</code>
+          <div class="code-frame" data-id="code">
+            <code class="hljs">&lt;<span class="hljs-keyword">div</span>&gt;text&lt;/div&gt;</code></div>
           <p>elements can be identified via the tag</p>
         </section>
         <section data-auto-animate="">
@@ -341,29 +343,37 @@
           attributes are used to configure an element and can change its behaviour and appearance
         </section>
         <section data-auto-animate>
-          <code class="hljs" data-id="code">
+          <div class="code-frame" data-id="code">
+            <code class="hljs">
             &lt;div <span class="hljs-keyword">attr="string value"</span>&gt;&lt;/div&gt;
           </code>
+          </div>
           <p>attributes can only contain string values</p>
           <p>every built-in attribute maps to a specific element property in the DOM API</p>
         </section>
         <section data-auto-animate>
-          <code class="hljs" data-id="code">
+          <div class="code-frame" data-id="code">
+            <code class="hljs">
             &lt;input type="checkbox" <span class="hljs-keyword">checked disabled</span> /&gt;
           </code>
+          </div>
           <p>the value can also be ommited</p>
         </section>
         <section data-auto-animate>
-          <code class="hljs" data-id="code">
+          <div class="code-frame" data-id="code">
+            <code class="hljs">
             &lt;div <span class="hljs-keyword">style="color: #0f0"</span>&gt;&lt;/div&gt;
           </code>
+          </div>
           <p><code class="inline">style</code> lets you inline css for a specific element</p>
           <p class="warning"><i class="fas fa-exclamation-triangle"></i> this should be used sparce, always try to use
             classes and style via css selectors</p>
         </section>
         <section>
           <h3>data attributes</h3>
-          <code data-id="code" class="hljs">&lt;div data-...="content"&gt;text&lt;/div&gt;</code>
+          <div class="code-frame" data-id="code">
+            <code data-id="code" class="hljs">&lt;div data-...="content"&gt;text&lt;/div&gt;</code>
+          </div>
           <p><code class="inline">data-</code> attributes can be used to add custom attributes to elements</p>
           <p>later with custom elements you can also define your own attributes</p>
         </section>
@@ -711,8 +721,10 @@
           <pre><code data-trim>
             <iframe src="./content.html"></iframe>
           </code></pre>
-          <p>With iframes it is possible to embedd other content within your web site, the embedded content is isolated from your web page</p>
-          <p><small>There is a new proposal which will take iframes to the next level <a href="https://github.com/WICG/portals"><i class="fab fa-github"></i>HTML Portals</a></small></p>
+          <p>With iframes it is possible to embedd other content within your web site, the embedded content is isolated
+            from your web page</p>
+          <p><small>There is a new proposal which will take iframes to the next level <a
+                href="https://github.com/WICG/portals"><i class="fab fa-github"></i>HTML Portals</a></small></p>
         </section>
       </section>
 
@@ -835,12 +847,14 @@
         </section>
         <section data-auto-animate="">
           <pre data-id="code"><code data-code="snippets/html.form.html" data-line-numbers="5,6"></code></pre>
-          <p>form controls can be marked as required, thus preventing the form from submission if the controls have no valid value</p>
+          <p>form controls can be marked as required, thus preventing the form from submission if the controls have no
+            valid value</p>
         </section>
         <section data-auto-animate="">
           <pre data-id="code"><code data-code="snippets/html.form.html" data-line-numbers="11,15"></code></pre>
           <p>some form controls can valdiate against a pattern or a specific value range</p>
-          <p><small class="warning">an empty string is treated as a matching pattern unless the required attribute is set</small></p>
+          <p><small class="warning">an empty string is treated as a matching pattern unless the required attribute is
+              set</small></p>
         </section>
         <section>
           <form action="/action.do" method="GET" style="font-size: 14px;">
@@ -876,13 +890,15 @@
               <input name="lastname" value="celine" />
             </form>
           </code></pre>
-          <p>this form will be URL encoded and the values of the form fields will be sent as URL query parameter name=value pairs</p>
+          <p>this form will be URL encoded and the values of the form fields will be sent as URL query parameter
+            name=value pairs</p>
           <pre><code lang="language-http" data-trim>
             GET /submit?firstname=hagbard&lastname=celine
           </code></pre>
         </section>
         <section>
-          <p><code class="inline">multipart/form-data</code> should be used if you have more complex forms or values that can't be URL encoded like files</p>
+          <p><code class="inline">multipart/form-data</code> should be used if you have more complex forms or values
+            that can't be URL encoded like files</p>
           <pre><code class="language-html" data-trim>
             <form method="POST" action="/submit" enctype="multipart/form-data">
               <input name="firstname" value="hagbard" />
@@ -907,16 +923,20 @@
           <p><code class="inline">text/plain</code> is new for html5 but not much used</p>
           <p><small>can be ignored for now</small></p>
           <blockquote>
-            Payloads using the text/plain format are intended to be human readable. They are not reliably interpretable by computer, as the format is ambiguous (for example, there is no way to distinguish a literal newline in a value from the newline at
-the end of the value).<sup><a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#text/plain-encoding-algorithm">[1]</a></sup>
+            Payloads using the text/plain format are intended to be human readable. They are not reliably interpretable
+            by computer, as the format is ambiguous (for example, there is no way to distinguish a literal newline in a
+            value from the newline at
+            the end of the value).<sup><a
+                href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#text/plain-encoding-algorithm">[1]</a></sup>
           </blockquote>
         </section>
         <section>
-          you can create own form associated custom elements <a href="https://web.dev/more-capable-form-controls/">https://web.dev/more-capable-form-controls/</a>
+          you can create own form associated custom elements <a
+            href="https://web.dev/more-capable-form-controls/">https://web.dev/more-capable-form-controls/</a>
         </section>
         <section>
           <p>
-          more on forms <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form">here</a>
+            more on forms <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form">here</a>
           </p>
         </section>
       </section>
@@ -930,7 +950,9 @@ the end of the value).<sup><a href="https://html.spec.whatwg.org/multipage/form-
         </section>
         <section>
           <blockquote>
-            Developers should prefer using the correct semantic HTML element over using ARIA. For instance, native elements have built-in keyboard accessibility, roles and states. However, if you choose to use ARIA, you are responsible for mimicking (the equivalent) browser behaviour in script.
+            Developers should prefer using the correct semantic HTML element over using ARIA. For instance, native
+            elements have built-in keyboard accessibility, roles and states. However, if you choose to use ARIA, you are
+            responsible for mimicking (the equivalent) browser behaviour in script.
             <br />
             <br />
             - <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA">MDN</a>
@@ -949,7 +971,9 @@ the end of the value).<sup><a href="https://html.spec.whatwg.org/multipage/form-
           <p>for custom widgets and custom elements you have to asign the appropriate aria tags yourself</p>
         </section>
         <section>
-          <p>More information on this <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles">MDN Article</a></p>
+          <p>More information on this <a
+              href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles">MDN
+              Article</a></p>
         </section>
       </section>
 

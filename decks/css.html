@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="dist/theme/sick.css" id="theme">
 
   <!-- Theme used for syntax highlighted code -->
-  <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+  <link rel="stylesheet" href="plugin/highlight/tomorrow.css" id="highlight-theme">
 
   <link rel="stylesheet" href="common.css">
 
@@ -230,16 +230,16 @@
         </section>
         <section>
           <pre><code data-code="snippets/css.definition.1.html" data-line-numbers="3-7"></code></pre>
-          <p>Inline in a HTML</p>
+          <p>Inside a HTML <code class="inline">style</code> element</p>
         </section>
         <section>
           <pre><code data-code="snippets/css.definition.3.html" data-line-numbers="3"></code></pre>
           <pre><code class="language-css" data-code="snippets/css.definition.3.css" data-line-numbers></code></pre>
-          <p>As an external resource in HTML</p>
+          <p>As an external resource in HTML with a <code class="inline">link</code> element</p>
         </section>
         <section>
           <pre><code data-code="snippets/css.definition.2.html" data-line-numbers="5"></code></pre>
-          <p>Inline in a HTML element</p>
+          <p>Inside the <code class="inline">style</code> attribute of the HTML</p>
         </section>
         <section>
           <pre><code class="language-javascript" data-code="snippets/css.definition.4.js" data-line-numbers="5"></code></pre>
@@ -256,7 +256,7 @@
           <h2>Structure of a CSS File</h2>
         </section>
         <section data-auto-animate>
-          <div data-id="code" style="width: 500px; text-align: left; margin: auto;">
+          <div class="code-frame" data-id="code" style="width: 500px; text-align: left; margin: auto;">
             <code class="hljs" style="padding: 0;">@import 'other.css'</code>
             <code class="hljs" style="padding: 0;">html {</code>
             <code class="hljs" style="padding: 0;">&nbsp;&nbsp;color: #000;</code>
@@ -268,7 +268,7 @@
           </div>
         </section>
         <section data-auto-animate>
-          <div data-id="code" style="width: 500px; text-align: left; margin: auto;">
+          <div class="code-frame" data-id="code" style="width: 500px; text-align: left; margin: auto;">
             <code class="hljs" style="padding: 0;"><span class="hljs-keyword">@import 'other.css'</span></code>
             <code class="hljs" style="padding: 0;">html {</code>
             <code class="hljs" style="padding: 0;">&nbsp;&nbsp;color: #000;</code>
@@ -281,7 +281,7 @@
           <p>@import rule to import other css files </p>
         </section>
         <section data-auto-animate>
-          <div data-id="code" style="width: 500px; text-align: left; margin: auto;">
+          <div class="code-frame" data-id="code" style="width: 500px; text-align: left; margin: auto;">
             <code class="hljs" style="padding: 0;">@import 'other.css'</code>
             <code class="hljs" style="padding: 0;"><span class="hljs-keyword">html</span> {</code>
             <code class="hljs" style="padding: 0;">&nbsp;&nbsp;color: #000;</code>
@@ -294,7 +294,7 @@
           <p>one or multiple selectors</p>
         </section>
         <section data-auto-animate>
-          <div data-id="code" style="width: 500px; text-align: left; margin: auto;">
+          <div class="code-frame" data-id="code" style="width: 500px; text-align: left; margin: auto;">
             <code class="hljs" style="padding: 0;">@import 'other.css'</code>
             <code class="hljs" style="padding: 0;">html <span class="hljs-keyword">{</span></code>
             <code class="hljs" style="padding: 0;">&nbsp;&nbsp;color: #000;</code>
@@ -308,7 +308,7 @@
           <p>rule block</p>
         </section>
         <section data-auto-animate>
-          <div data-id="code" style="width: 500px; text-align: left; margin: auto;">
+          <div class="code-frame" data-id="code" style="width: 500px; text-align: left; margin: auto;">
             <code class="hljs" style="padding: 0;">@import 'other.css'</code>
             <code class="hljs" style="padding: 0;">html {</code>
             <code class="hljs" style="padding: 0;">&nbsp;&nbsp;<span class="hljs-keyword">color</span>: #000;</code>
@@ -322,7 +322,7 @@
           <p>one or multiple properties</p>
         </section>
         <section data-auto-animate>
-          <div data-id="code" style="width: 500px; text-align: left; margin: auto;">
+          <div class="code-frame" data-id="code" style="width: 500px; text-align: left; margin: auto;">
             <code class="hljs" style="padding: 0;">@import 'other.css'</code>
             <code class="hljs" style="padding: 0;">html {</code>
             <code class="hljs" style="padding: 0;">&nbsp;&nbsp;color: <span class="hljs-keyword">#000</span>;</code>
@@ -336,7 +336,7 @@
           <p>one or multiple values</p>
         </section>
         <section data-auto-animate>
-          <div data-id="code" style="width: 500px; text-align: left; margin: auto;">
+          <div class="code-frame" data-id="code" style="width: 500px; text-align: left; margin: auto;">
             <code class="hljs" style="padding: 0;">@import 'other.css'</code>
             <code class="hljs" style="padding: 0;">html {</code>
             <code class="hljs" style="padding: 0;">&nbsp;&nbsp;color: #000;</code>
@@ -346,7 +346,7 @@
             <code class="hljs" style="padding: 0;">div, p { ... }</code>
             <code class="hljs" style="padding: 0;"><span class="hljs-keyword">@media print { ... }</span></code>
           </div>
-          <p>a @media rule with more rules which only apply if the media query matches</p>
+          <p>a @media rule with rules which only apply if the media query matches</p>
         </section>
         <section>
           <pre><code class="language-html"><div style="background-color: black; color: white;"></div></code></pre>
@@ -735,7 +735,7 @@
         </section>
         <section>
           <p>Some properties will be inherited from the parent elements (<code class="inline">color</code>, <code
-              class="inline">font</code>, etc)</p>
+              class="inline">font</code>, custom properties)</p>
           <pre><code class="language-html" data-trim>
             <style>
               .red {
@@ -752,6 +752,7 @@
               </p>
             </div>
           </code></pre>
+          <p><small>Inherited properties also bleed into the shadow dom</small></p>
         </section>
         <section>
           <style>
@@ -966,13 +967,18 @@
         </section>
         <section>
           <h3>Percentages</h3>
-          <p><code class="inline">%</code>-percent values are always relative to the same property of the parent element
+          <p><code class="inline">%</code>-percent values are <b>not</b> always relative to the same property of the
+            parent element
           </p>
-          <p><code class="inline">font-size: 50%</code> is relative to the parents <code class="inline">font-size</code>
-          </p>
-          <p><code class="inline">width: 50%</code> is relative to the parents containing block size</p>
-          <p><small><code class="inline">width</code> and <code class="inline">height</code> are relative to the parents
-              available content area (containing block)</small></p>
+          <p><small><code class="inline">font-size: 50%</code> is relative to the <b>parents</b> <code
+                class="inline">font-size</code>
+            </small></p>
+          <p><small><code class="inline">width/height: 50%</code> is relative to the <b>parents</b> containing block
+              size</small></p>
+          <p><small><code class="inline">transform: translate(-50%, -50%)</code> is relative to the
+              elements <b>own</b> width/height can be used to center an element</small></p>
+          <p><small><code class="inline">padding: 0 50%</code> a percentage value is relative to the elements <b>own</b>
+              <b>width</b>, this can be used for fixed-ratio elements</small></p>
         </section>
         <section>
           <style>
@@ -1057,7 +1063,7 @@
               }
             </style>
           </code></pre>
-          <p><small>Custom properties are inherited from parent elements and are the only properties which bleed into
+          <p><small>Custom properties are inherited from parent elements and thus bleed into
               the shadow dom</small></p>
         </section>
       </section>
@@ -1157,32 +1163,34 @@
               class="inline">width</code> or <code class="inline">height</code></p>
         </section>
         <section>
+          <p>With <code class="inline">content-box</code> the <code class="inline">width</code> only applies to the
+            content box of the element, so the elements calculated width after layouting is 700px + padding + border,
+            and the content box width 700px</p>
           <div
-            style="width: 700px; border: 5px dashed black; border-top: none; margin: 10px auto; box-sizing: border-box;">
+            style="width: 700px; border: 5px dashed currentColor; border-top: none; margin: 10px auto; box-sizing: border-box;">
             700 px</div>
           <div
             style="width: 700px; margin: 10px auto; box-sizing: content-box; background-color: var(--magic-mint); border: 30px solid var(--salmon-pink);">
             width: 700px, border: 30px</div>
-          <p>With <code class="inline">content-box</code> the <code class="inline">width</code> only applies to the
-            content box of the element, so the elements calculated width after layouting is 700px + padding + border,
-            and the content box width 700px</p>
         </section>
         <section>
+          <p>With <code class="inline">border-box</code> the <code class="inline">width</code> applies to the border
+            box and includes the border and padding of the element, so the elements calculated width is 700px, and the
+            content box width 700px - margin - padding</p>
           <div
-            style="width: 700px; border: 5px dashed black; border-top: none; margin: 10px auto; box-sizing: border-box;">
+            style="width: 700px; border: 5px dashed currentColor; border-top: none; margin: 10px auto; box-sizing: border-box;">
             700 px</div>
           <div
             style="width: 700px; margin: 10px auto; box-sizing: border-box; background-color: var(--magic-mint); border: 30px solid var(--salmon-pink);">
             width: 700px, border: 30px</div>
-          <p>With <code class="inline">border-box</code> the <code class="inline">width</code> applies to the border
-            box and includes the border and padding of the element, so the elements calculated width is 700px, and the
-            content box width 700px - margin - padding</p>
         </section>
         <section>
           <h3>containing-block</h3>
-          <p>the size and position of an element are defined by the containing block, different properties change the
+          <p>the size and position of an element are impacted by its ir its parent containing block, different
+            properties change the
             containing block which is used to calculate an elements dimensions</p>
-          <p><small>a percent value for <code class="inline">width</code> usually take the ancestors content-box as the
+          <p><small>for example a percent value for <code class="inline">width</code> usually take the ancestors
+              content-box as the
               containing block a calculates the width relative to the ancestors content-box</small></p>
         </section>
         <section>
@@ -1328,7 +1336,7 @@
         </section>
         <section>
           <h3>fixed</h3>
-          <p>positions the element relative to the viewport or to the nearest ancestors containing which has a <code
+          <p>positions the element relative to the viewport or to the nearest ancestors which has a <code
               class="inline">transform</code>, <code class="inline">perspective</code>, <code
               class="inline">filter</code></p>
           <p><small><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block"><span
@@ -1338,10 +1346,156 @@
           <h3>Stacking Context</h3>
         </section>
         <section>
-          <p>The stacking context defines the order in which elements that overlap will drawn and is defined by the
-            order and depth of the elements within the HTMLs DOM</p>
+          <p>The stacking context defines the order in which elements that overlap will be drawn and is defined by the
+            order and depth of the elements within the HTMLs DOM and </p>
+        </section>
+        <style>
+          .stack-step-by-step {
+            position: relative;
+            margin: 0 auto;
+            width: 150px;
+          }
+
+          .stack-step-by-step div {
+            position: absolute;
+            height: 100px;
+            width: 100px;
+            top: 20px;
+            left: 20px;
+          }
+
+          .stack-step-by-step #one {
+            background-color: var(--light-cyan);
+          }
+
+          .stack-step-by-step #one>div {
+            background-color: var(--pale-orange);
+          }
+
+          .stack-step-by-step #one>div>div {
+            background-color: var(--magic-mint);
+          }
+
+          .stack-step-by-step #two {
+            background-color: var(--periwinkle);
+          }
+        </style>
+        <section>
+          <h3>Stacking defined by dom</h3>
+          <pre><code data-trim>
+            <style>
+              .stack-step-by-step div {
+                position: absolute;
+                height: 100px;
+                width: 100px;
+                top: 20px;
+                left: 20px;
+              }
+    
+              .stack-step-by-step #one {
+                background-color: #00f;
+              }
+    
+              .stack-step-by-step #one>div {
+                background-color: #f00;
+              }
+    
+              .stack-step-by-step #one>div>div {
+                background-color: #ff0;
+              }
+    
+              .stack-step-by-step #two {
+                background-color: #0f0;
+              }
+            </style>
+          </code></pre>
+          <pre><code data-trim>
+            <div id="one">1
+                <div>1.1
+                  <div>1.1.2</div>
+                </div>
+                <div>1.2</div>
+              </div>
+              <div id="two">2</div>
+          </code></pre>
+        </section>
+        <section data-auto-animate="">
+          <pre><code data-trim data-line-numbers="1">
+            <div id="one">1</div>
+          </code></pre>
+          <div class="stack-step-by-step">
+            <div id="one">1
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <pre><code data-trim data-line-numbers="2">
+            <div id="one">1
+              <div>1.1</div>
+            </div>
+          </code></pre>
+          <div class="stack-step-by-step">
+            <div id="one">1
+              <div>1.1</div>
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <pre><code data-trim data-line-numbers="3">
+            <div id="one">1
+              <div>1.1
+                <div>1.1.2</div>
+              </div>
+            </div>
+          </code></pre>
+          <div class="stack-step-by-step">
+            <div id="one">1
+              <div>1.1
+                <div>1.1.2</div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <pre><code data-trim data-line-numbers="5">
+            <div id="one">1
+              <div>1.1
+                <div>1.1.2</div>
+              </div>
+              <div>1.2</div>
+            </div>
+          </code></pre>
+          <div class="stack-step-by-step">
+            <div id="one">1
+              <div>1.1
+                <div>1.1.2</div>
+              </div>
+              <div>1.2</div>
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <pre><code data-trim data-line-numbers="7">
+            <div id="one">1
+              <div>1.1
+                <div>1.1.2</div>
+              </div>
+              <div>1.2</div>
+            </div>
+            <div id="two">2</div>
+          </code></pre>
+          <div class="stack-step-by-step">
+            <div id="one">1
+              <div>1.1
+                <div>1.1.2</div>
+              </div>
+              <div>1.2</div>
+            </div>
+            <div id="two">2</div>
+          </div>
         </section>
         <section>
+          <h3>Complex Example with z-indices</h3>
           <style>
             .stacking {
               font-size: 0.3em;
