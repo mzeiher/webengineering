@@ -1364,10 +1364,16 @@
           </div>
         </section>
         <section>
-          <p>float will remove the element from the normal flow and wrap the following content around the element</p>
+          <p>the <code class="inline">float</code> property will remove the element from the normal flow and wrap the following content around the element</p>
           <p>a float value other than <code class="inline">none</code> will automatically apply a <code
               class="inline">display: block;</code> to the element</p>
           <p><small>should only be used to control flow of content, for everything else use grid or flexbox</small></p>
+        </section>
+        <section>
+          <h3><code class="inline">display: none</code> and <code class="inline">visibility: hidden</code></h3>
+          <p>There are two ways to hide an element present in the DOM which behave different</p>
+          <p><code class="inline">display: none</code> will remove the element from the layout so its dimensions will not be used in layout calculation</p>
+          <p><code class="inline">visibility: hidden</code> will just not render the element but its dimensions still effect the layout</p>
         </section>
         <section>
           <h3>Positioning</h3>
