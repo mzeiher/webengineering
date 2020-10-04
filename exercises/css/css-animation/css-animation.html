@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>web engineering slides</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href='../../../static/styles/style.css'>
+    <link rel='stylesheet' type='text/css' href='../../../decks/plugin/highlight/tomorrow.css'>
+    <link rel="stylesheet" href="../../../decks/fontawesome/all.css">
+    <script src="../../../static/scripts/highlight.pack.js"></script>
+    <script src="../../../decks/plugin/externalcode/externalcode.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            Externalcode.init().then(() => {
+                document.querySelectorAll('pre > code').forEach((block) => {
+                    hljs.highlightBlock(block);
+                });
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <a href="./../../../index.html#ex-css-animation">← back</a>
+        <h1>CSS Animation</h1>
+        <p>In this exercise you learn the basics of CSS Animation</p>
+        <h2>Exercise</h2>
+        <p>Use the template provided here: <a href="template.html">Template</a> </p>
+        <ul>
+            <li>center the spinner horizontally</li>
+            <li>the spinner should spin with 1 revolution every 2 seconds</li>
+            <li>On hover the spinner should double it's size with an animation with the animation duration 1 second</li>
+            <li>On hover out the spinner should animate back</li>
+            <li>the loading text should be centered</li>
+        </ul>
+        <h3>Tips</h3>
+        <ul>
+            <li>Scaling can be done with css transforms</li>
+        </ul>
+        <img src="./css-animation.gif"/>
+        <figure>Possible layout of the page</figure>
+        <h2>Template</h2>
+        <pre><code class="language-html" data-code="template.html"></code></pre>
+        <h3>Solution</h3>
+        <a href="css-animation.solution.html"><i class="fas fa-link"></i>Link</a>
+        <details>
+            <summary>css-animation.solution.html</summary>
+            <pre><code class="language-html" data-code="css-animation.solution.html">
+            </code></pre>
+        </details>
+    </div>
+</body>
+
+</html>

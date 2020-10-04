@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>web engineering slides</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href='../../../static/styles/style.css'>
+    <link rel='stylesheet' type='text/css' href='../../../decks/plugin/highlight/tomorrow.css'>
+    <link rel="stylesheet" href="../../../decks/fontawesome/all.css">
+    <script src="../../../static/scripts/highlight.pack.js"></script>
+    <script src="../../../decks/plugin/externalcode/externalcode.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            Externalcode.init().then(() => {
+                document.querySelectorAll('pre > code').forEach((block) => {
+                    hljs.highlightBlock(block);
+                });
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <a href="./../../../index.html#ex-css-positioning">← back</a>
+        <h1>CSS Positioning</h1>
+        <p>In this exercise you learn some tricks for css positioning together with different layout types</p>
+
+
+        <h2>Exercise 1: horizontal positioning</h2>
+        <p>Use the template provided here: <a href="template.html">Template</a> and a solution on how to center an element</p>
+        <ul>
+            <li>Add a border to <code class="inline">.inner</code> element: 1px, solid, black</li>
+            <li>center the element horizontally</li>
+            <ol>
+                <li>with a fixed width of 400px</li>
+                <li>without a fixed width</li>
+            </ol>
+        </ul>
+        <p>There are different solutions to this exercise, some work with both constraints, some only work with just one constraint</p>
+        <img src="./css-positioning.ex1.webp"/>
+        <figure>Possible layout of the page</figure>
+        <h2>Template</h2>
+        <pre><code class="language-html" data-code="./template.html"></code></pre>
+        <h3>Solution 1 (only works with fixed width)</h3>
+        <a href="css-positioning.ex1.solution1.html"><i class="fas fa-link"></i>Link</a>
+        <details>
+            <summary>css-positioning.ex1.solution1.html</summary>
+            <pre><code class="language-html" data-code="css-positioning.ex1.solution1.html">
+            </code></pre>
+        </details>
+        <h3>Solution 2 (works with and without fixed width)</h3>
+        <a href="css-positioning.ex1.solution2.html"><i class="fas fa-link"></i>Link</a>
+        <details>
+            <summary>css-positioning.ex1.solution2.html</summary>
+            <pre><code class="language-html" data-code="css-positioning.ex1.solution2.html">
+            </code></pre>
+        </details>
+        <hr />
+        <h2>Exercise 2: horizontal and vertical positioning</h2>
+        <p>Use the template provided here: <a href="../template.html">Template</a> and a solution on how to center an element</p>
+        <ul>
+            <li>Add a border to <code class="inline">.inner</code> element: 1px, solid, black</li>
+            <li>Implement different solutions</li>
+            <ol>
+                <li>with absolute/relative positioning</li>
+                <li>with flex layout</li>
+                <li>with grid layout</li>
+            </ol>
+        </ul>
+        <img src="./css-positioning.ex2.webp"/>
+        <figure>Possible layout of the page</figure>
+        <h2>Template</h2>
+        <pre><code class="language-html" data-code="./template.html"></code></pre>
+        <h3>Solution 1: absolute layout</h3>
+        <a href="css-positioning.ex2.solution1.html"><i class="fas fa-link"></i>Link</a>
+        <details>
+            <summary>css-positioning.ex2.solution1.html</summary>
+            <pre><code class="language-html" data-code="css-positioning.ex2.solution1.html">
+            </code></pre>
+        </details>
+        <h3>Solution 1: Flex Layout</h3>
+        <a href="css-positioning.ex2.solution2.html"><i class="fas fa-link"></i>Link</a>
+        <details>
+            <summary>css-positioning.ex2.solution2.html</summary>
+            <pre><code class="language-html" data-code="css-positioning.ex2.solution2.html">
+            </code></pre>
+        </details>
+        <h3>Solution 1: Grid Layout</h3>
+        <a href="css-positioning.ex2.solution3.html"><i class="fas fa-link"></i>Link</a>
+        <details>
+            <summary>css-positioning.ex2.solution3.html</summary>
+            <pre><code class="language-html" data-code="css-positioning.ex2.solution3.html">
+            </code></pre>
+        </details>
+    </div>
+</body>
+
+</html>
