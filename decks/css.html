@@ -697,10 +697,67 @@
           </code></pre>
         </section>
         <section>
-          <p><code class="inline">,</code>, <code class="inline">+</code>,
-            <code class="inline">~</code>, <code class="inline">&nbsp;</code>, <code class="inline">&gt;</code> will not
-            increase specificity, but selectors defined in the pseudo selector <code class="inline">:not()</code> will
+          <p>selectors concatenated with <code class="inline">+</code>,
+            <code class="inline">~</code>, <code class="inline">&nbsp;</code>, <code class="inline">&gt;</code>, <code
+              class="inline">:not()</code> will increase the type specificity
           </p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim data-line-numbers="2-4, 13">
+            <style>
+              div {
+                background-color: blue;
+              }
+              div > div {
+                background-color: red;
+              }
+              div > .test {
+                background-color: yellow;
+              }
+            </style>
+            <div>
+              <div class="test">test</div>
+            </div>
+          </code></pre>
+          <p>The specificity for the selected rule is <code class="inline">0 0 1</code> for the selected element</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim data-line-numbers="5-7, 13">
+            <style>
+              div {
+                background-color: blue;
+              }
+              div > div {
+                background-color: red;
+              }
+              div > .test {
+                background-color: yellow;
+              }
+            </style>
+            <div>
+              <div class="test">test</div>
+            </div>
+          </code></pre>
+          <p>The specificity for the selected rule is <code class="inline">0 0 2</code> for the selected element</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim data-line-numbers="8-10, 13">
+            <style>
+              div {
+                background-color: blue;
+              }
+              div > div {
+                background-color: red;
+              }
+              div > .test {
+                background-color: yellow;
+              }
+            </style>
+            <div>
+              <div class="test">test</div>
+            </div>
+          </code></pre>
+          <p>The specificity for the selected rule is <code class="inline">0 1 1</code> for the selected element, so the background color of the element will be yellow</p>
         </section>
         <section>
           <p>User Agent Stylesheet</p>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>web engineering slides</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href='../../../static/styles/style.css'>
+    <link rel='stylesheet' type='text/css' href='../../../decks/plugin/highlight/tomorrow.css'>
+    <link rel="stylesheet" href="../../../decks/fontawesome/all.css">
+    <script src="../../../static/scripts/highlight.pack.js"></script>
+    <script src="../../../decks/plugin/externalcode/externalcode.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            Externalcode.init().then(() => {
+                document.querySelectorAll('pre > code').forEach((block) => {
+                    hljs.highlightBlock(block);
+                });
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <a href="./../../../index.html#ex-css-basic">← back</a>
+        <h1>CSS Basics</h1>
+        <p>In this exercise you learn the basics of CSS styling</p>
+        <h2>Exercise</h2>
+        <p>Use the template provided here: <a href="../template.html">Template</a> </p>
+        <ul>
+            <li>Create a <code class="inline">CSS</code> element in the <code class="inline">head</code> of the HTML with the following styling</li>
+            <li>The document should use the the font-family 'sans serif'</li>
+            <li>The Header should be 100px in height and take all of the available width</li>
+            <li>The Text in the Header should be 42px</li>
+            <li>The Header Text should be centered, both vertically and horizontally</li>
+            <li>The Header should have the following background color: <span style="background-color: #C7CEEA;">#C7CEEA</span></li>
+            <li>The Navigation should be 50px in height and the navigation times should be centered and have a 10px gap between each other</li>
+            <li>The "h1" in the sections should have a font size of 28px</li>
+            <li>The "h2" in the sections should have a font size of 21px</li>
+            <li>The content in main should have padding of 20px</li>
+            <li>The text in the footer should be centered and 7px in size</li>
+        </ul>
+        <h3>Tips</h3>
+        <ul>
+            <li>keep in mind different elements have a default styling like padding, margin applied by the browser which you need to override</li>
+            <li>sometimes there are different solutions with the same outcome</li>
+            <li>You can also override the default display type</li>
+            <li>Keep in mind the browser the standard defines an un-intuitive box sizing</li>
+            <li>list styles can also be overridden</li>
+        </ul>
+        <img src="./css-basics.webp"/>
+        <figure>Possible layout of the page</figure>
+        <h2>Template</h2>
+        <pre><code class="language-html" data-code="../template.html"></code></pre>
+        <h3>Solution</h3>
+        <a href="css-basics.solution.html"><i class="fas fa-link"></i>Link</a>
+        <details>
+            <summary>css-basics .solution.html</summary>
+            <pre><code class="language-html" data-code="css-basics.solution.html">
+            </code></pre>
+        </details>
+    </div>
+</body>
+
+</html>
