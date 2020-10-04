@@ -17,7 +17,6 @@
   <link rel="stylesheet" href="common.css">
 
   <link rel="stylesheet" href="fontawesome/all.css">
-
 </head>
 
 <body>
@@ -1621,14 +1620,188 @@
       </section>
 
 
+      <section>
+        <section data-background="var(--radial-background)">
+          <h2>Animations and Transitions</h2>
+        </section>
+        <section>
+          <h3>Animations</h3>
+          <p>You don't always need javascript to animate your elements</p>
+        </section>
+        <section>
+          <style>
+            #animated_div {
+              width: 70px;
+              height: 47px;
+              background: #92B901;
+              color: #ffffff;
+              position: relative;
+              font-weight: bold;
+              font-size: 20px;
+              padding: 10px;
+              animation: animated_div 5s infinite;
+              border-radius: 5px;
+            }
+
+            @keyframes animated_div {
+              0% {
+                transform: rotate(0deg);
+                left: 0px;
+              }
+
+              25% {
+                transform: rotate(20deg);
+                left: 0px;
+              }
+
+              50% {
+                transform: rotate(0deg);
+                left: 500px;
+                height: 100px;
+                width: 100px;
+              }
+
+              55% {
+                transform: rotate(0deg);
+                left: 500px;
+              }
+
+              70% {
+                transform: rotate(0deg);
+                left: 500px;
+                background: #1ec7e6;
+              }
+
+              100% {
+                transform: rotate(-360deg);
+                left: 0px;
+              }
+            }
+          </style>
+          <div id="animated_div">CSS</div>
+          <p><small>https://www.w3schools.com/css/css3_animations.asp</small></p>
+        </section>
+        <section>
+          <p>CSS animations are defined with the <code class="inline">animation</code> property which references to a
+            at-rule with the defined keyframes</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/animations.html">
+          </code></pre>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/animations.html" data-line-numbers="3">
+          </code></pre>
+          <p>an animation property which refers to a set of keyframes</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/animations.html" data-line-numbers="5-14">
+          </code></pre>
+          <p>definition of keyframe transitions</p>
+        </section>
+        <section>
+          <p>By using CSS animations, the browser will calculate the changed properties between keyframes and will
+            automatically animate these changes</p>
+        </section>
+        <section>
+          <h3>Transitions</h3>
+          <p>Transitions are similar to animations but will trigger if the CSS selector matching changes, for example on
+            a state change to the pseudo class <code class="inline">:hover</code></p>
+        </section>
+        <section>
+          <style>
+            .transition-example {
+              transition: all 2s ease-in;
+              margin: 0 auto;
+              width: 150px;
+              background-color: var(--periwinkle);
+            }
+
+            .transition-example:hover {
+              transition: all 2s ease-in;
+              height: 400px;
+              width: 400px;
+              background-color: var(--magic-mint);
+            }
+          </style>
+          <div class="transition-example">Hover Here</div>
+        </section>
+        <section>
+          <pre><code data-code="snippets/transitions.html"></code></pre>
+        </section>
+        <section>
+          <pre><code data-code="snippets/transitions.html" data-line-numbers="9"></code></pre>
+          <p>this will run a transition for all properties which the current selector rule changes</p>
+          <p><small><code class="inline">height</code> will not be animated because it is not defined in other matching
+              rules</small></p>
+        </section>
+        <section>
+          <pre><code data-code="snippets/transitions.html" data-line-numbers="3"></code></pre>
+          <p>This transition animation will play if the state changes and the <code class="inline">:hover</code> pseudo
+            selector does not match anymore</p>
+        </section>
+
+      </section>
+
 
       <section>
         <section data-background="var(--radial-background)">
           <h2>Responsive Designs</h2>
         </section>
         <section>
-
+          <p>The <code class="inline">@media {}</code> at-rule or the <code class="inline">media</code> attribute for
+            <code class="inline">link</code> and <code class="inline">style</code> elements let you control what styles
+            should be applied depending on the screen type of the user, the viewport size or preferred color schemes</p>
         </section>
+        <section data-auto-animate="">
+          <div class="code-frame" style="text-align: left;" data-id="code">
+            <code class="hljs" style="padding: 0;">@media screen and (min-width: 900px) {</code>
+            <code class="hljs" style="padding: 0;">&nbsp;&nbsp;rule {}</code>
+            <code class="hljs" style="padding: 0;">&nbsp;&nbsp;...</code>
+            <code class="hljs" style="padding: 0;">}</code>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <div class="code-frame" style="text-align: left;" data-id="code">
+            <code class="hljs"
+              style="padding: 0;"><span class="hljs-keyword">@media</span> screen and (min-width: 900px) {</code>
+            <code class="hljs" style="padding: 0;">&nbsp;&nbsp;rule {}</code>
+            <code class="hljs" style="padding: 0;">&nbsp;&nbsp;...</code>
+            <code class="hljs" style="padding: 0;">}</code>
+          </div>
+          <p><code class="inline">@media</code> at rule</p>
+        </section>
+        <section data-auto-animate="">
+          <div class="code-frame" style="text-align: left;" data-id="code">
+            <code class="hljs"
+              style="padding: 0;">@media <span class="hljs-keyword">screen and (min-width: 900px)</span> {</code>
+            <code class="hljs" style="padding: 0;">&nbsp;&nbsp;rule {}</code>
+            <code class="hljs" style="padding: 0;">&nbsp;&nbsp;...</code>
+            <code class="hljs" style="padding: 0;">}</code>
+          </div>
+          <p><code class="inline">@media</code> query list</p>
+          <p><small>multiple conditions can be concatenated with and, or, not or only</small></p>
+        </section>
+        <section data-auto-animate="">
+          <div class="code-frame" style="text-align: left;" data-id="code">
+            <code class="hljs" style="padding: 0;">@media screen and (min-width: 900px) {</code>
+            <code class="hljs" style="padding: 0;">&nbsp;&nbsp;<span class="hljs-keyword">rule {}</span></code>
+            <code class="hljs" style="padding: 0;">&nbsp;&nbsp;<span class="hljs-keyword">...</span></code>
+            <code class="hljs" style="padding: 0;">}</code>
+          </div>
+          <p>CSS rules to apply if the condition matches</p>
+        </section>
+        <section>
+          <p>With the help of media queries it is possible to provide different CSS styles and layouts for different
+            viewport sizes (mobile, tablet, desktop) or for print without the need to change the structure of the HTML
+          </p>
+        </section>
+        <section>
+          <p>The queries can be arbitrary complex and there are a lot of function to query</p>
+          <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media"><span class="highlight"><i
+                  class="fas fa-link"></i>List of media query conditions</span></a></p>
+        </section>
+
       </section>
 
 
@@ -1637,7 +1810,18 @@
           <h2>Scope</h2>
         </section>
         <section>
-
+          <p>Besides of selectors and specificity CSS offers no way to scope your CSS to a selected sub tree within your
+            HTML DOM. If you work with a lot of teams on different parts of a web page this can lead to problems if your
+            class names, ids or selector collide</p>
+          <p><small>There was a proposal which never caught traction with a attribute <code class="inline">scoped</code>
+              for style classes, so this should not be used anymore</small></p>
+        </section>
+        <section>
+          <p>Currently there are some solutions involving CSSinJS (for example styled elements in react) or tooling like
+            <a href="https://github.com/css-modules/css-modules"><i
+                class="fab fa-github"></i>https://github.com/css-modules/css-modules</a> which requires additional
+            tooling</p>
+          <p>The only solution provided by the browser platform for scoped CSS is the use of Shadow DOM</p>
         </section>
       </section>
     </div>
