@@ -993,6 +993,10 @@
                 <td><code class="inline">vmax</code></td>
                 <td>1% of the viewport's larger dimension.</td>
               </tr>
+              <tr>
+                <td><code class="inline">fr</code></td>
+                <td>'fraction' layouts the elements in fractions, helpfull in grid because it take grid-gap in account</td>
+              </tr>
             </tbody>
           </table>
         </section>
@@ -1482,35 +1486,35 @@
           </code></pre>
         </section>
         <section data-auto-animate="">
-          <pre><code data-trim data-line-numbers="1">
+          <pre data-id="code"><code data-trim data-line-numbers="1">
             <div id="one">1</div>
           </code></pre>
-          <div class="stack-step-by-step">
+          <div data-id="sample" class="stack-step-by-step">
             <div id="one">1
             </div>
           </div>
         </section>
         <section data-auto-animate="">
-          <pre><code data-trim data-line-numbers="2">
+          <pre data-id="code"><code data-trim data-line-numbers="2">
             <div id="one">1
               <div>1.1</div>
             </div>
           </code></pre>
-          <div class="stack-step-by-step">
+          <div data-id="sample" class="stack-step-by-step">
             <div id="one">1
               <div>1.1</div>
             </div>
           </div>
         </section>
         <section data-auto-animate="">
-          <pre><code data-trim data-line-numbers="3">
+          <pre data-id="code"><code data-trim data-line-numbers="3">
             <div id="one">1
               <div>1.1
                 <div>1.1.2</div>
               </div>
             </div>
           </code></pre>
-          <div class="stack-step-by-step">
+          <div data-id="sample" class="stack-step-by-step">
             <div id="one">1
               <div>1.1
                 <div>1.1.2</div>
@@ -1519,7 +1523,7 @@
           </div>
         </section>
         <section data-auto-animate="">
-          <pre><code data-trim data-line-numbers="5">
+          <pre data-id="code"><code data-trim data-line-numbers="5">
             <div id="one">1
               <div>1.1
                 <div>1.1.2</div>
@@ -1527,7 +1531,7 @@
               <div>1.2</div>
             </div>
           </code></pre>
-          <div class="stack-step-by-step">
+          <div data-id="sample" class="stack-step-by-step">
             <div id="one">1
               <div>1.1
                 <div>1.1.2</div>
@@ -1537,7 +1541,7 @@
           </div>
         </section>
         <section data-auto-animate="">
-          <pre><code data-trim data-line-numbers="7">
+          <pre data-id="code"><code data-trim data-line-numbers="7">
             <div id="one">1
               <div>1.1
                 <div>1.1.2</div>
@@ -1546,7 +1550,7 @@
             </div>
             <div id="two">2</div>
           </code></pre>
-          <div class="stack-step-by-step">
+          <div data-id="sample" class="stack-step-by-step">
             <div id="one">1
               <div>1.1
                 <div>1.1.2</div>
