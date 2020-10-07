@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>custom elements</title>
+
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/sick.css" id="theme">
+
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="plugin/highlight/tomorrow.css" id="highlight-theme">
+
+  <link rel="stylesheet" href="common.css">
+
+  <link rel="stylesheet" href="fontawesome/all.css">
+
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>custom elements</h1>
+      </section>
+      
+      <section>
+        <section data-background="var(--radial-background)">
+          <h2>A look into the future</h2>
+          <h3>These APIs are highly experimental!</h3>
+        </section>
+        <section>
+          https://web.dev/declarative-shadow-dom/
+        </section>
+      </section>
+    </div>
+  </div>
+
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script src="plugin/markdown/markdown.js"></script>
+  <script src="plugin/highlight/highlight.js"></script>
+  <script src="plugin/chalkboard/plugin.js"></script>
+  <script src="plugin/externalcode/externalcode.js"></script>
+  <script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      width: 1280,
+      height: 720,
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [Externalcode, RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard],
+      chalkboard: {
+        boardmarkerWidth: 3,
+        chalkWidth: 3,
+        chalkEffect: 0,
+        theme: "whiteboard"
+      }
+    });
+  </script>
+</body>
+
+</html>

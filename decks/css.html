@@ -535,7 +535,10 @@
           <pre><code class="language-html" data-code="snippets/css.selectors.directsibling.html" data-line-numbers></code></pre>
         </section>
         <section>
-          <p>All these selectors can combined in any way</p>
+          <p>All these selectors can combined with multiple combinators to refine the rule</p>
+          <pre><code class="language-css" data-code="snippets/css.selectors.types.all.css"></code></pre>
+          <p><small>Select any (*) element OR the 4th child which hast the id="main", the class "substrcuture" and a
+              "data-id" attribute with a value containing "5"</small></p>
         </section>
       </section>
 
@@ -703,16 +706,16 @@
           </p>
         </section>
         <section data-auto-animate="">
-          <pre data-id="code"><code data-trim data-line-numbers="2-4, 13">
+          <pre data-id="code"><code data-trim data-line-numbers="5-7, 13">
             <style>
+              div > .test {
+                background-color: yellow;
+              }
               div {
                 background-color: blue;
               }
               div > div {
                 background-color: red;
-              }
-              div > .test {
-                background-color: yellow;
               }
             </style>
             <div>
@@ -722,16 +725,16 @@
           <p>The specificity for the selected rule is <code class="inline">0 0 1</code> for the selected element</p>
         </section>
         <section data-auto-animate="">
-          <pre data-id="code"><code data-trim data-line-numbers="5-7, 13">
+          <pre data-id="code"><code data-trim data-line-numbers="8-10, 13">
             <style>
+              div > .test {
+                background-color: yellow;
+              }
               div {
                 background-color: blue;
               }
               div > div {
                 background-color: red;
-              }
-              div > .test {
-                background-color: yellow;
               }
             </style>
             <div>
@@ -741,23 +744,24 @@
           <p>The specificity for the selected rule is <code class="inline">0 0 2</code> for the selected element</p>
         </section>
         <section data-auto-animate="">
-          <pre data-id="code"><code data-trim data-line-numbers="8-10, 13">
+          <pre data-id="code"><code data-trim data-line-numbers="2-4, 13">
             <style>
+              div > .test {
+                background-color: yellow;
+              }
               div {
                 background-color: blue;
               }
               div > div {
                 background-color: red;
               }
-              div > .test {
-                background-color: yellow;
-              }
             </style>
             <div>
               <div class="test">test</div>
             </div>
           </code></pre>
-          <p>The specificity for the selected rule is <code class="inline">0 1 1</code> for the selected element, so the background color of the element will be yellow</p>
+          <p>The specificity for the selected rule is <code class="inline">0 1 1</code> for the selected element, so the
+            background color of the element will be yellow, despite the css rule is defined before the other rules</p>
         </section>
         <section>
           <p>User Agent Stylesheet</p>
@@ -995,7 +999,8 @@
               </tr>
               <tr>
                 <td><code class="inline">fr</code></td>
-                <td>'fraction' layouts the elements in fractions, helpfull in grid because it take grid-gap in account</td>
+                <td>'fraction' layouts the elements in fractions, helpfull in grid because it take grid-gap in account
+                </td>
               </tr>
             </tbody>
           </table>
@@ -1272,6 +1277,62 @@
           <p>always take up all available width of the parents content-box</p>
           <p>block elements will alway stack vertically</p>
         </section>
+        <section data-auto-animate>
+          <div class="r-hstack">
+            <pre style="width: 40%"
+              data-id="code"><code class="language-html" data-code="snippets/css.blocklayout.html"></code></pre>
+            <div data-id="sample" style="border: 1px solid #000; width: 40%;">
+              <div>I'm a block
+              </div>
+              <div>I'm a block
+              </div>
+              <div>I'm a block
+              </div>
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <div class="r-hstack">
+            <pre style="width: 40%"
+              data-id="code"><code class="language-html" data-code="snippets/css.blocklayout.html" data-line-numbers="2-3"></code></pre>
+            <div data-id="sample" style="border: 1px solid #000; width: 40%;">
+              <div style="background-color: var(--periwinkle);">I'm a block
+              </div>
+              <div>I'm a block
+              </div>
+              <div>I'm a block
+              </div>
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <div class="r-hstack">
+            <pre style="width: 40%"
+              data-id="code"><code class="language-html" data-code="snippets/css.blocklayout.html" data-line-numbers="4-5"></code></pre>
+            <div data-id="sample" style="border: 1px solid #000; width: 40%;">
+              <div>I'm a block
+              </div>
+              <div style="background-color: var(--periwinkle);">I'm a block
+              </div>
+              <div>I'm a block
+              </div>
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <div class="r-hstack">
+            <pre style="width: 40%"
+              data-id="code"><code class="language-html" data-code="snippets/css.blocklayout.html" data-line-numbers="6-7"></code></pre>
+            <div data-id="sample" style="border: 1px solid #000; width: 40%;">
+              <div>I'm a block
+              </div>
+              <div>I'm a block
+              </div>
+              <div style="background-color: var(--periwinkle);">I'm a block
+              </div>
+            </div>
+          </div>
+        </section>
         <section>
           <h3>inline layout</h3>
           <div class="r-stack">
@@ -1296,13 +1357,73 @@
           <p>inline elements will vertically align per default to the baseline and wrap if the horizontal space exceeds
             the available horizontal space of the ancestors content-box</p>
         </section>
+        <section data-auto-animate>
+          <div class="r-hstack">
+            <pre style="width: 40%"
+              data-id="code"><code class="language-html" data-code="snippets/css.inlinelayout.html"></code></pre>
+            <div data-id="sample" style="border: 1px solid #000; width: 40%;">
+              <span>I</span>
+              <span>am</span>
+              <span>in</span>
+              <span>line</span>
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <div class="r-hstack">
+            <pre style="width: 40%"
+              data-id="code"><code class="language-html" data-code="snippets/css.inlinelayout.html" data-line-numbers="2"></code></pre>
+            <div data-id="sample" style="border: 1px solid #000; width: 40%;">
+              <span style="background-color: var(--periwinkle);">I</span>
+              <span>am</span>
+              <span>in</span>
+              <span>line</span>
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <div class="r-hstack">
+            <pre style="width: 40%"
+              data-id="code"><code class="language-html" data-code="snippets/css.inlinelayout.html" data-line-numbers="3"></code></pre>
+            <div data-id="sample" style="border: 1px solid #000; width: 40%;">
+              <span>I</span>
+              <span style="background-color: var(--periwinkle);">am</span>
+              <span>in</span>
+              <span>line</span>
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <div class="r-hstack">
+            <pre style="width: 40%"
+              data-id="code"><code class="language-html" data-code="snippets/css.inlinelayout.html" data-line-numbers="4"></code></pre>
+            <div data-id="sample" style="border: 1px solid #000; width: 40%;">
+              <span>I</span>
+              <span>am</span>
+              <span style="background-color: var(--periwinkle);">in</span>
+              <span>line</span>
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <div class="r-hstack">
+            <pre style="width: 40%"
+              data-id="code"><code class="language-html" data-code="snippets/css.inlinelayout.html" data-line-numbers="5"></code></pre>
+            <div data-id="sample" style="border: 1px solid #000; width: 40%;">
+              <span>I</span>
+              <span>am</span>
+              <span>in</span>
+              <span style="background-color: var(--periwinkle);">line</span>
+            </div>
+          </div>
+        </section>
         <section>
           <h3>Flex Layout</h3>
           <div class="r-stack">
             <div style="border: 1px solid #000; padding: 10px; width: 300px; text-align: left; color: lightgray;">
               <div
                 style="display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; align-content: stretch; align-items: flex-start;">
-                <div style="flex: 0 1 30px; background-color: var(--magic-mint); margin: 5px; height: 30px">&nbsp;</div>
+                <div style="flex: 0 0 30px; background-color: var(--magic-mint); margin: 5px; height: 30px">&nbsp;</div>
                 <div style="flex: 1 1 auto; background-color: var(--salmon-pink); margin: 5px; height: 30px">&nbsp;
                 </div>
                 <div style="flex: 0 1 auto; background-color: var(--pale-orange); margin: 5px; height: 30px;">&nbsp;
@@ -1315,8 +1436,102 @@
           <p><code class="inline">display: flex</code> lets you control the vertical or horizontal distribution and
             alignment of block level elements</p>
           <p>used for more dynamic and responsive layouts</p>
+          <p><small>If you need a 2-dimensional layout with unknown numbers of children prefer a flex layout over a grid
+              layout</small></p>
           <p><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"><span class="highlight"><i
                   class="fas fa-link"></i>A complete guide to flexbox</span></a></p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/css.flexlayout.html"></code></pre>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/css.flexlayout.html" data-line-numbers="3"></code></pre>
+          <p>Set the layout type to <code class="inline">flex</code></p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/css.flexlayout.html" data-line-numbers="4"></code></pre>
+          <p>Aligns the items in a row</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/css.flexlayout.html" data-line-numbers="5"></code></pre>
+          <p>Prevents the wrapping of flex items if their content doesn't fit into the containers width</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/css.flexlayout.html" data-line-numbers="6"></code></pre>
+          <p>Aligns all items to the left side of the container</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/css.flexlayout.html" data-line-numbers="7"></code></pre>
+          <p>Allows items to stretch if there is space on the cross axis</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/css.flexlayout.html" data-line-numbers="8"></code></pre>
+          <p>Align items to the top of the container</p>
+        </section>
+        <section data-auto-animate="">
+          <div class="r-hstack">
+            <pre data-id="code"
+              style="width: 40%"><code data-code="snippets/css.flexlayout.html" data-line-numbers="11"></code></pre>
+            <div data-id="sample" style="border: 1px solid #000; width: 40%;">
+              <div
+                style="display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; align-content: stretch; align-items: flex-start;">
+                <div style="flex: 0 0 30px; background-color: var(--periwinkle); margin: 5px; height: 30px">&nbsp;</div>
+                <div
+                  style="flex: 1 1 auto; background-color: var(--periwinkle); opacity: 0.5;margin: 5px; height: 30px">
+                  &nbsp;
+                </div>
+                <div
+                  style="flex: 0 1 auto; background-color: var(--periwinkle); opacity: 0.5;margin: 5px; height: 30px;">
+                  &nbsp;
+                </div>
+              </div>
+            </div>
+          </div>
+          <p>The first item will not grow and will not shrink and will always be 30px wide</p>
+        </section>
+        <section data-auto-animate="">
+          <div class="r-hstack">
+            <pre data-id="code"
+              style="width: 40%"><code data-code="snippets/css.flexlayout.html" data-line-numbers="14"></code></pre>
+            <div data-id="sample" style="border: 1px solid #000; width: 40%;">
+              <div
+                style="display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; align-content: stretch; align-items: flex-start;">
+                <div
+                  style="flex: 0 0 30px; background-color: var(--periwinkle);opacity: 0.5; margin: 5px; height: 30px">
+                  &nbsp;</div>
+                <div style="flex: 1 1 auto; background-color: var(--periwinkle); margin: 5px; height: 30px">
+                  &nbsp;
+                </div>
+                <div
+                  style="flex: 0 1 auto; background-color: var(--periwinkle); opacity: 0.5; margin: 5px; height: 30px;">
+                  &nbsp;
+                </div>
+              </div>
+            </div>
+          </div>
+          <p>The second item will grow and shrink if enough space is available</p>
+        </section>
+        <section data-auto-animate="">
+          <div class="r-hstack">
+            <pre data-id="code"
+              style="width: 40%"><code data-code="snippets/css.flexlayout.html" data-line-numbers="17"></code></pre>
+            <div data-id="sample" style="border: 1px solid #000; width: 40%;">
+              <div
+                style="display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; align-content: stretch; align-items: flex-start;">
+                <div
+                  style="flex: 0 0 30px; background-color: var(--periwinkle); opacity: 0.5; margin: 5px; height: 30px">
+                  &nbsp;</div>
+                <div
+                  style="flex: 1 1 auto; background-color: var(--periwinkle); opacity: 0.5;margin: 5px; height: 30px">
+                  &nbsp;
+                </div>
+                <div style="flex: 0 1 auto; background-color: var(--periwinkle);  margin: 5px; height: 30px;">
+                  &nbsp;
+                </div>
+              </div>
+            </div>
+          </div>
+          <p>The third element will not grow and only shrink to the point its content will still fit inside</p>
         </section>
         <section>
           <h3>Grid Layout</h3>
@@ -1368,7 +1583,8 @@
           </div>
         </section>
         <section>
-          <p>the <code class="inline">float</code> property will remove the element from the normal flow and wrap the following content around the element</p>
+          <p>the <code class="inline">float</code> property will remove the element from the normal flow and wrap the
+            following content around the element</p>
           <p>a float value other than <code class="inline">none</code> will automatically apply a <code
               class="inline">display: block;</code> to the element</p>
           <p><small>should only be used to control flow of content, for everything else use grid or flexbox</small></p>
@@ -1376,8 +1592,10 @@
         <section>
           <h3><code class="inline">display: none</code> and <code class="inline">visibility: hidden</code></h3>
           <p>There are two ways to hide an element present in the DOM which behave different</p>
-          <p><code class="inline">display: none</code> will remove the element from the layout so its dimensions will not be used in layout calculation</p>
-          <p><code class="inline">visibility: hidden</code> will just not render the element but its dimensions still effect the layout</p>
+          <p><code class="inline">display: none</code> will remove the element from the layout so its dimensions will
+            not be used in layout calculation</p>
+          <p><code class="inline">visibility: hidden</code> will just not render the element but its dimensions still
+            effect the layout</p>
         </section>
         <section>
           <h3>Positioning</h3>
@@ -1428,6 +1646,7 @@
             width: 100px;
             top: 20px;
             left: 20px;
+            opacity: 0.8;
           }
 
           .stack-step-by-step #one {
@@ -1447,7 +1666,7 @@
           }
         </style>
         <section>
-          <h3>Stacking defined by dom</h3>
+          <h3>Stacking defined by dom level</h3>
           <pre><code data-trim>
             <style>
               .stack-step-by-step div {
@@ -1456,6 +1675,7 @@
                 width: 100px;
                 top: 20px;
                 left: 20px;
+                opacity: 0.8;
               }
     
               .stack-step-by-step #one {
@@ -1552,6 +1772,26 @@
           </code></pre>
           <div data-id="sample" class="stack-step-by-step">
             <div id="one">1
+              <div>1.1
+                <div>1.1.2</div>
+              </div>
+              <div>1.2</div>
+            </div>
+            <div id="two">2</div>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim data-line-numbers="1">
+            <div id="one" stlye="z-index: 1">1
+              <div>1.1
+                <div>1.1.2</div>
+              </div>
+              <div>1.2</div>
+            </div>
+            <div id="two">2</div>
+          </code></pre>
+          <div data-id="sample" class="stack-step-by-step">
+            <div id="one" style="z-index: 1;">1
               <div>1.1
                 <div>1.1.2</div>
               </div>
