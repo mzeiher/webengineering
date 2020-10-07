@@ -1,0 +1,15 @@
+{
+  "name": "webengineering",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server"
+  },
+  "dependencies": {
+    "http-server": "^0.12.3"
+  },
+  "author": "",
+  "license": "MIT"
+}

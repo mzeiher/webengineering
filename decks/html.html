@@ -95,8 +95,8 @@
           <p>not all tags must be closed (e.g. link tag)</p>
         </section>
         <section>
-          <p>some tags will auto close depending on nested elements</p>
-          <p><small>this is called tag omittion</small></p>
+          <p>some tags will auto close depending on which elements are nested</p>
+          <p><small>this is called tag omission</small></p>
         </section>
         <section>
           HTML attributes and elements are not case sensitive (will be important later for custom elements)
@@ -276,14 +276,26 @@
           <p>content/children</p>keep in mind, not all tags can hold children
         </section>
         <section>
-          <h3>Auto Closing and Tag omittion</h3>
+          <h3>Auto Closing and Tag omission</h3>
+          <p>Some block level elements can't be nested and the html parser will auto close the tags before parsing the next block level element</p>
         </section>
         <section>
-          <p>Some tags will automatically close depending on nested of following elements</p>
+          <pre><code class="language-html" data-code="snippets/html.tag-omission.1.html"></code></pre>
+          <p>this example...</p>
+        </section>
+        <section>
+          <p>...after reading the standard...</p>
+          <blockquote>
+            <b>Tag omission</b><br />The start tag is required. The end tag may be omitted if the &lt;p&gt; element is immediately followed by an &lt;address&gt;, &lt;article&gt;, &lt;aside&gt;, &lt;blockquote&gt;, &lt;div&gt;, &lt;dl&gt;, &lt;fieldset&gt;, &lt;footer&gt;, &lt;form&gt;, &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt;, &lt;header&gt;, &lt;hr&gt;, &lt;menu&gt;, &lt;nav&gt;, &lt;ol&gt;, &lt;pre&gt;, &lt;section&gt;, &lt;table&gt;, &lt;ul&gt; or another &lt;p&gt; element, or if there is no more content in the parent element and the parent element is not an &lt;a&gt; element.
+          </blockquote>
+        </section>
+        <section>
+          <p>...will be changed to this structure by the HTML parser</p>
+          <pre data-id="code"><code class="language-html" data-code="snippets/html.tag-omission.2.html"></code></pre>
+        </section>
+        <section>
+          <p>Some tags will be automatically closed depending on nested of following elements</p>
           <p><small>If you're using HTML sanitizer for preventing XSS attacks you should check if the sanitizer works according to the specification<sup><a href="https://research.securitum.com/mutation-xss-via-mathml-mutation-dompurify-2-0-17-bypass/">[1]</a></sup></small></p>
-        </section>
-        <section>
-
         </section>
         <section>
           <h3>There are different content categories for tags</h3>
