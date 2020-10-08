@@ -559,9 +559,42 @@
           <p>Author Style Sheet</p>
         </section>
         <section>
-          <p>If multiple selectors match and contain contradicting properties there is a hierarchy which properties will
-            be applied for the element</p>
+          <p>If multiple selectors match the defined properties will be merged</p>
           <pre><code class="language-html" data-trim>
+            <style>
+              p { color: black;}
+              .yellow { background-color: yellow;}
+              #red { border-color: red};
+            </style>
+            <p id="red" class="yellow">text</p>
+          </code></pre>
+        </section>
+        <section>
+          <p>All selectors match for the element so all properties (<code class="inline">color</code>, <code class="inline">background-color</code>, <code class="inline">border-color</code> are applied</p>
+          <pre><code class="language-html" data-trim data-line-numbers="2-4, 6">
+            <style>
+              p { color: black;}
+              .yellow { background-color: yellow;}
+              #red { border-color: red};
+            </style>
+            <p id="red" class="yellow">text</p>
+          </code></pre>
+        </section>
+        <section>
+          <p>If multiple selectors match and contain contradicting properties there is a hierarchy which properties will
+            be applied for the specific element</p>
+          <pre><code class="language-html" data-trim>
+            <style>
+              p { color: black;}
+              .yellow { color: yellow;}
+              #red { color: red};
+            </style>
+            <p id="red" class="yellow">text</p>
+          </code></pre>
+        </section>
+        <section>
+          <p>The element will be red because the <code class="inline">#red</code> rule is the most specific one</p>
+          <pre><code class="language-html" data-trim data-line-numbers="4, 6">
             <style>
               p { color: black;}
               .yellow { color: yellow;}
