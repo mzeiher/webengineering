@@ -1481,6 +1481,21 @@
           <pre data-id="code"><code data-code="snippets/css.flexlayout.html"></code></pre>
         </section>
         <section data-auto-animate="">
+          <div class="r-hstack">
+            <pre style="width: 40%"
+              data-id="code"><code data-code="snippets/css.flexlayout.html" data-line-numbers="2-9"></code></pre>
+            <pre style="width: 40%"><code data-trim data-line-numbers="1,5">
+              <div class="wrapper">
+                <div></div> 
+                <div></div> 
+                <div></div> 
+              </div>
+            </code></pre>
+          </div>
+          <p>A flex layout always needs a container element which controls the positioning of the direct
+            children</p>
+        </section>
+        <section data-auto-animate="">
           <pre data-id="code"><code data-code="snippets/css.flexlayout.html" data-line-numbers="3"></code></pre>
           <p>Set the layout type to <code class="inline">flex</code></p>
         </section>
@@ -1650,17 +1665,20 @@
                 </select>
               </div>
               <div><label>item#1 flex:</label><input name="flex-grow-1" value="0" type="number" /><input
-                  name="flex-shrink-1" value="0" type="number" /><input name="flex-base-1" value="auto" type="text" /></div>
+                  name="flex-shrink-1" value="0" type="number" /><input name="flex-base-1" value="auto" type="text" />
+              </div>
               <div><label>item#2 flex:</label><input name="flex-grow-2" value="0" type="number" /><input
-                  name="flex-shrink-2" value="0" type="number" /><input name="flex-base-2" value="auto" type="text" /></div>
+                  name="flex-shrink-2" value="0" type="number" /><input name="flex-base-2" value="auto" type="text" />
+              </div>
               <div><label>item#3 flex:</label><input name="flex-grow-3" value="0" type="number" /><input
-                  name="flex-shrink-3" value="0" type="number" /><input name="flex-base-3" value="auto" type="text" /></div>
+                  name="flex-shrink-3" value="0" type="number" /><input name="flex-base-3" value="auto" type="text" />
+              </div>
             </form>
             <script>
               const form = document.querySelector('#flexform');
               form.querySelectorAll('select, input').forEach((ctrl) => {
                 ctrl.addEventListener('change', () => {
-                  const formdata =new FormData(form);
+                  const formdata = new FormData(form);
                   const entries = Array.from(formdata.entries()).reduce((prev, [key, value]) => {
                     prev[key] = value;
                     return prev;
@@ -1725,6 +1743,337 @@
           <p><a href="https://css-tricks.com/snippets/css/complete-guide-grid/"><span class="highlight"><i
                   class="fas fa-link"></i>A complete guide to grid</span></a></p>
         </section>
+        <section data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-code="snippets/css.grid.sample.html" data-line-numbers=""></code></pre>
+        </section>
+        <section data-auto-animate="">
+          <div class="r-hstack">
+            <pre data-id="code"
+              style="width: 40%"><code class="language-html" data-code="snippets/css.grid.sample.html" data-line-numbers="2-7"></code></pre>
+            <pre data-id="code" style="width: 40%"><code class="language-html" data-trim data-line-numbers="1,8">
+                <div class="grid">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </code></pre>
+          </div>
+          <p>A grid like a flex layout always needs a container element which controls the positioning of the direct
+            children</p>
+        </section>
+        <section data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-code="snippets/css.grid.sample.html" data-line-numbers="3"></code></pre>
+          <p>Set the layout mode to <code class="inline">grid</code></p>
+        </section>
+        <section data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-code="snippets/css.grid.sample.html" data-line-numbers="4"></code></pre>
+          <p>Set a template for the grids columns</p>
+          <p><small>In this case 5 columns, where the 1st, 2nd, 4th and 5th have a fixed width and the middle column
+              takes up all remaining space</small></p>
+        </section>
+        <section data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-code="snippets/css.grid.sample.html" data-line-numbers="5"></code></pre>
+          <p>Set a template for the grids rows</p>
+          <p><small>In this case 3 rows where the first is 25% of the available space, the second 100px and the last
+              takes up all remaining space</small></p>
+        </section>
+        <section data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-code="snippets/css.grid.sample.html" data-line-numbers="6"></code></pre>
+          <p>leave a gap of 10px horizontally and vertically between the grid cells</p>
+        </section>
+        <section data-auto-animate="">
+          <div class="r-hstack">
+            <pre style="width: 40%;"
+              data-id="code"><code class="language-html" data-code="snippets/css.grid.sample.html" data-line-numbers="9-14"></code></pre>
+            <div data-id="sample"
+              style="border: 1px solid #000; padding: 10px; width: 40%; text-align: left; color: lightgray;">
+              <div
+                style="display: grid; grid-template-columns: 40px 50px auto 50px 40px; grid-template-rows: 25% 100px auto; gap: 10px 10px">
+                <div
+                  style="grid-column-start: 1; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 2; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 3; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 4; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 5; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 1; grid-column-end: span 3; grid-row-start: 2; grid-row-end: span 1; background-color: var(--salmon-pink);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 3; grid-column-end: span 2; grid-row-start: 3; grid-row-end: span 2; background-color: var(--pale-orange);">
+                  &nbsp;</div>
+              </div>
+            </div>
+          </div>
+          <p>The first cell starts at position 1/1 of the grid and spans 1 row and 1 column</p>
+        </section>
+        <section data-auto-animate="">
+          <div class="r-hstack">
+            <pre style="width: 40%;"
+              data-id="code"><code class="language-html" data-code="snippets/css.grid.sample.html" data-line-numbers="16-21"></code></pre>
+            <div data-id="sample"
+              style="border: 1px solid #000; padding: 10px; width: 40%; text-align: left; color: lightgray;">
+              <div
+                style="display: grid; grid-template-columns: 40px 50px auto 50px 40px; grid-template-rows: 25% 100px auto; gap: 10px 10px">
+                <div
+                  style="opacity: 0.5; grid-column-start: 1; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="grid-column-start: 2; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 3; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 4; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 5; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 1; grid-column-end: span 3; grid-row-start: 2; grid-row-end: span 1; background-color: var(--salmon-pink);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 3; grid-column-end: span 2; grid-row-start: 3; grid-row-end: span 2; background-color: var(--pale-orange);">
+                  &nbsp;</div>
+              </div>
+            </div>
+          </div>
+          <p>The second cell starts at position 1/2 of the grid and spans 1 row and 1 column</p>
+        </section>
+        <section data-auto-animate="">
+          <div class="r-hstack">
+            <pre style="width: 40%;"
+              data-id="code"><code class="language-html" data-code="snippets/css.grid.sample.html" data-line-numbers="23-28"></code></pre>
+            <div data-id="sample"
+              style="border: 1px solid #000; padding: 10px; width: 40%; text-align: left; color: lightgray;">
+              <div
+                style="display: grid; grid-template-columns: 40px 50px auto 50px 40px; grid-template-rows: 25% 100px auto; gap: 10px 10px">
+                <div
+                  style="opacity: 0.5; grid-column-start: 1; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 2; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="grid-column-start: 3; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 4; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 5; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 1; grid-column-end: span 3; grid-row-start: 2; grid-row-end: span 1; background-color: var(--salmon-pink);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 3; grid-column-end: span 2; grid-row-start: 3; grid-row-end: span 2; background-color: var(--pale-orange);">
+                  &nbsp;</div>
+              </div>
+            </div>
+          </div>
+          <p>The third cell starts at position 1/3 of the grid and spans 1 row and 1 column (the auto column)</p>
+        </section>
+        <section data-auto-animate="">
+          <div class="r-hstack">
+            <pre style="width: 40%;"
+              data-id="code"><code class="language-html" data-code="snippets/css.grid.sample.html" data-line-numbers="30-35"></code></pre>
+            <div data-id="sample"
+              style="border: 1px solid #000; padding: 10px; width: 40%; text-align: left; color: lightgray;">
+              <div
+                style="display: grid; grid-template-columns: 40px 50px auto 50px 40px; grid-template-rows: 25% 100px auto; gap: 10px 10px">
+                <div
+                  style="opacity: 0.5; grid-column-start: 1; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 2; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 3; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="grid-column-start: 4; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 5; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 1; grid-column-end: span 3; grid-row-start: 2; grid-row-end: span 1; background-color: var(--salmon-pink);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 3; grid-column-end: span 2; grid-row-start: 3; grid-row-end: span 2; background-color: var(--pale-orange);">
+                  &nbsp;</div>
+              </div>
+            </div>
+          </div>
+          <p>The fourth cell starts at position 1/4 of the grid and spans 1 row and 1 column</p>
+        </section>
+        <section data-auto-animate="">
+          <div class="r-hstack">
+            <pre style="width: 40%;"
+              data-id="code"><code class="language-html" data-code="snippets/css.grid.sample.html" data-line-numbers="37-42"></code></pre>
+            <div data-id="sample"
+              style="border: 1px solid #000; padding: 10px; width: 40%; text-align: left; color: lightgray;">
+              <div
+                style="display: grid; grid-template-columns: 40px 50px auto 50px 40px; grid-template-rows: 25% 100px auto; gap: 10px 10px">
+                <div
+                  style="opacity: 0.5; grid-column-start: 1; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 2; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 3; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 4; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="grid-column-start: 5; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 1; grid-column-end: span 3; grid-row-start: 2; grid-row-end: span 1; background-color: var(--salmon-pink);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 3; grid-column-end: span 2; grid-row-start: 3; grid-row-end: span 2; background-color: var(--pale-orange);">
+                  &nbsp;</div>
+              </div>
+            </div>
+          </div>
+          <p>The fifth cell starts at position 1/5 of the grid and spans 1 row and 1 column</p>
+        </section>
+        <section data-auto-animate="">
+          <div class="r-hstack">
+            <pre style="width: 40%;"
+              data-id="code"><code class="language-html" data-code="snippets/css.grid.sample.html" data-line-numbers="44-49"></code></pre>
+            <div data-id="sample"
+              style="border: 1px solid #000; padding: 10px; width: 40%; text-align: left; color: lightgray;">
+              <div
+                style="display: grid; grid-template-columns: 40px 50px auto 50px 40px; grid-template-rows: 25% 100px auto; gap: 10px 10px">
+                <div
+                  style="opacity: 0.5; grid-column-start: 1; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 2; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 3; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 4; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 5; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="grid-column-start: 1; grid-column-end: span 3; grid-row-start: 2; grid-row-end: span 1; background-color: var(--salmon-pink);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 3; grid-column-end: span 2; grid-row-start: 3; grid-row-end: span 2; background-color: var(--pale-orange);">
+                  &nbsp;</div>
+              </div>
+            </div>
+          </div>
+          <p>The sixth cell starts at position 2/1 of the grid and spans 1 row and 3 columns</p>
+        </section>
+        <section data-auto-animate="">
+          <div class="r-hstack">
+            <pre style="width: 40%;"
+              data-id="code"><code class="language-html" data-code="snippets/css.grid.sample.html" data-line-numbers="51-56"></code></pre>
+            <div data-id="sample"
+              style="border: 1px solid #000; padding: 10px; width: 40%; text-align: left; color: lightgray;">
+              <div
+                style="display: grid; grid-template-columns: 40px 50px auto 50px 40px; grid-template-rows: 25% 100px auto; gap: 10px 10px">
+                <div
+                  style="opacity: 0.5; grid-column-start: 1; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 2; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 3; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 4; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 5; grid-column-end: span 1; grid-row-start: 1; grid-row-end: span 1; background-color: var(--magic-mint);">
+                  &nbsp;</div>
+                <div
+                  style="opacity: 0.5; grid-column-start: 1; grid-column-end: span 3; grid-row-start: 2; grid-row-end: span 1; background-color: var(--salmon-pink);">
+                  &nbsp;</div>
+                <div
+                  style="grid-column-start: 3; grid-column-end: span 2; grid-row-start: 3; grid-row-end: span 2; background-color: var(--pale-orange);">
+                  &nbsp;</div>
+              </div>
+            </div>
+          </div>
+          <p>The last cell starts at position 3/3 of the grid and spans 1 row and 2 columns</p>
+        </section>
+        <section>
+          <p>If you layout a grid item on a row or column which does not exists, for example if the grids size is not
+            known in advanced the missing rows or columns will be initialized with a width of <code
+              class="inline">0</code> and the last one with <code class="inline">auto</code></p>
+          <p>you can however overwrite this behavior with the <code class="inline">grid-auto-rows</code> and <code
+              class="inline">grid-auto-columns</code> property</p>
+        </section>
+        <section>
+          <p>for easier placement it is possible to name areas within a grid and position your elements according to the
+            name</p>
+        </section>
+        <section>
+          <div class="r-hstack">
+            <pre style="width: 40%"><code class="language-html" data-trim>
+              <style>
+                .grid {
+                  display: grid;
+                  grid-template-columns: 100px auto;
+                  grid-template-rows: 100px auto;
+                }
+                .header {
+                  grid-row-start: 1;
+                  grid-row-end: span 2;
+                  grid-column-start: 1;
+                  grid-column-end: span 1;
+                }
+              </style>
+            </code></pre>
+            <pre style="width: 40%"><code class="language-html" data-trim>
+              <style>
+                .grid {
+                  display: grid;
+                  grid-template-areas: 
+                  "header header"
+                  "nav content";
+                  grid-template-columns: 100px auto;
+                  grid-template-rows: 100px auto;
+                }
+                .header {
+                  grid-area: "header";
+                }
+              </style>
+            </code></pre>
+          </div>
+          <p>With grid areas you can assign names to different parts of your grid</p>
+          <p><small>The areas must only be rectangles</small></p>
+        </section>
         <section>
           <h3>Float</h3>
           <div class="r-stack">
@@ -1745,7 +2094,9 @@
           <p><small>should only be used to control flow of content, for everything else use grid or flexbox</small></p>
         </section>
         <section>
-          <h3><code class="inline">display: none</code> and <code class="inline">visibility: hidden</code></h3>
+          <h3>display and visibility</h3>
+        </section>
+        <section>
           <p>There are two ways to hide an element present in the DOM which behave different</p>
           <p><code class="inline">display: none</code> will remove the element from the layout so its dimensions will
             not be used in layout calculation</p>
@@ -1765,7 +2116,16 @@
         <section>
           <h3>relative</h3>
           <p>Same as <code class="inline">static</code> but children elements with an absolute positioning will use the
-            containing-block of the relative element to position them selfs</p>
+            containing-block of the relative element to position them selfs and the relative positioned element is moved
+            by the offset defined in the <code class="inline">top, left, right, bottom</code> property</p>
+        </section>
+        <section>
+          <div style="border: 1px solid currentColor; height: 500px; width: 40%; margin: 0 auto; font-size: 0.5em;">
+            <div style="background-color: var(--periwinkle);">I have a static (default) position</div>
+            <div style="background-color: var(--periwinkle);">I have a static (default) position</div>
+            <div style="background-color: var(--periwinkle); position: relative; top: 50px">I have a relative position
+              with top: 50px</div>
+          </div>
         </section>
         <section>
           <h3>absolute</h3>
@@ -1774,12 +2134,31 @@
           </p>
         </section>
         <section>
+          <div
+            style="border: 1px solid currentColor; height: 500px; width: 40%; margin: 0 auto; font-size: 0.5em; position: relative;">
+            <div style="background-color: var(--periwinkle);">I have a static (default) position</div>
+            <div style="background-color: var(--periwinkle);">I have a static (default) position</div>
+            <div style="background-color: var(--periwinkle); position: absolute; bottom: 0px; right: 0px; width: 300px">
+              I have a absolute position with bottom: 0px; right: 0px; width: 300px</div>
+          </div>
+        </section>
+        <section>
           <h3>fixed</h3>
           <p>positions the element relative to the viewport or to the nearest ancestors which has a <code
               class="inline">transform</code>, <code class="inline">perspective</code>, <code
               class="inline">filter</code></p>
           <p><small><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block"><span
                   class="highlight"><i class="fas fa-link"></i>Containing block explained</span></a></small></p>
+        </section>
+        <section>
+          <div
+            style="border: 1px solid currentColor; height: 500px; width: 40%; margin: 0 auto; font-size: 0.5em; position: relative; transform: translateX(0px)">
+            <div style="background-color: var(--periwinkle);">I have a static (default) position</div>
+            <div style="background-color: var(--periwinkle);">I have a static (default) position</div>
+            <div
+              style="background-color: var(--periwinkle); position: fixed; opacity: 0.5; bottom: 0px; right: 0px; top: 0px; left: 0px">
+              I have a fixed position with bottom: 0px; right: 0px; top: 0px; left: 0px</div>
+          </div>
         </section>
         <section>
           <h3>Stacking Context</h3>
@@ -2170,6 +2549,20 @@
           <p>Transitions are similar to animations but will trigger if the CSS selector matching changes, for example on
             a state change to the pseudo class <code class="inline">:hover</code></p>
         </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/transitions.html"></code></pre>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/transitions.html" data-line-numbers="9"></code></pre>
+          <p>this will run a transition for all properties which the current selector rule changes</p>
+          <p><small><code class="inline">height</code> will not be animated because it is not defined in other matching
+              rules</small></p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/transitions.html" data-line-numbers="3"></code></pre>
+          <p>This transition animation will play if the state changes and the <code class="inline">:hover</code> pseudo
+            selector does not match anymore</p>
+        </section>
         <section>
           <style>
             .transition-example {
@@ -2188,21 +2581,33 @@
           </style>
           <div class="transition-example">Hover Here</div>
         </section>
-        <section>
-          <pre><code data-code="snippets/transitions.html"></code></pre>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/transitions.html" data-line-numbers="10"></code></pre>
+          <p>The height will not be animated on hover because the origin properties do not contain a height property</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/transitionswithheight.html" data-line-numbers="5,11"></code></pre>
+          <p>We can fix this by adding a height property</p>
         </section>
         <section>
-          <pre><code data-code="snippets/transitions.html" data-line-numbers="9"></code></pre>
-          <p>this will run a transition for all properties which the current selector rule changes</p>
-          <p><small><code class="inline">height</code> will not be animated because it is not defined in other matching
-              rules</small></p>
-        </section>
-        <section>
-          <pre><code data-code="snippets/transitions.html" data-line-numbers="3"></code></pre>
-          <p>This transition animation will play if the state changes and the <code class="inline">:hover</code> pseudo
-            selector does not match anymore</p>
-        </section>
+          <style>
+            .transition-example-two {
+              transition: all 2s ease-in;
+              margin: 0 auto;
+              height: 150px;
+              width: 150px;
+              background-color: var(--periwinkle);
+            }
 
+            .transition-example-two:hover {
+              transition: all 2s ease-in;
+              height: 400px;
+              width: 400px;
+              background-color: var(--magic-mint);
+            }
+          </style>
+          <div class="transition-example-two">Hover Here</div>
+        </section>
       </section>
 
 
@@ -2257,6 +2662,9 @@
           <p>With the help of media queries it is possible to provide different CSS styles and layouts for different
             viewport sizes (mobile, tablet, desktop) or for print without the need to change the structure of the HTML
           </p>
+        </section>
+        <section>
+          <pre><code data-code="snippets/css.mediaquery.html"></code></pre>
         </section>
         <section>
           <p>The queries can be arbitrary complex and there are a lot of function to query</p>

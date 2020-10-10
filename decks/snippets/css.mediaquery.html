@@ -1,0 +1,20 @@
+<style>
+  :root {
+    background-color: white;
+    width: 800px;
+  }
+
+  @media (max-width: 800px) {
+    :root {
+      width: 90%;
+      /* on smaller devices max width should be 90% */
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      background-color: black;
+      /* if the users OS prefers a dark color scheme, the background should be black */
+    }
+  }
+</style>

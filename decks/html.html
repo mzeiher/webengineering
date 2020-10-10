@@ -294,7 +294,7 @@
           <pre data-id="code"><code class="language-html" data-code="snippets/html.tag-omission.2.html"></code></pre>
         </section>
         <section>
-          <p>Some tags will be automatically closed depending on nested of following elements</p>
+          <p>Some tags will be automatically closed depending the elements that follow</p>
           <p><small>If you're using HTML sanitizer for preventing XSS attacks you should check if the sanitizer works according to the specification<sup><a href="https://research.securitum.com/mutation-xss-via-mathml-mutation-dompurify-2-0-17-bypass/">[1]</a></sup></small></p>
         </section>
         <section>
@@ -346,8 +346,8 @@
           <div class="code-frame" data-id="code">
             <code class="hljs">&lt;div <span class="hljs-keyword">id="test"</span>&gt;text&lt;/div&gt;</code></div>
           <p>elements can be identified via the <code class="inline">id</code> attribute</p>
-          <p><code>&lt;label for="" /&gt;</code> and <code>&lt;a href="#id" /&gt;</code> use id for reference</p>
-          <p class="warning"><i class="fas fa-exclamation-triangle"></i> the id must be unique within aa html document
+          <p><code>&lt;label for="" /&gt;</code> and <code>&lt;a href="#id" /&gt;</code> use the id for reference</p>
+          <p class="warning"><i class="fas fa-exclamation-triangle"></i> the id must be unique within an html document
           </p>
         </section>
         <section data-auto-animate="">
@@ -376,6 +376,7 @@
           </div>
           <p>attributes can only contain string values</p>
           <p>every built-in attribute maps to a specific element property in the DOM API</p>
+          <p><small>unfortunately the mapped property has not always the same name as the attribute. The <code class="inline">for</code> attribute maps to the <code class="inline">htmlFor</code> property</small></p>
         </section>
         <section data-auto-animate>
           <div class="code-frame" data-id="code">
@@ -383,7 +384,10 @@
             &lt;input type="checkbox" <span class="hljs-keyword">checked disabled</span> /&gt;
           </code>
           </div>
-          <p>the value can also be ommited</p>
+          <p>the value can also be omitted</p>
+        </section>
+        <section>
+          <h3>There are some attributes which will be handled in a special way</h3>
         </section>
         <section data-auto-animate>
           <div class="code-frame" data-id="code">
