@@ -1,0 +1,12 @@
+<script type="module">
+  const testObj = {
+      arrow: () => {
+          console.log(this);
+      },
+      func() {
+          console.log(this);
+      }
+  }
+  testObj.arrow();
+  testObj.func();
+</script>

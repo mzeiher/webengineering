@@ -1,0 +1,10 @@
+var number = 0; // integer (internally a floating point number)
+var number = 0.1; // floating point number
+var number = 0.1 + 5; // numbers can be added
+var number = 0.1 - 5; // numbers can be subtracted
+var number = 0.1 / 5; // numbers can be divided
+var number = 0.1 * 5; // numbers can be multiplied
+var number = 5 ** 2; // numbers can be potentiated
+var number = 10 % 5; // also the modulo operator is supported
+var number = Number.parseInt('234'); // the Number object has some helpers to convert types
+var number = Number.parseFloat('234.23'); // the Number object has some helpers to convert types

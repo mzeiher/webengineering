@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>reveal.js</title>
+  <title>javascript</title>
 
   <link rel="stylesheet" href="dist/reset.css">
   <link rel="stylesheet" href="dist/reveal.css">
@@ -55,29 +55,255 @@
           <h2>Anatomy of a modern Javascript file</h2>
         </section>
         <section>
-          <h3></h3>
+          <p>Since all modern browsers and nodejs &gt;=14.0.0 support ES6 Modules, we will use the es module syntax</p>
+        </section>
+        <section data-auto-animate>
+          <pre
+            data-id="code"><code class="language-javascript" data-code="snippets/javascript.js" data-line-numbers></code></pre>
+        </section>
+        <section data-auto-animate>
+          <pre
+            data-id="code"><code class="language-javascript" data-code="snippets/javascript.js" data-line-numbers="1,2"></code></pre>
+          <p>Import declarations to import functions and declarations from other modules</p>
+        </section>
+        <section data-auto-animate>
+          <pre
+            data-id="code"><code class="language-javascript" data-code="snippets/javascript.js" data-line-numbers="4-6"></code></pre>
+          <p>Function declarations</p>
+        </section>
+        <section data-auto-animate>
+          <pre
+            data-id="code"><code class="language-javascript" data-code="snippets/javascript.js" data-line-numbers="8-16"></code></pre>
+          <p>Class declarations</p>
+        </section>
+        <section data-auto-animate>
+          <pre
+            data-id="code"><code class="language-javascript" data-code="snippets/javascript.js" data-line-numbers="18"></code></pre>
+          <p>Export of declarations so to be used from other modules</p>
+        </section>
+        <section>
+          <h3>Pre-module Javascript syntax</h3>
+        </section>
+        <section data-auto-animate>
+          <pre
+            data-id="code"><code class="language-javascript" data-code="snippets/javascript.legacy.js" data-line-numbers></code></pre>
+        </section>
+        <section data-auto-animate>
+          <pre
+            data-id="code"><code class="language-javascript" data-code="snippets/javascript.legacy.js" data-line-numbers="1"></code></pre>
+          <p>Turn javascript engine in strict mode</p>
+        </section>
+        <section data-auto-animate>
+          <pre
+            data-id="code"><code class="language-javascript" data-code="snippets/javascript.legacy.js" data-line-numbers="3-5"></code></pre>
+          <p>Function declaration</p>
+        </section>
+        <section data-auto-animate>
+          <pre
+            data-id="code"><code class="language-javascript" data-code="snippets/javascript.legacy.js" data-line-numbers="7-14"></code></pre>
+          <p>Class declaration</p>
         </section>
       </section>
 
       <section>
         <section data-background="var(--radial-background)">
-          <h2>Embedding Javascript</h2>
+          <h2>Loading Javascript</h2>
         </section>
         <section>
-          browser and node
+          <h3>Embedding Javascript in HTML</h3>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/javascript.embed.html" data-line-numbers></code></pre>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/javascript.embed.html" data-line-numbers="3"></code></pre>
+          <p>external javascript can be loaded with the <code class="inline">src</code> attribute on the <code
+              class="inline">script</code> element</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/javascript.embed.html" data-line-numbers="4-7"></code></pre>
+          <p>Javascript can be inlined within a <code class="inline">script</code> element. If you use the es module
+            syntax you have to set the attribute <code class="inline">type</code> to <code class="inline">module</code>
+            on the script element</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/javascript.embed.html" data-line-numbers="10-13"></code></pre>
+          <p>script elements can be inserted everywhere in the HTML document and will be evaluated as soon as the parser
+            processes the element</p>
+        </section>
+        <section>
+          <h3>Loading Javascript with nodejs</h3>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code class="language-bash" data-trim data-line-numbers="">
+            #> node ./myfile.js
+            #> node -e 'console.log("test");'
+            #> node --input-type=module myfile.js
+            #> node ./myfile.mjs
+          </code></pre>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code class="language-bash" data-trim data-line-numbers="1">
+            #> node ./myfile.js
+            #> node -e 'console.log("test");'
+            #> node --input-type=module myfile.js
+            #> node ./myfile.mjs
+          </code></pre>
+          <p>Load a javascript file from the filesystem</p>
+          <p><small>Historically nodejs used its own module system called "commonjs" every js file is interpreted as a
+              commonjs module</small></p>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code class="language-bash" data-trim data-line-numbers="2">
+            #> node ./myfile.js
+            #> node -e 'console.log("test");'
+            #> node --input-type=module myfile.js
+            #> node ./myfile.mjs
+          </code></pre>
+          <p>evaluate the javascript passed in the argument</p>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code class="language-bash" data-trim data-line-numbers="3">
+            #> node ./myfile.js
+            #> node -e 'console.log("test");'
+            #> node --input-type=module myfile.js
+            #> node ./myfile.mjs
+          </code></pre>
+          <p>Load a javascript file from the filesystem and interpret the file as a es module</p>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code class="language-bash" data-trim data-line-numbers="4">
+            #> node ./myfile.js
+            #> node -e 'console.log("test");'
+            #> node --input-type=module myfile.js
+            #> node ./myfile.mjs
+          </code></pre>
+          <p>Load a javascript file from the filesystem and interpret the file as a es module</p>
+          <p><small>On nodejs files with the <code class="inline">.mjs</code> extension are treated as module files,
+              whereas file with the <code class="inline">.cjs</code> extension are treated as commonjs files</small></p>
+        </section>
+      </section>
+
+      <section>
+        <section data-background="var(--radial-background)">
+          <h2>Primitive Data types</h2>
+        </section>
+        <section>
+          <h3>Boolean</h3>
+        </section>
+        <section>
+          <pre><code class="language-javascript" data-code="snippets/javascript.boolean.js"></code></pre>
+          <p>boolean numbers represent only two states and are expressed with the expression <code
+              class="inline">true</code> and <code class="inline">false</code></p>
+        </section>
+        <section>
+          <pre><code class="language-javascript" data-code="snippets/javascript.boolean.convert.js"></code></pre>
+          <p>With the global <code class="inline">Boolean</code> function it is possible to convert other types to
+            booleans</p>
+        </section>
+        <section>
+          <h3>String</h3>
+        </section>
+        <section>
+          <p>Javascript distinguishes between the primitive type <code class="inline">string</code> and the object type
+            <code class="inline">String</code></p>
+          <pre><code class="language-javascript" data-code="snippets/javascript.string.js"></code></pre>
+        </section>
+        <section>
+          <p>A string holds a sequence of characters, javascript supports utf-8 and utf-16 characters</p>
+          <pre><code class="language-javascript" data-code="snippets/javascript.string.utf8.js"></code></pre>
+        </section>
+        <section>
+          <h3>Number</h3>
+        </section>
+        <section>
+          <p>Same as for strings, JavaScript distinguishes between the primitive type <code class="inline">number</code>
+            and the object type <code class="inline">Number</code></p>
+        </section>
+        <section>
+          <p>JavaScript only uses floating point numbers, Integers are represented as floating point numbers without a
+            fraction</p>
+          <p><small>Don't blame JavaScript that <code class="inline">0.1+0.2 = 0.30000000000000004</code>, blame IEEE
+              754</small></p>
+        </section>
+        <section>
+          <pre><code data-code="snippets/javascript.number.js" class="language-javascript"></code></pre>
+        </section>
+        <section>
+          <h3>BigInt</h3>
+        </section>
+        <section>
+          <p><code class="inline">BigInt</code> was introduced because it was not possible to safely use large Integers
+            in JavaScript</p>
+        </section>
+        <section>
+          <pre><code data-code="snippets/javascript.bigint.js" class="language-javascript"></code></pre>
+        </section>
+        <section>
+          <h3>Symbol</h3>
+        </section>
+        <section>
+          The <code class="inline">Symbol</code> function can be used to create an unique symbol value which can be used
+          as an property type on objects. For debugging purposes symbols can have a description
+        </section>
+        <section>
+          <p>There are some "well known" symbols which can be used in javascript to to add additional functionality to
+            your own objects, for example usage of the Symbol.iterator symbol as a property to make an object iterable
+          </p>
+        </section>
+        <section>
+          <pre><code data-code="snippets/javascript.symbol.js" class="language-javascript"></code></pre>
         </section>
       </section>
 
 
       <section>
         <section data-background="var(--radial-background)">
-          <h2>Primitive Datatypes</h2>
+          <h2>Type Coercion and Boolean Algebra</h2>
         </section>
         <section>
-          IEEE 754
+          <p>JavaScript is a dynamically typed language, if you compare different types JavaScript tries make sense of
+            the types for you, this is the reason why <code class="inline">[] == ''</code> evaluates tue <code
+              class="inline">true</code></p>
+          <p></p>
+        </section>
+        <section>
+          <h3>== and === (!= and !==)</h3>
+        </section>
+        <section>
+          <h3>typeof, instanceof and Object.isPrototypeOf</h3>
         </section>
       </section>
 
+      <section>
+        <section data-background="var(--radial-background)">
+          <h2>Control Flow</h2>
+        </section>
+        <section>
+          <h3>IF</h3>
+        </section>
+        <section>
+          <h3>Ternary If</h3>
+        </section>
+        <section>
+          <h3>null coalescing operator</h3>
+        </section>
+        <section>
+          <h3>Optional Chaining</h3>
+        </section>
+        <section>
+          <h3>Switch-Case</h3>
+        </section>
+        <section>
+          <h3>For-Loop</h3>
+        </section>
+        <section>
+          <h3>While-Loop</h3>
+        </section>
+        <section>
+          <h3>Do-While-Loop</h3>
+        </section>
+      </section>
 
       <section>
         <section data-background="var(--radial-background)">
@@ -90,6 +316,9 @@
         <section data-background="var(--radial-background)">
           <h2>Arrays</h2>
         </section>
+        <section>
+          <h3>Typed Arrays</h3>
+        </section>
       </section>
 
       <section>
@@ -98,7 +327,7 @@
         </section>
       </section>
 
-      
+
       <section>
         <section data-background="var(--radial-background)">
           <h2>Hoisting</h2>
@@ -175,22 +404,25 @@
           <h2>Classes and Prototypes</h2>
         </section>
       </section>
-      
+
       <section>
         <section data-background="var(--radial-background)">
-          <h2>Scope</h2>
+          <h2>Scope, this and Closures</h2>
         </section>
         <section>
           global scope, window and globalThis (var vs let,const)
         </section>
         <section>
-          function scope, arrow functions, classes
+          modules (no global this)
         </section>
         <section>
-          iife
+          this in function scope, arrow functions, classes
         </section>
         <section>
-          modules
+          manual scoping and closures: iife
+        </section>
+        <section>
+          closures
         </section>
       </section>
 
