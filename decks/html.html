@@ -208,6 +208,14 @@
           </code></pre>
           text content node
         </section>
+        <section data-auto-animate>
+          <div class="r-hstack r-stretch">
+            <pre style="width: 45%" data-id="code" class="language-html"><code class="hljs" data-code="snippets/html.structure.html" data-line-numbers>
+            </code></pre>
+            <img style="height: 90%" src="assets/html.structure.svg" />
+          </div>
+          <p>HTML is hierarchically structured in a tree with the elements either as nodes or leaves all originating from the root html node</p>
+        </section>
       </section>
 
 
@@ -277,7 +285,8 @@
         </section>
         <section>
           <h3>Auto Closing and Tag omission</h3>
-          <p>Some block level elements can't be nested and the html parser will auto close the tags before parsing the next block level element</p>
+          <p>Some block level elements can't be nested and the html parser will auto close the tags before parsing the
+            next block level element</p>
         </section>
         <section>
           <pre><code class="language-html" data-code="snippets/html.tag-omission.1.html"></code></pre>
@@ -286,7 +295,12 @@
         <section>
           <p>...after reading the standard...</p>
           <blockquote>
-            <b>Tag omission</b><br />The start tag is required. The end tag may be omitted if the &lt;p&gt; element is immediately followed by an &lt;address&gt;, &lt;article&gt;, &lt;aside&gt;, &lt;blockquote&gt;, &lt;div&gt;, &lt;dl&gt;, &lt;fieldset&gt;, &lt;footer&gt;, &lt;form&gt;, &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt;, &lt;header&gt;, &lt;hr&gt;, &lt;menu&gt;, &lt;nav&gt;, &lt;ol&gt;, &lt;pre&gt;, &lt;section&gt;, &lt;table&gt;, &lt;ul&gt; or another &lt;p&gt; element, or if there is no more content in the parent element and the parent element is not an &lt;a&gt; element.
+            <b>Tag omission</b><br />The start tag is required. The end tag may be omitted if the &lt;p&gt; element is
+            immediately followed by an &lt;address&gt;, &lt;article&gt;, &lt;aside&gt;, &lt;blockquote&gt;, &lt;div&gt;,
+            &lt;dl&gt;, &lt;fieldset&gt;, &lt;footer&gt;, &lt;form&gt;, &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;,
+            &lt;h5&gt;, &lt;h6&gt;, &lt;header&gt;, &lt;hr&gt;, &lt;menu&gt;, &lt;nav&gt;, &lt;ol&gt;, &lt;pre&gt;,
+            &lt;section&gt;, &lt;table&gt;, &lt;ul&gt; or another &lt;p&gt; element, or if there is no more content in
+            the parent element and the parent element is not an &lt;a&gt; element.
           </blockquote>
         </section>
         <section>
@@ -295,7 +309,10 @@
         </section>
         <section>
           <p>Some tags will be automatically closed depending the elements that follow</p>
-          <p><small>If you're using HTML sanitizer for preventing XSS attacks you should check if the sanitizer works according to the specification<sup><a href="https://research.securitum.com/mutation-xss-via-mathml-mutation-dompurify-2-0-17-bypass/">[1]</a></sup></small></p>
+          <p><small>If you're using HTML sanitizer for preventing XSS attacks you should check if the sanitizer works
+              according to the specification<sup><a
+                  href="https://research.securitum.com/mutation-xss-via-mathml-mutation-dompurify-2-0-17-bypass/">[1]</a></sup></small>
+          </p>
         </section>
         <section>
           <h3>There are different content categories for tags</h3>
@@ -376,7 +393,8 @@
           </div>
           <p>attributes can only contain string values</p>
           <p>every built-in attribute maps to a specific element property in the DOM API</p>
-          <p><small>unfortunately the mapped property has not always the same name as the attribute. The <code class="inline">for</code> attribute maps to the <code class="inline">htmlFor</code> property</small></p>
+          <p><small>unfortunately the mapped property has not always the same name as the attribute. The <code
+                class="inline">for</code> attribute maps to the <code class="inline">htmlFor</code> property</small></p>
         </section>
         <section data-auto-animate>
           <div class="code-frame" data-id="code">
