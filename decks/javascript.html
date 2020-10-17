@@ -48,6 +48,16 @@
             </code></pre>
           <p><small><a href="http://www.jsfuck.com/">jsfuck</a></small></p>
         </section>
+        <section>
+          <blockquote>
+            Javascript is a programming language that conforms to the ECMAScript specification. JavaScript is
+            high-level, often just-in-time compiled, and multi-paradigm. It has curly-bracket syntax, dynamic typing,
+            prototype-based object-orientation, and first-class functions.
+            <br />
+            <br />
+            <a href="https://en.wikipedia.org/wiki/JavaScript">Wikipedia</a>
+          </blockquote>
+        </section>
       </section>
 
       <section>
@@ -254,24 +264,660 @@
         <section>
           <pre><code data-code="snippets/javascript.symbol.js" class="language-javascript"></code></pre>
         </section>
+        <section data-auto-animate="">
+          <h3>well known iterator symbol</h3>
+          <pre
+            data-id="code"><code data-code="snippets/javascript.symbol.iterator.sample.js" class="language-javascript" data-line-numbers=""></code></pre>
+        </section>
+        <section data-auto-animate="">
+          <pre
+            data-id="code"><code data-code="snippets/javascript.symbol.iterator.sample.js" class="language-javascript" data-line-numbers="2"></code></pre>
+          <p>The <code class="inline">Symbol.iterator</code> well known symbol can be used to make any object iterable
+          </p>
+        </section>
+        <section data-auto-animate="">
+          <pre
+            data-id="code"><code data-code="snippets/javascript.symbol.iterator.sample.js" class="language-javascript" data-line-numbers="3-6"></code></pre>
+          <p>An iterator property must return a defined data structure...</p>
+        </section>
+        <section data-auto-animate="">
+          <pre
+            data-id="code"><code data-code="snippets/javascript.symbol.iterator.sample.js" class="language-javascript" data-line-numbers="11-14"></code></pre>
+          <p>...then its possible to iterate over the object with a loop</p>
+        </section>
+        <section>
+          <p>More on iterators in a later chapter</p>
+        </section>
+        <section>
+          <h3>NULL vs undefined</h3>
+        </section>
+        <section>
+          <p>In javascript there are two similar values describing "no value", <code class="inline">null</code> and
+            <code class="inline">undefined</code></p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            var test; // test is "undefined"
+            test = null; // test is "null"
+            test = 1 // test is "1"
+          </script></code></pre>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="1"><script type="text/template">
+            var test; // test is "undefined"
+            test = null; // test is "null"
+            test = 1 // test is "1"
+          </script></code></pre>
+          <p>In this example test is <code class="inline">undefined</code> because it is declared but not yet
+            initialized...</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="2"><script type="text/template">
+            var test; // test is "undefined"
+            test = null; // test is "null"
+            test = 1 // test is "1"
+          </script></code></pre>
+          <p>...after initializing it with <code class="inline">null</code> the value is <code
+              class="inline">null</code>...</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="3"><script type="text/template">
+            var test; // test is "undefined"
+            test = null; // test is "null"
+            test = 1 // test is "1"
+          </script></code></pre>
+          <p>...after assignment to a real value the value stored in variable <code class="inline">test</code> is the
+            number 1</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            var obj = {
+              prop: "test",
+              nullProp: null
+            }
+            obj.prop === "test" // true
+            obj.prop2 === undefined // true
+            obj.nullProp === null // true
+
+            delete obj.prop
+            obj.prop === undefined // true
+          </script></code></pre>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers="1-4"><script type="text/template">
+            var obj = {
+              prop: "test",
+              nullProp: null
+            }
+            obj.prop === "test" // true
+            obj.prop2 === undefined // true
+            obj.nullProp === null // true
+
+            delete obj.prop
+            obj.prop === undefined // true
+          </script></code></pre>
+          <p>Given we have a defined object with properties...</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers="5"><script type="text/template">
+            var obj = {
+              prop: "test",
+              nullProp: null
+            }
+            obj.prop === "test" // true
+            obj.prop2 === undefined // true
+            obj.nullProp === null // true
+
+            delete obj.prop
+            obj.prop === undefined // true
+          </script></code></pre>
+          <p>... the property <code class="inline">prop</code> evaluates to the string value "test" ...</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers="6"><script type="text/template">
+            var obj = {
+              prop: "test",
+              nullProp: null
+            }
+            obj.prop === "test" // true
+            obj.prop2 === undefined // true
+            obj.nullProp === null // true
+
+            delete obj.prop
+            obj.prop === undefined // true
+          </script></code></pre>
+          <p>... the property <code class="inline">prop2</code>, because it is <b>not defined evaluates</b> to the value
+            undefined ...</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers="7"><script type="text/template">
+            var obj = {
+              prop: "test",
+              nullProp: null
+            }
+            obj.prop === "test" // true
+            obj.prop2 === undefined // true
+            obj.nullProp === null // true
+
+            delete obj.prop
+            obj.prop === undefined // true
+          </script></code></pre>
+          <p>... and the property <code class="inline">nullProp</code>, because it is initialized with <b>null</b>
+            evaluates to null ...</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers="9"><script type="text/template">
+            var obj = {
+              prop: "test",
+              nullProp: null
+            }
+            obj.prop === "test" // true
+            obj.prop2 === undefined // true
+            obj.nullProp === null // true
+
+            delete obj.prop
+            obj.prop === undefined // true
+          </script></code></pre>
+          <p>... after deleting the property <code class="inline">prop</code> on our object ...</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers="10"><script type="text/template">
+            var obj = {
+              prop: "test",
+              nullProp: null
+            }
+            obj.prop === "test" // true
+            obj.prop2 === undefined // true
+            obj.nullProp === null // true
+
+            delete obj.prop
+            obj.prop === undefined // true
+          </script></code></pre>
+          <p>...property <code class="inline">prop</code> will evaluate to undefined because it is not defined on our
+            object</p>
+        </section>
       </section>
+
+      <section>
+        <section data-background="var(--radial-background)">
+          <h2>Variable declaration</h2>
+        </section>
+        <section>
+          <p>Javascript has 3 keywords to declare a variable <code class="inline">var</code>, <code
+              class="inline">let</code> and <code class="inline">const</code></code></p>
+        </section>
+        <section>
+          <h3>var</h3>
+          <p><code class="inline">var</code> was the standard way to declare variables up to ES2015</p>
+          <pre><code data-trim class="language-javascript">
+            <script type="text/template">
+              var test = 1;
+
+              var test = 2; // redeclaration of var is possible and does not result in an error
+            </script>
+          </code></pre>
+        </section>
+        <section>
+          <h3>let</h3>
+          <p><code class="inline">let</code> lets you declare mutable variables which can be reassigned</p>
+          <pre><code data-trim class="language-javascript">
+            <script type="text/template">
+              let test = 1;
+              test = 2; // valid for let
+              
+              let test = 2; // will throw an error, because test is already declared
+            </script>
+          </code></pre>
+        </section>
+        <section>
+          <h3>const</h3>
+          <p><code class="inline">const</code> lets you declare immutable variables which can not be reassigned</p>
+          <pre><code data-trim class="language-javascript">
+            <script type="text/template">
+              const test = 1;
+              test = 2; // will throw an error, because test can not be reassigned
+
+              const test = 2; // will throw an error, because test is already declared
+            </script>
+          </code></pre>
+        </section>
+        <section>
+          <p>as a rule of thumb, always prefer <code class="inline">let</code> over <code class="inline">var</code> and
+            <code class="inline">const</code> over <code class="inline">let</code></p>
+        </section>
+        <section>
+          <p><code class="inline">let</code> and <code class="inline">const</code> assignment can have the nice side
+            effect that a new variable is created for every loop iteration, so its possible to keep the iterated value
+            in a closure scope</p>
+          <pre><code data-trim class="language-javascript">
+            <script type="text/template">
+              function usingVar() {
+                for (var i = 0; i < 3; ++i) {
+                  setTimeout(function() {
+                    console.log("var's i: " + i);
+                  }, 0);
+                }
+              }
+              function usingLet() {
+                for (let i = 0; i < 3; ++i) {
+                  setTimeout(function() {
+                    console.log("let's i: " + i);
+                  }, 0);
+                }
+              }
+              usingVar();
+              setTimeout(usingLet, 20);
+            </script>
+          </code></pre>
+        </section>
+      </section>
+
 
 
       <section>
         <section data-background="var(--radial-background)">
-          <h2>Type Coercion and Boolean Algebra</h2>
+          <h2>Operators</h2>
         </section>
         <section>
-          <p>JavaScript is a dynamically typed language, if you compare different types JavaScript tries make sense of
-            the types for you, this is the reason why <code class="inline">[] == ''</code> evaluates tue <code
+          <h3>Assignments</h3>
+        </section>
+        <section>
+          <table>
+            <thead>
+              <tr>
+                <th>Operator</th>
+                <th>Example</th>
+                <th>Same as</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>=</td>
+                <td>x = y</td>
+                <td>x = y</td>
+              </tr>
+              <tr>
+                <td>+=</td>
+                <td>x += y</td>
+                <td>x = x + y</td>
+              </tr>
+              <tr>
+                <td>-=</td>
+                <td>x -= y</td>
+                <td>x = x - y</td>
+              </tr>
+              <tr>
+                <td>*=</td>
+                <td>x *= y</td>
+                <td>x = x * y</td>
+              </tr>
+              <tr>
+                <td>/=</td>
+                <td>x /= y</td>
+                <td>x = x / y</td>
+              </tr>
+              <tr>
+                <td>%=</td>
+                <td>x %= y</td>
+                <td>x = x % y</td>
+              </tr>
+              <tr>
+                <td>**=</td>
+                <td>x **= y</td>
+                <td>x = x ** y</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section>
+          <h3>String Concatenation</h3>
+        </section>
+        <section>
+          <p>String can be concatenated with the <code class="inline">+</code> operator</p>
+        </section>
+        <section>
+          <h3>Algebraic operators</h3>
+        </section>
+        <section>
+          <table style="font-size: 0.8em;">
+            <thead>
+              <tr>
+                <th>Operator</th>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>+</td>
+                <td>Add</td>
+                <td>Add two numeric values (concatenation for strings)</td>
+              </tr>
+              <tr>
+                <td>-</td>
+                <td>Subtract</td>
+                <td>Subtracts two numeric values</td>
+              </tr>
+              <tr>
+                <td>*</td>
+                <td>Multiply</td>
+                <td>Multiplies two numeric values</td>
+              </tr>
+              <tr>
+                <td>/</td>
+                <td>Divide</td>
+                <td>Divides two numeric values</td>
+              </tr>
+              <tr>
+                <td>**</td>
+                <td>Exponentiation</td>
+                <td>Applies the exponent to a numeric value</td>
+              </tr>
+              <tr>
+                <td>++</td>
+                <td>Increments</td>
+                <td>Increments a value</td>
+              </tr>
+              <tr>
+                <td>--</td>
+                <td>Decrement</td>
+                <td>decrements a value</td>
+              </tr>
+              <tr>
+                <td>%</td>
+                <td>Modulo</td>
+                <td>Division Reminder</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section>
+          <h3>Logical Operators</h3>
+        </section>
+        <section>
+          <table>
+            <thead>
+              <tr>
+                <th>Operator</th>
+                <th>Name</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>&&</td>
+                <td>Logical AND</td>
+                <td>(x == 5 && y == 5)</td>
+              </tr>
+              <tr>
+                <td>||</td>
+                <td>Logical OR</td>
+                <td>(x == 5 || y == 5)</td>
+              </tr>
+              <tr>
+                <td>!</td>
+                <td>NOT</td>
+                <td>!(x == 5)</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section>
+          <h3>Comparison</h3>
+        </section>
+        <section>
+          <table style="font-size: 0.8em;">
+            <thead>
+              <tr>
+                <th>Operator</th>
+                <th>Description</th>
+                <th>Sample</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>==</td>
+                <td>equal to</td>
+                <td>1 == 1 (true)</td>
+              </tr>
+              <tr>
+                <td>===</td>
+                <td>equal value and equal type</td>
+                <td>"5" === 5 (false)</td>
+              </tr>
+              <tr>
+                <td>!=</td>
+                <td>not equal</td>
+                <td>"1" != "2" (true)</td>
+              </tr>
+              <tr>
+                <td>!==</td>
+                <td>not equal value or not equal type</td>
+                <td>"1" !== "2" (true)</td>
+              </tr>
+              <tr>
+                <td>&gt;</td>
+                <td>greater than</td>
+                <td>1 &gt; 0 (true)</td>
+              </tr>
+              <tr>
+                <td>&lt;</td>
+                <td>less than</td>
+                <td>1 &lt; 0 (false)</td>
+              </tr>
+              <tr>
+                <td>&gt;=</td>
+                <td>greater than or equal to</td>
+                <td>1 &gt;= 1 (true)</td>
+              </tr>
+              <tr>
+                <td>&lt;=</td>
+                <td>greater than or equal to</td>
+                <td>1 &lt;= 1 (true)</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section>
+          <h3>bitwise operators</h3>
+        </section>
+        <section>
+          <table style="font-size: 0.8em;">
+            <thead>
+              <tr>
+                <th>Operator</th>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>&</td>
+                <td>AND</td>
+                <td>Sets each bit to 1 if both bits are 1</td>
+              </tr>
+              <tr>
+                <td>|</td>
+                <td>OR</td>
+                <td>Sets each bit to 1 if one of two bits is 1</td>
+              </tr>
+              <tr>
+                <td>^</td>
+                <td>XOR</td>
+                <td>Sets each bit to 1 if only one of two bits is 1</td>
+              </tr>
+              <tr>
+                <td>~</td>
+                <td>NOT</td>
+                <td>Inverts all the bits</td>
+              </tr>
+              <tr>
+                <td>&lt;&lt;</td>
+                <td>Zero fill left shift</td>
+                <td>Shifts left by pushing zeros in from the right and let the leftmost bits fall off</td>
+              </tr>
+              <tr>
+                <td>&gt;&gt;</td>
+                <td>Signed right shift</td>
+                <td>Shifts right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall
+                  off</td>
+              </tr>
+              <tr>
+                <td>&gt;&gt;&gt;</td>
+                <td>Zero fill right shift</td>
+                <td>Shifts right by pushing zeros in from the left, and let the rightmost bits fall off</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+
+      <section>
+        <section data-background="var(--radial-background)">
+          <h2>Type Coercion and Comparison</h2>
+        </section>
+        <section>
+          <p>JavaScript is a dynamically typed language, if you compare different types JavaScript <b>tries</b> to make
+            sense of
+            the types for you, this is the reason why <code class="inline">[] == ''</code> evaluates to <code
               class="inline">true</code></p>
-          <p></p>
         </section>
         <section>
-          <h3>== and === (!= and !==)</h3>
+          <p>This behavior is called <b>implicit type coercion</b> and alway happens if you apply an operator (+, -, ==,
+            ...) to values of different types</p>
+        </section>
+        <section data-auto-animate="">
+          <pre
+            data-id="code"><code data-code="snippets/javascript.typecoercion.js" data-line-numbers="" class="language-javascript"></code></pre>
+        </section>
+        <section data-auto-animate="">
+          <pre
+            data-id="code"><code data-code="snippets/javascript.typecoercion.js" data-line-numbers="1" class="language-javascript"></code></pre>
+          <p>This will evaluate to <code class="inline">true</code> because javascript will try to convert the string to
+            a number and checks for equality</p>
+        </section>
+        <section data-auto-animate="">
+          <pre
+            data-id="code"><code data-code="snippets/javascript.typecoercion.js" data-line-numbers="2" class="language-javascript"></code></pre>
+          <p>This will evaluate to <code class="inline">false</code> because javascript will try to convert the string
+            to a number (NaN), and boolean to a number (1) and check for equality</p>
+        </section>
+        <section data-auto-animate="">
+          <pre
+            data-id="code"><code data-code="snippets/javascript.typecoercion.js" data-line-numbers="3" class="language-javascript"></code></pre>
+          <p>This will evaluate to <code class="inline">true</code> because javascript will try to convert the string to
+            a number (NaN), and boolean to a number (1) and check for inequality</p>
+        </section>
+        <section data-auto-animate="">
+          <pre
+            data-id="code"><code data-code="snippets/javascript.typecoercion.js" data-line-numbers="4" class="language-javascript"></code></pre>
+          <p>This will evaluate to <code class="inline">11</code> because javascript will try to convert the number to a
+            string ("1") and concatenate both</p>
         </section>
         <section>
-          <h3>typeof, instanceof and Object.isPrototypeOf</h3>
+          <p><span class="highlight"><i class="fas fa-link"></i><a
+                href="https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/">Type Coercion
+                Explained</a></span></p>
+        </section>
+        <section>
+          <h3>Implicit vs. explicit coercion</h3>
+        </section>
+        <section>
+          <p>You can help the javascript engine to make sense of the types you want to work with with <b>explicit
+              coercion</b></p>
+          <p><small>In other languages this is also known as type casting</small></p>
+        </section>
+        <section data-auto-animate="">
+          <pre
+            data-id="code"><code data-code="snippets/javascript.typecoercion.js" data-line-numbers="" class="language-javascript"></code></pre>
+          <p>This can be rewritten to...</p>
+        </section>
+        <section data-auto-animate="">
+          <pre
+            data-id="code"><code data-code="snippets/javascript.typecoercion.explicit.js" data-line-numbers="" class="language-javascript"></code></pre>
+          <p>...this with explicit type coercion</p>
+        </section>
+        <section>
+          <p>For equality checks you can disable type coercion with the use of the "tripple equality operator" <code
+              class="inline">===</code> or <code class="inline">!==</code></p>
+        </section>
+        <section>
+          <p>This operator prevents implicit type coercion and javascript will compare the <b>values</b> of both
+            operands and the <b>identity</b> for objects</p>
+        </section>
+        <section data-auto-animate="">
+          <pre
+            data-id="code"><code data-code="snippets/javascript.typecoercion.===.js" data-line-numbers="" class="language-javascript"></code></pre>
+        </section>
+        <section data-auto-animate="">
+          <pre
+            data-id="code"><code data-code="snippets/javascript.typecoercion.===.js" data-line-numbers="1" class="language-javascript"></code></pre>
+          <p>this will evaluate to <code class="inline">false</code> because the types and values don't match</p>
+        </section>
+        <section data-auto-animate="">
+          <pre
+            data-id="code"><code data-code="snippets/javascript.typecoercion.===.js" data-line-numbers="2" class="language-javascript"></code></pre>
+          <p>this will evaluate to <code class="inline">true</code> because the types and values match</p>
+        </section>
+        <section data-auto-animate="">
+          <pre
+            data-id="code"><code data-code="snippets/javascript.typecoercion.===.js" data-line-numbers="3" class="language-javascript"></code></pre>
+          <p>this will evaluate to <code class="inline">false</code> because the types match but the identity not (two
+            separate object instances)</p>
+        </section>
+        <section data-auto-animate="">
+          <pre
+            data-id="code"><code data-code="snippets/javascript.typecoercion.===.js" data-line-numbers="6" class="language-javascript"></code></pre>
+          <p>this will evaluate to <code class="inline">false</code> because the types match but the identity matches
+            (both are the same object instance)</p>
+        </section>
+        <section>
+          <h3>typeof</h3>
+        </section>
+        <section>
+          <p>Javascript only has 7 data types <code
+              class="inline">boolean, number, string, BigInt, Symbol, function and object</code>, to query the datatype
+            of a value the <code class="inline">typeof</code> operator can be used</p>
+          <pre><code data-trim class="language-javascript"><script type="text/template">
+            typeof Symbol.iterator // returns "symbol"
+            typeof 5 // returns "number"
+            typeof "test" // returns "string"
+            typeof [] // returns "object"
+            typeof () => {} // returns "function"
+            typeof {} // returns "object"
+          </script></code></pre>
+        </section>
+        <section>
+          <h3>instanceof and Object.isPrototypeOf</h3>
+        </section>
+        <section>
+          <pre><code data-trim class="language-javascript"><script type="text/template">
+            class Foo {};
+            class Bar extends Foo {};
+
+            let bar = new Bar();
+            let foo = new Foo();
+            
+            bar instanceof Foo // returns false
+            bar instanceof Bar // returns true
+
+            // the instanceof operator equals to the following expression
+            bar.constructor === Bar // returns true
+          </script></code></pre>
+          <p><code class="inline">instanceof</code> can be used to check if a object instance is of a specific type</p>
+        </section>
+        <section>
+          <pre><code data-trim class="language-javascript"><script type="text/template">
+            class Foo {};
+            class Bar extends Foo {};
+
+            Foo.isPrototypeOf(Bar) // returns true
+          </script></code></pre>
+          <p><code class="inline">Object.isPrototypeOf</code> can be used to analyze the prototype chain</p>
+        </section>
+        <section>
+          <p><code class="inline">instanceof</code> should be used to check object <b>instances</b></p>
+          <p><code class="inline">Object.isPrototypeOf</code> should be used to check <b>prototype objects</b></p>
         </section>
       </section>
 
@@ -283,25 +929,307 @@
           <h3>IF</h3>
         </section>
         <section>
-          <h3>Ternary If</h3>
+          <pre><code data-trim class="language-javascript"><script type="text/template">
+            if (<expression>) {
+              // do something if expression evaluates to true
+            } else {
+              // otherwise to something different
+            }
+          </script></code></pre>
+          <p>with <code class="inline">if</code>/<code class="inline">else</code> you can control the control flow of
+            your program to only execute specific statements <b>if</b> a specific expression evaluates to true</p>
+        </section>
+        <section>
+          <h3>Ternary If (if expression)</h3>
+        </section>
+        <section>
+          <pre><code data-trim class="language-javascript"><script type="text/template">
+            const value = <expression> ? 'if true' : 'if false';
+          </script></code></pre>
+          <p>If/else control flows can also be an expression which return a specific value depending to what the if
+            expression evaluates</p>
         </section>
         <section>
           <h3>null coalescing operator</h3>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            const result = value || 'default value'; 
+            
+            const result = value ?? 'default value';
+          </script></code></pre>
+          <p>There are two operators to assign a fallback value if the preceding value is "falsy" or "nullish"</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="1"><script type="text/template">
+            const result = value || 'default value'; 
+            
+            const result = value ?? 'default value';
+          </script></code></pre>
+          <p>The <code class="inline">||</code> operator will assign <code class="inline">"default value"</code> to the
+            variable <code class="inline">result</code> if the value for <code class="inline">value</code> is "falsy"
+          </p>
+          <p><small>falsy values are: <code class="inline">false</code>,<code class="inline">undefined</code>,<code
+                class="inline">null</code>,<code class="inline">0</code>, <code class="inline">""</code>, this can lead
+              to problems when for example the numeric value 0 is valid, in this case it would be overwritten by the
+              default value despite being valid</small></p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="3"><script type="text/template">
+            const result = value || 'default value'; 
+            
+            const result = value ?? 'default value';
+          </script></code></pre>
+          <p>The <code class="inline">??</code> operator (null coalescing operator) will assign <code
+              class="inline">"default value"</code> to the variable <code class="inline">result</code> if the value for
+            <code class="inline">value</code> is <code class="inline">null</code> or <code
+              class="inline">undefined</code></p>
+          <p><small>this will prevent the problem with the <code class="inline">||</code> operator, the numeric value 0
+              would not be overwritten with the defualt value</small></p>
         </section>
         <section>
           <h3>Optional Chaining</h3>
         </section>
         <section>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="3"><script type="text/template">
+            const result = object?.arr?[0]?.func(); 
+            // if one of the properties is "null" or "undefined" result will be "undefined"
+          </script></code></pre>
+          <p>With the help of optional chaining you don't need to check if a specific path exists within nested object,
+            this is a safe way to access nested object where you are not sure if specific properties exists on the
+            objects</p>
+        </section>
+        <section>
           <h3>Switch-Case</h3>
+        </section>
+        <section>
+          <p>Switch-case statements are similar to if-else statements with the exception that multiple statements can be
+            grouped together</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            switch(<expression>) {
+              case "EX1":
+              case "EX2":
+                // do something
+                break;
+              case "EX3":
+                // do something different
+                break;
+              default:
+                // default if no expression matches
+                break;
+            }
+          </script></code></pre>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="1"><script type="text/template">
+            switch(<expression>) {
+              case "EX1":
+              case "EX2":
+                // do something
+                break;
+              case "EX3":
+                // do something different
+                break;
+              default:
+                // default if no expression matches
+                break;
+            }
+          </script></code></pre>
+          <p>The switch-case statement expects an expression...</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="2-5"><script type="text/template">
+            switch(<expression>) {
+              case "EX1":
+              case "EX2":
+                // do something
+                break;
+              case "EX3":
+                // do something different
+                break;
+              default:
+                // default if no expression matches
+                break;
+            }
+          </script></code></pre>
+          <p>... if the expression matches "EX1" or "EX2" the statements following "EX2" will be executed and after that the switch-case statement will be exited ...</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="6-8"><script type="text/template">
+            switch(<expression>) {
+              case "EX1":
+              case "EX2":
+                // do something
+                break;
+              case "EX3":
+                // do something different
+                break;
+              default:
+                // default if no expression matches
+                break;
+            }
+          </script></code></pre>
+          <p>... if the expression matches "EX3" the statements following "EX3" will be executed and after that the switch-case statement will be exited ...</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="9-11"><script type="text/template">
+            switch(<expression>) {
+              case "EX1":
+              case "EX2":
+                // do something
+                break;
+              case "EX3":
+                // do something different
+                break;
+              default:
+                // default if no expression matches
+                break;
+            }
+          </script></code></pre>
+          <p>... if no expression match the default branch will be executed and after that the switch-case statement will be exited</p>
+        </section>
+        <section>
+          <div class="r-hstack">
+            <pre style="width: 48%"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+              switch(<expression>) {
+                case "EX1":
+                case "EX2":
+                  // do something
+                  break;
+                case "EX3":
+                  // do something different
+                  break;
+                default:
+                  // default if no expression matches
+                  break;
+              }
+            </script></code></pre>
+            <pre style="width: 48%" ><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+              if(expression === "EX1" || expression === "EX2") {
+                // do something
+              } else if(expression === "EX3") {
+                // do something different
+              } else {
+                // default if no expression matches
+              }
+            </script></code></pre>
+          </div>
+          <p>Every switch statement can also be written with if-if else-else statements</p>
         </section>
         <section>
           <h3>For-Loop</h3>
         </section>
         <section>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            for(const i = 0; i < 100; i++) {
+              // do something
+            }
+          </script></code></pre>
+          <p>For loops can iterate over a specific number range, this loop will start at <code class="inline">0</code>, increment the identifier <code class="inline">i++</code> after every execution, and loop as long as <code class="inline">i</code> is less than 100</p>
+        </section>
+        <section>
+          <p>There are three type how you can iterate in for loops</p>
+        </section>
+        <section>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            for(<initializing>; <break condition>; <expression executed after every loop>) {
+              // do something
+            }
+          </script></code></pre>
+          <p>Iterate over a value range</p>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            for(const i; i < 100; i++) {
+              // do something
+            }
+          </script></code></pre>
+        </section>
+        <section>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            for(<variable> of <iterable>) {
+              // do something
+            }
+          </script></code></pre>
+          <p>Iterate over the values of an "iterable" type</p>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            for(const value of [0,0,0,0,0,0]) {
+              console.log(value); // log the current value of the iterator
+            }
+          </script></code></pre>
+        </section>
+        <section>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            for(<variable> of <iterable>) {
+              // do something
+            }
+          </script></code></pre>
+          <p>Iterate over the indices of an array type</p>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            for(const index in [0,0,0,0,0,0]) {
+              console.log(index); // log the index of the array
+            }
+          </script></code></pre>
+        </section>
+        <section>
           <h3>While-Loop</h3>
         </section>
         <section>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            while(<expression>) {
+              // do something
+            }
+          </script></code></pre>
+          <p>a while loop will loop until the given expression evaluates to false</p>
+        </section>
+        <section>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            let i = 0;
+            while(i < 100) {
+              // do something
+              i++;
+            }
+          </script></code></pre>
+          <p>The for loop example written in a while loop</p>
+        </section>
+        <section>
           <h3>Do-While-Loop</h3>
+        </section>
+        <section>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            do {
+              // do something
+            } while(<expression>)
+          </script></code></pre>
+          <p>a do while loop is the same as a while loop with the distinction that the expression is evaluated <b>after</b> every loop round</p>
+        </section>
+        <section>
+          <h3>continue and break in loop</h3>
+        </section>
+        <section>
+          <p>Javascript has two specific keywords <code class="inline">continue</code> and <code class="inline">break</code> to manipulate the loop flow</p>
+        </section>
+        <section>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            while(<expression>) {
+              // ignore all following statements and begin with the next loop iteration
+              if (<expression>) continue;
+              // break the loop and continue the normal program flow
+              if (<expression>) break;
+            }
+          </script></code></pre>
+        </section>
+        <section>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            let i = -1;
+            while(true) { // loop endlessly
+              i++;
+              if(i > 100 ) break;
+              if (i%2 === 0) continue;
+              console.log(i);
+            }
+          </script></code></pre>
+          <p>This will create an endless loop that will loop until the break condition i > 100 is triggerd and skip all even numbers</p>
         </section>
       </section>
 
