@@ -516,6 +516,71 @@
 
       <section>
         <section data-background="var(--radial-background)">
+          <h2>Hoisting</h2>
+        </section>
+        <section>
+          <blockquote>
+            Definition of hoist<br />
+            <br />
+            transitive verb<br />
+            <br />
+            1: LIFT, RAISE<br />
+            especially : to raise into position by or as if by means of tackle<br />
+            hoist a flag
+          </blockquote>
+          <a href="https://developer.mozilla.org/en-US/docs/Glossary/Hoisting"><span class="highlight"><i
+                class="fas fa-link"></i>Hoisting on MDN</span></a>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code data-trim data-line-numbers data-code="snippets/javascript.hoisting.1.js">
+          </code></pre>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code data-trim data-line-numbers="5-6" data-code="snippets/javascript.hoisting.1.js">
+          </code></pre>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code data-trim data-line-numbers="3-4" data-code="snippets/javascript.hoisting.2.js">
+          </code></pre>
+          <span><code class="inline">function</code> declarations will be hoisted in scope</span>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code data-trim data-line-numbers data-code="snippets/javascript.hoisting.3.js">
+            </code></pre>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code data-trim data-line-numbers="5-6" data-code="snippets/javascript.hoisting.3.js">
+            </code></pre>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code data-trim data-line-numbers="3,6-7" data-code="snippets/javascript.hoisting.4.js">
+              <script type="text/template">
+              </script>
+            </code></pre>
+          <span><code class="inline">var</code> will be hoisted in scope but not initialized</span>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code data-trim data-line-numbers data-code="snippets/javascript.hoisting.5.js">
+            </code></pre>
+        </section>
+        <section data-auto-animate>
+          <pre data-id="code"><code data-trim data-line-numbers="7" data-code="snippets/javascript.hoisting.5.js">
+            </code></pre>
+          <span><code class="inline">let</code> and <code class="inline">const</code> will not be hoisted</span>
+        </section>
+        <section>
+          <h3>conclusion</h3>
+          <ul>
+            <li>Only declarations are hoisted</li>
+            <li>...with the exception of <code class="inline">let</code> and <code class="inline">const</code></li>
+          </ul>
+        </section>
+      </section>
+
+
+
+      <section>
+        <section data-background="var(--radial-background)">
           <h2>Operators</h2>
         </section>
         <section>
@@ -1054,7 +1119,8 @@
                 break;
             }
           </script></code></pre>
-          <p>... if the expression matches "EX1" or "EX2" the statements following "EX2" will be executed and after that the switch-case statement will be exited ...</p>
+          <p>... if the expression matches "EX1" or "EX2" the statements following "EX2" will be executed and after that
+            the switch-case statement will be exited ...</p>
         </section>
         <section data-auto-animate="">
           <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="6-8"><script type="text/template">
@@ -1071,7 +1137,8 @@
                 break;
             }
           </script></code></pre>
-          <p>... if the expression matches "EX3" the statements following "EX3" will be executed and after that the switch-case statement will be exited ...</p>
+          <p>... if the expression matches "EX3" the statements following "EX3" will be executed and after that the
+            switch-case statement will be exited ...</p>
         </section>
         <section data-auto-animate="">
           <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="9-11"><script type="text/template">
@@ -1088,7 +1155,8 @@
                 break;
             }
           </script></code></pre>
-          <p>... if no expression match the default branch will be executed and after that the switch-case statement will be exited</p>
+          <p>... if no expression match the default branch will be executed and after that the switch-case statement
+            will be exited</p>
         </section>
         <section>
           <div class="r-hstack">
@@ -1106,7 +1174,7 @@
                   break;
               }
             </script></code></pre>
-            <pre style="width: 48%" ><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            <pre style="width: 48%"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
               if(expression === "EX1" || expression === "EX2") {
                 // do something
               } else if(expression === "EX3") {
@@ -1127,7 +1195,9 @@
               // do something
             }
           </script></code></pre>
-          <p>For loops can iterate over a specific number range, this loop will start at <code class="inline">0</code>, increment the identifier <code class="inline">i++</code> after every execution, and loop as long as <code class="inline">i</code> is less than 100</p>
+          <p>For loops can iterate over a specific number range, this loop will start at <code class="inline">0</code>,
+            increment the identifier <code class="inline">i++</code> after every execution, and loop as long as <code
+              class="inline">i</code> is less than 100</p>
         </section>
         <section>
           <p>There are three type how you can iterate in for loops</p>
@@ -1201,13 +1271,15 @@
               // do something
             } while(<expression>)
           </script></code></pre>
-          <p>a do while loop is the same as a while loop with the distinction that the expression is evaluated <b>after</b> every loop round</p>
+          <p>a do while loop is the same as a while loop with the distinction that the expression is evaluated
+            <b>after</b> every loop round</p>
         </section>
         <section>
           <h3>continue and break in loop</h3>
         </section>
         <section>
-          <p>Javascript has two specific keywords <code class="inline">continue</code> and <code class="inline">break</code> to manipulate the loop flow</p>
+          <p>Javascript has two specific keywords <code class="inline">continue</code> and <code
+              class="inline">break</code> to manipulate the loop flow</p>
         </section>
         <section>
           <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
@@ -1229,13 +1301,216 @@
               console.log(i);
             }
           </script></code></pre>
-          <p>This will create an endless loop that will loop until the break condition i > 100 is triggerd and skip all even numbers</p>
+          <p>This will create an endless loop that will loop until the break condition i > 100 is triggerd and skip all
+            even numbers</p>
         </section>
       </section>
 
       <section>
         <section data-background="var(--radial-background)">
           <h2>Objects</h2>
+        </section>
+        <section>
+          <p>Objects are a base primitive in Javascript for complex data types</p>
+        </section>
+        <section>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            const obj = {}; // creates an empty object
+            const obj = Object.create({}); // also creates an empty object
+          </script></code></pre>
+          <p>different ways to create an empty object</p>
+        </section>
+        <section>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            const obj = {
+              prop: 1 // define a property "prop" with a number value
+            }
+
+            obj.prop // access property of object with the "." notation
+            obj["prop"] // access property of object with the [<identifer>] notation
+          </script></code></pre>
+          <p>objects are organized as dictionaries, objects can have properties which are either string identifiers or
+            symbols</p>
+        </section>
+        <section>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            const obj = {
+              prop: 1,
+              func() { // objects can also have functions
+                return 1;
+              }
+            }
+
+            obj.func(); // returns 1
+          </script></code></pre>
+          <p>objects can have functions</p>
+        </section>
+        <section>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            const obj = {
+              prop: 1,
+              func() { // objects can also have functions
+                return this.prop; // this will point to the current object scope
+              }
+            }
+
+            obj.func(); // returns 1
+          </script></code></pre>
+          <p>functions defined in objects can access the current object with the <code class="inline">this</code>
+            keyword</p>
+        </section>
+        <section>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            const propSymbol = Symbol();
+            const obj = {
+              ["123prop"] : "prop", // properties that start with a number must be declared with []
+              [propSymbol]: "prop with symbol"
+            }
+
+            obj["123prop"]; // returns "prop"
+            obj[propSymbol]; // returns "prop with symbol"
+          </script></code></pre>
+          <p>Property names can also start with numbers or be a symbol</p>
+        </section>
+        <section>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            const obj = {
+              prop: "test"
+            }
+
+            obj.prop2 = "test2" // add new property
+            delete obj.prop // remove property
+          </script></code></pre>
+          <p>Properties can be added or removed after object creation</p>
+        </section>
+        <section>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            const obj = {
+              prop: "test",
+              set prop2(value) {
+                this.prop = value;
+              },
+              get prop2() {
+                return this.prop;
+              }
+            }
+
+            obj.prop2 = "foo" // getters and setters are accessed like properties not functions
+            obj.prop // will be "foo"
+          </script></code></pre>
+          <p>Properties can be defined with a setter or getter</p>
+        </section>
+        <section>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            const obj = {
+              prop: "test",
+              prop2: 1
+            }
+
+            Object.getOwnPropertyDescriptors(obj) // returns all defined properties
+          </script></code></pre>
+          <p>Properties can be queried and enumerated with <code
+              class="inline">Object.getOwnPropertyDescriptors(obj)</code></p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            const obj = {}
+            Object.defineProperty(obj, "prop", { 
+              value: "test", 
+              writable: false, 
+              enumerable: false, 
+              configurable: false
+            })
+
+            obj.prop = "test" // will fail because property is not writable
+          </script></code></pre>
+          <p>With <code class="inline">Object.defineProperty(obj, name, options)</code> you have more control over the
+            property which you define</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="3"><script type="text/template">
+            const obj = {}
+            Object.defineProperty(obj, "prop", { 
+              value: "test", 
+              writable: false, 
+              enumerable: false, 
+              configurable: false
+            })
+
+            obj.prop = "test" // will fail because property is not writable
+          </script></code></pre>
+          <p>Set the value of the property</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="4"><script type="text/template">
+            const obj = {}
+            Object.defineProperty(obj, "prop", { 
+              value: "test", 
+              writable: false, 
+              enumerable: false, 
+              configurable: false
+            })
+
+            obj.prop = "test" // will fail because property is not writable
+          </script></code></pre>
+          <p>Make the property readonly or writable</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="5"><script type="text/template">
+            const obj = {}
+            Object.defineProperty(obj, "prop", { 
+              value: "test", 
+              writable: false, 
+              enumerable: false, 
+              configurable: false
+            })
+
+            obj.prop = "test" // will fail because property is not writable
+          </script></code></pre>
+          <p>Make the property enumerable with <code class="inline">Object.entries()</code> or <code
+              class="inline">Object.keys()</code></p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="6"><script type="text/template">
+            const obj = {}
+            Object.defineProperty(obj, "prop", { 
+              value: "test", 
+              writable: false, 
+              enumerable: false, 
+              configurable: false
+            })
+
+            obj.prop = "test" // will fail because property is not writable
+          </script></code></pre>
+          <p>Prevent redefining the property on the object, can also be done for all properties with <code
+              class="inline">Object.freeze()</code> or <code class="inline">Object.seal()</code></p>
+        </section>
+        <section>
+          <h3>hiding properties</h3>
+          <p>Javscript has no concept for private properties on Objects (for classes it is possible), but there are
+            several ways to simulate private properties</p>
+        </section>
+        <section>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            const obj = (function() {
+              // the hiddenProperty will be kept in a closure scope
+              // where it is not accessible from the outside
+              // only with the defined getter
+              let hiddenProperty = 'hidden';
+              return {
+                get prop() {
+                  return hiddenProperty;
+                }
+              }
+            })(); //iife will create a closure scope
+
+            obj.prop // will return the value of the hidden property
+          </script></code></pre>
+          <p>It is possible to hide information in closure scopes</p>
+        </section>
+        <section>
+          <p>Javascripts global <code class="inline">Object</code> object is the base of all other objects defined in
+            javascript (Array, Classes, etc..)</p>
         </section>
       </section>
 
@@ -1245,7 +1520,225 @@
           <h2>Arrays</h2>
         </section>
         <section>
+          <p>All real arrays extend the base object <code class="inline">Array</code></p>
+        </section>
+        <section>
+          <p>Historically there are some objects which are "array-like", especially when working with the DOM API, an
+            array like object is an object with <b>numeric</b> properties and a <b>length</b> property returning a
+            number</p>
+          <p><small>All array-like objects can be converted to arrays with the static <code
+                class="inline">Array.from()</code> function this function can also be used to create and initialize an
+              array</small></p>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            Array.from({ length: 100}, () => 100);
+            // this will create an array with 100 entries all initialized with 100
+          </script></code></pre>
+        </section>
+        <section data-auto-animate="">
+          <h3>Creating and manipulating an array</h3>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="1,8"><script type="text/template">
+            const array = [0, 1, 2, 3 , 4, 5, 6];
+            array.push('second')
+            array.splice(0, 0, 'third')
+            array.pop()
+            array.splice(0,1);
+            array.reverse();
+
+            // arr = [0, 1, 2, 3, 4, 5, 6]
+          </script></code></pre>
+          <p>creating an array</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="2,8"><script type="text/template">
+            const array = [0, 1, 2, 3 , 4, 5, 6];
+            array.push('second')
+            array.splice(0, 0, 'third')
+            array.pop()
+            array.splice(0,1);
+            array.reverse();
+
+            // arr = [0, 1, 2, 3, 4, 5, 6, 'second']
+          </script></code></pre>
+          <p>push a new value to the end of an array</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="3,8"><script type="text/template">
+            const array = [0, 1, 2, 3 , 4, 5, 6];
+            array.push('second')
+            array.splice(0, 0, 'third')
+            array.pop()
+            array.splice(0,1);
+            array.reverse();
+
+            // arr = ['third, 0, 1, 2, 3 , 4, 5, 6, 'second']
+          </script></code></pre>
+          <p>push a new value to the beginning of an array</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="4,8"><script type="text/template">
+            const array = [0, 1, 2, 3 , 4, 5, 6];
+            array.push('second')
+            array.splice(0, 0, 'third')
+            array.pop()
+            array.splice(0,1);
+            array.reverse();
+
+            // arr = ['third, 0, 1, 2, 3 , 4, 5, 6]
+          </script></code></pre>
+          <p>pop the last value from an array</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="5,8"><script type="text/template">
+            const array = [0, 1, 2, 3 , 4, 5, 6];
+            array.push('second')
+            array.splice(0, 0, 'third')
+            array.pop()
+            array.splice(0,1);
+            array.reverse();
+
+            // arr = [0, 1, 2, 3 , 4, 5, 6]
+          </script></code></pre>
+          <p>pop the first value from an array</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="6,8"><script type="text/template">
+            const array = [0, 1, 2, 3 , 4, 5, 6];
+            array.push('second')
+            array.splice(0, 0, 'third')
+            array.pop()
+            array.splice(0,1);
+            array.reverse();
+
+            // arr = [6, 5, 4, 3, 2, 1, 0]
+          </script></code></pre>
+          <p>reverse the array</p>
+        </section>
+        <section>
+          <p><b>Important:</b> these commands manipulate the array instance in memory and do not create a new copy with
+            the new values, this is important if multiple parts of your program access the same array, if one part
+            reverses the array for example it is also done for all other parts accessing the same array</p>
+        </section>
+        <section>
+          <h3>Filter-Map-Reduce</h3>
+        </section>
+        <section>
+          <p>Javascript arrays functional programming style to work with data, the following functions do <b>not</b>
+            work on the same array instance, these functions result will always be a new array instance</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            [0, 1, 2, 3, 4, 5, 6]
+              .filter((value) => {
+                return value % 2 === 0;
+              })
+              .map((value) => {
+                return value ** 2;
+              })
+              .reduce((accumulator, currentValue) => {
+                return accumulator += currentValue;
+              },0);
+
+              // array = [0, 1, 2, 3, 4, 5, 6]
+          </script></code></pre>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="2-4"><script type="text/template">
+            [0, 1, 2, 3, 4, 5, 6]
+              .filter((value) => {
+                return value % 2 === 0;
+              })
+              .map((value) => {
+                return value ** 2;
+              })
+              .reduce((accumulator, currentValue) => {
+                return accumulator += currentValue;
+              },0);
+
+              // array = [0, 2, 4, 6]
+          </script></code></pre>
+          <p>Filter all even numbers and create a new array with them</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="5-7"><script type="text/template">
+            [0, 1, 2, 3, 4, 5, 6]
+              .filter((value) => {
+                return value % 2 === 0;
+              })
+              .map((value) => {
+                return value ** 2;
+              })
+              .reduce((accumulator, currentValue) => {
+                return accumulator += currentValue;
+              },0);
+
+              // array = [0, 4, 16, 36]
+          </script></code></pre>
+          <p>Make all values in the array to the power of 2</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="8-10"><script type="text/template">
+            [0, 1, 2, 3, 4, 5, 6]
+              .filter((value) => {
+                return value % 2 === 0;
+              })
+              .map((value) => {
+                return value ** 2;
+              })
+              .reduce((accumulator, currentValue) => {
+                return accumulator += currentValue;
+              },0);
+
+              // array = 56
+          </script></code></pre>
+          <p>Add all values in the array together</p>
+        </section>
+        <section>
+          <p><span class="highlight"><i class="fas fa-comment-dots"></i>This programming style is often controversially
+              discussed<sup><a href="https://www.youtube.com/watch?v=qaGjS7-qWzg">[1]</a></sup></span></p>
+          <p>Some love it for the clarity and immutable properties which functional programming gives you (not one
+            assignment here), but if performance matters and you have a huge array an iterative approach is often more
+            clear and faster</p>
+        </section>
+        <section>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            const numbers = [];
+            for(let i = 0; i < 1000000; i++) {
+              numbers.push(Math.round(Math.random() * 2)+1);
+            }
+            const filter = (value) => value % 2 === 0;
+            const map = (value) => value**2;
+            const reduce = (acc, value) => acc + value;
+          </script></code></pre>
+          <div class="r-hstack">
+            <pre style="width: 45%" data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+              numbers
+                .filter(filter)
+                .map(map)
+                .reduce(reduce,0)
+            </script></code></pre>
+            <pre style="width: 45%" data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+              let acc = 0;
+              for(let num of numbers) {
+                if(filter(num)) {
+                  acc = reduce(acc, map(num));
+                }
+              }
+            </script></code></pre>
+          </div>
+        </section>
+        <section>
+          <p>both solutions have the same output but totally different runtime timings, despite both are O(n) in
+            complexity</p>
+          <p><small>For huge datasets loops, especially paired with loop tiling can have significant performance
+              impacts: <span class="highlight"><i class="fas fa-play-circle"></i><a
+                  href="https://www.youtube.com/watch?v=S0NQwttnr1I">HTTP203 Episode on loop tiling</a></span></small>
+          </p>
+        </section>
+        <section>
           <h3>Typed Arrays</h3>
+        </section>
+        <section>
+          <p>Typed arrays were introduced to ease the work with binary data were byte ordering and atomic byte access is important</p>
         </section>
       </section>
 
@@ -1255,69 +1748,6 @@
         </section>
       </section>
 
-
-      <section>
-        <section data-background="var(--radial-background)">
-          <h2>Hoisting</h2>
-        </section>
-        <section>
-          <blockquote>
-            Definition of hoist<br />
-            <br />
-            transitive verb<br />
-            <br />
-            1: LIFT, RAISE<br />
-            especially : to raise into position by or as if by means of tackle<br />
-            hoist a flag
-          </blockquote>
-          <a href="https://developer.mozilla.org/en-US/docs/Glossary/Hoisting"><span class="highlight"><i
-                class="fas fa-link"></i>Hoisting on MDN</span></a>
-        </section>
-        <section data-auto-animate>
-          <pre data-id="code"><code data-trim data-line-numbers data-code="snippets/javascript.hoisting.1.js">
-          </code></pre>
-        </section>
-        <section data-auto-animate>
-          <pre data-id="code"><code data-trim data-line-numbers="5-6" data-code="snippets/javascript.hoisting.1.js">
-          </code></pre>
-        </section>
-        <section data-auto-animate>
-          <pre data-id="code"><code data-trim data-line-numbers="3-4" data-code="snippets/javascript.hoisting.2.js">
-          </code></pre>
-          <span><code class="inline">function</code> declarations will be hoisted in scope</span>
-        </section>
-        <section data-auto-animate>
-          <pre data-id="code"><code data-trim data-line-numbers data-code="snippets/javascript.hoisting.3.js">
-            </code></pre>
-        </section>
-        <section data-auto-animate>
-          <pre data-id="code"><code data-trim data-line-numbers="5-6" data-code="snippets/javascript.hoisting.3.js">
-            </code></pre>
-        </section>
-        <section data-auto-animate>
-          <pre data-id="code"><code data-trim data-line-numbers="3,6-7" data-code="snippets/javascript.hoisting.4.js">
-              <script type="text/template">
-              </script>
-            </code></pre>
-          <span><code class="inline">var</code> will be hoisted in scope but not initialized</span>
-        </section>
-        <section data-auto-animate>
-          <pre data-id="code"><code data-trim data-line-numbers data-code="snippets/javascript.hoisting.5.js">
-            </code></pre>
-        </section>
-        <section data-auto-animate>
-          <pre data-id="code"><code data-trim data-line-numbers="7" data-code="snippets/javascript.hoisting.5.js">
-            </code></pre>
-          <span><code class="inline">let</code> and <code class="inline">const</code> will not be hoisted</span>
-        </section>
-        <section>
-          <h3>conclusion</h3>
-          <ul>
-            <li>Only declarations are hoisted</li>
-            <li>...with the exception of <code class="inline">let</code> and <code class="inline">const</code></li>
-          </ul>
-        </section>
-      </section>
 
 
       <section>
