@@ -1,0 +1,12 @@
+<script>
+  const func = () => {
+    console.log(this);
+  }
+  func() //will return window
+</script>
+<script type="module">
+  const func = () => {
+    console.log(this);
+  }
+  func() // will return undefined
+</script>

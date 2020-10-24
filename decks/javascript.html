@@ -200,6 +200,7 @@
         </section>
         <section>
           <h3>Boolean</h3>
+          <p><small><code class="inline">typeof true === 'boolean'</code></small></p>
         </section>
         <section>
           <pre><code class="language-javascript" data-code="snippets/javascript.boolean.js"></code></pre>
@@ -213,6 +214,7 @@
         </section>
         <section>
           <h3>String</h3>
+          <p><small><code class="inline">typeof 'test' === 'string'</code></small></p>
         </section>
         <section>
           <p>Javascript distinguishes between the primitive type <code class="inline">string</code> and the object type
@@ -225,6 +227,7 @@
         </section>
         <section>
           <h3>Number</h3>
+          <p><small><code class="inline">typeof 5 === 'number'</code></small></p>
         </section>
         <section>
           <p>Same as for strings, JavaScript distinguishes between the primitive type <code class="inline">number</code>
@@ -241,6 +244,7 @@
         </section>
         <section>
           <h3>BigInt</h3>
+          <p><small><code class="inline">typeof 5n === 'bigint'</code></small></p>
         </section>
         <section>
           <p><code class="inline">BigInt</code> was introduced because it was not possible to safely use large Integers
@@ -251,6 +255,7 @@
         </section>
         <section>
           <h3>Symbol</h3>
+          <p><small><code class="inline">typeof Symbol() === 'symbol'</code></small></p>
         </section>
         <section>
           The <code class="inline">Symbol</code> function can be used to create an unique symbol value which can be used
@@ -290,6 +295,7 @@
         </section>
         <section>
           <h3>NULL vs undefined</h3>
+          <p><small><code class="inline">typeof undefined === 'undefined', typeof null === 'object'</code></small></p>
         </section>
         <section>
           <p>In javascript there are two similar values describing "no value", <code class="inline">null</code> and
@@ -1187,6 +1193,31 @@
           <p>Every switch statement can also be written with if-if else-else statements</p>
         </section>
         <section>
+          <p>switch-case can have von disadvantage to if-else, all case branches share the same scope, so you have to be
+            careful with reassigning and defining your variables</p>
+          <div class="r-hstack">
+            <pre style="width: 45%;"><code data-trim class="language-javascript" data-line-numbers="3,5"><script type="text/template">
+              switch(test) {
+                case '1':
+                    const test = '';
+                case '2':
+                    const test = '3'; // this will throw an error since test is already declared
+                default:
+                    break;
+              }
+            </script></code></pre>
+            <pre style="width: 45%;"><code data-trim class="language-javascript" data-line-numbers="2,4"><script type="text/template">
+              if(test === '1') {
+                const test = '';
+              } else if(test === '2') {
+                const test = '3'; // this will work because every branch has its own scope
+              } else {
+
+              }
+            </script></code></pre>
+          </div>
+        </section>
+        <section>
           <h3>For-Loop</h3>
         </section>
         <section>
@@ -1309,6 +1340,7 @@
       <section>
         <section data-background="var(--radial-background)">
           <h2>Objects</h2>
+          <p><small><code class="inline">typeof {} === 'object'</code></small></p>
         </section>
         <section>
           <p>Objects are a base primitive in Javascript for complex data types</p>
@@ -1512,12 +1544,52 @@
           <p>Javascripts global <code class="inline">Object</code> object is the base of all other objects defined in
             javascript (Array, Classes, etc..)</p>
         </section>
+        <section>
+          <h3>Destructuring and object spread</h3>
+        </section>
+        <section>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            const obj = {
+              one: 1,
+              two: 2,
+              three: 3,
+              four: 4
+            }
+
+            const {one, two, ...rest} = obj;
+            // one = 1
+            // two = 2
+            // rest = { three: 3, four: 4}
+          </script></code></pre>
+          <p>Destructuring can be used to destructure object properties in variables</p>
+        </section>
+        <section>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            const obj1 = {
+              one: 1,
+              two: 2,
+            }
+            const obj2 = {
+              three: 3,
+              four: 4,
+            }
+
+            const merged = {
+              ...obj1,
+              ...obj2,
+            }
+          </script></code></pre>
+          <p>The spread operator <code class="inline">...</code> can be used to shallow merge objects</p>
+          <p><small>the same can be done with the assign function <code
+                class="inline">const obj =  Object.assign({}, obj1, obj2)</code></small></p>
+        </section>
       </section>
 
 
       <section>
         <section data-background="var(--radial-background)">
           <h2>Arrays</h2>
+          <p><small><code class="inline">typeof [] === 'object', Array.isArray([]) === true</code></small></p>
         </section>
         <section>
           <p>All real arrays extend the base object <code class="inline">Array</code></p>
@@ -1622,8 +1694,8 @@
           <h3>Filter-Map-Reduce</h3>
         </section>
         <section>
-          <p>Javascript arrays functional programming style to work with data, the following functions do <b>not</b>
-            work on the same array instance, these functions result will always be a new array instance</p>
+          <p>Javascript arrays allow a functional programming style to work with data with the builtin <code
+              class="inline">filter, map, reduce, concat</code> function</p>
         </section>
         <section data-auto-animate="">
           <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
@@ -1735,83 +1807,951 @@
           </p>
         </section>
         <section>
+          <p><code class="inline">map, filter, reduce</code> will also not work with <code class="inline">async</code>
+            functions using <code class="inline">await</code> and iterators, if you work with <code
+              class="inline">async</code> functions you have to use regular loops, or wait for the <a
+              href="https://github.com/tc39/proposal-async-iteration/">Async Iterables Proposal</a></p>
+        </section>
+        <section>
           <h3>Typed Arrays</h3>
         </section>
         <section>
-          <p>Typed arrays were introduced to ease the work with binary data were byte ordering and atomic byte access is important</p>
+          <p>Typed arrays were introduced to ease the work with binary data were byte ordering and atomic byte access is
+            important</p>
+        </section>
+        <section>
+          <p>Typed arrays work as a view on specific data which allows you to manipulate single bytes or words with full
+            control of endianess</p>
+          <img src="assets/typed_arrays.png" />
+        </section>
+        <section>
+          <h3>Destructuring and array spread</h3>
+        </section>
+        <section>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            const arr1 = [1,2,3,4]
+
+            const [first, second, ...rest] = arr1;
+            // first = 1
+            // second = 2
+            // rest = [3,4]
+          </script></code></pre>
+          <p>Destructuring can be used to destructure array entries into variables</p>
+        </section>
+        <section>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            const arr1 = [1, 2];
+            const obj2 = [3, 4];
+
+            const merged = [
+              ...arr1,
+              ...arr2
+            ]
+          </script></code></pre>
+          <p>The spread operator <code class="inline">...</code> can be used to merge arrays into a new one</p>
+          <p><small>the same can be done with the concat function <code
+                class="inline">const arrmerged =  arr1.concat(arr2)</code></small></p>
+        </section>
+        <section>
+          <h3>Flatten Discussion</h3>
+          <p><a href="https://github.com/tc39/proposal-flatMap/pull/56"><span class="highlight"><i
+                  class="fab fa-github"></i>https://github.com/tc39/proposal-flatMap/pull/56</span></a></p>
+          <p>What happened?</p>
+          <p><small>TC39 wanted to add a "flatten" method to flatten an array, but mootools patched the built in array
+              with a incompatible function with the same name</small></p>
+        </section>
+      </section>
+
+      <section>
+        <section data-background="var(--radial-background)">
+          <h2>More built-in datatypes</h2>
+        </section>
+        <section>
+          <h3>Map</h3>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            const map = new Map();
+            map.put('key', 'value');
+            const value = map.get('key');
+            map.has('key');
+            map.delete('key');
+            Array.from(map.entries());
+            Array.from(map.keys());
+            Array.from(map.values());
+          </script></code></pre>
+          <p>A <code class="inline">Map</code> is a data structure to store data by a key, it allows easy manipulation
+            and iteration</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="2"><script type="text/template">
+            const map = new Map();
+            map.put('key', 'value');
+            const value = map.get('key');
+            map.has('key');
+            map.delete('key');
+            Array.from(map.entries());
+            Array.from(map.keys());
+            Array.from(map.values());
+          </script></code></pre>
+          <p>Add new data into a map</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="3"><script type="text/template">
+            const map = new Map();
+            map.put('key', 'value');
+            const value = map.get('key');
+            map.has('key');
+            map.delete('key');
+            Array.from(map.entries());
+            Array.from(map.keys());
+            Array.from(map.values());
+          </script></code></pre>
+          <p>Retrieve data from the map</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="4"><script type="text/template">
+            const map = new Map();
+            map.put('key', 'value');
+            const value = map.get('key');
+            map.has('key');
+            map.delete('key');
+            Array.from(map.entries());
+            Array.from(map.keys());
+            Array.from(map.values());
+          </script></code></pre>
+          <p>Check if a key exists</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="5"><script type="text/template">
+            const map = new Map();
+            map.put('key', 'value');
+            const value = map.get('key');
+            map.has('key');
+            map.delete('key');
+            Array.from(map.entries());
+            Array.from(map.keys());
+            Array.from(map.values());
+          </script></code></pre>
+          <p>Delete a key</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="6,7,8"><script type="text/template">
+            const map = new Map();
+            map.put('key', 'value');
+            const value = map.get('key');
+            map.has('key');
+            Array.from(map.entries());
+            Array.from(map.keys());
+            Array.from(map.values());
+          </script></code></pre>
+          <p>Create iterators to iterate over the values of a map</p>
+        </section>
+        <section>
+          <h3>WeakMap</h3>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            const map = new WeakMap();
+            map.put(document.querySelector('my-element'), 'value');
+            const value = map.get(document.querySelector('my-element'));
+            map.has('key');
+          </script></code></pre>
+          <p>With a weak map its possible to store data on objects which can be cleanup up by the garbage collector</p>
+          <p><small>a weak map does not allow you to iterate over its contents and as soon as the garbage collector
+              removes an
+              instance used as key the data will be deleted from the weak map</small></p>
+        </section>
+        <section>
+          <h3>Set</h3>
+        </section>
+        <section>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="4"><script type="text/template">
+            const set = new Set();
+            set.put('key');
+            set.has('key');
+            set.delete('key');
+            Array.from(set.entries());
+            Array.from(set.keys());
+            Array.from(set.values());
+          </script></code></pre>
+          <p>Check if a key exists</p>
         </section>
       </section>
 
       <section>
         <section data-background="var(--radial-background)">
           <h2>Functions</h2>
+          <p><small><code class="inline">typeof function() {} === 'function'</code></small></p>
         </section>
-      </section>
-
-
-
-      <section>
-        <section data-background="var(--radial-background)">
-          <h2>Other</h2>
+        <section>
+          <p>Functions are first class citizens in javascript, this means you can assign them, use them as values,
+            return them from functions and pass them as arguments</p>
         </section>
-        <section>Map, WeakMap, Set</section>
+        <section>
+          <pre class="" data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            function func() {}
+            let func2 = function() {
+              return test;
+            }
+            const func3 = (param) => {
+              return param();
+            }
+            func3(func2); // returns 'func'
+          </script></code></pre>
+        </section>
+        <section>
+          <p>A function is considered <b>pure</b> if the functions output is only determined by its input arguments
+            without side effects.</p>
+          <p><small><code class="inline">Math.cos(x)</code> is pure, because it will always return the same value for
+              the same x</small></p>
+        </section>
+        <section>
+          <p>functions can be defined standalone or on objects</p>
+          <pre class="" data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            function myFunction() {};
+
+            const obj = {
+              prop: '',
+              function func() {
+
+              }
+            }
+          </script></code></pre>
+        </section>
+        <section>
+          <h3><code class="inline">this</code> and functions</h3>
+        </section>
+        <section>
+          <p>depending on where and how a function is defined the keyword <code class="inline">this</code> refers to
+            different objects</p>
+        </section>
+        <section>
+          <pre class="" data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            function func() {
+              console.log(this);
+            }
+          </script></code></pre>
+          <p><code class="inline">this</code> will be the global object (window on browsers)</p>
+        </section>
+        <section>
+          <pre class="" data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            let obj = {
+              function func() {
+                console.log(this);
+              }
+            }
+          </script></code></pre>
+          <p><code class="inline">this</code> will reference to the <b>owning object</b></p>
+        </section>
+        <section>
+          <p>You can change the <code class="inline">this</code> scope of functions with the builtin methods <code
+              class="inline">call</code> and <code class="inline">apply</code> or <code class="inline">bind</code></p>
+          <p><small><code class="inline">call</code> and <code class="inline">apply</code> differ only by its
+              API</small></p>
+        </section>
+        <section data-auto-animate="">
+          <pre class="" data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            let obj1 = {
+              name: 'foo'
+            }
+            let obj2 = {
+              name: 'bar'
+            }
+            function func() {
+              console.log(this.name);
+            }
+
+            func.apply(obj1);
+            func.apply(obj2);
+          </script></code></pre>
+        </section>
+        <section data-auto-animate="">
+          <pre class="" data-id="code"><code data-trim class="language-javascript" data-line-numbers="11"><script type="text/template">
+            let obj1 = {
+              name: 'foo'
+            }
+            let obj2 = {
+              name: 'bar'
+            }
+            function func() {
+              console.log(this.name);
+            }
+
+            func.apply(obj1);
+            func.apply(obj2);
+          </script></code></pre>
+          <p>this will manipulate the scope of the function <code class="inline">func</code> to use <code
+              class="inline">obj1</code> and return 'foo'</p>
+        </section>
+        <section data-auto-animate="">
+          <pre class="" data-id="code"><code data-trim class="language-javascript" data-line-numbers="12"><script type="text/template">
+            let obj1 = {
+              name: 'foo'
+            }
+            let obj2 = {
+              name: 'bar'
+            }
+            function func() {
+              console.log(this.name);
+            }
+
+            func.apply(obj1);
+            func.apply(obj2);
+          </script></code></pre>
+          <p>this will manipulate the scope of the function <code class="inline">func</code> to use <code
+              class="inline">obj2</code> and return 'bar'</p>
+        </section>
+        <section>
+          <p>With the <code class="inline">bind</code> function you can create a new function reference where the scope
+            is always bound to a specific object</p>
+        </section>
+        <section data-auto-animate="">
+          <pre class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            let obj1 = {
+              name: 'foo'
+            }
+            let obj2 = {
+              name: 'bar'
+            }
+            function func() {
+              console.log(this.name);
+            }
+
+            const obj1Func = func.bind(obj1);
+            obj1Func();
+          </script></code></pre>
+        </section>
+        <section data-auto-animate="">
+          <pre class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="11"><script type="text/template">
+            let obj1 = {
+              name: 'foo'
+            }
+            let obj2 = {
+              name: 'bar'
+            }
+            function func() {
+              console.log(this.name);
+            }
+
+            const obj1Func = func.bind(obj1);
+            obj1Func();
+          </script></code></pre>
+          <p>Create a new function reference of function <code class="inline">func</code> which is fixed bound to <code
+              class="inline">obj1</code></p>
+        </section>
+        <section data-auto-animate="">
+          <pre class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="12"><script type="text/template">
+            let obj1 = {
+              name: 'foo'
+            }
+            let obj2 = {
+              name: 'bar'
+            }
+            function func() {
+              console.log(this.name);
+            }
+
+            const obj1Func = func.bind(obj1);
+            obj1Func();
+          </script></code></pre>
+          <p>Executing the bound function <code class="inline">obj1Func</code> will always use <code
+              class="inline">obj1</code> as this and return 'foo'</p>
+        </section>
+        <section>
+          <h3>difference <code class="inline">function</code> and <code class="inline">=&gt;</code></h3>
+        </section>
+        <section>
+          <p>functions defined with the fat arrow function <code class="inline">=&gt;</code> will <b>always</b> create a
+            function where <code class="inline">this</code> is bound the the lexical scope</p>
+        </section>
+        <section data-auto-animate="">
+          <pre class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            let obj1 = {
+              name: 'foo',
+              func: () => {
+                console.log(this.name);
+              }
+            }
+            let obj2 = {
+                name: 'bar'
+            }
+          </script></code></pre>
+        </section>
+        <section data-auto-animate="">
+          <pre class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="11"><script type="text/template">
+            let obj1 = {
+              name: 'foo',
+              func: () => {
+                console.log(this.name);
+              }
+            }
+            let obj2 = {
+                name: 'bar'
+            }
+
+            obj1.func(); // will result in 'undefined'
+          </script></code></pre>
+          <p>when executing the function <code class="inline">func</code> the <code class="inline">this</code> scope
+            within the function will point to the lexical scope which in this case is the global window object on
+            browsers</p>
+        </section>
+        <section data-auto-animate="">
+          <pre class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="11"><script type="text/template">
+            let obj1 = {
+              name: 'foo',
+              func: () => {
+                console.log(this.name);
+              }
+            }
+            let obj2 = {
+                name: 'bar'
+            }
+
+            obj1.func.apply(obj2); // will result in 'undefined'
+          </script></code></pre>
+          <p>Applying a new scope to the function will have no effect</p>
+        </section>
+        <section data-auto-animate="">
+          <pre class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="13"><script type="text/template">
+            let obj1 = {
+              name: 'foo',
+              func() {
+                return () => {
+                  console.log(this.name);
+                }
+              }
+            }
+            let obj2 = {
+                name: 'bar'
+            }
+
+            obj1.func()(); // will result in 'foo'
+          </script></code></pre>
+          <p>If we change the function 'func' to a regular function which <code class="this">this</code> pointing to the
+            owning object the returned fat-arrow function will use this scope and return the desired value</p>
+        </section>
+        <section>
+          <p>In javascript only <code class="inline">class</code> and <code class="inline">function</code> create a
+            lexical scope, <code class="inline">this</code> within functions always references to the owning object or
+            global scope, <code class="inline">this</code> for fat-arrow functions always reference to the current
+            lexical scope</p>
+        </section>
+        <section>
+          <p><b>Important:</b> JS modules do <b>not</b> have a global this object</p>
+        </section>
+        <section data-auto-animate="">
+          <pre class=""
+            data-id="code2"><code data-trim class="language-html" data-line-numbers="1-6" data-code="snippets/javascript.module.nomodule.scope.html"></code></pre>
+          <p>loading js as a regular js file will have a global <code class="inline">this</code> reference to window</p>
+        </section>
+        <section data-auto-animate="">
+          <pre class=""
+            data-id="code2"><code data-trim class="language-html" data-line-numbers="7-12" data-code="snippets/javascript.module.nomodule.scope.html"></code></pre>
+          <p>loading js as a module js file will <b>not</b> have a global <code class="inline">this</code> reference to
+            window</p>
+        </section>
+        <section>
+          <h3>Closures</h3>
+        </section>
+        <section data-auto-animate="">
+          <pre class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+          let y = 1;
+          function func() {
+              var test = 1;
+              return function() {
+                  return (test++) + y;
+              }
+          }
+          </script></code></pre>
+        </section>
+        <section data-auto-animate="">
+          <pre class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="5,3,1"><script type="text/template">
+          let y = 1;
+          function func() {
+              var test = 1;
+              return function() {
+                  return (test++) + y;
+              }
+          }
+          </script></code></pre>
+          <p>both variable <code class="inline">y</code> and variable <code class="inline">test</code> are accessible
+            from the function</p>
+        </section>
+        <section data-auto-animate="">
+          <pre class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="8"><script type="text/template">
+          let y = 1;
+          function func() {
+              var test = 1;
+              return function() {
+                  return (test++) + y;
+              }
+          }
+          const closure = func();
+          closure() // will return 3
+          </script></code></pre>
+          <p>The function returned when invoking test will retain its scope and all the variables accessible in it in
+            its own closure scope</p>
+        </section>
+        <section data-auto-animate="">
+          <pre class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="3"><script type="text/template">
+          let y = 1;
+          function func() {
+              var test = 1;
+              return function() {
+                  return (test++) + y;
+              }
+          }
+          const closure = func();
+          y = 5;
+          closure() // will return 7
+          </script></code></pre>
+          <p>This can be used to hide implementation details or information, in this case the variable test is only
+            accessible via the function returned by <code class="inline">func</code></p>
+        </section>
+        <section>
+          <pre class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            var i = 0;
+            (function() {
+              // new scope, all declaration are only alive within this scope;
+              y = i + 1;
+              console.log(y)
+            })()
+            </script></code></pre>
+          <p>This pattern for information hiding and lexical scope creation is often used in form of iife (Immediately
+            invoked function expression)</p>
+        </section>
       </section>
 
       <section>
         <section data-background="var(--radial-background)">
           <h2>Classes and Prototypes</h2>
         </section>
+        <section>
+          <p>javascript does not have a specific class type, the <code class="inline">class</code> keyword is syntactic
+            sugar for the prototype inheritance model of javascript</p>
+        </section>
+        <section data-auto-animate="">
+          <div class="r-hstack">
+            <pre style="width: 45%;" class="" data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+              function MyClass() {
+              }
+              MyClass.prototype = {
+                myProp: '1',
+                doSomethingInClass() {
+                  return 'world';
+                }
+              }
+            </script></code></pre>
+            <pre style="width: 45%;" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+              class MyClass {
+                myProp = '1';
+
+                constructor() {
+                }
+
+                doSomethingInClass() {
+                  return 'world';
+                }
+              }
+            </script></code></pre>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <div class="r-hstack">
+            <pre style="width: 45%;" class="" data-id="code"><code data-trim class="language-javascript" data-line-numbers="1-2"><script type="text/template">
+              function MyClass() {
+              }
+              MyClass.prototype = {
+                myProp: '1',
+                doSomethingInClass() {
+                  return 'world';
+                }
+              }
+            </script></code></pre>
+            <pre style="width: 45%;" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="4-5"><script type="text/template">
+              class MyClass {
+                myProp = '1';
+
+                constructor() {
+                }
+
+                doSomethingInClass() {
+                  return 'world';
+                }
+              }
+            </script></code></pre>
+          </div>
+          <p>The class constructor</p>
+        </section>
+        <section data-auto-animate="">
+          <div class="r-hstack">
+            <pre style="width: 45%;" class="" data-id="code"><code data-trim class="language-javascript" data-line-numbers="4"><script type="text/template">
+              function MyClass() {
+              }
+              MyClass.prototype = {
+                myProp: '1',
+                doSomethingInClass() {
+                  return 'world';
+                }
+              }
+            </script></code></pre>
+            <pre style="width: 45%;" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="2"><script type="text/template">
+              class MyClass {
+                myProp = '1';
+
+                constructor() {
+                }
+
+                doSomethingInClass() {
+                  return 'world';
+                }
+              }
+            </script></code></pre>
+          </div>
+          <p>Class properties</p>
+        </section>
+        <section data-auto-animate="">
+          <div class="r-hstack">
+            <pre style="width: 45%;" class="" data-id="code"><code data-trim class="language-javascript" data-line-numbers="5-7"><script type="text/template">
+              function MyClass() {
+              }
+              MyClass.prototype = {
+                myProp: '1',
+                doSomethingInClass() {
+                  return 'world';
+                }
+              }
+            </script></code></pre>
+            <pre style="width: 45%;" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="7-9"><script type="text/template">
+              class MyClass {
+                myProp = '1';
+
+                constructor() {
+                }
+
+                doSomethingInClass() {
+                  return 'world';
+                }
+              }
+            </script></code></pre>
+          </div>
+          <p>Class function</p>
+        </section>
+        <section>
+          <pre style="" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            class Base {
+              baseProp = 'hello';
+            }
+
+            class MyClass extends Base {
+              myProp = 'world';
+              constructor() {
+                super();
+              }
+
+              print() {
+                return this.baseProp + this.myProp;
+              }
+            }
+          </script></code></pre>
+          <p>javascript classes support inheritance</p>
+        </section>
       </section>
+
+
+
 
       <section>
         <section data-background="var(--radial-background)">
-          <h2>Scope, this and Closures</h2>
+          <h2>Module Systems and ES Modules</h2>
         </section>
         <section>
-          global scope, window and globalThis (var vs let,const)
+          <p>Historically all javascript was usually written in one big file and every file shared the same global scope
+            which lead to a lot of problems with name clashes when multiple teams worked on the same project or when new
+            libraries where introduced</p>
         </section>
         <section>
-          modules (no global this)
+          <div class="r-hstack">
+            <pre style="width: 45%;" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+              var JQuery = {
+                getSomething() {}
+              }
+            </script></code></pre>
+            <pre style="width: 45%;" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+              var JQuery = {
+                getSomethingDifferent() {}
+              }
+            </script></code></pre>
+          </div>
+          <p>If you have two libraries of javascript files which used the same namespace, they will overwrite each other
+            depending on which javascript file gets loaded first</p>
         </section>
         <section>
-          this in function scope, arrow functions, classes
+          <p>There where some tricks which could be used to scope your libraries, for example <b>IIFE</b>s</p>
         </section>
         <section>
-          manual scoping and closures: iife
+          <p>Because of all this different module systems began to emerge which where more or less incompatible</p>
         </section>
         <section>
-          closures
+          <h3>currently available module systems</h3>
+          <ul>
+            <li>AMD</li>
+            <li>SystemJS</li>
+            <li>commonJS (was adapted by node.js)</li>
+            <li>UMD (which supports all the former)</li>
+          </ul>
+        </section>
+        <section>
+          <p>To tackle this problem the TC39 introduced ES modules with the 6th edition (ES2015) after a long discussion
+          </p>
+        </section>
+        <section>
+          <h3>AMD</h3>
+          <p><small>asynchronous Module Definition</small></p>
+          <pre style="" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            // file mymodule.js
+            define(['require', 'exports', './dependency1.js', './dependency2.js'], function (require, exports, dependency1, dependency2) {
+              const otherdependecy = require('otherdependecy');
+              exports.func = function() {
+
+              }
+            });
+          </script></code></pre>
+          <p>modules had a name (which could be the actual file name or a synthetic identifer) and export functions and
+            properties, modules could be loaded asynchronous</p>
+        </section>
+        <section>
+          <h3>CommonJs</h3>
+          <p><small>Adopted by node.js</small></p>
+          <pre style="" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            // file mymodule.js
+            const dependency1 = require('./dependency1.js');
+            const dependency2 = require('./dependency2.js');
+            const otherdependecy = require('otherdependecy');
+
+            module.exports = {
+              fun: function() {
+
+              }
+            }
+          </script></code></pre>
+          <p>Modules are file based or synthetic (resolved by a module loader), module resolution is sequential, modules
+            can export properties and functions</p>
+        </section>
+        <section data-auto-animate="">
+          <h3>ES Modules</h3>
+          <p><small>Available in node.js &gt;= 14.0.0 and modern browsers</small></p>
+          <pre style="" class="" data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            // file mymodule.js
+            import { func } from './dependency1.js';
+            import * as dep2 from './dependency2.js'
+            import './dependency3.js';
+
+            const dynamicDependency = await import('otherdependecy').func;
+
+            export const constvar = '1';
+            export function func() {
+              return 'hello world'
+            }
+          </script></code></pre>
+          <p>Modules are file based or synthetic (<b>module loader/bundler needed</b>), module resolution can be
+            asynchronous</p>
+        </section>
+        <section data-auto-animate="">
+          <pre style="" class="" data-id="code"><code data-trim class="language-javascript" data-line-numbers="2"><script type="text/template">
+            // file mymodule.js
+            import { func } from './dependency1.js';
+            import * as dep2 from './dependency2.js'
+            import './dependency3.js';
+
+            const dynamicDependency = (await import('otherdependecy')).func;
+
+            export const constvar = '1';
+            export function func() {
+              return 'hello world'
+            }
+          </script></code></pre>
+          <p>You can import specific function exported by other modules</p>
+        </section>
+        <section data-auto-animate="">
+          <pre style="" class="" data-id="code"><code data-trim class="language-javascript" data-line-numbers="3"><script type="text/template">
+            // file mymodule.js
+            import { func } from './dependency1.js';
+            import * as dep2 from './dependency2.js'
+            import './dependency3.js';
+
+            const dynamicDependency = (await import('otherdependecy')).func;
+
+            export const constvar = '1';
+            export function func() {
+              return 'hello world'
+            }
+          </script></code></pre>
+          <p>You can import the whole namespace of another module</p>
+        </section>
+        <section data-auto-animate="">
+          <pre style="" class="" data-id="code"><code data-trim class="language-javascript" data-line-numbers="4"><script type="text/template">
+            // file mymodule.js
+            import { func } from './dependency1.js';
+            import * as dep2 from './dependency2.js'
+            import './dependency3.js';
+
+            const dynamicDependency = (await import('otherdependecy')).func;
+
+            export const constvar = '1';
+            export function func() {
+              return 'hello world'
+            }
+          </script></code></pre>
+          <p>You can import a module only for its side effects</p>
+        </section>
+        <section data-auto-animate="">
+          <pre style="" class="" data-id="code"><code data-trim class="language-javascript" data-line-numbers="6"><script type="text/template">
+            // file mymodule.js
+            import { func } from './dependency1.js';
+            import * as dep2 from './dependency2.js'
+            import './dependency3.js';
+
+            const dynamicDependency = (await import('otherdependecy')).func;
+
+            export const constvar = '1';
+            export function func() {
+              return 'hello world'
+            }
+          </script></code></pre>
+          <p>You can dynamically load modules (in this case top-level await must be supported) everywhere in your code
+          </p>
+        </section>
+        <section data-auto-animate="">
+          <pre style="" class="" data-id="code"><code data-trim class="language-javascript" data-line-numbers="8-11"><script type="text/template">
+            // file mymodule.js
+            import { func } from './dependency1.js';
+            import * as dep2 from './dependency2.js'
+            import './dependency3.js';
+
+            const dynamicDependency = (await import('otherdependecy')).func;
+
+            export const constvar = '1';
+            export function func() {
+              return 'hello world'
+            }
+          </script></code></pre>
+          <p>You can export variables, functions, classes and objects</p>
+        </section>
+        <section data-auto-animate="">
+          <pre style="" class="" data-id="code"><code data-trim class="language-javascript" data-line-numbers="2-4"><script type="text/template">
+            // file mymodule.js
+            import { func } from './dependency1.js';
+            import * as dep2 from './dependency2.js'
+            import './dependency3.js';
+
+            const dynamicDependency = (await import('otherdependecy')).func;
+
+            export const constvar = '1';
+            export function func() {
+              return 'hello world'
+            }
+          </script></code></pre>
+          <p>All import statements (except dynamic imports) must always be at the beginning of your file</p>
+        </section>
+        <section data-auto-animate="">
+          <pre style="" class="" data-id="code"><code data-trim class="language-javascript" data-line-numbers="8,9"><script type="text/template">
+            // file mymodule.js
+            import { func } from './dependency1.js';
+            import * as dep2 from './dependency2.js'
+            import './dependency3.js';
+
+            const dynamicDependency = (await import('otherdependecy')).func;
+
+            export const constvar = '1';
+            export function func() {
+              return 'hello world'
+            }
+          </script></code></pre>
+          <p>Export statements can be everywhere in your file but must be on the top scope</p>
+        </section>
+        <section>
+          <table>
+            <tr>
+              <td></td>
+              <td>node.js</td>
+              <td>browser</td>
+            </tr>
+            <tr>
+              <td>AMD</td>
+              <td>❌</td>
+              <td>(✔) Only with library</td>
+            </tr>
+            <tr>
+              <td>UMD</td>
+              <td>(✔)</td>
+              <td>(✔) Only with library</td>
+            </tr>
+            <tr>
+              <td>CommonJs</td>
+              <td>✔</td>
+              <td>❌</td>
+            </tr>
+            <tr>
+              <td>ES Modules</td>
+              <td>✔ (&gt;=14.0.0)</td>
+              <td>✔</td>
+            </tr>
+          </table>
+        </section>
+        <section>
+          <p><a href="https://www.typescriptlang.org/">Typescript</a> and <a href="https://babeljs.io/">Babel</a> can
+            transform and output different module types. There are also module bundlers available (<a
+              href="https://webpack.js.org/">Webpack</a>, <a href="https://rollupjs.org/guide/en/">Rollup</a> which statically analyze your modules and output performant bundles</p>
         </section>
       </section>
 
+
+
       <section>
         <section data-background="var(--radial-background)">
-          <h2>ES Modules</h2>
+          <h2>TC 39 and Javascript Editions</h2>
         </section>
         <section>
-          <h3>History</h3>
-          <p>no concept (global scope), then amd (commonjs), systemjs, </p>
+          <p>The Technical Commitee 39 steers and decided on how to proceed with proposals to further developer ES262
+            and javascript, this is done in an open process where everybody can contribute to</p>
+          <p><a href="https://developer.mozilla.org/en-US/docs/Glossary/Hoisting"><span class="highlight"><i
+                  class="fab fa-github"></i>https://github.com/tc39</span></a></p>
         </section>
         <section>
-          <h3>ES Modules vs commonJS</h3>
+          <h3>Selection process</h3>
+          <img class="r-stretch" src="assets/tc39-process.svg" />
         </section>
-      </section>
-
-
-      <section>
-        <section data-background="var(--radial-background)">
-          <h2>Editions</h2>
+        <section>
+          <p>All approved proposals which reached Stage 4 within a year will be summarized in a new ECMA Script Edition
+            stating the current year</p>
         </section>
-        <section>ES1, 2, 3, (4), 5, 6 (2015), 2016, 2017, 2018, 2019, 2020, 2021</section>
-      </section>
-
-
-
-      <section>
-        <section data-background="var(--radial-background)">
-          <h2>TC 39</h2>
+        <section>
+          <h3>Current editions</h3>
+          <ul>
+            <li>ES1</li>
+            <li>ES2</li>
+            <li>ES3</li>
+            <li>ES4 (never happened)</li>
+            <li>ES5</li>
+            <li>ES2015</li>
+            <li>ES2015</li>
+            <li>ES2016</li>
+            <li>ES2017</li>
+            <li>...</li>
+          </ul>
         </section>
-        <section>https://exploringjs.com/impatient-js/ch_history.html#tc39-process</section>
+        <section>
+          <h3>Compatibility</h3>
+        </section>
+        <section>
+          <p>For some new features it is possible to make them available in older browsers with the help of "polyfills".
+            New language features will mostly break in javascript engines in older browsers, in this case you need to
+            use transpilers to transform this features to a lower ES edition. Notable transpilers are the <a
+              href="https://www.typescriptlang.org/">Typescript Compiler</a> and the <a href="https://babeljs.io/">Babel
+              Project</a></p>
+        </section>
       </section>
     </div>
   </div>
