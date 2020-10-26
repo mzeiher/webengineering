@@ -2707,8 +2707,11 @@
               }
             }
           </script></code></pre>
-          <p>the <code class="inline">yield</code> keyword will return a value a wait for the next <code class="inline">next()</code> call</p>
-          <p><small>because <code class="inline">yield</code> interrupts the loop until <code class="inline">next()</code> is called, this infinite-loop will not block the javascript process</small></p>
+          <p>the <code class="inline">yield</code> keyword will return a value a wait for the next <code
+              class="inline">next()</code> call</p>
+          <p><small>because <code class="inline">yield</code> interrupts the loop until <code
+                class="inline">next()</code> is called, this infinite-loop will not block the javascript process</small>
+          </p>
         </section>
         <section data-auto-animate="">
           <pre style="" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="5"><script type="text/template">
@@ -2720,7 +2723,8 @@
               }
             }
           </script></code></pre>
-          <p>A <code class="inline">return</code> keyword will return an iterator item with the <code class="inline">done</code> flag set to true, thus closing the iterator</p>
+          <p>A <code class="inline">return</code> keyword will return an iterator item with the <code
+              class="inline">done</code> flag set to true, thus closing the iterator</p>
         </section>
         <section data-auto-animate="">
           <pre style="" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="5-7"><script type="text/template">
@@ -2775,6 +2779,67 @@
         </section>
       </section>
 
+
+
+      <section>
+        <section data-background="var(--radial-background)">
+          <h2>Javascript Eventloop</h2>
+        </section>
+        <section>
+          <p>Javascript is single threaded so every work done will block the whole process</p>
+        </section>
+        <section>
+          <p>Javascript also offers a task concept with different hooks where you can enqueue tasks which are then run
+            on a specified time</p>
+        </section>
+        <section>
+          <p>For real parallelism javascript offers <code class="inline">WebWorkers</code> which can spawn real parallel
+            processes</p>
+        </section>
+        <section>
+          <h3>The javascript event loop</h3>
+        </section>
+        <section>
+          <img class="r-stretch" src="assets/eventloop.svg" />
+        </section>
+        <section>
+          <div
+            style="background: url('assets/eventloop.svg'); background-repeat: none; height: 300px; width:300px;background-repeat: no-repeat;background-size: cover;background-position: -144px -142px; margin: 0 auto">
+          </div>
+          <h3>The Task queue</h3>
+        </section>
+        <section>
+          <div class="r-hstack">
+            <div style="width: 30%">
+              <div
+                style="background: url('assets/eventloop.svg'); background-repeat: none; height: 300px; width:300px;background-repeat: no-repeat;background-size: cover;background-position: -144px -142px;margin: 0 auto">
+              </div>
+            </div>
+            <div style="width: 55%">
+              <ul style="margin-left: 3em; font-size: 0.8em">
+                <li>FIFO Task queue</li>
+                <li>New Tasks are appended at the end of the queue</li>
+                <li>Most callbacks from the engine a queued here</li>
+                <li>The javascript process picks the first item, processes it and continues in the event loop</li>
+                <li>Task can be queued with
+                  <ul>
+                    <li><code class="inline">globalThis.setTimeout()</code></li>
+                    <li><code class="inline">globalThis.setInterval()</code></li>
+                    <li><code class="inline">globalThis.postMessage()</code></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section>
+          <p><span class="highlight"><i class="fas fa-play-circle"></i><a
+                href="https://www.youtube.com/watch?v=cCOL7MC4Pl0&vl=en">In The Loop</a></span></p>
+          <p><span class="highlight"><i class="fas fa-play-circle"></i><a href="https://vimeo.com/254947206">In The Loop
+                - extended talk</a></span></p>
+
+        </section>
+      </section>
 
       <section>
         <section data-background="var(--radial-background)">
