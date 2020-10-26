@@ -1965,19 +1965,83 @@
         <section>
           <h3>Set</h3>
         </section>
-        <section>
-          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="4"><script type="text/template">
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
             const set = new Set();
-            set.put('key');
-            set.has('key');
-            set.delete('key');
+            set.put('value');
+            set.has('value');
+            set.delete('value');
             Array.from(set.entries());
-            Array.from(set.keys());
             Array.from(set.values());
           </script></code></pre>
-          <p>Check if a key exists</p>
+          <p>A Set can store simple values like an array but the order of entries is not preserved</p>
+          <p><small>An array is optimized for random access on a fixed data structure with a known index, a set is
+              optimized for a growing data structure where the value is known</small></p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="1"><script type="text/template">
+            const set = new Set();
+            set.put('value');
+            set.has('value');
+            set.delete('value');
+            Array.from(set.entries());
+            Array.from(set.values());
+          </script></code></pre>
+          <p>Create a new Set</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="2"><script type="text/template">
+            const set = new Set();
+            set.put('value');
+            set.has('value');
+            set.delete('value');
+            Array.from(set.entries());
+            Array.from(set.values());
+          </script></code></pre>
+          <p>Add a new value into the set</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="3"><script type="text/template">
+            const set = new Set();
+            set.put('value');
+            set.has('value');
+            set.delete('value');
+            Array.from(set.entries());
+            Array.from(set.values());
+          </script></code></pre>
+          <p>Check if value is present in a set</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="4"><script type="text/template">
+            const set = new Set();
+            set.put('value');
+            set.has('value');
+            set.delete('value');
+            Array.from(set.entries());
+            Array.from(set.values());
+          </script></code></pre>
+          <p>Remove a value from a set</p>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="5,6"><script type="text/template">
+            const set = new Set();
+            set.put('value');
+            set.has('value');
+            set.delete('value');
+            Array.from(set.entries());
+            Array.from(set.values());
+          </script></code></pre>
+          <p>Get an iterator for the set</p>
+        </section>
+        <section>
+          <h3>WeakSet</h3>
+        </section>
+        <section>
+          <p>Same as the map, the set also has an weak reference based pendant called WeakSet</p>
         </section>
       </section>
+
+
 
       <section>
         <section data-background="var(--radial-background)">
@@ -2213,7 +2277,7 @@
           <p>Applying a new scope to the function will have no effect</p>
         </section>
         <section data-auto-animate="">
-          <pre class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="13"><script type="text/template">
+          <pre class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="3, 13"><script type="text/template">
             let obj1 = {
               name: 'foo',
               func() {
@@ -2228,8 +2292,10 @@
 
             obj1.func()(); // will result in 'foo'
           </script></code></pre>
-          <p>If we change the function 'func' to a regular function which <code class="this">this</code> pointing to the
-            owning object the returned fat-arrow function will use this scope and return the desired value</p>
+          <p>If we change the function 'func' to a regular function which lets <code class="this">this</code> point to
+            the
+            owning object and return the fat-arrow function, it will use the this from the last function declaration and
+            return the desired value</p>
         </section>
         <section>
           <p>In javascript only <code class="inline">class</code> and <code class="inline">function</code> create a
@@ -2322,6 +2388,9 @@
             invoked function expression)</p>
         </section>
       </section>
+
+
+
 
       <section>
         <section data-background="var(--radial-background)">
@@ -2455,11 +2524,256 @@
               }
             }
           </script></code></pre>
-          <p>javascript classes support inheritance</p>
+          <p>javascript classes also support inheritance</p>
+        </section>
+
+      </section>
+
+
+
+      <section>
+        <section data-background="var(--radial-background)">
+          <h2>Iterators</h2>
+        </section>
+        <section>
+          <p>As already discussed in the <code class="inline">Symbol</code> and Loops chapter, javascript has a concept
+            of iterators. You can define your own iterators and make every object iterable</p>
+          <p><small>Most javascript built-in object support iterators, <code class="inline">Array</code>, <code
+                class="inline">Map</code>, <code class="inline">Set</code>,...</small></p>
+        </section>
+        <section data-auto-animate>
+          <pre style="" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            const getNextNumber = {
+              i: 0,
+              [Symbol.iterator]: function() {
+                return {
+                  next: () => {
+                    return {
+                      value: i++,
+                      done: false
+                    }
+                  }
+                }
+              }
+            }
+          </script></code></pre>
+          <p>Lets create a simple number generator</p>
+        </section>
+        <section data-auto-animate>
+          <pre style="" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="3"><script type="text/template">
+            const getNextNumber = {
+              i: 0,
+              [Symbol.iterator]: function() {
+                return {
+                  next: () => {
+                    return {
+                      value: i++,
+                      done: false
+                    }
+                  }
+                }
+              }
+            }
+          </script></code></pre>
+          <p>To make any object iterable you have to define a function property with the fixed symbol <code
+              class="inline">Symbol.iterator</code></p>
+        </section>
+        <section data-auto-animate>
+          <pre style="" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="4,11"><script type="text/template">
+            const getNextNumber = {
+              i: 0,
+              [Symbol.iterator]: function() {
+                return {
+                  next: () => {
+                    return {
+                      value: i++,
+                      done: false
+                    }
+                  }
+                }
+              }
+            }
+          </script></code></pre>
+          <p>The iterator function must return a new object...</p>
+        </section>
+        <section data-auto-animate>
+          <pre style="" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="5"><script type="text/template">
+            const getNextNumber = {
+              i: 0,
+              [Symbol.iterator]: function() {
+                return {
+                  next: () => {
+                    return {
+                      value: i++,
+                      done: false
+                    }
+                  }
+                }
+              }
+            }
+          </script></code></pre>
+          <p>...which in turn has a function called <code class="inline">next</code>...</p>
+        </section>
+        <section data-auto-animate>
+          <pre style="" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="6-9"><script type="text/template">
+            const getNextNumber = {
+              i: 0,
+              [Symbol.iterator]: function() {
+                return {
+                  next: () => {
+                    return {
+                      value: i++,
+                      done: false
+                    }
+                  }
+                }
+              }
+            }
+          </script></code></pre>
+          <p>...which returns an object with the properties <code class="inline">value</code> which holds the actual
+            value and a boolean property called <code class="inline">done</code> which indicates the end of the iterator
+          </p>
+        </section>
+        <section data-auto-animate="">
+          <pre style="" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="5-7"><script type="text/template">
+            const getNextNumber = {
+              ...
+            }
+
+            for(const num of getNextNumber) {
+              console.log(num) // will return a new number
+            }
+
+            const it = getNextNumber[Symbol.iterator]();
+            let nextValue = it.next();
+            while(!nextValue.done) {
+              console.log(nextValue.value);
+              nextValue = it.next();
+            }
+          </script></code></pre>
+          <p>Now you can iterate over your object with a for loop...</p>
+        </section>
+        <section data-auto-animate="">
+          <pre style="" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="9-14"><script type="text/template">
+            const getNextNumber = {
+              ...
+            }
+
+            for(const num of getNextNumber) {
+              console.log(num) // will return a new number
+            }
+
+            const it = getNextNumber[Symbol.iterator]();
+            let nextValue = it.next();
+            while(!nextValue.done) {
+              console.log(nextValue.value);
+              nextValue = it.next();
+            }
+          </script></code></pre>
+          <p>...or manually by using the iterator directly</p>
+        </section>
+        <section>
+          <h3>Generator functions</h3>
+        </section>
+        <section data-auto-animate="">
+          <pre style="" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            function *getNextNumber() {
+              const i = 0;
+              while(true) {
+                yield i++; // returns { value: i, done: false }
+              }
+            }
+          </script></code></pre>
+          <p>The previous example can also be simplified with a generator function</p>
+        </section>
+        <section data-auto-animate="">
+          <pre style="" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="1"><script type="text/template">
+            function *getNextNumber() {
+              const i = 0;
+              while(true) {
+                yield i++;
+              }
+            }
+          </script></code></pre>
+          <p><code class="inline">function</code> declarations followed by an asterisk (<code class="inline">*</code>)
+            are so called generator functions</p>
+        </section>
+        <section data-auto-animate="">
+          <pre style="" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="4"><script type="text/template">
+            function *getNextNumber() {
+              const i = 0;
+              while(true) {
+                yield i++;
+              }
+            }
+          </script></code></pre>
+          <p>the <code class="inline">yield</code> keyword will return a value a wait for the next <code class="inline">next()</code> call</p>
+          <p><small>because <code class="inline">yield</code> interrupts the loop until <code class="inline">next()</code> is called, this infinite-loop will not block the javascript process</small></p>
+        </section>
+        <section data-auto-animate="">
+          <pre style="" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="5"><script type="text/template">
+            function *getNextNumber() {
+              const i = 0;
+              while(true) {
+                yield i++; // will return { value: i, done: false }
+                if(i > 100) return i; // will return { value: i, done: true }
+              }
+            }
+          </script></code></pre>
+          <p>A <code class="inline">return</code> keyword will return an iterator item with the <code class="inline">done</code> flag set to true, thus closing the iterator</p>
+        </section>
+        <section data-auto-animate="">
+          <pre style="" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="5-7"><script type="text/template">
+            function *getNextNumber() {
+              ...
+            }
+
+            for(const num of getNextNumber()) {
+              console.log(num) // will return a new number
+            }
+
+            const it = getNextNumber();
+            let nextValue = it.next();
+            while(!nextValue.done) {
+              console.log(nextValue.value);
+              nextValue = it.next();
+            }
+          </script></code></pre>
+          <p>Now you can iterate over your object with a for loop...</p>
+        </section>
+        <section data-auto-animate="">
+          <pre style="" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="9-14"><script type="text/template">
+            function *getNextNumber() {
+              ...
+            }
+
+            for(const num of getNextNumber()) {
+              console.log(num) // will return a new number
+            }
+
+            const it = getNextNumber();
+            let nextValue = it.next();
+            while(!nextValue.done) {
+              console.log(nextValue.value);
+              nextValue = it.next();
+            }
+          </script></code></pre>
+          <p>...or manually by using the iterator directly</p>
         </section>
       </section>
 
 
+
+
+
+      <section>
+        <section data-background="var(--radial-background)">
+          <h2>async/await</h2>
+        </section>
+        <section>
+          <p></p>
+        </section>
+      </section>
 
 
       <section>
@@ -2703,7 +3017,8 @@
         <section>
           <p><a href="https://www.typescriptlang.org/">Typescript</a> and <a href="https://babeljs.io/">Babel</a> can
             transform and output different module types. There are also module bundlers available (<a
-              href="https://webpack.js.org/">Webpack</a>, <a href="https://rollupjs.org/guide/en/">Rollup</a> which statically analyze your modules and output performant bundles</p>
+              href="https://webpack.js.org/">Webpack</a>, <a href="https://rollupjs.org/guide/en/">Rollup</a> which
+            statically analyze your modules and output performant bundles</p>
         </section>
       </section>
 
