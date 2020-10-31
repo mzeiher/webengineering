@@ -38,7 +38,6 @@
             <header class="chapter">
               <h2>Interesting resources</h2>
             </header>
-
           </div>
         </section>
         <section>
@@ -1993,7 +1992,7 @@
               <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
                 do {
                   // do something
-            } while(<expression>)
+                } while(<expression>)
             </script></code></pre>
               <p>a do while loop is the same as a while loop with the distinction that the expression is evaluated
                 <b>after</b> every loop round</p>
@@ -3846,7 +3845,40 @@
             </main>
           </div>
         </section>
-        <section>
+        <section data-auto-animate="">
+          <div class="sick-grid">
+            <main>
+              <pre style="" class="" data-id="code3"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+                class MyClass {
+                  prop = 'test';
+                  getProp() {
+                    return this.prop;
+                  }
+                }
+
+                const myClassInstance = new MyClass();
+              </script></code></pre>
+              <p>javascript classes/constructor functions can be instantiated with the keyword <code
+                  class="inline">new</code></p>
+            </main>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <div class="sick-grid">
+            <main>
+              <pre style="" class="" data-id="code3"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+                ...
+
+                const myClassInstance = new MyClass();
+
+                myClassInstance.getProp(); // returns 'test';
+                myClassInstance.prop = 'hello world'; // set the property on the class instance
+              </script></code></pre>
+              <p>You can access the properties and functions defined on the class</p>
+            </main>
+          </div>
+        </section>
+        <section data-auto-animate="">
           <div class="sick-grid">
             <main>
               <pre style="" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
@@ -3869,7 +3901,104 @@
             </main>
           </div>
         </section>
+        <section data-auto-animate="">
+          <div class="sick-grid">
+            <main>
+              <pre style="" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="8"><script type="text/template">
+                class Base {
+                  baseProp = 'hello';
+                }
+                
+                class MyClass extends Base {
+                  myProp = 'world';
+                  constructor() {
+                    super();
+                  }
+                  
+                  print() {
+                    return this.baseProp + this.myProp;
+                  }
+                }
+              </script></code></pre>
+              <p>if you you extend another class you have to call the constructor of the parent (super) class</p>
+              <p><small>If your constructor is empty you can also omit the constructor on the class definition</small>
+              </p>
+            </main>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <div class="sick-grid">
+            <main>
+              <pre style="" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="2,6,12"><script type="text/template">
+                class Base {
+                  baseProp = 'hello';
+                }
+                
+                class MyClass extends Base {
+                  myProp = 'world';
+                  constructor() {
+                    super();
+                  }
+                  
+                  print() {
+                    return this.baseProp + this.myProp;
+                  }
+                }
+              </script></code></pre>
+              <p>javascript will lookup functions and properties within the prototype chain of the prototype object,
+                thus allowing you to access functions and properties defined in super classes</p>
+            </main>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <div class="sick-grid">
+            <main>
+              <pre style="" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="12"><script type="text/template">
+                class Base {
+                  baseProp = 'hello';
+                  print() {
+                    return 'hello world on base class'
+                  }
+                }
+                
+                class MyClass extends Base {
+                  myProp = 'world';
+                  
+                  print() {
+                    return super.print();
+                  }
+                }
+              </script></code></pre>
+              <p>with the super keyword you can explicitly call the function defined on a super class</p>
+            </main>
+          </div>
+        </section>
+        <section>
+          <div class="sick-grid">
+            <main>
+              <pre style="" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="12"><script type="text/template">
+                class Base {
+                  #privateMember = 'hello';
 
+                  printPrivateMember() {
+                    return this.#privateMember;
+                  }
+                }
+              </script></code></pre>
+              <p>class fields beginning with a <code class="inline">#</code> are private class fields and only
+                accessible within the specific class</p>
+              <p><small><b>Important</b> not all browsers support private class fields</small></p>
+            </main>
+          </div>
+        </section>
+        <section>
+          <div class="sick-grid">
+            <main>
+              <p>Javascript classes (or prototype objects) are helpful if you want to instantiate multiple objects with
+                the same structure, properties and functions</p>
+            </main>
+          </div>
+        </section>
       </section>
 
 
@@ -4155,7 +4284,7 @@
         <section data-auto-animate="">
           <div class="sick-grid">
             <main>
-              <pre style="" class="" data-id="code2"><code data-trim class="language-javascript" data-line-numbers="9-14"><script type="text/template">
+              <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers="9-14"><script type="text/template">
                 function *getNextNumber() {
                   ...
                 }
@@ -4178,22 +4307,341 @@
       </section>
 
 
-
+      <section>
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+          <h2>Exception Handling</h2>
+        </section>
+        <section data-sick-grid>
+          <p>An exception is an error which can happen during the program execution - or runtime, to prevent a crash or undefined behavior it is important that you guard handle exceptions which happen within your program</p>
+        </section>
+        <section data-sick-grid>
+          <p>Javascript supports exception handling with <code class="inline">try - catch</code> blocks</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            try {
+              // do something where exceptions could happen
+            } 
+            catch(exception) {
+              // run if an exception happens
+            }
+            // resume program
+          </script></code></pre>
+          <p>The try-catch block</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="1-3"><script type="text/template">
+            try {
+              // do something where exceptions could happen
+            } 
+            catch(exception) {
+              // run if an exception happens
+            }
+            // resume program
+          </script></code></pre>
+          <p>try-catch will execute the within the <code class="inline">try</code> block</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="4-6"><script type="text/template">
+            try {
+              // do something where exceptions could happen
+            } 
+            catch(exception) {
+              // run if an exception happens
+            }
+            // resume program
+          </script></code></pre>
+          <p>If an exception happens within the try block the catch block will be executed with the exception passed as an argument</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="7"><script type="text/template">
+            try {
+              // do something where exceptions could happen
+            } 
+            catch(exception) {
+              // run if an exception happens
+            }
+            // resume program
+          </script></code></pre>
+          <p>If no exception happened or the exception was handled within the catch block the normal program flow will continue</p>
+        </section>
+        <section data-sick-grid="">
+          <p>Exceptions which happen somewhere in your code will bubble up the stack until the nearest catch block is found</p>
+        </section>
+        <section data-sick-grid="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="3"><script type="text/template">
+            // do something
+            if(somethingIsWrong) {
+              throw new Error('something is wrong');
+            }
+          </script></code></pre>
+          <p>you can "throw" your own exceptions (Errors) with the <code class="inline">throw</code> keyword</p>
+        </section>
+      </section>
 
 
       <section>
-        <section data-background="assets/javascript-bg.jpg" class="dark">
-          <div class="sick-grid">
-            <header class="chapter">
-              <h2>async/await</h2>
-            </header>
-          </div>
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+          <h2>Promises, async/await</h2>
         </section>
-        <section>
-          <div class="sick-grid">
-            <main>
-            </main>
-          </div>
+        <section data-sick-grid>
+          <h3>Promises</h3>
+        </section>
+        <section data-sick-grid>
+          <p>a promise is a special object that a asynchronous function can return as a placeholder for a value which
+            will resolve some time in the future</p>
+        </section>
+        <section data-sick-grid>
+          <p>Promises can have three states</p>
+          <ul>
+            <li><code class="inline">pending</code> the task which returned the promise is still executing</li>
+            <li><code class="inline">resolved</code> the task finished with a result</li>
+            <li><code class="inline">rejected</code> the task finished with an error</li>
+          </ul>
+        </section>
+        <section data-sick-grid>
+          <p>Promises offer two methods to register a callback to react if the state changes</p>
+          <ul>
+            <li><code class="inline">.then(callback)</code> the then callback will be called with the value which the
+              promised resolved</li>
+            <li><code class="inline">.catch(callback)</code> the catch callback will be called with the reason when a
+              promise was rejected</li>
+          </ul>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code data-trim data-line-numbers="" class="language-javascript">
+            Promise.resolve('value')
+              .then((value) => console.log(value))
+              .catch((reason) => console.error(reason);
+          </code></pre>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code data-trim data-line-numbers="1" class="language-javascript">
+            Promise.resolve('value')
+              .then((value) => console.log(value))
+              .catch((reason) => console.error(reason);
+          </code></pre>
+          <p><code class="inline">Promise.resolve</code> will create a promise which will instantly resolve with the
+            given value</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code data-trim data-line-numbers="2" class="language-javascript">
+            Promise.resolve('value')
+              .then((value) => console.log(value))
+              .catch((reason) => console.error(reason);
+          </code></pre>
+          <p>The callback provided in the <code class="inline">then</code> method will be called with the value of the
+            resolved promise</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code data-trim data-line-numbers="3" class="language-javascript">
+            Promise.resolve('value')
+              .then((value) => console.log(value))
+              .catch((reason) => console.error(reason);
+          </code></pre>
+          <p>The callback provided in the <code class="inline">catch</code> method will be called with the reason why
+            the promise was rejected</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code data-trim data-line-numbers="1,2" class="language-javascript">
+            Promise.resolve('value')
+              .then((value) => console.log(value))
+              .catch((reason) => console.error(reason);
+          </code></pre>
+          <p>In this case the promise will resolve with the value "value" and it will be displayed on the console</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code data-trim data-line-numbers="1,3" class="language-javascript">
+            Promise.reject('error')
+              .then((value) => console.log(value))
+              .catch((reason) => console.error(reason);
+          </code></pre>
+          <p>In this case the promise will reject with the reason "error" and it will be displayed on the console</p>
+        </section>
+        <section data-sick-grid>
+          <p>Most modern APIs which trigger asynchronous tasks will return promises nowaday</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code"><code data-trim data-line-numbers="" class="language-javascript">
+            const promise = new Promise((resolve, reject) => {
+              // do asynchronous work
+              if(workDoneWithoutErrors) {
+                resolve(value);
+              } else {
+                reject(error);
+              }
+            });
+          </code></pre>
+          <p>You can also create your own promise object, by creating a new promise and pass a callback function to the
+            constructor with two arguments <code class="inline">resolve</code> and <code class="inline">reject</code>
+          </p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code"><code data-trim data-line-numbers="4" class="language-javascript">
+            const promise = new Promise((resolve, reject) => {
+              // do asynchronous work
+              if(workDoneWithoutErrors) {
+                resolve(value);
+              } else {
+                reject(error);
+              }
+            });
+          </code></pre>
+          <p>If your work is done, you have to call the <code class="inline">resolve</code> callback with a value</p>
+          <p><small>You can also omit a value, then the promise will resolve with <code
+                class="inline">void</code></small></p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code"><code data-trim data-line-numbers="6" class="language-javascript">
+            const promise = new Promise((resolve, reject) => {
+              // do asynchronous work
+              if(workDoneWithoutErrors) {
+                resolve(value);
+              } else {
+                reject(reason);
+              }
+            });
+          </code></pre>
+          <p>If an error happen during your task, you have to call the <code class="inline">reject</code> callback with
+            a string as a reason</p>
+        </section>
+        <section data-sick-grid="">
+          <pre data-id="code"><code data-trim data-line-numbers="6" class="language-javascript">
+            const promise = new Promise((resolve, reject) => {
+              window.setTimeout(() => {
+                resolve('done');
+              }, 10000)
+            });
+          </code></pre>
+          <p>This promise will resolve after 10 seconds with the value 'done'
+          </p>
+        </section>
+        <section data-sick-grid="">
+          <p>The global <code class="inline">Promise</code> object also offers some helper function to work with
+            multiple promises</p>
+        </section>
+        <section data-sick-grid="">
+          <pre data-id="code"><code data-trim data-line-numbers="6" class="language-javascript">
+            Promise.all([promise1, promise2])
+              .then((values) => {
+                const [valueFromPromise1, valueFromPromise2] = values;
+              })
+              .catch((reason) => {});
+          </code></pre>
+          <p>The <code class="inline">Promise.all</code> helper will resolve once all promises in an array resolve or
+            reject if one of the promises was rejected</p>
+        </section>
+        <section data-sick-grid="">
+          <pre data-id="code"><code data-trim data-line-numbers="6" class="language-javascript">
+            Promise.race([promise1, promise2])
+              .then((value) => {
+                // value of the promise which resolved first
+              })
+              .catch((reason) => {});
+          </code></pre>
+          <p>The <code class="inline">Promise.race</code> helper will resolve once one of the promises in an array
+            either resolve or reject</p>
+        </section>
+        <section data-sick-grid>
+          <h3>async/await</h3>
+        </section>
+        <section data-sick-grid>
+          <p><code class="inline">async/await</code> keywords where introduced to make code utilizing Promises simpler
+            to read and write</p>
+        </section>
+        <section data-sick-grid="">
+          <pre data-id="code"><code data-trim data-line-numbers="" class="language-javascript">
+            doSomethingAsync((value, error) => {
+              if(error) {
+                // error happened
+              }
+              doSomethingOtherAsync(value, (error) => {
+                if(error) {
+                  // error happened
+                }
+                // now do something
+              })
+            })
+          </code></pre>
+          <p>Async code before promises with nested asynchronous function calls</p>
+        </section>
+        <section data-sick-grid="">
+          <pre data-id="code"><code data-trim data-line-numbers="" class="language-javascript">
+            doSomethingAsync()
+              .then((value) => {
+                return doSomethingOtherAsync(value);
+              })
+              .then((value) => {
+              // do something
+              })
+              .catch((reason) => {})
+          </code></pre>
+          <p>Promises helped a bit because they could be chained... but the "callback hell" still persists</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code"><code data-trim data-line-numbers="" class="language-javascript">
+            try {
+              const value = await doSomethingAsync();
+              const result = await doSomethingOtherAsync(value);
+            } catch(e) {
+              // error thrown;
+            }
+          </code></pre>
+          <p>The same promise based solution with async/await</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code"><code data-trim data-line-numbers="2" class="language-javascript">
+            try {
+              const value = await doSomethingAsync();
+              const result = await doSomethingOtherAsync(value);
+            } catch(e) {
+              // error thrown;
+            }
+          </code></pre>
+          <p><code class="inline">await</code> will stop the execution of the code and wait until the returned Promise will either resolve or rejects</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code"><code data-trim data-line-numbers="2" class="language-javascript">
+            try {
+              const value = await doSomethingAsync();
+              const result = await doSomethingOtherAsync(value);
+            } catch(e) {
+              // error thrown;
+            }
+          </code></pre>
+          <p>once the promise resolved, the resolved value will be assigned to the variable "value" and javascript will continue the execution</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code"><code data-trim data-line-numbers="3" class="language-javascript">
+            try {
+              const value = await doSomethingAsync();
+              const result = await doSomethingOtherAsync(value);
+            } catch(e) {
+              // error thrown;
+            }
+          </code></pre>
+          <p>another <code class="inline">await</code> will stop the execution again until the promise resolves or rejects</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code"><code data-trim data-line-numbers="4-6" class="language-javascript">
+            try {
+              const value = await doSomethingAsync();
+              const result = await doSomethingOtherAsync(value);
+            } catch(e) {
+              // error thrown;
+            }
+          </code></pre>
+          <p>If one of the promises within the try block reject, the catch block is triggered and you can handle the exception</p>
+        </section>
+        <section data-sick-grid="">
+          <pre data-id="code"><code data-trim data-line-numbers="" class="language-javascript">
+            async function doSomething() {
+              const value = await asyncFunc();
+              return value;
+            }
+          </code></pre>
+          <p>function defined with the <code class="inline">async</code> keyword always return a promise</p>
+          <p><small>Until <a href="https://github.com/tc39/proposal-top-level-await">Top Level Await</a> is not in the ES262 specifictaion <code class="inline">await</code> can only be used within async functions</small></p>
         </section>
       </section>
 
@@ -4633,18 +5081,19 @@
         <section data-auto-animate="">
           <div class="sick-grid">
             <main>
-              <pre><code data-trim data-line-numbers="1" data-id="code">
+              <pre data-id="code"><code data-trim data-line-numbers="1">
                 import { export1 } from 'my-module'
                 import { export2 } from './my-module.js'
               </code></pre>
-              <p>The browser does not support module imports until <a href="https://github.com/WICG/import-maps">Import Maps</a> are implemented</p>
+              <p>The browser does not support module imports until <a href="https://github.com/WICG/import-maps">Import
+                  Maps</a> are implemented</p>
             </main>
           </div>
         </section>
         <section data-auto-animate="">
           <div class="sick-grid">
             <main>
-              <pre><code data-trim data-line-numbers="2" data-id="code">
+              <pre data-id="code"><code data-trim data-line-numbers="2">
                 import { export1 } from 'my-module'
                 import { export2 } from './my-module.js'
               </code></pre>
@@ -4655,19 +5104,23 @@
         <section data-auto-animate="">
           <div class="sick-grid">
             <main>
-              <pre><code data-trim data-line-numbers="1,2" data-id="code">
+              <pre data-id="code"><code data-trim data-line-numbers="1,2">
                 import { export1 } from 'my-module'
                 import { export2 } from './my-module.js'
               </code></pre>
-              <p>nodejs supports module imports and imports without extensions, module imports will be resolved according to the node module resolution algorithm</p>
+              <p>nodejs supports module imports and imports without extensions, module imports will be resolved
+                according to the node module resolution algorithm</p>
             </main>
           </div>
         </section>
         <section>
           <div class="sick-grid">
             <main>
-              <p>Before you can deploy your project and let it run on the web browser and if you used module imports you have to use module bundlers to post process your javascript code, common used bundlers are <a
-                  href="https://webpack.js.org/">Webpack</a>, <a href="https://rollupjs.org/guide/en/">Rollup</a>, <a href="https://esbuild.github.io/">esbuild</a> or <a href="https://www.snowpack.dev/">snowpack</a> which will resolve your imports,
+              <p>Before you can deploy your project and let it run on the web browser and if you used module imports you
+                have to use module bundlers to post process your javascript code, common used bundlers are <a
+                  href="https://webpack.js.org/">Webpack</a>, <a href="https://rollupjs.org/guide/en/">Rollup</a>, <a
+                  href="https://esbuild.github.io/">esbuild</a> or <a href="https://www.snowpack.dev/">snowpack</a>
+                which will resolve your imports,
                 statically analyze your modules and output performant bundles</p>
             </main>
           </div>

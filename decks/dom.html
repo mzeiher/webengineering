@@ -516,13 +516,14 @@
           <div class="sick-grid">
             <main>
               <pre style="" data-id="code" class="language-javascript"><code class="language-javascript" data-line-numbers="4,5" data-trim><script type="text/template">
-                const element = document.querySelector('div').remove();
+                const element = document.querySelector('div');
+                element.remove();
               </script></code></pre>
               <pre style="" data-id="code2" class="language-html"><code class="language-html" data-line-numbers data-trim><script type="text/template">
                 <body>
                   <span>test<span>
                 </body>
-                // detached and stored in element variable
+                // detached and stored in variable "element"
                 <div id="one"><span>test</span></div>
                 </script></code></pre>
               <p>remove a node</p>
@@ -801,6 +802,13 @@
                 </script></code></pre>
             </main>
           </div>
+        </section>
+      </section>
+
+
+      <section>
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+          <h2>The global window object</h2>
         </section>
       </section>
     </div>

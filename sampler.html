@@ -7,20 +7,24 @@
     <title>Sampler</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script type="module">
-        class Foo {};
-        class Bar extends Foo {};
-        class OtherClass {};
+        function* asyncIterator() {
+            let i = 0;
+            while (true) {
+                yield new Promise((resolve) => {
+                    window.setTimeout(() => {
+                        resolve(i++);
+                    }, 1000);
+                });
+                if (i > 100) break;
+            }
+        }
 
-        let bar = new Bar();
-        let foo = new Foo();
-        let otherclass = new OtherClass();
-
-        bar instanceof Foo // returns true
-        bar instanceof Bar // returns true
-        otherclass instanceof Bar // returns false
-
-        // the instanceof operator equals to the following expression
-        bar.constructor === Bar // returns true
+        async function run() {
+            for (const result of asyncIterator()) {
+                console.log(await result);
+            }
+        }
+        run();
     </script>
 </head>
 
