@@ -1,5 +1,6 @@
 /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
 
+/** light mode **/
 /* Tomorrow Comment */
 .hljs-comment,
 .hljs-quote {
@@ -68,6 +69,149 @@
 }
 
 .hljs-strong {
+  font-weight: bold;
+}
+
+
+
+:root section.dark .hljs-comment,
+:root section.dark .hljs-quote {
+  color: #8e908c;
+}
+
+/* Tomorrow Red */
+:root section.dark .hljs-variable,
+:root section.dark .hljs-template-variable,
+:root section.dark .hljs-tag,
+:root section.dark .hljs-name,
+:root section.dark .hljs-selector-id,
+:root section.dark .hljs-selector-class,
+:root section.dark .hljs-regexp,
+:root section.dark .hljs-deletion {
+  color: #c82829;
+}
+
+/* Tomorrow Orange */
+:root section.dark .hljs-number,
+:root section.dark .hljs-built_in,
+:root section.dark .hljs-builtin-name,
+:root section.dark .hljs-literal,
+:root section.dark .hljs-type,
+:root section.dark .hljs-params,
+:root section.dark .hljs-meta,
+:root section.dark .hljs-link {
+  color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+:root section.dark .hljs-attribute {
+  color: #eab700;
+}
+
+/* Tomorrow Green */
+:root section.dark .hljs-string,
+:root section.dark .hljs-symbol,
+:root section.dark .hljs-bullet,
+:root section.dark .hljs-addition {
+  color: #718c00;
+}
+
+/* Tomorrow Blue */
+:root section.dark .hljs-title,
+:root section.dark .hljs-section {
+  color: #4271ae;
+}
+
+/* Tomorrow Purple */
+:root section.dark .hljs-keyword,
+:root section.dark .hljs-selector-tag {
+  color: #8959a8;
+}
+
+:root section.dark .hljs {
+  display: block;
+  overflow-x: auto;
+  background: white;
+  color: #4d4d4c;
+  padding: 0.5em;
+}
+
+:root section.dark .hljs-emphasis {
+  font-style: italic;
+}
+
+:root section.dark .hljs-strong {
+  font-weight: bold;
+}
+
+
+:root.light .hljs-comment,
+:root.light .hljs-quote {
+  color: #8e908c;
+}
+
+/* Tomorrow Red */
+:root.light .hljs-variable,
+:root.light .hljs-template-variable,
+:root.light .hljs-tag,
+:root.light .hljs-name,
+:root.light .hljs-selector-id,
+:root.light .hljs-selector-class,
+:root.light .hljs-regexp,
+:root.light .hljs-deletion {
+  color: #c82829;
+}
+
+/* Tomorrow Orange */
+:root.light .hljs-number,
+:root.light .hljs-built_in,
+:root.light .hljs-builtin-name,
+:root.light .hljs-literal,
+:root.light .hljs-type,
+:root.light .hljs-params,
+:root.light .hljs-meta,
+:root.light .hljs-link {
+  color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+:root.light .hljs-attribute {
+  color: #eab700;
+}
+
+/* Tomorrow Green */
+:root.light .hljs-string,
+:root.light .hljs-symbol,
+:root.light .hljs-bullet,
+:root.light .hljs-addition {
+  color: #718c00;
+}
+
+/* Tomorrow Blue */
+:root.light .hljs-title,
+:root.light .hljs-section {
+  color: #4271ae;
+}
+
+/* Tomorrow Purple */
+:root.light .hljs-keyword,
+:root.light .hljs-selector-tag {
+  color: #8959a8;
+}
+
+:root.light .hljs {
+  display: block;
+  overflow-x: auto;
+  background: white;
+  color: #4d4d4c;
+  padding: 0.5em;
+}
+
+:root.light .hljs-emphasis {
+  font-style: italic;
+}
+
+:root.light .hljs-strong {
   font-weight: bold;
 }
 
@@ -147,4 +291,152 @@
     .hljs-strong {
     font-weight: bold;
     }
+}
+
+/** dark override **/
+
+/* Tomorrow Night Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+
+/* Tomorrow Comment */
+:root.dark .hljs-comment,
+:root.dark .hljs-quote {
+color: #969896;
+}
+
+/* Tomorrow Red */
+:root.dark .hljs-variable,
+:root.dark .hljs-template-variable,
+:root.dark .hljs-tag,
+:root.dark .hljs-name,
+:root.dark .hljs-selector-id,
+:root.dark .hljs-selector-class,
+:root.dark .hljs-regexp,
+:root.dark .hljs-deletion {
+color: #cc6666;
+}
+
+/* Tomorrow Orange */
+:root.dark .hljs-number,
+:root.dark .hljs-built_in,
+:root.dark .hljs-builtin-name,
+:root.dark .hljs-literal,
+:root.dark .hljs-type,
+:root.dark .hljs-params,
+:root.dark .hljs-meta,
+:root.dark .hljs-link {
+color: #de935f;
+}
+
+/* Tomorrow Yellow */
+:root.dark .hljs-attribute {
+color: #f0c674;
+}
+
+/* Tomorrow Green */
+:root.dark .hljs-string,
+:root.dark .hljs-symbol,
+:root.dark .hljs-bullet,
+:root.dark .hljs-addition {
+color: #b5bd68;
+}
+
+/* Tomorrow Blue */
+:root.dark .hljs-title,
+:root.dark .hljs-section {
+color: #81a2be;
+}
+
+/* Tomorrow Purple */
+:root.dark .hljs-keyword,
+:root.dark .hljs-selector-tag {
+color: #b294bb;
+}
+
+:root.dark .hljs {
+display: block;
+overflow-x: auto;
+background: #1d1f21;
+color: #c5c8c6;
+padding: 0.5em;
+}
+
+:root.dark .hljs-emphasis {
+font-style: italic;
+}
+
+:root.dark .hljs-strong {
+font-weight: bold;
+}
+
+:root section.dark .hljs-comment,
+:root section.dark .hljs-quote {
+color: #969896;
+}
+
+/* Tomorrow Red */
+:root section.dark .hljs-variable,
+:root section.dark .hljs-template-variable,
+:root section.dark .hljs-tag,
+:root section.dark .hljs-name,
+:root section.dark .hljs-selector-id,
+:root section.dark .hljs-selector-class,
+:root section.dark .hljs-regexp,
+:root section.dark .hljs-deletion {
+color: #cc6666;
+}
+
+/* Tomorrow Orange */
+:root section.dark .hljs-number,
+:root section.dark .hljs-built_in,
+:root section.dark .hljs-builtin-name,
+:root section.dark .hljs-literal,
+:root section.dark .hljs-type,
+:root section.dark .hljs-params,
+:root section.dark .hljs-meta,
+:root section.dark .hljs-link {
+color: #de935f;
+}
+
+/* Tomorrow Yellow */
+:root section.dark .hljs-attribute {
+color: #f0c674;
+}
+
+/* Tomorrow Green */
+:root section.dark .hljs-string,
+:root section.dark .hljs-symbol,
+:root section.dark .hljs-bullet,
+:root section.dark .hljs-addition {
+color: #b5bd68;
+}
+
+/* Tomorrow Blue */
+:root section.dark .hljs-title,
+:root section.dark .hljs-section {
+color: #81a2be;
+}
+
+/* Tomorrow Purple */
+:root section.dark .hljs-keyword,
+:root section.dark .hljs-selector-tag {
+color: #b294bb;
+}
+
+:root section.dark .hljs {
+display: block;
+overflow-x: auto;
+background: #1d1f21;
+color: #c5c8c6;
+padding: 0.5em;
+}
+
+:root section.dark .hljs-emphasis {
+font-style: italic;
+}
+
+:root section.dark .hljs-strong {
+font-weight: bold;
 }
