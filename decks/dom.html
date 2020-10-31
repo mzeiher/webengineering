@@ -13,8 +13,9 @@
 
   <!-- Theme used for syntax highlighted code -->
   <link rel="stylesheet" href="plugin/highlight/tomorrow.css" id="highlight-theme">
-
   <link rel="stylesheet" href="common.css">
+
+  <link rel="stylesheet" href="plugin/sick/sick-design.css">
 
   <link rel="stylesheet" href="fontawesome/all.css">
 
@@ -23,567 +24,783 @@
 <body>
   <div class="reveal">
     <div class="slides">
-      <section>
-        <h1>DOM</h1>
+      <section data-background="assets/javascript-bg.jpg" class="dark">
+        <div class="sick-grid">
+          <header class="title">
+            <h1>DOM API</h1>
+          </header>
+        </div>
       </section>
       <section>
-        <section data-background="var(--radial-background)">
-          <h2>Interesting resources</h2>
-        </section>
-        <section>
-          <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">MDN DOM API</a></p>
-          <p><a href="https://github.com/whatwg">WHATWG</a></p>
-        </section>
-      </section>
-
-      <section>
-        <section data-background="var(--radial-background)">
-          <h2>What is the DOM</h2>
-        </section>
-        <section>
-          <p>The DOM (Document Object Model) is the underlying data structure of a html page</p>
-        </section>
-        <section>
-          <div class="r-hstack r-stretch">
-            <pre style="width: 45%" data-id="code" class="language-html"><code class="hljs" data-code="snippets/html.structure.html" data-line-numbers>
-            </code></pre>
-            <img style="height: 90%" src="assets/html.structure.svg" />
+        <section data-background="assets/javascript-bg.jpg" class="dark">
+          <div class="sick-grid">
+            <header class="chapter">
+              <h2>Interesting resources</h2>
+            </header>
           </div>
         </section>
         <section>
-          <div class="r-hstack r-stretch">
-            <pre style="width: 45%" data-id="code" class="language-html"><code class="hljs" data-code="snippets/html.structure.html" data-line-numbers>
-            </code></pre>
-            <img style="height: 90%" src="assets/dom.structure.svg" />
+          <div class="sick-grid">
+            <main>
+              <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">MDN DOM API</a></p>
+              <p><a href="https://github.com/whatwg">WHATWG</a></p>
+            </main>
           </div>
         </section>
       </section>
 
       <section>
-        <section data-background="var(--radial-background)">
-          <h2>Working with the dom</h2>
-        </section>
-        <section>
-          <h3>Attributes, properties and children</h3>
-        </section>
-        <section>
-          <p>Attributes and children map to different properties on the DOM element</p>
-          <p><small>An attribute does not always map to a property of the same name and properties can have a different
-              datatype then string</small></p>
-        </section>
-        <section data-auto-animate>
-          <pre data-id="code" class="language-html"><code class="language-html" data-line-numbers data-trim><script type="text/template">
-            <div 
-              id="test"
-              style="background-color: #f0f;"
-              class="clazz two"
-              tabindex="1">
-              <span>span</span>
-              test
-            </div>
-          </script></code></pre>
-        </section>
-        <section data-auto-animate>
-          <div class="r-hstack">
-            <pre style="width: 45%;" data-id="code" class="language-html"><code class="language-html" data-line-numbers="2" data-trim><script type="text/template">
-            <div 
-              id="test"
-              style="background-color: #f0f;"
-              class="clazz two"
-              tabindex="1">
-              <span>span</span>
-              test
-            </div>
-          </script></code></pre>
-            <pre style="width: 45%;" data-id="code2" class="language-javascript"><code class="language-javascript" data-line-numbers data-trim><script type="text/template">
-            console.log(element.id) // returns test
-            console.log(element.getAttribute('id')) // return test
-            element.id='test';
-            element.setAttribute('id', 'test');
-          </script></code></pre>
-          </div>
-        </section>
-        <section data-auto-animate>
-          <div class="r-hstack">
-            <pre style="width: 45%;" data-id="code" class="language-html"><code class="language-html" data-line-numbers="3" data-trim><script type="text/template">
-            <div 
-              id="test"
-              style="background-color: #f0f;"
-              class="clazz two"
-              tabindex="1">
-              <span>span</span>
-              test
-            </div>
-          </script></code></pre>
-            <pre style="width: 45%;" data-id="code2" class="language-javascript"><code class="language-javascript" data-line-numbers data-trim><script type="text/template">
-            console.log(element.style);
-            // returns { 
-            // backgroundColor: '#f0f', 
-            //   ...
-            // }
-            element.style.backgroundColor: '#f0f';
-            console.log(element.getAttribute('style'));
-            // return 'background-color: #f0f;'
-            element.setAttribute('style', 'background-color: #f0f;');
-          </script></code></pre>
-          </div>
-        </section>
-        <section data-auto-animate>
-          <div class="r-hstack">
-            <pre style="width: 45%;" data-id="code" class="language-html"><code class="language-html" data-line-numbers="4" data-trim><script type="text/template">
-            <div 
-              id="test"
-              style="background-color: #f0f;"
-              class="clazz two"
-              tabindex="1">
-              <span>span</span>
-              test
-            </div>
-          </script></code></pre>
-            <pre style="width: 45%;" data-id="code2" class="language-javascript"><code class="language-javascript" data-line-numbers data-trim><script type="text/template">
-            console.log(element.classList);
-            // returns { 
-            //  [0]: 'clazz'
-            //  [1]: 'two'
-            //  length: 0
-            //  value: 'clazz two'
-            // }
-            element.classList.add('clazz');
-            console.log(element.getAttribute('class'));
-            // return 'clazz two'
-            element.setAttribute('class', 'clazz two');
-          </script></code></pre>
-          </div>
-        </section>
-        <section data-auto-animate>
-          <div class="r-hstack">
-            <pre style="width: 45%;" data-id="code" class="language-html"><code class="language-html" data-line-numbers="5" data-trim><script type="text/template">
-            <div 
-              id="test"
-              style="background-color: #f0f;"
-              class="clazz two"
-              tabindex="1">
-              <span>span</span>
-              test
-            </div>
-          </script></code></pre>
-            <pre style="width: 45%;" data-id="code2" class="language-javascript"><code class="language-javascript" data-line-numbers data-trim><script type="text/template">
-            console.log(element.tabIndex);
-            // returns "1"
-            console.log(element.getAttribute('tabindex'));
-            // returns "1"
-          </script></code></pre>
-          </div>
-        </section>
-        <section data-auto-animate>
-          <div class="r-hstack">
-            <pre style="width: 45%;" data-id="code" class="language-html"><code class="language-html" data-line-numbers="6,7" data-trim><script type="text/template">
-            <div 
-              id="test"
-              style="background-color: #f0f;"
-              class="clazz two"
-              tabindex="1">
-              <span>span</span>
-              test
-            </div>
-          </script></code></pre>
-            <pre style="width: 45%;" data-id="code2" class="language-javascript"><code class="language-javascript" data-line-numbers data-trim><script type="text/template">
-            console.log(element.children);
-            // returns {
-            // [0]: HTMLSpanElement,
-            // length: 1
-            // }
-            console.log(element.childNodes);
-            // returns {
-            // [0]: HTMLSpanELement,
-            // [1]: #textnode,
-            // length: 2
-            // }
-            console.log(element.innerHTML);
-            //return '<span>span</span>\n  test'
-            console.log(element.textContent);
-            //return '    span\n  test'
-            console.log(element.innerText);
-            //return 'span test'
-          </script></code></pre>
+        <section data-background="assets/javascript-bg.jpg" class="dark">
+          <div class="sick-grid">
+            <header class="chapter">
+              <h2>What is the DOM</h2>
+            </header>
           </div>
         </section>
         <section>
-          <h3>Querying the DOM</h3>
-        </section>
-        <section data-auto-animate="">
-          <pre style="" data-id="code" class="language-html"><code class="language-html" data-line-numbers="1,7" data-trim><script type="text/template">
-            <div 
-              id="test"
-              style="background-color: #f0f;"
-              class="clazz two"
-              tabindex="1">
-              <span>span</span>
-            </div>
-          </script></code></pre>
-          <pre style="" data-id="code2" class="language-javascript"><code class="language-javascript" data-line-numbers data-trim><script type="text/template">
-            const element = document.querySelector('div');
-            const element = document.querySelector('#test');
-            const element = document.querySelector('div.clazz.two');
-            const element = document.getElementById('test');
-          </script></code></pre>
-        </section>
-        <section data-auto-animate="">
-          <pre style="" data-id="code" class="language-html"><code class="language-html" data-line-numbers="6" data-trim><script type="text/template">
-            <div 
-              id="test"
-              style="background-color: #f0f;"
-              class="clazz two"
-              tabindex="1">
-              <span>span</span>
-            </div>
-          </script></code></pre>
-          <pre style="" data-id="code2" class="language-javascript"><code class="language-javascript" data-line-numbers data-trim><script type="text/template">
-            const element = document.querySelector('div > span');
-            const element = divElement.querySelector('span');
-            const element = divElement.querySelector(':scope > span');
-          </script></code></pre>
+          <div class="sick-grid">
+            <main>
+              <p>The DOM (Document Object Model) is the underlying data structure of a html page</p>
+            </main>
+          </div>
         </section>
         <section>
-          <h3>Navigating the DOM</h3>
-        </section>
-        <section data-auto-animate="">
-          <pre style="" data-id="code" class="language-html"><code class="language-html" data-line-numbers="3,6" data-trim><script type="text/template">
-            <div>
-              <div><div>
-              <div class="reference">
-                <div></div>
-                <div></div>
+          <div class="sick-grid">
+            <main>
+              <div class="r-hstack r-stretch">
+                <pre style="width: 45%" data-id="code" class="language-html"><code class="hljs" data-code="snippets/html.structure.html" data-line-numbers>
+                </code></pre>
+                <img style="height: 90%" src="assets/html.structure.svg" />
               </div>
-              <div><div>
-            </div>
-          </script></code></pre>
-          <p>The following samples are all relative to the element with the class "reference"</p>
-        </section>
-        <section data-auto-animate="">
-          <pre style="" data-id="code" class="language-html"><code class="language-html" data-line-numbers="1,8" data-trim><script type="text/template">
-            <div>
-              <div><div>
-              <div class="reference">
-                <div></div>
-                <div></div>
-              </div>
-              <div><div>
-            </div>
-          </script></code></pre>
-          <pre style="" data-id="code2" class="language-javascript"><code class="language-javascript" data-line-numbers data-trim><script type="text/template">
-            const element = reference.parentElement;
-          </script></code></pre>
-          <p>get the current parent element</p>
-        </section>
-        <section data-auto-animate="">
-          <pre style="" data-id="code" class="language-html"><code class="language-html" data-line-numbers="2,7" data-trim><script type="text/template">
-            <div>
-              <div><div>
-              <div class="reference">
-                <div></div>
-                <div></div>
-              </div>
-              <div><div>
-            </div>
-          </script></code></pre>
-          <pre style="" data-id="code2" class="language-javascript"><code class="language-javascript" data-line-numbers data-trim><script type="text/template">
-            const sibling1 = reference.previousElementSibling; // excludes text nodes
-            const sibling1 = reference.previousSibling; // includes text nodes
-            const sibling2 = reference.nextElementSibling; // excludes text nodes
-            const sibling2 = reference.nextSibling; // includes text nodes
-          </script></code></pre>
-          <p>get siblings</p>
-        </section>
-        <section data-auto-animate="">
-          <pre style="" data-id="code" class="language-html"><code class="language-html" data-line-numbers="4,5" data-trim><script type="text/template">
-            <div>
-              <div><div>
-              <div class="reference">
-                <div></div>
-                <div></div>
-              </div>
-              <div><div>
-            </div>
-          </script></code></pre>
-          <pre style="" data-id="code2" class="language-javascript"><code class="language-javascript" data-line-numbers data-trim><script type="text/template">
-            reference.children[0];
-            reference.children[1];
-            reference.querySelectorAll(':scope > div')[0];
-          </script></code></pre>
-          <p>get children</p>
+            </main>
+          </div>
         </section>
         <section>
-          <h3>Creating, Adding and Removing Elements</h3>
+          <div class="sick-grid">
+            <main>
+              <div class="r-hstack r-stretch">
+                <pre style="width: 45%" data-id="code" class="language-html"><code class="hljs" data-code="snippets/html.structure.html" data-line-numbers>
+                </code></pre>
+                <img style="height: 90%" src="assets/dom.structure.svg" />
+              </div>
+            </main>
+          </div>
         </section>
-        <section data-auto-animate="">
-          <pre style="" data-id="code" class="language-javascript"><code class="language-javascript" data-line-numbers="4,5" data-trim><script type="text/template">
-            const element.createElement('div');
-            element.id = 'one';
-          </script></code></pre>
-          <pre style="" data-id="code2" class="language-html"><code class="language-html" data-line-numbers data-trim><script type="text/template">
-            <div id="one"></div> // detached
-          </script></code></pre>
-          <p>Creating a new Element</p>
+      </section>
+
+      <section>
+        <section data-background="assets/javascript-bg.jpg" class="dark">
+          <div class="sick-grid">
+            <header class="chapter">
+              <h2>Working with the dom</h2>
+            </header>
+          </div>
         </section>
-        <section data-auto-animate="">
-          <pre style="" data-id="code" class="language-javascript"><code class="language-javascript" data-line-numbers="4,5" data-trim><script type="text/template">
-            document.body.appendChild(element);
-          </script></code></pre>
-          <pre style="" data-id="code2" class="language-html"><code class="language-html" data-line-numbers data-trim><script type="text/template">
-            <body>
-              <div id="one"></div>
-            </body>
-          </script></code></pre>
-          <p>Append a new element</p>
+        <section>
+          <div class="sick-grid">
+            <main>
+              <h3>Attributes, properties and children</h3>
+            </main>
+          </div>
         </section>
-        <section data-auto-animate="">
-          <pre style="" data-id="code" class="language-javascript"><code class="language-javascript" data-line-numbers="4,5" data-trim><script type="text/template">
-            document.body.prepend(document.createElement('span'));
-          </script></code></pre>
-          <pre style="" data-id="code2" class="language-html"><code class="language-html" data-line-numbers data-trim><script type="text/template">
-            <body>
-              <span><span>
-              <div id="one"></div>
-            </body>
-          </script></code></pre>
-          <p>prepend a new element</p>
+        <section>
+          <div class="sick-grid">
+            <main>
+              <p>Attributes and children map to different properties on the DOM element</p>
+              <p><small>An attribute does not always map to a property of the same name and properties can have a
+                  different
+                  datatype then string</small></p>
+            </main>
+          </div>
         </section>
-        <section data-auto-animate="">
-          <pre style="" data-id="code" class="language-javascript"><code class="language-javascript" data-line-numbers="4,5" data-trim><script type="text/template">
-            const text = document.createTextNode('test');
-            document.querySelector('#one').append(text)
-          </script></code></pre>
-          <pre style="" data-id="code2" class="language-html"><code class="language-html" data-line-numbers data-trim><script type="text/template">
-            <body>
-              <span><span>
-              <div id="one">test</div>
-            </body>
-          </script></code></pre>
-          <p>create and append text content</p>
-        </section>
-        <section data-auto-animate="">
-          <pre style="" data-id="code" class="language-javascript"><code class="language-javascript" data-line-numbers="4,5" data-trim><script type="text/template">
-            document.querySelector('span').innerText = 'test';
-          </script></code></pre>
-          <pre style="" data-id="code2" class="language-html"><code class="language-html" data-line-numbers data-trim><script type="text/template">
-            <body>
-              <span>test<span>
-              <div id="one">test</div>
-            </body>
-          </script></code></pre>
-          <p>add text to an element</p>
-        </section>
-        <section data-auto-animate="">
-          <pre style="" data-id="code" class="language-javascript"><code class="language-javascript" data-line-numbers="4,5" data-trim><script type="text/template">
-            document.querySelector('div').innerHTML = '<span>test</span>';
-          </script></code></pre>
-          <pre style="" data-id="code2" class="language-html"><code class="language-html" data-line-numbers data-trim><script type="text/template">
-            <body>
-              <span>test<span>
-              <div id="one"><span>test</span></div>
-            </body>
-          </script></code></pre>
-          <p>add html to an element <b>Use with care!</b> you have to sanitize user input before using innerHTML</p>
-        </section>
-        <section data-auto-animate="">
-          <pre style="" data-id="code" class="language-javascript"><code class="language-javascript" data-line-numbers="4,5" data-trim><script type="text/template">
-            const element = document.querySelector('div').remove();
-          </script></code></pre>
-          <pre style="" data-id="code2" class="language-html"><code class="language-html" data-line-numbers data-trim><script type="text/template">
-            <body>
-              <span>test<span>
-              </body>
-              // detached and stored in element variable
-              <div id="one"><span>test</span></div>
+        <section data-auto-animate>
+          <div class="sick-grid">
+            <main>
+              <pre data-id="code" class="language-html"><code class="language-html" data-line-numbers data-trim><script type="text/template">
+                <div 
+                id="test"
+                style="background-color: #f0f;"
+                class="clazz two"
+                tabindex="1">
+                <span>span</span>
+                test
+              </div>
             </script></code></pre>
-          <p>remove a node</p>
+            </main>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <div class="sick-grid">
+            <main>
+              <div class="sick-h-layout">
+                <pre style="width: 45%;" data-id="code" class="language-html"><code class="language-html" data-line-numbers="2" data-trim><script type="text/template">
+                  <div 
+                  id="test"
+                  style="background-color: #f0f;"
+                  class="clazz two"
+                  tabindex="1">
+                  <span>span</span>
+                  test
+                </div>
+              </script></code></pre>
+                <pre style="width: 45%;" data-id="code2" class="language-javascript"><code class="language-javascript" data-line-numbers data-trim><script type="text/template">
+                console.log(element.id) // returns test
+                console.log(element.getAttribute('id')) // return test
+                element.id='test';
+                element.setAttribute('id', 'test');
+              </script></code></pre>
+              </div>
+            </main>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <div class="sick-grid">
+            <main>
+              <div class="sick-h-layout">
+                <pre style="width: 45%;" data-id="code" class="language-html"><code class="language-html" data-line-numbers="3" data-trim><script type="text/template">
+                  <div 
+                  id="test"
+                  style="background-color: #f0f;"
+                  class="clazz two"
+                  tabindex="1">
+                  <span>span</span>
+                  test
+                </div>
+              </script></code></pre>
+                <pre style="width: 45%;" data-id="code2" class="language-javascript"><code class="language-javascript" data-line-numbers data-trim><script type="text/template">
+                console.log(element.style);
+                // returns { 
+                // backgroundColor: '#f0f', 
+                //   ...
+                // }
+                element.style.backgroundColor: '#f0f';
+                console.log(element.getAttribute('style'));
+                // return 'background-color: #f0f;'
+                element.setAttribute('style', 'background-color: #f0f;');
+                </script></code></pre>
+              </div>
+            </main>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <div class="sick-grid">
+            <main>
+              <div class="sick-h-layout">
+                <pre style="width: 45%;" data-id="code" class="language-html"><code class="language-html" data-line-numbers="4" data-trim><script type="text/template">
+                  <div 
+                  id="test"
+                  style="background-color: #f0f;"
+                  class="clazz two"
+                  tabindex="1">
+                  <span>span</span>
+                  test
+                </div>
+              </script></code></pre>
+                <pre style="width: 45%;" data-id="code2" class="language-javascript"><code class="language-javascript" data-line-numbers data-trim><script type="text/template">
+                console.log(element.classList);
+                // returns { 
+                //  [0]: 'clazz'
+                //  [1]: 'two'
+                //  length: 0
+                //  value: 'clazz two'
+                // }
+                element.classList.add('clazz');
+                console.log(element.getAttribute('class'));
+                // return 'clazz two'
+                element.setAttribute('class', 'clazz two');
+                </script></code></pre>
+              </div>
+            </main>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <div class="sick-grid">
+            <main>
+              <div class="sick-h-layout">
+                <pre style="width: 45%;" data-id="code" class="language-html"><code class="language-html" data-line-numbers="5" data-trim><script type="text/template">
+                  <div 
+                  id="test"
+                  style="background-color: #f0f;"
+                  class="clazz two"
+                  tabindex="1">
+                  <span>span</span>
+                  test
+                </div>
+              </script></code></pre>
+                <pre style="width: 45%;" data-id="code2" class="language-javascript"><code class="language-javascript" data-line-numbers data-trim><script type="text/template">
+                console.log(element.tabIndex);
+                // returns "1"
+                console.log(element.getAttribute('tabindex'));
+                // returns "1"
+              </script></code></pre>
+              </div>
+            </main>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <div class="sick-grid">
+            <main>
+              <div class="sick-h-layout">
+                <pre style="width: 45%;" data-id="code" class="language-html"><code class="language-html" data-line-numbers="6,7" data-trim><script type="text/template">
+                  <div 
+                  id="test"
+                  style="background-color: #f0f;"
+                  class="clazz two"
+                  tabindex="1">
+                  <span>span</span>
+                  test
+                </div>
+              </script></code></pre>
+                <pre style="width: 45%;" data-id="code2" class="language-javascript"><code class="language-javascript" data-line-numbers data-trim><script type="text/template">
+                console.log(element.children);
+                // returns {
+                  // [0]: HTMLSpanElement,
+                  // length: 1
+                  // }
+                  console.log(element.childNodes);
+                  // returns {
+                  // [0]: HTMLSpanELement,
+                  // [1]: #textnode,
+                  // length: 2
+                  // }
+                  console.log(element.innerHTML);
+                  //return '<span>span</span>\n  test'
+                  console.log(element.textContent);
+                  //return '    span\n  test'
+                  console.log(element.innerText);
+                  //return 'span test'
+                </script></code></pre>
+              </div>
+            </main>
+          </div>
         </section>
         <section>
-          <h3>TreeWalker</h3>
-          <pre style="" data-id="code"><code class="language-javascript" data-line-numbers="" data-trim><script type="text/template">
-            var treeWalker = document.createTreeWalker(
-              document.body,
-              NodeFilter.SHOW_ELEMENT,
-              { acceptNode: function(node) { return NodeFilter.FILTER_ACCEPT; } },
-              false
-            );
-            
-            var nodeList = [];
-            var currentNode = treeWalker.currentNode;
-            
-            while(currentNode) {
-              nodeList.push(currentNode);
-              currentNode = treeWalker.nextNode();
-            }
+          <div class="sick-grid">
+            <main>
+              <h3>Querying the DOM</h3>
+            </main>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <div class="sick-grid">
+            <main>
+              <pre style="" data-id="code" class="language-html"><code class="language-html" data-line-numbers="1,7" data-trim><script type="text/template">
+                <div 
+                id="test"
+                style="background-color: #f0f;"
+                class="clazz two"
+                tabindex="1">
+                <span>span</span>
+              </div>
             </script></code></pre>
+              <pre style="" data-id="code2" class="language-javascript"><code class="language-javascript" data-line-numbers data-trim><script type="text/template">
+              const element = document.querySelector('div');
+              const element = document.querySelector('#test');
+              const element = document.querySelector('div.clazz.two');
+              const element = document.getElementById('test');
+            </script></code></pre>
+            </main>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <div class="sick-grid">
+            <main>
+              <pre style="" data-id="code" class="language-html"><code class="language-html" data-line-numbers="6" data-trim><script type="text/template">
+                <div 
+                id="test"
+                style="background-color: #f0f;"
+                class="clazz two"
+                tabindex="1">
+                <span>span</span>
+              </div>
+            </script></code></pre>
+              <pre style="" data-id="code2" class="language-javascript"><code class="language-javascript" data-line-numbers data-trim><script type="text/template">
+              const element = document.querySelector('div > span');
+              const element = divElement.querySelector('span');
+              const element = divElement.querySelector(':scope > span');
+            </script></code></pre>
+            </main>
+          </div>
+        </section>
+        <section>
+          <div class="sick-grid">
+            <main>
+              <h3>Navigating the DOM</h3>
+            </main>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <div class="sick-grid">
+            <main>
+              <pre style="" data-id="code" class="language-html"><code class="language-html" data-line-numbers="3,6" data-trim><script type="text/template">
+                <div>
+                  <div><div>
+                  <div class="reference">
+                    <div></div>
+                    <div></div>
+                  </div>
+                  <div><div>
+                </div>
+                </script></code></pre>
+              <p>The following samples are all relative to the element with the class "reference"</p>
+            </main>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <div class="sick-grid">
+            <main>
+              <pre style="" data-id="code" class="language-html"><code class="language-html" data-line-numbers="1,8" data-trim><script type="text/template">
+                <div>
+                  <div><div>
+                  <div class="reference">
+                    <div></div>
+                    <div></div>
+                  </div>
+                  <div><div>
+                </div>
+              </script></code></pre>
+              <pre style="" data-id="code2" class="language-javascript"><code class="language-javascript" data-line-numbers data-trim><script type="text/template">
+                    const element = reference.parentElement;
+                  </script></code></pre>
+              <p>get the current parent element</p>
+            </main>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <div class="sick-grid">
+            <main>
+              <pre style="" data-id="code" class="language-html"><code class="language-html" data-line-numbers="2,7" data-trim><script type="text/template">
+                <div>
+                  <div><div>
+                  <div class="reference">
+                    <div></div>
+                    <div></div>
+                  </div>
+                  <div><div>
+                </div>
+                </script></code></pre>
+              <pre style="" data-id="code2" class="language-javascript"><code class="language-javascript" data-line-numbers data-trim><script type="text/template">
+                    const sibling1 = reference.previousElementSibling; // excludes text nodes
+                    const sibling1 = reference.previousSibling; // includes text nodes
+                    const sibling2 = reference.nextElementSibling; // excludes text nodes
+                    const sibling2 = reference.nextSibling; // includes text nodes
+                  </script></code></pre>
+              <p>get siblings</p>
+            </main>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <div class="sick-grid">
+            <main>
+              <pre style="" data-id="code" class="language-html"><code class="language-html" data-line-numbers="4,5" data-trim><script type="text/template">
+                <div>
+                  <div><div>
+                  <div class="reference">
+                    <div></div>
+                    <div></div>
+                  </div>
+                  <div><div>
+                </div>
+                </script></code></pre>
+              <pre style="" data-id="code2" class="language-javascript"><code class="language-javascript" data-line-numbers data-trim><script type="text/template">
+                    reference.children[0];
+                    reference.children[1];
+                    reference.querySelectorAll(':scope > div')[0];
+                  </script></code></pre>
+              <p>get children</p>
+            </main>
+          </div>
+        </section>
+        <section>
+          <div class="sick-grid">
+            <main>
+              <h3>Creating, Adding and Removing Elements</h3>
+            </main>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <div class="sick-grid">
+            <main>
+              <pre style="" data-id="code" class="language-javascript"><code class="language-javascript" data-line-numbers="4,5" data-trim><script type="text/template">
+                const element.createElement('div');
+                element.id = 'one';
+              </script></code></pre>
+              <pre style="" data-id="code2" class="language-html"><code class="language-html" data-line-numbers data-trim><script type="text/template">
+                <div id="one"></div> // detached
+              </script></code></pre>
+              <p>Creating a new Element</p>
+            </main>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <div class="sick-grid">
+            <main>
+              <pre style="" data-id="code" class="language-javascript"><code class="language-javascript" data-line-numbers="4,5" data-trim><script type="text/template">
+                document.body.appendChild(element);
+              </script></code></pre>
+              <pre style="" data-id="code2" class="language-html"><code class="language-html" data-line-numbers data-trim><script type="text/template">
+                <body>
+                  <div id="one"></div>
+                </body>
+              </script></code></pre>
+              <p>Append a new element</p>
+            </main>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <div class="sick-grid">
+            <main>
+              <pre style="" data-id="code" class="language-javascript"><code class="language-javascript" data-line-numbers="4,5" data-trim><script type="text/template">
+                document.body.prepend(document.createElement('span'));
+              </script></code></pre>
+              <pre style="" data-id="code2" class="language-html"><code class="language-html" data-line-numbers data-trim><script type="text/template">
+                <body>
+                  <span><span>
+                  <div id="one"></div>
+                </body>
+                </script></code></pre>
+              <p>prepend a new element</p>
+            </main>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <div class="sick-grid">
+            <main>
+              <pre style="" data-id="code" class="language-javascript"><code class="language-javascript" data-line-numbers="4,5" data-trim><script type="text/template">
+                const text = document.createTextNode('test');
+                document.querySelector('#one').append(text)
+              </script></code></pre>
+              <pre style="" data-id="code2" class="language-html"><code class="language-html" data-line-numbers data-trim><script type="text/template">
+                <body>
+                  <span><span>
+                  <div id="one">test</div>
+                </body>
+                </script></code></pre>
+              <p>create and append text content</p>
+            </main>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <div class="sick-grid">
+            <main>
+              <pre style="" data-id="code" class="language-javascript"><code class="language-javascript" data-line-numbers="4,5" data-trim><script type="text/template">
+                document.querySelector('span').innerText = 'test';
+              </script></code></pre>
+              <pre style="" data-id="code2" class="language-html"><code class="language-html" data-line-numbers data-trim><script type="text/template">
+                <body>
+                  <span>test<span>
+                  <div id="one">test</div>
+                </body>
+                </script></code></pre>
+              <p>add text to an element</p>
+            </main>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <div class="sick-grid">
+            <main>
+              <pre style="" data-id="code" class="language-javascript"><code class="language-javascript" data-line-numbers="4,5" data-trim><script type="text/template">
+                document.querySelector('div').innerHTML = '<span>test</span>';
+              </script></code></pre>
+              <pre style="" data-id="code2" class="language-html"><code class="language-html" data-line-numbers data-trim><script type="text/template">
+                <body>
+                  <span>test<span>
+                  <div id="one"><span>test</span></div>
+                </body>
+                </script></code></pre>
+              <p>add html to an element <b>Use with care!</b> you have to sanitize user input before using innerHTML</p>
+            </main>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <div class="sick-grid">
+            <main>
+              <pre style="" data-id="code" class="language-javascript"><code class="language-javascript" data-line-numbers="4,5" data-trim><script type="text/template">
+                const element = document.querySelector('div').remove();
+              </script></code></pre>
+              <pre style="" data-id="code2" class="language-html"><code class="language-html" data-line-numbers data-trim><script type="text/template">
+                <body>
+                  <span>test<span>
+                </body>
+                // detached and stored in element variable
+                <div id="one"><span>test</span></div>
+                </script></code></pre>
+              <p>remove a node</p>
+            </main>
+          </div>
+        </section>
+        <section>
+          <div class="sick-grid">
+            <main>
+              <h3>TreeWalker</h3>
+              <pre style="" data-id="code"><code class="language-javascript" data-line-numbers="" data-trim><script type="text/template">
+                var treeWalker = document.createTreeWalker(
+                document.body,
+                NodeFilter.SHOW_ELEMENT,
+                { acceptNode: function(node) { return NodeFilter.FILTER_ACCEPT; } },
+                false
+                );
+                
+                var nodeList = [];
+                var currentNode = treeWalker.currentNode;
+                
+                while(currentNode) {
+                  nodeList.push(currentNode);
+                  currentNode = treeWalker.nextNode();
+                }
+                </script></code></pre>
+            </main>
+          </div>
         </section>
       </section>
 
       <section>
-        <section data-background="var(--radial-background)">
-          <h2>Events</h2>
+        <section data-background="assets/javascript-bg.jpg" class="dark">
+          <div class="sick-grid">
+            <header class="chapter">
+              <h2>Events</h2>
+            </header>
+          </div>
         </section>
         <section>
-          <p>The general DOM paradigm is settings data via properties and exposing changed data or user interaction with
-            events</p>
+          <div class="sick-grid">
+            <main>
+              <p>The general DOM paradigm is settings data via properties and exposing changed data or user interaction
+                with
+                events</p>
+            </main>
+          </div>
         </section>
         <section>
-          <p>Event handling is split into three phases, capture phase, target phase and bubbling phase.</p>
+          <div class="sick-grid">
+            <main>
+              <p>Event handling is split into three phases, capture phase, target phase and bubbling phase.</p>
+            </main>
+          </div>
         </section>
         <section>
-          <img class="r-stretch" src="assets/bubble-capture.png" />
-          <ul class="sources">
-            <li>https://javascript.info/bubbling-and-capturing#stopping-bubbling</li>
-          </ul>
+          <div class="sick-grid">
+            <main>
+              <figure style="height: 90%;"
+                data-footnote-link="https://javascript.info/bubbling-and-capturing#stopping-bubbling"><img
+                  style="height: 100%;" src="assets/bubble-capture.png" /></figure>
+            </main>
+          </div>
         </section>
         <section>
-          <p>Events can be triggered by user interaction, for example mouse events (move, click), keyboard events,
-            focus events, typing in textfields or custom events</p>
-          <p><b>Important:</b> not all events bubble, also for custom events it is possible to prevent bubbling. Events
-            which are not <code class="inline">composed</code> will also not bubble through a shadow dom boundary</p>
+          <div class="sick-grid">
+            <main>
+              <p>Events can be triggered by user interaction, for example mouse events (move, click), keyboard events,
+                focus events, typing in textfields or custom events</p>
+              <p><b>Important:</b> not all events bubble, also for custom events it is possible to prevent bubbling.
+                Events
+                which are not <code class="inline">composed</code> will also not bubble through a shadow dom boundary
+              </p>
+            </main>
+          </div>
         </section>
         <section>
-          <h3>Adding event listeners</h3>
+          <div class="sick-grid">
+            <main>
+              <h3>Adding event listeners</h3>
+            </main>
+          </div>
         </section>
         <section>
-          <pre style="" data-id="code"><code class="language-javascript" data-line-numbers="" data-trim><script type="text/template">
-            const element = document.querySelector('div');
-            // add event listener on the capturing phase
-            element.addEventListener('click', (event) => {
-              // do something
-            }, true);
-
-            // add event listener on the bubbling phase
-            element.addEventListener('click', (event) => {
-              // do something
-            });
-          </script></code></pre>
+          <div class="sick-grid">
+            <main>
+              <pre style="" data-id="code"><code class="language-javascript" data-line-numbers="" data-trim><script type="text/template">
+                const element = document.querySelector('div');
+                // add event listener on the capturing phase
+                element.addEventListener('click', (event) => {
+                  // do something
+                }, true);
+                
+                // add event listener on the bubbling phase
+                element.addEventListener('click', (event) => {
+                  // do something
+                });
+              </script></code></pre>
+            </main>
+          </div>
         </section>
         <section>
-          <h3>Removing event listeners</h3>
+          <div class="sick-grid">
+            <main>
+              <h3>Removing event listeners</h3>
+            </main>
+          </div>
         </section>
         <section>
-          <pre style="" data-id="code"><code class="language-javascript" data-line-numbers="" data-trim><script type="text/template">
-            const element = document.querySelector('div');
-            
-            const listener = (event) => {
-              console.log(event.target);
-            }
-
-            element.addEventListener('click', listener);
-            element.removeEventListener('click', listener);
-          </script></code></pre>
+          <div class="sick-grid">
+            <main>
+              <pre style="" data-id="code"><code class="language-javascript" data-line-numbers="" data-trim><script type="text/template">
+                const element = document.querySelector('div');
+                
+                const listener = (event) => {
+                  console.log(event.target);
+                }
+                
+                element.addEventListener('click', listener);
+                element.removeEventListener('click', listener);
+              </script></code></pre>
+            </main>
+          </div>
         </section>
         <section>
-          <h3>Preventing propagation or default behaviour</h3>
+          <div class="sick-grid">
+            <main>
+              <h3>Preventing propagation or default behaviour</h3>
+            </main>
+          </div>
         </section>
         <section>
-          <pre style="" data-id="code"><code class="language-javascript" data-line-numbers="" data-trim><script type="text/template">
-            const element = document.querySelector('div');
-            
-            const listener = (event) => {
-              event.stopPropagation(); // stops the propagation of the event
-              event.preventDefault(); // prevents the browser to invoke default behavior (scrolling, etc..)
-            }
-            element.addEventListener('scroll', listener);
-          </script></code></pre>
+          <div class="sick-grid">
+            <main>
+              <pre style="" data-id="code"><code class="language-javascript" data-line-numbers="" data-trim><script type="text/template">
+                const element = document.querySelector('div');
+                
+                const listener = (event) => {
+                  event.stopPropagation(); // stops the propagation of the event
+                  event.preventDefault(); // prevents the browser to invoke default behavior (scrolling, etc..)
+                }
+                element.addEventListener('scroll', listener);
+              </script></code></pre>
+            </main>
+          </div>
         </section>
         <section>
-          <h3>Event target</h3>
+          <div class="sick-grid">
+            <main>
+              <h3>Event target</h3>
+            </main>
+          </div>
         </section>
         <section>
-          <pre style="" data-id="code"><code class="language-javascript" data-line-numbers="" data-trim><script type="text/template">
-            const element = document.querySelector('div');
-            
-            const listener = (event) => {
-              event.target; // reference to the element on which the event was dispatched
-              event.currentTarget; // reference to the element where the event handler was attached to
-            }
-            element.addEventListener('scroll', listener);
-          </script></code></pre>
+          <div class="sick-grid">
+            <main>
+              <pre style="" data-id="code"><code class="language-javascript" data-line-numbers="" data-trim><script type="text/template">
+                const element = document.querySelector('div');
+                
+                const listener = (event) => {
+                  event.target; // reference to the element on which the event was dispatched
+                  event.currentTarget; // reference to the element where the event handler was attached to
+                }
+                element.addEventListener('scroll', listener);
+              </script></code></pre>
+            </main>
+          </div>
         </section>
         <section>
-          <h3>Dispatching Events</h3>
+          <div class="sick-grid">
+            <main>
+              <h3>Manually Dispatching Events</h3>
+            </main>
+          </div>
         </section>
         <section>
-          <pre style="" data-id="code"><code class="language-javascript" data-line-numbers="" data-trim><script type="text/template">
-            const element = document.querySelector('div');
-            
-            const listener = (event) => {} // event listener
-            element.addEventListener('custom-event', listener);
-
-            element.dispatch(new CustomEvent('custom-event', { bubbles: true}));
-          </script></code></pre>
+          <div class="sick-grid">
+            <main>
+              <pre style="" data-id="code"><code class="language-javascript" data-line-numbers="" data-trim><script type="text/template">
+                const element = document.querySelector('div');
+                
+                const listener = (event) => {} // event listener
+                element.addEventListener('custom-event', listener);
+                
+                element.dispatch(new CustomEvent('custom-event', { bubbles: true}));
+              </script></code></pre>
+            </main>
+          </div>
         </section>
       </section>
 
       <section>
-        <section data-background="var(--radial-background)">
-          <h2>Working effectively with the DOM</h2>
+        <section data-background="assets/javascript-bg.jpg" class="dark">
+          <div class="sick-grid">
+            <header class="chapter">
+              <h2>Working effectively with the DOM</h2>
+            </header>
+          </div>
         </section>
         <section>
-          <p>As you see the DOM API only provides primitives and low level functions to work with. Thats the main reason
-            templating frameworks like (p)react, lit-html, etc.. exist. The w3c is currently working on a <a
-              href="https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Template-Instantiation.md">Template
-              Instantiation Proposal</a> to mitigate these issues</p>
+          <div class="sick-grid">
+            <main>
+              <p>As you see the DOM API only provides primitives and low level functions to work with. Thats the main
+                reason
+                templating frameworks like (p)react, lit-html, etc.. exist. The w3c is currently working on a <a
+                  href="https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Template-Instantiation.md">Template
+                  Instantiation Proposal</a> to mitigate these issues</p>
+            </main>
+          </div>
         </section>
         <section>
-          <pre data-id="code"><code class="language-javascript" data-line-numbers="" data-trim style="max-height: unset"><script type="text/template">
-            const element = document.createElement('div');
-            element.id = 'test';
-            element.classList.add('my-class');
-            
-            const subElement = document.createElement('span');
-            subElement.textContent = 'test';
-
-            element.appendChild(subElement);
-            
-            subElement.addEventListener('click', () => {
-              console.log('click');
-            })
-            
-            document.body.appendChild(element);
-
-            function updateText(text) {
-              element.querySelector('span').textContent = text;
-            }
-          </script></code></pre>
+          <div class="sick-grid">
+            <main>
+              <pre data-id="code"><code class="language-javascript" data-line-numbers="" data-trim style="max-height: unset"><script type="text/template">
+                const element = document.createElement('div');
+                element.id = 'test';
+                element.classList.add('my-class');
+                
+                const subElement = document.createElement('span');
+                subElement.textContent = 'test';
+                
+                element.appendChild(subElement);
+                
+                subElement.addEventListener('click', () => {
+                  console.log('click');
+                })
+                
+                document.body.appendChild(element);
+                
+                function updateText(text) {
+                  element.querySelector('span').textContent = text;
+                }
+              </script></code></pre>
+            </main>
+          </div>
         </section>
         <section>
-          <pre data-id="code"><code class="language-javascript" data-line-numbers="" data-trim style="max-height: unset"><script type="text/template">
-            import { render, html } from 'lit-html';
-
-            const renderFunc = (text) => {
-              return html`
-                <div id="test" class="my-class">
-                  <span @click="${ evt => console.log('click')}">${text}</span>
-                </div>
-                `;
-            }
-            function updateText(text) {
-              render(document.body, renderFunc(text));
-            }
-            updateText('text');
-          </script></code></pre>
+          <div class="sick-grid">
+            <main>
+              <pre data-id="code"><code class="language-javascript" data-line-numbers="" data-trim style="max-height: unset"><script type="text/template">
+                import { render, html } from 'lit-html';
+                
+                const renderFunc = (text) => {
+                  return html`
+                  <div id="test" class="my-class">
+                    <span @click="${ evt => console.log('click')}">${text}</span>
+                  </div>
+                  `;
+                }
+                function updateText(text) {
+                  render(document.body, renderFunc(text));
+                }
+                updateText('text');
+              </script></code></pre>
+            </main>
+          </div>
         </section>
         <section>
-          <pre data-id="code"><code class="language-javascript" data-line-numbers="" data-trim style="max-height: unset"><script type="text/template">
-            import React from 'react';
-            import ReactDom from 'react-dom';
-
-            const renderFunc = (text) => {
-              return (
-                <div id="test" class="my-class">
-                  <span onClick="{ evt => console.log('click')}">{text}</span>
-                </div>
-              );
-            }
-            function updateText(text) {
-              ReactDOM.render(renderFunc(text), document.body);
-            }
-            updateText('text');
-          </script></code></pre>
+          <div class="sick-grid">
+            <main>
+              <pre data-id="code"><code class="language-javascript" data-line-numbers="" data-trim style="max-height: unset"><script type="text/template">
+                import React from 'react';
+                import ReactDom from 'react-dom';
+                
+                const renderFunc = (text) => {
+                  return (
+                    <div id="test" class="my-class">
+                      <span onClick="{ evt => console.log('click')}">{text}</span>
+                    </div>
+                    );
+                  }
+                  function updateText(text) {
+                    ReactDOM.render(renderFunc(text), document.body);
+                  }
+                  updateText('text');
+                </script></code></pre>
+            </main>
+          </div>
         </section>
       </section>
     </div>
@@ -595,6 +812,7 @@
   <script src="plugin/highlight/highlight.js"></script>
   <script src="plugin/chalkboard/plugin.js"></script>
   <script src="plugin/externalcode/externalcode.js"></script>
+  <script src="plugin/sick/sick.js"></script>
   <script>
     // More info about initialization & config:
     // - https://revealjs.com/initialization/
@@ -605,12 +823,15 @@
       width: 1280,
       height: 720,
       // Learn about plugins: https://revealjs.com/plugins/
-      plugins: [Externalcode, RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard],
+      plugins: [Externalcode, SickPlugin, RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard],
       chalkboard: {
         boardmarkerWidth: 3,
         chalkWidth: 3,
         chalkEffect: 0,
         theme: "whiteboard"
+      },
+      sickPlugin: {
+        footerText: `Mathis Zeiher | DOM API | ${new Date().getDate()}.${new Date().getMonth() + 1}.${new Date().getFullYear()}`
       }
     });
   </script>
