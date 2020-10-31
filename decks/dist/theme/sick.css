@@ -139,17 +139,44 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 }
 
 .reveal ul ul {
-  list-style-type: square; }
+  list-style-type: none; 
+}
+
+.reveal ul ul > li::before {
+    margin-left: -1em;
+    content: "";
+    display: inline-block;
+    width: 1em;
+    vertical-align: baseline;
+    height: 0.8em;
+    background-size: contain;
+    line-height: inherit;
+    color: #007CC1;
+    content: "-";
+    background-image: none;
+  
+}
 
 .reveal ul ul ul {
-  list-style-type: circle; }
+  list-style-type: circle; 
+}
 
 .reveal ul ul,
 .reveal ul ol,
 .reveal ol ol,
 .reveal ol ul {
   display: block;
-  margin-left: 40px; }
+  margin-left: 40px; 
+}
+
+.reveal ol li::marker {
+  color: #007CC1;
+}
+
+.reveal ul ol,
+.reveal ol ol {
+  list-style-type: lower-latin;
+}
 
 .reveal dt {
   font-weight: bold; }
@@ -290,6 +317,18 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   background: rgba(0, 0, 0, 0.2);
   color: #007CC1; }
 
+
+.reveal .slides:not(.no-logo)::before {
+  content: '';
+  position: absolute;
+  right: 50px;
+  top: 60px;
+  background-image: url('../../assets/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 40px;
+}
 /*********************************************
  * PRINT BACKGROUND
  *********************************************/

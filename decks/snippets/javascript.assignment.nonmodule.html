@@ -1,0 +1,13 @@
+<script>
+  var varVariable = 'var';
+  let letVariable = 'let'
+  const constVariable = 'const'
+</script>
+<script>
+   console.log(varVariable) // output "var"
+   console.log(window.varVariable) // output "var"
+   console.log(letVariable) // output "let"
+   console.log(window.letVariable) // output undefined
+   console.log(constVariable) // output "const"
+   console.log(window.constVariable) // output undefined
+</script>

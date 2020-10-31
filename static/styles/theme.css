@@ -1,37 +1,39 @@
 :root {
-    --background-color: #fff;
     --main-font: Open Sans, Helvetica, sans-serif;
     --main-font-size: 14px;
-    --main-color: #2C3133;
     --block-margin: 20px;
     --heading-margin: 0 0 20px 0;
     --heading-font: Open Sans, Helvetica, sans-serif;
-    --heading-color: #737F85;
     --heading-line-height: 1.2;
     --heading-letter-spacing: normal;
     --heading-text-transform: uppercase;
     --heading-text-shadow: none;
     --heading-font-weight: 600;
+    --background-color: #fff;
+    --background-color-80: rgba(255,255,255,0.8);
+    --main-color: #2C3133;
+    --heading-color: #737F85;
     --heading1-color: #007CC1;
     --heading2-color: #007CC1;
+    --link-color: #007CC1;
+    --link-color-hover: #009DF4;
+    --selection-background-color: #98bdef;
+    --selection-color: #fff;
+    --highlight-background: #E5F1F8;
     --heading1-text-shadow: none;
     --heading1-size: 2.5em;
     --heading2-size: 1.6em;
     --heading3-size: 1.3em;
     --heading4-size: 1em;
     --code-font: monospace;
-    --link-color: #007CC1;
-    --link-color-hover: #009DF4;
-    --selection-background-color: #98bdef;
-    --selection-color: #fff;
-    --highlight-background: #E5F1F8;
 
     --radial-background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(201,220,232,1) 80%, rgba(141,181,206,1) 100%);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --background-color: #141718;
+        --background-color: rgb(20, 23, 24);
+        --background-color-80: rgb(20, 23, 24, 0.8);
         --main-color: #fff;
         --heading-color: #fff;
         --heading1-color: #fff;
@@ -39,4 +41,45 @@
         --highlight-background: #2C3133;
         --radial-background: radial-gradient(circle, rgba(44,49,51,1) 0%, rgba(31,35,36,1) 80%, rgba(0,0,0,1) 100%);
     }
+
+    :root section.light {
+        --background-color: #fff;
+        --background-color-80: rgba(255,255,255,0.8);
+        --main-color: #2C3133;
+        --heading-color: #737F85;
+        --heading1-color: #007CC1;
+        --heading2-color: #007CC1;
+        --link-color: #007CC1;
+        --link-color-hover: #009DF4;
+        --selection-background-color: #98bdef;
+        --selection-color: #fff;
+        --highlight-background: #E5F1F8;
+        --radial-background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(201,220,232,1) 80%, rgba(141,181,206,1) 100%);
+    }
+}
+:root section.dark,
+:root.dark {
+    --background-color: #141718;
+    --background-color-80: rgb(20, 23, 24, 0.8);
+    --main-color: #fff;
+    --heading-color: #fff;
+    --heading1-color: #fff;
+    --heading2-color: #fff;
+    --highlight-background: #2C3133;
+    --radial-background: radial-gradient(circle, rgba(44,49,51,1) 0%, rgba(31,35,36,1) 80%, rgba(0,0,0,1) 100%);
+}
+:root.dark section.light,
+:root.light {
+    --background-color: #fff;
+    --background-color-80: rgba(255,255,255,0.8);
+    --main-color: #2C3133;
+    --heading-color: #737F85;
+    --heading1-color: #007CC1;
+    --heading2-color: #007CC1;
+    --link-color: #007CC1;
+    --link-color-hover: #009DF4;
+    --selection-background-color: #98bdef;
+    --selection-color: #fff;
+    --highlight-background: #E5F1F8;
+    --radial-background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(201,220,232,1) 80%, rgba(141,181,206,1) 100%);
 }

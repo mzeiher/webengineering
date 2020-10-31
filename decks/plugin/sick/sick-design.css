@@ -1,0 +1,138 @@
+code.inline {
+    background-color: var(--highlight-background);
+}
+
+small i.fas, 
+small i.fab {
+    vertical-align: baseline;
+}
+
+:root {
+    --light-cyan: #E0FEFE;
+    --periwinkle: #C7CEEA;
+    --pale-orange: #FFDAC1;
+    --salmon-pink: #FF9AA2;
+    --light-yellow: #FFFFD8;
+    --magic-mint: #B5EAD7;
+}
+
+.sick-h-layout {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.sick-grid {
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    column-gap: 0.6%;
+    grid-template-rows: 7% 10% 5% 33% 33% 5% 7%;
+}
+
+.sick-grid > header {
+    grid-column: 2 / span 11;
+    grid-row-start: 2;
+    grid-row-end: span 1;
+}
+
+.sick-grid > header h2 {
+    font-size: 0.8em;
+    font-weight: bold;
+    margin: 0 0 0 0;
+    text-align: left;
+    text-transform: none;
+}
+.sick-grid > header h3 {
+    font-size: 0.6em;
+    margin: 0 0 0 0;
+    text-align: left;
+    text-transform: none;
+}
+
+.sick-grid > header.title {
+    grid-row-start: 4;
+    grid-row-end: span 1;
+    grid-column: 2 / span 12;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: flex-start;
+}
+
+.sick-grid > header.title > h1 {
+    font-size: 1.5em;
+    line-height: 1.7em;
+    font-weight: bold;
+    margin: 1em 0 0 0;
+    max-width: 50%;
+    text-align: left;
+    text-transform: none;
+}
+
+.sick-grid > header.chapter {
+    grid-row-start: 5;
+    grid-row-end: span 1;
+    background-color: var(--background-color-80);
+    padding: 1em 0 0 1em;
+}
+
+.sick-grid > main.full,
+.sick-grid > main {
+    grid-row: 2 / span 5;
+    grid-column: 1 / span 14;
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-size: 0.8em;
+}
+
+.sick-grid > main.right {
+    align-items: flex-end;
+}
+.sick-grid > main.left {
+    align-items: flex-start;
+}
+.sick-grid > main.top {
+    justify-content: flex-start;
+}
+
+.sick-grid > header + main {
+    grid-row: 4 / span 2;
+    grid-column: 2 / span 12;
+}
+.sick-grid > footer {
+    grid-row-start: 7;
+    grid-row-end: span 1;
+    grid-column: 2 / span 12;
+    vertical-align: middle;
+    color: var(--heading-color);
+    font-size: 0.3em;
+    text-align: center;
+}
+
+sup[data-footnote],
+sup[data-footnote-link] {
+    font-size: 0.5em;
+}
+ul.sick-footnote {
+    list-style: none;
+    grid-row: 6 / span 1;
+    grid-column: 2 / span 12;
+    align-self: flex-end;
+    justify-self: left;
+
+    font-size: 0.2em;
+}
+ul.sick-footnote li::before {
+    display: none;
+}

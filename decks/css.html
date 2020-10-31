@@ -2170,7 +2170,7 @@
         </section>
         <section>
           <p>The stacking context defines the order in which elements that overlap will be drawn and is defined by the
-            order and depth of the elements within the HTMLs DOM and </p>
+            order and depth of the elements within the HTMLs DOM and can manually be created by the css properties <code class="inline">z-index, opacity, transform</code></p>
         </section>
         <style>
           .stack-step-by-step {
@@ -2185,7 +2185,6 @@
             width: 100px;
             top: 20px;
             left: 20px;
-            opacity: 0.8;
           }
 
           .stack-step-by-step #one {
@@ -2214,7 +2213,6 @@
                 width: 100px;
                 top: 20px;
                 left: 20px;
-                opacity: 0.8;
               }
     
               .stack-step-by-step #one {
@@ -2335,6 +2333,46 @@
                 <div>1.1.2</div>
               </div>
               <div>1.2</div>
+            </div>
+            <div id="two">2</div>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim data-line-numbers="3">
+            <div id="one" stlye="z-index: 1">1
+              <div>1.1
+                <div style="z-index: 1">1.1.2</div>
+              </div>
+              <div>1.2</div>
+            </div>
+            <div id="two">2</div>
+          </code></pre>
+          <div data-id="sample" class="stack-step-by-step">
+            <div id="one" style="z-index: 1;">1
+              <div>1.1
+                <div style="z-index: 1">1.1.2</div>
+              </div>
+              <div>1.2</div>
+            </div>
+            <div id="two">2</div>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <pre data-id="code"><code data-trim data-line-numbers="5,7">
+            <div id="one" stlye="">1
+              <div>1.1
+                <div style="z-index: 1">1.1.2</div>
+              </div>
+              <div style="z-index: 1;">1.2</div>
+            </div>
+            <div id="two">2</div>
+          </code></pre>
+          <div data-id="sample" class="stack-step-by-step">
+            <div id="one" style="">1
+              <div>1.1
+                <div style="z-index: 1">1.1.2</div>
+              </div>
+              <div style="z-index: 1;">1.2</div>
             </div>
             <div id="two">2</div>
           </div>

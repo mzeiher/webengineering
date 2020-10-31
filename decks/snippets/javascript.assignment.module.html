@@ -1,0 +1,13 @@
+<script type="module">
+  var varVariable = 'var';
+  let letVariable = 'let'
+  const constVariable = 'const'
+</script>
+<script type="module">
+   console.log(varVariable) // Uncaught ReferenceError: varVariable is not defined
+   console.log(window.varVariable) // output undefined
+   console.log(letVariable) // Uncaught ReferenceError: varVariable is not defined
+   console.log(window.letVariable) // output undefined
+   console.log(constVariable) // Uncaught ReferenceError: varVariable is not defined
+   console.log(window.constVariable) // output undefined
+</script>
