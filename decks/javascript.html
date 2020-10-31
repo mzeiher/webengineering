@@ -4619,8 +4619,55 @@
             <main>
               <p><a href="https://www.typescriptlang.org/">Typescript</a> and <a href="https://babeljs.io/">Babel</a>
                 can
-                transform and output different module types. There are also module bundlers available (<a
-                  href="https://webpack.js.org/">Webpack</a>, <a href="https://rollupjs.org/guide/en/">Rollup</a> which
+                transform and output different module types</p>
+            </main>
+          </div>
+        </section>
+        <section>
+          <div class="sick-grid">
+            <main>
+              <h3>Module Imports and the Browser</h3>
+            </main>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <div class="sick-grid">
+            <main>
+              <pre><code data-trim data-line-numbers="1" data-id="code">
+                import { export1 } from 'my-module'
+                import { export2 } from './my-module.js'
+              </code></pre>
+              <p>The browser does not support module imports until <a href="https://github.com/WICG/import-maps">Import Maps</a> are implemented</p>
+            </main>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <div class="sick-grid">
+            <main>
+              <pre><code data-trim data-line-numbers="2" data-id="code">
+                import { export1 } from 'my-module'
+                import { export2 } from './my-module.js'
+              </code></pre>
+              <p>The browser only supports relative imports with a defined extension</p>
+            </main>
+          </div>
+        </section>
+        <section data-auto-animate="">
+          <div class="sick-grid">
+            <main>
+              <pre><code data-trim data-line-numbers="1,2" data-id="code">
+                import { export1 } from 'my-module'
+                import { export2 } from './my-module.js'
+              </code></pre>
+              <p>nodejs supports module imports and imports without extensions, module imports will be resolved according to the node module resolution algorithm</p>
+            </main>
+          </div>
+        </section>
+        <section>
+          <div class="sick-grid">
+            <main>
+              <p>Before you can deploy your project and let it run on the web browser and if you used module imports you have to use module bundlers to post process your javascript code, common used bundlers are <a
+                  href="https://webpack.js.org/">Webpack</a>, <a href="https://rollupjs.org/guide/en/">Rollup</a>, <a href="https://esbuild.github.io/">esbuild</a> or <a href="https://www.snowpack.dev/">snowpack</a> which will resolve your imports,
                 statically analyze your modules and output performant bundles</p>
             </main>
           </div>
