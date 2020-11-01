@@ -13,8 +13,9 @@
 
   <!-- Theme used for syntax highlighted code -->
   <link rel="stylesheet" href="plugin/highlight/tomorrow.css" id="highlight-theme">
-
   <link rel="stylesheet" href="common.css">
+
+  <link rel="stylesheet" href="plugin/sick/sick-design.css">
 
   <link rel="stylesheet" href="fontawesome/all.css">
 
@@ -48,6 +49,7 @@
   <script src="plugin/highlight/highlight.js"></script>
   <script src="plugin/chalkboard/plugin.js"></script>
   <script src="plugin/externalcode/externalcode.js"></script>
+  <script src="plugin/sick/sick.js"></script>
   <script>
     // More info about initialization & config:
     // - https://revealjs.com/initialization/
@@ -58,12 +60,15 @@
       width: 1280,
       height: 720,
       // Learn about plugins: https://revealjs.com/plugins/
-      plugins: [Externalcode, RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard],
+      plugins: [Externalcode, SickPlugin, RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard],
       chalkboard: {
         boardmarkerWidth: 3,
         chalkWidth: 3,
         chalkEffect: 0,
         theme: "whiteboard"
+      },
+      sickPlugin: {
+        footerText: `Mathis Zeiher | DOM API | ${new Date().getDate()}.${new Date().getMonth() + 1}.${new Date().getFullYear()}`
       }
     });
   </script>

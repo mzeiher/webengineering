@@ -810,6 +810,74 @@
         <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
           <h2>The global window object</h2>
         </section>
+        <section data-sick-grid>
+          <p>Until builtin modules are a thing in the browser the only way to access the browser APIs is with the global
+            <code class="inline">window</code> object</p>
+        </section>
+        <section data-sick-grid>
+          <p>All builtin objects like <code class="inline">Array, Set, Map, Promise</code> are defined on the global
+            window object and are automatically injected and available in the script scope</p>
+          <p><small>calling <code class="inline">window.Promise.resolve()</code> is the same as <code
+                class="inline">Promise.resolve()</code> because these objects are automatically injected</small></p>
+        </section>
+        <section data-sick-grid>
+          <p>You can't share global Objects of different execution environments, for example <code
+              class="inline">iframes</code></p>
+          <pre><code class="language-javascript" data-trim data-line-numbers=""><script type="text/template">
+            document.querySelector('iframe').contentWindow.window.Array === window.Array // false
+          </script></code></pre>
+        </section>
+        <section data-sick-grid>
+          <h3>window.document</h3>
+        </section>
+        <section>
+          <p>the <code class="inline">window.document</code> property provides all APIs to work and manipulate with the DOM of the currently loaded document</p>
+        </section>
+        <section data-sick-grid>
+          <h3>window.navigator property</h3>
+        </section>
+        <section data-sick-grid>
+          <p>The <code class="inline">window.navigator</code> property provides functions to interact with the browser
+            and the APIs the browser provides</p>
+        </section>
+        <section data-sick-grid>
+          <p>A small overview of the provided APIs and functions</p>
+          <ul>
+            <li><code class="inline">window.navigator.language</code> return the current set language</li>
+            <li><code class="inline">window.navigator.geoLocation</code> access geolocation API</li>
+            <li><code class="inline">window.navigator.usb</code> access WebUSB API</li>
+            <li><code class="inline">window.navigator.bluetooth</code> access WebBluetooth API</li>
+          </ul>
+        </section>
+        <section data-sick-grid="">
+          <h3>window.location</h3>
+        </section>
+        <section data-sick-grid>
+          <p>The <code class="inline">window.location</code> object provides you with all information about your current
+            browsing location</p>
+          <p><small>do not confuse <code class="inline">location</code> with <code
+                class="inline">navigator.geoLocation</code></small></p>
+        </section>
+        <section data-sick-grid="">
+          <h3>window.history</h3>
+        </section>
+        <section data-sick-grid>
+          <p>the <code class="inline">window.history</code> object can be used to manipulate the browsers back/forward history and shown URL</p>
+          <p><small>If you develop single page applications this API is important for routing and "back" behavior</small></p>
+        </section>
+        <section data-sick-grid="">
+          <h3>window.localstorage</h3>
+        </section>
+        <section data-sick-grid>
+          <p>the <code class="inline">window.localstorage</code> object provides an alternative for cookies to save information to a specific origin</p>
+          <p><small>Every "origin" has its own local storage can can't read data from other origins</small></p>
+        </section>
+        <section data-sick-grid="">
+          <h3>window.crypto</h3>
+        </section>
+        <section data-sick-grid>
+          <p>Never roll your own crypto and use the functions provided by <code class="inline">window.crypto</code> for hashing/encrypt/decrypt</p>
+        </section>
       </section>
     </div>
   </div>

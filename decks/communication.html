@@ -47,10 +47,40 @@
           <h3>Server Sent Events</h3>
         </section>
         <section>
-          <h3>Fetch</h3>
+          <h3>REST</h3>
         </section>
       </section>
 
+      <section>
+        <section data-sick-chapter>
+          <h2>fetch API</h2>
+        </section>
+        <section data-sick-grid>
+          <pre><code data-trim class="language-javascript"><script type="text-template">
+            var controller = new AbortController();
+            var signal = controller.signal;
+
+            var downloadBtn = document.querySelector('.download');
+            var abortBtn = document.querySelector('.abort');
+
+            downloadBtn.addEventListener('click', fetchVideo);
+
+            abortBtn.addEventListener('click', function() {
+              controller.abort();
+              console.log('Download aborted');
+            });
+
+            function fetchVideo() {
+              ...
+              fetch(url, {signal}).then(function(response) {
+                ...
+              }).catch(function(e) {
+                reports.textContent = 'Download error: ' + e.message;
+              })
+            }
+          </script></code></pre>
+        </section>
+      </section>
 
       <section>
         <section data-background="var(--radial-background)">

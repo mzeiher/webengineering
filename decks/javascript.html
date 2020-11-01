@@ -4312,7 +4312,8 @@
           <h2>Exception Handling</h2>
         </section>
         <section data-sick-grid>
-          <p>An exception is an error which can happen during the program execution - or runtime, to prevent a crash or undefined behavior it is important that you guard handle exceptions which happen within your program</p>
+          <p>An exception is an error which can happen during the program execution - or runtime, to prevent a crash or
+            undefined behavior it is important that you guard handle exceptions which happen within your program</p>
         </section>
         <section data-sick-grid>
           <p>Javascript supports exception handling with <code class="inline">try - catch</code> blocks</p>
@@ -4351,7 +4352,8 @@
             }
             // resume program
           </script></code></pre>
-          <p>If an exception happens within the try block the catch block will be executed with the exception passed as an argument</p>
+          <p>If an exception happens within the try block the catch block will be executed with the exception passed as
+            an argument</p>
         </section>
         <section data-sick-grid data-auto-animate="">
           <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="7"><script type="text/template">
@@ -4363,10 +4365,12 @@
             }
             // resume program
           </script></code></pre>
-          <p>If no exception happened or the exception was handled within the catch block the normal program flow will continue</p>
+          <p>If no exception happened or the exception was handled within the catch block the normal program flow will
+            continue</p>
         </section>
         <section data-sick-grid="">
-          <p>Exceptions which happen somewhere in your code will bubble up the stack until the nearest catch block is found</p>
+          <p>Exceptions which happen somewhere in your code will bubble up the stack until the nearest catch block is
+            found</p>
         </section>
         <section data-sick-grid="">
           <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="3"><script type="text/template">
@@ -4598,7 +4602,8 @@
               // error thrown;
             }
           </code></pre>
-          <p><code class="inline">await</code> will stop the execution of the code and wait until the returned Promise will either resolve or rejects</p>
+          <p><code class="inline">await</code> will stop the execution of the code and wait until the returned Promise
+            will either resolve or rejects</p>
         </section>
         <section data-sick-grid="" data-auto-animate="">
           <pre data-id="code"><code data-trim data-line-numbers="2" class="language-javascript">
@@ -4609,7 +4614,8 @@
               // error thrown;
             }
           </code></pre>
-          <p>once the promise resolved, the resolved value will be assigned to the variable "value" and javascript will continue the execution</p>
+          <p>once the promise resolved, the resolved value will be assigned to the variable "value" and javascript will
+            continue the execution</p>
         </section>
         <section data-sick-grid="" data-auto-animate="">
           <pre data-id="code"><code data-trim data-line-numbers="3" class="language-javascript">
@@ -4620,7 +4626,8 @@
               // error thrown;
             }
           </code></pre>
-          <p>another <code class="inline">await</code> will stop the execution again until the promise resolves or rejects</p>
+          <p>another <code class="inline">await</code> will stop the execution again until the promise resolves or
+            rejects</p>
         </section>
         <section data-sick-grid="" data-auto-animate="">
           <pre data-id="code"><code data-trim data-line-numbers="4-6" class="language-javascript">
@@ -4631,7 +4638,8 @@
               // error thrown;
             }
           </code></pre>
-          <p>If one of the promises within the try block reject, the catch block is triggered and you can handle the exception</p>
+          <p>If one of the promises within the try block reject, the catch block is triggered and you can handle the
+            exception</p>
         </section>
         <section data-sick-grid="">
           <pre data-id="code"><code data-trim data-line-numbers="" class="language-javascript">
@@ -4641,7 +4649,8 @@
             }
           </code></pre>
           <p>function defined with the <code class="inline">async</code> keyword always return a promise</p>
-          <p><small>Until <a href="https://github.com/tc39/proposal-top-level-await">Top Level Await</a> is not in the ES262 specifictaion <code class="inline">await</code> can only be used within async functions</small></p>
+          <p><small>Until <a href="https://github.com/tc39/proposal-top-level-await">Top Level Await</a> is not in the
+              ES262 specifictaion <code class="inline">await</code> can only be used within async functions</small></p>
         </section>
       </section>
 
@@ -4704,33 +4713,83 @@
             </main>
           </div>
         </section>
-        <section>
-          <div class="sick-grid">
-            <main>
-              <div class="sick-h-layout">
-                <div style="width: 30%">
-                  <div
-                    style="background: url('assets/eventloop.svg'); background-repeat: none; height: 300px; width:300px;background-repeat: no-repeat;background-size: cover;background-position: -144px -142px;margin: 0 auto">
-                  </div>
-                </div>
-                <div style="width: 55%">
-                  <ul style="margin-left: 3em; font-size: 0.8em">
-                    <li>FIFO Task queue</li>
-                    <li>New Tasks are appended at the end of the queue</li>
-                    <li>Most callbacks from the engine a queued here</li>
-                    <li>The javascript process picks the first item, processes it and continues in the event loop</li>
-                    <li>Task can be queued with
-                      <ul>
-                        <li><code class="inline">globalThis.setTimeout()</code></li>
-                        <li><code class="inline">globalThis.setInterval()</code></li>
-                        <li><code class="inline">globalThis.postMessage()</code></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </main>
+        <section data-sick-grid>
+          <ul>
+            <li>FIFO Task queue</li>
+            <li>New Tasks are appended at the end of the queue</li>
+            <li>Most callbacks from the javascript engine a enqueued here</li>
+            <li>The javascript process picks the first item, processes it and continues in the event loop</li>
+            <li>Task can be queued with
+              <ul>
+                <li><code class="inline">globalThis.setTimeout()</code></li>
+                <li><code class="inline">globalThis.setInterval()</code></li>
+                <li><code class="inline">globalThis.postMessage()</code></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section data-sick-grid="">
+          <div
+            style="background: url('assets/eventloop.svg'); background-repeat: none; height: 300px; width:300px;background-repeat: no-repeat;background-size: cover;background-position: 23px -21px; margin: 0 auto">
           </div>
+          <h3>The Microtask queue</h3>
+        </section>
+        <section data-sick-grid="">
+          <ul>
+            <li>FIFO queue</li>
+            <li>The microtask queue will execute until the queue ist empty, <b>warning</b> you can block the event queue
+              by enqueue microtasks during the microtasks execution</li>
+            <li>resolved and rejected promises are executed here</li>
+            <li>Callbacks from the <code class="inline">(Mutation/Resize)Observer</code> are executed here</li>
+            <li>Tasks can be enqueued with
+              <ul>
+                <li><code class="inline">Promise.resolve().then(cb)</code></li>
+                <li><code class="inline">Mutation/ResizeObserver</code></li>
+                <li><code class="inline">globalThis.queueMicrotask(cb)</code></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section data-sick-grid="">
+          <div
+            style="background: url('assets/eventloop.svg'); background-repeat: none; height: 300px; width:300px;background-repeat: no-repeat;background-size: cover;background-position: -141px 114px; margin: 0 auto">
+          </div>
+          <h3>The Idle Task queue</h3>
+        </section>
+        <section data-sick-grid="">
+          <ul>
+            <li>FIFO queue (Callbacks with a specified timeout can run before other in the list)</li>
+            <li>Callbacks enqueued in the requestIdle callback list will be executed like the task queue but only if the
+              browser idles</li>
+            <li>Tasks can be enqueued with
+              <ul>
+                <li><code class="inline">globalThis.requestIdleCallback(cb)</code></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section data-sick-grid="">
+          <div
+            style="background: url('assets/eventloop.svg'); background-repeat: none; height: 300px; width:300px;background-repeat: no-repeat;background-size: cover;background-position: -297px -21px; margin: 0 auto">
+          </div>
+          <h3>The Request Animation Frame queue</h3>
+        </section>
+        <section data-sick-grid="">
+          <ul>
+            <li>FIFO queue</li>
+            <li>Callbacks will run before the browser paints</li>
+            <li>The browser tries to maintain 60fps and paints every ~16.6ms</li>
+            <li>All callbacks enqueued after the last rAF run will be executed, new callbacks that are enqueued during the execution will be run in the next round</li>
+            <li>Tasks can be enqueued with
+              <ul>
+                <li><code class="inline">globalThis.requestAnimationFrame(cb)</code></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section data-sick-grid="">
+          <p>Because there is only one eventloop, especially in the browser you should take care that the javascript execution time of all of your code within in round in loop does not exceed 16.6ms to maintain a stable 60fps</p>
+          <p><small>If you have work that needs a longer execution time try to split it or deffer it to Webworkers, <a href="https://github.com/GoogleChromeLabs/comlink">ComLink</a> is a good helper library</small></p>
         </section>
         <section>
           <div class="sick-grid">
