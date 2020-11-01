@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>web engineering 101</title>
+  <title>web engineering</title>
 
   <link rel="stylesheet" href="dist/reset.css">
   <link rel="stylesheet" href="dist/reveal.css">
@@ -13,8 +13,10 @@
 
   <!-- Theme used for syntax highlighted code -->
   <link rel="stylesheet" href="plugin/highlight/tomorrow.css" id="highlight-theme">
-
   <link rel="stylesheet" href="common.css">
+
+  <link rel="stylesheet" href="plugin/sick/sick-design.css">
+
 
   <link rel="stylesheet" href="fontawesome/all.css">
 
@@ -23,20 +25,20 @@
 <body>
   <div class="reveal">
     <div class="slides">
-      <section>
-        <h1>web engineering 101</h1>
+      <section data-sick-title data-background="assets/javascript-bg.jpg" class="dark">
+        <h1>Web Engineering</h1>
       </section>
-      <section>
+      <section data-sick-grid>
         <h2>about me</h2>
-        <div class="r-hstack">
+        <div class="sick-h-layout center">
           <img src="assets/profile.jpg" height="200" class="round">
-          <ul>
+          <ul data-sick-no-decoration>
             <li>Mathis Zeiher</li>
             <li>Software Engineer <a href="http://www.sick.com">@SICK AG</a></li>
             <li>In the field for way too long...</li>
           </ul>
         </div>
-        <div class="r-hstack margin-10" style="font-size: 2em;">
+        <div class="sick-h-layout center" style="font-size: 2em;">
           <a href="mailto:mathis@bitschubser.dev">
             <i class="fas fa-fw fa-at"></i>
           </a>
@@ -52,7 +54,7 @@
         </div>
       </section>
 
-      <section>
+      <section data-sick-grid>
         <p>All the slides are available here: <a
             href="https://mzeiher.github.io/webengineering/">https://mzeiher.github.io/webengineering/</a></p>
         <p><small>
@@ -63,25 +65,25 @@
       </section>
 
 
-      <section data-background="var(--radial-background)">
+      <section data-sick-grid>
         <h2>what about you?</h2>
       </section>
 
 
       <section>
-        <section data-background="var(--radial-background)">
-          <h2>goals</h2>
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+          <h2>Goals</h2>
         </section>
-        <section>
+        <section data-sick-grid>
           <h3>Course Goals</h3>
         </section>
-        <section>
+        <section data-sick-grid>
           <h3>professional expertise</h3>
           <blockquote>Die Studierenden setzen die erarbeiteten Theorien und Modelle in Bezug zu ihren Erfahrungen aus
             der beruflichen Praxis
             und können deren Grenzen und praktische Anwendbarkeit einschätzen.</blockquote>
         </section>
-        <section>
+        <section data-sick-grid>
           <h3>methodological expertise</h3>
           <blockquote>Die Studierenden sind mit Abschluss des Moduls in der Lage, für weitgehend standardisierte
             Anwendungsfälle in der
@@ -90,18 +92,15 @@
             ihrem beruflichen Anwendungsfeld und können diese in konkreten Handlungssituationen gegeneinander abwägen
           </blockquote>
         </section>
-        <section>
+        <section data-sick-grid>
           <h3>Social and personal experise</h3>
           <blockquote>Die Studierenden können sowohl eigenständig, also auch im Team zielorientiert und nachhaltig
             handeln</blockquote>
         </section>
-        <section>
-          <img class="r-stretch" src="assets/approximate_knowledge.jpg" />
-          <ul class="sources">
-            <li>http://www.quickmeme.com/meme/3tnh3f</li>
-          </ul>
+        <section data-sick-grid>
+          <figure stlye="height:100%" data-sick-footnote-link="http://www.quickmeme.com/meme/3tnh3f"><img style="height: 100%;" src="assets/approximate_knowledge.jpg" /></figure>
         </section>
-        <section>
+        <section data-sick-grid>
           <p>Overview of existing technologies in webengineering</p>
           <p>Able to say "it depends..." and pick the tools which suit the best for the job</p>
           <p>Able to look things up (no one expects from you that you know everything)</p>
@@ -109,28 +108,28 @@
           <p>Fun while learning</p>
           <p>Outlook to the future</p>
         </section>
-        <section>
+        <section data-sick-grid>
           <h3>whats not in the course</h3>
         </section>
-        <section>
+        <section data-sick-grid>
           <p>Fanboiism/Fangirlism</p>
           <p>Thoughtleadership</p>
           <p>Framework/Technology wars</p>
         </section>
-        <section>
+        <section data-sick-grid>
           <h3>disclaimer</h3>
         </section>
-        <section>
+        <section data-sick-grid>
           <p><span class="highlight"><i class="fas fa-comment-dots"></i>Comments are highly subjective</span></p>
           <p><span class="highlight"><i class="fab fa-twitter"></i>Interesting people to follow</span></p>
           <p><span class="highlight"><i class="fas fa-play-circle"></i>Interesting videos to watch</span></p>
           <p><span class="highlight"><i class="fas fa-link"></i>Interesting links to read</span></p>
           <p><span class="highlight"><i class="fab fa-github"></i>Interesting repositories</span></p>
         </section>
-        <section>
+        <section data-sick-grid>
           <h3>good resources</h3>
         </section>
-        <section>
+        <section data-sick-grid>
           <p><a href="https://developer.mozilla.org/en-US/">Mozilla Developer Network</a></p>
           <p><a href="https://www.youtube.com/user/ChromeDevelopers">Chrome Webcast</a></p>
           <p><a href="https://caniuse.com/">caniuse.com</a></p>
@@ -141,23 +140,23 @@
 
 
       <section>
-        <section data-background="var(--radial-background)">
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
           <h2>what?</h2>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>introduction</h3>
           <p>Who is who (w3c, CSSWG, WHATWG, WICG, ES262, TC39 and others)</p>
           <p>History of webengineering</p>
           <p>Engines (blink, webkit, quantum (mozilla))</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>HTML</h3>
           <p>Basics</p>
           <p>HTML5 syntax</p>
           <p>Elements</p>
           <p>ARIA</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>CSS</h3>
           <p>the CSS cascade, selectors and specificity</p>
           <p>positioning</p>
@@ -166,13 +165,13 @@
           <p>animations</p>
           <p>media queries</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>DOM/CSSOM</h3>
           <p>Document Object Model, DOM manipulation, EventTarget, ShadowDom, Custom Elements</p>
           <p>style attribute</p>
           <p>CSS object model, Constructable StyleSheets</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>javascript</h3>
           <p>ES262 basics</p>
           <p>Versions (es3, es5, es6, es2015-2019)</p>
@@ -181,7 +180,7 @@
             and
             lexical this) explained</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>javascript - advanced</h3>
           <p>functional and oo paradigm for programming</p>
           <p>Arrays (map/reduce) Arrays and ArrayLike</p>
@@ -190,7 +189,7 @@
           <p>Typescript/Flow/ReasonML</p>
           <p>the javascript event loop explained (micro/macro task)</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>communication protocols</h3>
           <p>HTTP, HTTP/2, HTTP/3 (QUIC)</p>
           <p>REST (GraphQL) (XMLHttpRequest, fetch)</p>
@@ -198,7 +197,7 @@
           <p>Websockets</p>
           <p>WebRTC</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>what: backend technologies and stacks</h3>
           <p>Node (JS) (Apollo for GraphQL, epxress)</p>
           <p>JavaEE (Spring Boot)</p>
@@ -208,13 +207,13 @@
           <p>LAMP (Linux Apache MySQL PHP)</p>
           <p>MEAN/MERN (mongoDB, express, angular, node)</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>backend technologies and stacks</h3>
           <p>Databases NoSQL, SQL, Document Stores, Big Table</p>
           <p>"Serverless" Gatsby, Next, Zeit, </p>
           <p>SSR (https://developers.google.com/web/updates/2019/02/rendering-on-the-web)</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>frameworks and libraries</h3>
           <p>General overview over the most popular frameworks, how they work and differences</p>
           <p>(p)react (class based and hooks (also how they work ;))</p>
@@ -223,14 +222,14 @@
           <p>lit-html/hyper-html/lighter-html</p>
           </ul>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>security and authentication</h3>
           <p>OWASP</p>
           <p>XSS, Injection, secure store</p>
           <p>CORS, CSP</p>
           <p>OAuth/OpenID, JWT, HTTP Basic, HTTP Digest, Cookies</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>modern js tool chain</h3>
           <p>modern javascript development needs its own tool chain to organize small and large projects, enabling
             shiping
@@ -242,7 +241,7 @@
           <p>testing - karma/selenium, jest, jasmine, mocha</p>
           </ul>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>advanced topics</h3>
           <p>Worklets (parallelism), ServiceWorker (PWA, notification triggers,
             https://medium.com/@amberovsky/crdt-conflict-free-replicated-data-types-b4bfc8459d26), CSS Houdini
@@ -251,7 +250,7 @@
           <p>Rendering techniques (Server Side Rendering, Client Side Rendering and everything in between)</p>
           <p>WebGL/WebGPU</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>advanced topics</h3>
           <p>Project FUGU APIs (WebUSB, WebSerial, WebFileAPI, ShareAPI, ContactAPI, Object Recognition API, etc)
           </p>
@@ -263,7 +262,7 @@
 
 
       <section>
-        <section data-background="var(--radial-background)">
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
           <h2>Tools needed</h2>
         </section>
         <section>
@@ -276,13 +275,13 @@
 
 
 
-      <section data-background="var(--radial-background)">
+      <section data-sick-grid>
         <h2>lets start...</h2>
       </section>
 
 
       <section>
-        <section data-background="var(--radial-background)">
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
           <h2>who is who</h2>
         </section>
         <section>
@@ -380,7 +379,7 @@
 
 
       <section>
-        <section data-background="var(--radial-background)">
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
           <h2>the internet</h2>
         </section>
         <section data-background-color="#000">
@@ -582,7 +581,7 @@
 
 
       <section>
-        <section data-background="var(--radial-background)">
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
           <h2>engines</h2>
         </section>
         <section>
@@ -668,7 +667,7 @@
 
 
       <section>
-        <section data-background="var(--radial-background)">
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
           <h2>history lesson</h2>
         </section>
         <section>
@@ -735,7 +734,7 @@
 
 
       <section>
-        <section data-background="var(--radial-background)">
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
           <h2>oh boi...</h2>
           <h3>how things have changed</h3>
         </section>
@@ -852,6 +851,8 @@
   <script src="plugin/markdown/markdown.js"></script>
   <script src="plugin/highlight/highlight.js"></script>
   <script src="plugin/chalkboard/plugin.js"></script>
+  <script src="plugin/externalcode/externalcode.js"></script>
+  <script src="plugin/sick/sick.js"></script>
   <script>
     // More info about initialization & config:
     // - https://revealjs.com/initialization/
@@ -862,15 +863,17 @@
       width: 1280,
       height: 720,
       // Learn about plugins: https://revealjs.com/plugins/
-      plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard],
+      plugins: [Externalcode, SickPlugin, RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard],
       chalkboard: {
         boardmarkerWidth: 3,
         chalkWidth: 3,
         chalkEffect: 0,
         theme: "whiteboard"
+      },
+      sickPlugin: {
+        footerText: `Mathis Zeiher | Web Engineering | ${new Date().getDate()}.${new Date().getMonth() + 1}.${new Date().getFullYear()}`
       }
     });
-
   </script>
 </body>
 

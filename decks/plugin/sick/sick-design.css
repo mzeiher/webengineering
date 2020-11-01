@@ -26,6 +26,10 @@ small i.fab {
     width: 100%;
 }
 
+.sick-h-layout.center {
+    justify-content: center;
+}
+
 .sick-grid {
     display: grid;
     grid-template-columns: repeat(14, 1fr);
@@ -134,5 +138,16 @@ ul.sick-footnote {
     font-size: 0.2em;
 }
 ul.sick-footnote li::before {
+    display: none;
+}
+
+ul[data-sick-no-decoration],
+ul[data-sick-no-decoration] ul,
+ul.sick-no-decoration,
+ul.sick-no-decoration ul {
+    list-style: none;
+}
+ul[data-sick-no-decoration] li::before,
+ul.sick-no-decoration li::before {
     display: none;
 }
