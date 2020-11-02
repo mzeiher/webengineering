@@ -7,24 +7,6 @@
     <title>Sampler</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script type="module">
-        function* asyncIterator() {
-            let i = 0;
-            while (true) {
-                yield new Promise((resolve) => {
-                    window.setTimeout(() => {
-                        resolve(i++);
-                    }, 1000);
-                });
-                if (i > 100) break;
-            }
-        }
-
-        async function run() {
-            for (const result of asyncIterator()) {
-                console.log(await result);
-            }
-        }
-        run();
     </script>
 </head>
 
