@@ -24,6 +24,7 @@ const server = http.createServer((req, res) => {
                 buffer += chunk;
             });
             req.on('end', ()=> {
+                res.setHeader('Access-Control-Allow-Origin', '*');
                 res.setHeader('Content-Type', 'text/plain');
                 res.writeHead(200);
                 res.end(buffer);
@@ -46,6 +47,7 @@ const server = http.createServer((req, res) => {
             buffer += 'Field [' + fieldname + ']: value: ' + inspect(val) + '\n';
         });
         busboy.on('finish', function () {
+            res.setHeader('Access-Control-Allow-Origin', '*');
             res.setHeader('Content-Type', 'text/plain');
             res.writeHead(200);
             res.end(buffer);
@@ -54,6 +56,7 @@ const server = http.createServer((req, res) => {
     } else if (/^\/url/.test(req.url) && (req.method === 'POST' || req.method === 'GET')) {
         const parameters = req.url.split('?')[1] || '';
         res.setHeader('Content-Type', 'text/plain');
+        res.setHeader('Access-Control-Allow-Origin', '*');
         res.writeHead(200);
         parameters.split('&').forEach((tuple) => {
             const [key, value] = tuple.split('=')
