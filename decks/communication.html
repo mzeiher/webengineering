@@ -382,6 +382,19 @@
           <p><small>Server sent events are interesting if your server does not support web sockets but you want to use a
               push base protocol</small></p>
         </section>
+        <section data-sick-grid="">
+          <p>Server Sent events can also be simulated with client side long polling, long polling can be implemented by
+            keeping a request open until new data is available and as soon as the response is processed open the next
+            request</p>
+          <p><small>for this to work the server must send empty packages to not trigger a timeout</small></p>
+        </section>
+        <section data-sick-grid="">
+          <h3>Cookies</h3>
+        </section>
+        <section data-sick-grid="">
+          <p>With the <code class="inline">Cookie</code> it is possible to share state between HTTP requests. A Cookie
+            can be set by the client or the server and will be transferred with every request and response</p>
+        </section>
         <section data-sick-grid>
           <h3>CSP</h3>
           <p><small>Content Security Policy</small></p>
@@ -426,15 +439,15 @@
               get content</small></p>
         </section>
         <section data-sick-grid="">
-          <p>with the <code class="inline">Access-Control-Allow-Origin</code> header your server can indicate from from which origins a fetch is allowed, this is important if your page ist hosted on a different host than your API endpoints</p>
+          <p>with the <code class="inline">Access-Control-Allow-Origin</code> header your server can indicate from from
+            which origins a fetch is allowed, this is important if your page ist hosted on a different host than your
+            API endpoints</p>
           <dl>
             <dt>static.example.com</dt>
             <dd>The static content for your application</dd>
             <dt>api.example.com</dt>
             <dd>The API endpoints for your applications</dd>
           </dl>
-
-          </ul>
         </section>
         <section data-sick-grid>
           <p>A good explanation for CORS, CSRF, etc can be found in this <a
@@ -574,21 +587,131 @@
             <dd>binary data</dd>
           </dl>
         </section>
+        <section data-sick-grid="">
+          <p>Because web sockets is a push base communication protocol without the possibility to add backpressure your
+            server can overwhelm the client if the client is to slow to process the pushed data</p>
+          <p><small>WebsocketStream API could change that in the future<sup
+                data-sick-footnote-link="https://web.dev/websocketstream/"></sup></small></p>
+        </section>
       </section>
 
+
+      <section>
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+          <h2>Securing the connection</h2>
+        </section>
+        <section data-sick-grid="">
+          <p>All discussed protocols with the exception of HTTP/3 do transfer their content unencrypted are are prone to
+            man in the middle attacks</p>
+        </section>
+        <section data-sick-grid="">
+          <p>Because of the layer architecture of internet communication protocols all web protocols can be transferred
+            encrypted with TLS if the server supports it by changing the protocol in the URI</p>
+          <p><small>All server by now should support TLS1.2 other encryption schemes should not be used anymore</small>
+          </p>
+          <p>http (unencrypted) &lt;-&gt; http<b>s</b> (TLS encrypted)</p>
+          <p>ws (unencrypted) &lt;-&gt; ws<b>s</b> (TLS encrypted)</p>
+        </section>
+        <section data-sick-grid="">
+          <p>encrypted communication must be supported by both server and client and can be combined with authentication
+          </p>
+        </section>
+      </section>
 
       <section>
         <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
           <h2>Authentication</h2>
         </section>
         <section data-sick-grid>
+          <p>There are different techniques to authenticate against a web service or maintain a session each with
+            different tradeoffs</p>
+        </section>
+        <section data-sick-grid>
           <h3>Cookies</h3>
+        </section>
+        <section data-sick-grid>
+          <p>Storing authentication information in the <code class="inline">Cookie</code> header</p>
+          <div class="sick-h-layout">
+            <div style="width: 40%;">
+              <h3>+</h3>
+              <ul>
+                <li>Works out of the box in every browser</li>
+                <li>Works with web sockets</li>
+                <li>Works with OAUTH</li>
+              </ul>
+            </div>
+            <div style="width: 40%;">
+              <h3>-</h3>
+              <ul>
+                <li>Can be deactivated by the client</li>
+                <li>Can be complicated with other HTTP clients</li>
+              </ul>
+            </div>
+          </div>
         </section>
         <section data-sick-grid>
           <h3>HTTP Authentication</h3>
         </section>
         <section data-sick-grid>
-          <h3>Token</h3>
+          <p>Set with the <code class="inline">Authorization</code> header</p>
+          <div class="sick-h-layout">
+            <div style="width: 40%;">
+              <h3>+</h3>
+              <ul>
+                <li>Works out of the box in every browser</li>
+                <li>Works with web sockets</li>
+                <li>Different Authorization Schemes (basic, digest, etc...)</li>
+              </ul>
+            </div>
+            <div style="width: 40%;">
+              <h3>-</h3>
+              <ul>
+                <li>User and password transferred in plain text</li>
+                <li>Authentication schemes other than basic are difficult to use wiht other http clients</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section data-sick-grid>
+          <h3>Token Based</h3>
+        </section>
+        <section data-sick-grid>
+          <p>Set with a custom header in the request</p>
+          <div class="sick-h-layout">
+            <div style="width: 40%;">
+              <h3>+</h3>
+              <ul>
+                <li>Good for SPAs or other clients</li>
+              </ul>
+            </div>
+            <div style="width: 40%;">
+              <h3>-</h3>
+              <ul>
+                <li>Works only for SPAs</li>
+                <li>Does not work with web sockets</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section data-sick-grid>
+          <h3>Client Side Certificates</h3>
+        </section>
+        <section data-sick-grid>
+          <p>Authentication can be done during the TLS handshake by providing client side certificates</p>
+          <div class="sick-h-layout">
+            <div style="width: 40%;">
+              <h3>+</h3>
+              <ul>
+                <li>Really good security</li>
+              </ul>
+            </div>
+            <div style="width: 40%;">
+              <h3>-</h3>
+              <ul>
+                <li>Complicated to distribute the certificates</li>
+              </ul>
+            </div>
+          </div>
         </section>
       </section>
 
@@ -599,13 +722,7 @@
           <h2>REST, GraphQL</h2>
         </section>
         <section data-sick-grid="">
-          <p>Besides serving static content HTTP is used to expose APIs on a host for services</p>
-        </section>
-        <section data-sick-grid>
-          <h3>Communication Strategies</h3>
-        </section>
-        <section data-sick-grid>
-          <h3>Poll, Long Poll, Push</h3>
+          <p>Besides serving static content HTTP is often used to expose APIs for services</p>
         </section>
       </section>
 
