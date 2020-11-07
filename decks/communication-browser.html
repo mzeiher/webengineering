@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Communication</title>
+
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/sick.css" id="theme">
+
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="plugin/highlight/tomorrow.css" id="highlight-theme">
+  <link rel="stylesheet" href="common.css">
+
+  <link rel="stylesheet" href="plugin/sick/sick-design.css">
+
+  <link rel="stylesheet" href="fontawesome/all.css">
+
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-sick-title data-background="assets/javascript-bg.jpg" class="dark">
+        <h1>communication within the browser</h1>
+      </section>
+
+
+
+      <section>
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+          <h2>Interesting Resources</h2>
+        </section>
+        <section>
+          <p><a href="https://wizardzines.com/comics/">Wizard Zines by Julia Evans</a></p>
+          <p><a href="https://tools.ietf.org/html/rfc2616">RFC2616 - HTTP/1.1</a></p>
+          <p><a href="https://tools.ietf.org/html/rfc6455">RFC6455 - WebSockets</a></p>
+        </section>
+      </section>
+
+      <section>
+        <section data-sick-title data-background="assets/javascript-bg.jpg" class="dark">
+          <h1>Browser Communication APIs</h1>
+        </section>
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+          <h2>fetch API</h2>
+        </section>
+        <section data-sick-grid="">
+          <p>The browser is able to load static content via http by browsing to a resource, often it is necessary to request additional data with javascript, this is where the <code class="inline">fetch</code> API comes into play</p>
+        </section>
+        <section data-sick-grid>
+          <h3>Abort fetch requests</h3>
+          <pre><code data-trim class="language-javascript"><script type="text/template">
+            const controller = new AbortController();
+            const signal = controller.signal;
+
+            const downloadBtn = document.querySelector('.download');
+            const abortBtn = document.querySelector('.abort');
+
+            downloadBtn.addEventListener('click', fetchVideo);
+
+            abortBtn.addEventListener('click', function() {
+              controller.abort();
+              console.log('Download aborted');
+            });
+
+            async function fetchVideo() {
+              ...
+              try {
+                const content= await fetch(url, {signal});
+              } catch(e) {
+                reports.textContent = 'Download error: ' + e.message;
+              }
+            }
+          </script></code></pre>
+        </section>
+      </section>
+
+
+      <section>
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+          <h2>Web Socket API</h2>
+        </section>
+      </section>
+
+      <section>
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+          <h2>Server Sent Event API</h2>
+        </section>
+      </section>
+
+
+      <section>
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+          <h2>WebRTC API</h2>
+        </section>
+        <section data-sick-grid>
+          <img src="assets/webrtc.svg" style="height: 50%;">
+        </section>
+      </section>
+    </div>
+  </div>
+
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script src="plugin/markdown/markdown.js"></script>
+  <script src="plugin/highlight/highlight.js"></script>
+  <script src="plugin/chalkboard/plugin.js"></script>
+  <script src="plugin/externalcode/externalcode.js"></script>
+  <script src="plugin/sick/sick.js"></script>
+  <script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      width: 1280,
+      height: 720,
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [Externalcode, SickPlugin, RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard],
+      chalkboard: {
+        boardmarkerWidth: 3,
+        chalkWidth: 3,
+        chalkEffect: 0,
+        theme: "whiteboard"
+      },
+      sickPlugin: {
+        footerText: `Mathis Zeiher | DOM API | ${new Date().getDate()}.${new Date().getMonth() + 1}.${new Date().getFullYear()}`
+      }
+    });
+  </script>
+</body>
+
+</html>

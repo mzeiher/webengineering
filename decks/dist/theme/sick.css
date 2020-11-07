@@ -116,7 +116,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 .reveal ul {
   display: inline-block;
   text-align: left;
-  margin: 0 0 0 1em; }
+  margin: 0 0 0 0; }
 
 .reveal ol {
   list-style-type: decimal; }
@@ -179,10 +179,14 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 }
 
 .reveal dt {
-  font-weight: bold; }
+  font-weight: bold; 
+  color: #007CC1;
+}
 
 .reveal dd {
-  margin-left: 40px; }
+  margin-left: 40px; 
+  font-size: 0.8em;
+}
 
 .reveal blockquote {
   display: block;

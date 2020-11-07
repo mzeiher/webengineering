@@ -13,8 +13,9 @@
 
   <!-- Theme used for syntax highlighted code -->
   <link rel="stylesheet" href="plugin/highlight/tomorrow.css" id="highlight-theme">
-
   <link rel="stylesheet" href="common.css">
+
+  <link rel="stylesheet" href="plugin/sick/sick-design.css">
 
   <link rel="stylesheet" href="fontawesome/all.css">
 
@@ -23,92 +24,587 @@
 <body>
   <div class="reveal">
     <div class="slides">
-      <section>
+      <section data-sick-title data-background="assets/javascript-bg.jpg" class="dark">
         <h1>communication protocols</h1>
       </section>
 
 
-      
+
       <section>
-        <section data-background="var(--radial-background)">
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+          <h2>Interesting Resources</h2>
+        </section>
+        <section>
+          <p><a href="https://wizardzines.com/comics/">Wizard Zines by Julia Evans</a></p>
+          <p><a href="https://tools.ietf.org/html/rfc2616">RFC2616 - HTTP/1.1</a></p>
+          <p><a href="https://tools.ietf.org/html/rfc6455">RFC6455 - WebSockets</a></p>
+        </section>
+      </section>
+
+
+
+      <section>
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
           <h2>HTTP</h2>
         </section>
-        <section>
-          <h3>HTTP 1.1</h3>
-        </section>
-        <section>
-          <h3>HTTP 2/SPDY</h3>
-          <p>https://twitter.com/jaffathecake/status/1308389934039007233, https://bugs.chromium.org/p/chromium/issues/detail?id=773219#c11</p>
-        </section>
-        <section>
-          <h3>HTTP 3/QUIC</h3>
-        </section>
-        <section>
-          <h3>Server Sent Events</h3>
-        </section>
-        <section>
-          <h3>REST</h3>
-        </section>
-      </section>
-
-      <section>
-        <section data-sick-chapter>
-          <h2>fetch API</h2>
+        <section data-sick-grid>
+          <p>The Hypertext transfer protocol was introduced along with the world wide web by Tim Berners-Lee in 1989</p>
         </section>
         <section data-sick-grid>
-          <pre><code data-trim class="language-javascript"><script type="text-template">
-            var controller = new AbortController();
-            var signal = controller.signal;
-
-            var downloadBtn = document.querySelector('.download');
-            var abortBtn = document.querySelector('.abort');
-
-            downloadBtn.addEventListener('click', fetchVideo);
-
-            abortBtn.addEventListener('click', function() {
-              controller.abort();
-              console.log('Download aborted');
-            });
-
-            function fetchVideo() {
-              ...
-              fetch(url, {signal}).then(function(response) {
-                ...
-              }).catch(function(e) {
-                reports.textContent = 'Download error: ' + e.message;
-              })
-            }
+          <p>HTTP is a request-response protocol in the client-server computing model, the browser acts as a client and
+            connects to a webserver by hostname or ip address</p>
+          <img src="assets/http.svg" style="height: 50%;" />
+        </section>
+        <section data-sick-grid>
+          <p>HTTP resources are identified and located on the network by Uniform Resource Locators (URLs), using the
+            Uniform Resource Identifiers (URI's) schemes http and https</p>
+        </section>
+        <section data-sick-grid>
+          <h3>HTTP 1.1</h3>
+        </section>
+        <section data-sick-grid data-auto-animate>
+          <h3>Get Request</h3>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers><script type="text/template">
+            GET /index.html HTTP/1.1
+            Host: www.example.com
           </script></code></pre>
         </section>
+        <section data-sick-grid data-auto-animate>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="1"><script type="text/template">
+            GET /index.html HTTP/1.1
+            Host: www.example.com
+          </script></code></pre>
+          <p>HTTP Method, path and protocol version</p>
+        </section>
+        <section data-sick-grid data-auto-animate>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="2"><script type="text/template">
+            GET /index.html HTTP/1.1
+            Host: www.example.com
+          </script></code></pre>
+          <p>Header: the host where the above resource is requested</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <h3>Response</h3>
+          <pre data-id="code3"><code data-trim class="language-javascript" data-line-numbers><script type="text/template">
+            HTTP/1.1 200 OK
+            Date: Mon, 23 May 2005 22:38:34 GMT
+            Content-Type: text/html; charset=UTF-8
+            Content-Length: 155
+            Last-Modified: Wed, 08 Jan 2003 23:11:55 GMT
+
+            <html>
+              <head>
+                <title>An Example Page</title>
+              </head>
+              <body>
+                <p>Hello World, this is a very simple HTML document.</p>
+              </body>
+            </html>
+          </script></code></pre>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code3"><code data-trim class="language-javascript" data-line-numbers="1"><script type="text/template">
+            HTTP/1.1 200 OK
+            Content-Type: text/html; charset=UTF-8
+            Content-Length: 155
+            Last-Modified: Wed, 08 Jan 2003 23:11:55 GMT
+
+            <html>
+              <head>
+                <title>An Example Page</title>
+              </head>
+              <body>
+                <p>Hello World, this is a very simple HTML document.</p>
+              </body>
+            </html>
+          </script></code></pre>
+          <p>Response status and status message</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code3"><code data-trim class="language-javascript" data-line-numbers="2"><script type="text/template">
+            HTTP/1.1 200 OK
+            Content-Type: text/html; charset=UTF-8
+            Content-Length: 155
+            Last-Modified: Wed, 08 Jan 2003 23:11:55 GMT
+
+            <html>
+              <head>
+                <title>An Example Page</title>
+              </head>
+              <body>
+                <p>Hello World, this is a very simple HTML document.</p>
+              </body>
+            </html>
+          </script></code></pre>
+          <p>MIME type of the response data</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code3"><code data-trim class="language-javascript" data-line-numbers="3"><script type="text/template">
+            HTTP/1.1 200 OK
+            Content-Type: text/html; charset=UTF-8
+            Content-Length: 155
+            Last-Modified: Wed, 08 Jan 2003 23:11:55 GMT
+
+            <html>
+              <head>
+                <title>An Example Page</title>
+              </head>
+              <body>
+                <p>Hello World, this is a very simple HTML document.</p>
+              </body>
+            </html>
+          </script></code></pre>
+          <p>Length of the response in bytes</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code3"><code data-trim class="language-javascript" data-line-numbers="4"><script type="text/template">
+            HTTP/1.1 200 OK
+            Content-Type: text/html; charset=UTF-8
+            Content-Length: 155
+            Last-Modified: Wed, 08 Jan 2003 23:11:55 GMT
+
+            <html>
+              <head>
+                <title>An Example Page</title>
+              </head>
+              <body>
+                <p>Hello World, this is a very simple HTML document.</p>
+              </body>
+            </html>
+          </script></code></pre>
+          <p>Meta information about the content</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code3"><code data-trim class="language-javascript" data-line-numbers="5"><script type="text/template">
+            HTTP/1.1 200 OK
+            Content-Type: text/html; charset=UTF-8
+            Content-Length: 155
+            Last-Modified: Wed, 08 Jan 2003 23:11:55 GMT
+
+            <html>
+              <head>
+                <title>An Example Page</title>
+              </head>
+              <body>
+                <p>Hello World, this is a very simple HTML document.</p>
+              </body>
+            </html>
+          </script></code></pre>
+          <p>Content separator (single line feed \n)</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code3"><code data-trim class="language-javascript" data-line-numbers="6-13"><script type="text/template">
+            HTTP/1.1 200 OK
+            Content-Type: text/html; charset=UTF-8
+            Content-Length: 155
+            Last-Modified: Wed, 08 Jan 2003 23:11:55 GMT
+
+            <html>
+              <head>
+                <title>An Example Page</title>
+              </head>
+              <body>
+                <p>Hello World, this is a very simple HTML document.</p>
+              </body>
+            </html>
+          </script></code></pre>
+          <p>Content</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <h3>Request with Content</h3>
+          <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers><script type="text/template">
+            POST /index.html HTTP/1.1
+            Host: www.example.com
+            Content-Type: application/json
+            Content-Length: 17
+
+            { "key": "value"}
+          </script></code></pre>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers="1"><script type="text/template">
+            POST /create HTTP/1.1
+            Host: www.example.com
+            Content-Type: application/json
+            Content-Length: 17
+
+            { "key": "value"}
+          </script></code></pre>
+          <p>HTTP Method, path and protocol version</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers="2"><script type="text/template">
+            POST /create HTTP/1.1
+            Host: www.example.com
+            Content-Type: application/json
+            Content-Length: 17
+
+            { "key": "value"}
+          </script></code></pre>
+          <p>Header: the host where the above resource is requested</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers="3"><script type="text/template">
+            POST /create HTTP/1.1
+            Host: www.example.com
+            Content-Type: application/json
+            Content-Length: 17
+
+            { "key": "value"}
+          </script></code></pre>
+          <p>Header: The mime type of the content</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers="4"><script type="text/template">
+            POST /create HTTP/1.1
+            Host: www.example.com
+            Content-Type: application/json
+            Content-Length: 17
+
+            { "key": "value"}
+          </script></code></pre>
+          <p>Header: Length of the content</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers="5"><script type="text/template">
+            POST /create HTTP/1.1
+            Host: www.example.com
+            Content-Type: application/json
+            Content-Length: 17
+
+            { "key": "value"}
+          </script></code></pre>
+          <p>Seperator for content (one line feed \n)</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers="6"><script type="text/template">
+            POST /create HTTP/1.1
+            Host: www.example.com
+            Content-Type: application/json
+            Content-Length: 17
+
+            { "key": "value"}
+          </script></code></pre>
+          <p>Content</p>
+        </section>
+        <section data-sick-grid>
+          <h3>Request Methods</h3>
+        </section>
+        <section data-sick-grid>
+          <p>HTTP has several "Methods" or "verbs" to express the intent of the request</p>
+        </section>
+        <section data-sick-grid>
+          <dl>
+            <dt>GET</dt>
+            <dd>Retrieve data of the specified resource</dd>
+            <dt>HEAD</dt>
+            <dd>Same as get but send only the headers without the data</dd>
+            <dt>POST</dt>
+            <dd>Submit data to a resource, often causing a state change on the server</dd>
+            <dt>PUT</dt>
+            <dd>Update a resource with new content</dd>
+            <dt>DELETE</dt>
+            <dd>Delete a specific resource on the server</dd>
+            <dt>OPTIONS</dt>
+            <dd>Describe the communication options for the resource (used as a preflight request for CORS)</dd>
+          </dl>
+        </section>
+        <section data-sick-grid>
+          <h3>Status Codes</h3>
+        </section>
+        <section data-sick-grid>
+          <h3>200</h3>
+          <p>The status code 200 indicates a successful request-response</p>
+        </section>
+        <section data-sick-grid>
+          <h3>3XX</h3>
+          <p>The 3XX status code range indicates the requested resource was moved or not changed</p>
+          <p><small>information about the new location are encoded within the response headers and are often handled by
+              the browser</small></p>
+          <ul>
+            <li>301 Moved Permanently</li>
+            <li>302 Found, temporary redirect</li>
+            <li>304 Not Modified</li>
+          </ul>
+        </section>
+        <section data-sick-grid>
+          <h3>4XX</h3>
+          <p>The 4XX status code range indicates something with the request of the <b>client</b> was wrong</p>
+          <ul>
+            <li>400 Bad Request</li>
+            <li>403 Forbidden</li>
+            <li>404 Not Found</li>
+            <li><b>418 I'm a teapot</b></li>
+          </ul>
+        </section>
+        <section data-sick-grid>
+          <h3>5XX</h3>
+          <p>The 5XX status code range indicates something with the <b>server</b> was wrong</p>
+          <ul>
+            <li>500 Internal Server Error</li>
+            <li>503 Service Unavailable</li>
+            <li>504 Gateway Timeout</li>
+          </ul>
+        </section>
+        <section data-sick-grid>
+          <h3>HTTP 2/SPDY</h3>
+          <p>Same methods and headers as http but a multiplexed connection</p>
+          <img src="assets/http2.svg" style="height: 30%;">
+        </section>
+        <section data-sick-grid="">
+          <ul>
+            <li>Multiple requests/responses with a single tcp connection</li>
+            <li>binary protocol for smaller transmission size</li>
+            <li>The server can push additional content without a specific request, for example sending css along the
+              html site</li>
+          </ul>
+          <p><small>The content push will be disabled in future because of performance implications
+              <sup data-sick-footnote-link="https://bugs.chromium.org/p/chromium/issues/detail?id=773219#c11"></sup>
+              <sup data-sick-footnote-link="https://twitter.com/jaffathecake/status/1308389934039007233"></sup>
+            </small></p>
+        </section>
+        <section data-sick-grid>
+          <h3>HTTPS</h3>
+          <p>https encrypts the http traffic with TLS to prevent man in the middle attacks and should be mandatory</p>
+        </section>
+        <section data-sick-grid>
+          <h3>HTTP 3/QUIC</h3>
+          <p>Next iteration of the HTTP Protocol, based on UDP and includes TLS no extra TLS handshake for encrypted
+            connections necessary</p>
+        </section>
+        <section data-sick-grid>
+          <h3>Server Sent Events</h3>
+          <p>Server send events are in contrast to web sockets a one way connection to send messages from a server to
+            client, they consist of a persistent TCP connection with a server sending an <code
+              class="inline">text/event-stream</code> response</p>
+          <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events">More
+              on server sent events</a></p>
+          <p><small>Server sent events are interesting if your server does not support web sockets but you want to use a
+              push base protocol</small></p>
+        </section>
+        <section data-sick-grid>
+          <h3>CSP</h3>
+          <p><small>Content Security Policy</small></p>
+        </section>
+        <section data-sick-grid>
+          <p>The <code class="inline">Content-Security-Policy</code> header gives you control which scripts are allowed
+            to be executed or which media is allowed to be loaded</p>
+        </section>
+        <section data-sick-grid>
+          <h3>What is an origin</h3>
+          <p><span class="highlight">https</span>://subdomain.<span class="highlight">example.com</span>:<span
+              class="highlight">80</span>/index.html</p>
+          <p>an origin is specified by the protocol, the host domain and the port, all responses from another host,
+            subdomain or port are <b>not</b> from the same origin</p>
+        </section>
+        <section data-sick-grid>
+          <pre><code data-trim data-line-numbers=""><script type="text/template">
+              Content-Security-Policy: default-src 'self'; img-src *; media-src media1.com media2.com; script-src userscripts.example.com
+          </script></code></pre>
+          <ul>
+            <li>Default all policies to 'self' also 'same origin'</li>
+            <li>Allow images to be loaded from everywhere</li>
+            <li>Restrict media to only be loaded from media1.com and media2.com</li>
+            <li>Executable scripts are only loaded from userscripts.example.com</li>
+          </ul>
+        </section>
+        <section data-sick-grid="">
+          <pre><code data-trim data-line-numbers=""><script type="text/template">
+            content-security-policy: connect-src 'self' blob: https://*.giphy.com https://*.pscp.tv https://*.video.pscp.tv https://*.twimg.com https://api.twitter.com https://api-stream.twitter.com https://ads-api.twitter.com https://caps.twitter.com https://media.riffsy.com https://pay.twitter.com https://sentry.io https://ton.twitter.com https://twitter.com https://upload.twitter.com https://www.google-analytics.com https://app.link https://api2.branch.io https://bnc.lt https://vmap.snappytv.com https://vmapstage.snappytv.com https://vmaprel.snappytv.com https://vmap.grabyo.com https://dhdsnappytv-vh.akamaihd.net https://pdhdsnappytv-vh.akamaihd.net https://mdhdsnappytv-vh.akamaihd.net https://mdhdsnappytv-vh.akamaihd.net https://mpdhdsnappytv-vh.akamaihd.net https://mmdhdsnappytv-vh.akamaihd.net https://mdhdsnappytv-vh.akamaihd.net https://mpdhdsnappytv-vh.akamaihd.net https://mmdhdsnappytv-vh.akamaihd.net https://dwo3ckksxlb0v.cloudfront.net ; default-src 'self'; form-action 'self' https://twitter.com https://*.twitter.com; font-src 'self' https://*.twimg.com; frame-src 'self' https://twitter.com https://mobile.twitter.com https://pay.twitter.com https://cards-frame.twitter.com ; img-src 'self' blob: data: https://*.cdn.twitter.com https://ton.twitter.com https://*.twimg.com https://analytics.twitter.com https://cm.g.doubleclick.net https://www.google-analytics.com https://www.periscope.tv https://www.pscp.tv https://media.riffsy.com https://*.giphy.com https://*.pscp.tv; manifest-src 'self'; media-src 'self' blob: https://twitter.com https://*.twimg.com https://*.vine.co https://*.pscp.tv https://*.video.pscp.tv https://*.giphy.com https://media.riffsy.com https://dhdsnappytv-vh.akamaihd.net https://pdhdsnappytv-vh.akamaihd.net https://mdhdsnappytv-vh.akamaihd.net https://mdhdsnappytv-vh.akamaihd.net https://mpdhdsnappytv-vh.akamaihd.net https://mmdhdsnappytv-vh.akamaihd.net https://mdhdsnappytv-vh.akamaihd.net https://mpdhdsnappytv-vh.akamaihd.net https://mmdhdsnappytv-vh.akamaihd.net https://dwo3ckksxlb0v.cloudfront.net; object-src 'none'; script-src 'self' 'unsafe-inline' https://*.twimg.com   https://www.google-analytics.com https://twitter.com https://app.link  'nonce-NDdiODZjOWMtMzExYS00N2JiLWFjNzUtMDk1NGViNjBhMzVl'; style-src 'self' 'unsafe-inline' https://*.twimg.com; worker-src 'self' blob:; report-uri https://twitter.com/i/csp_report?a=O5RXE%3D%3D%3D&ro=false
+          </script></code></pre>
+          <p>A sample from twitter.com</p>
+        </section>
+        <section data-sick-grid>
+          <p>Mapping of content security policy mappings</p>
+          <figure style="height: 80%;"
+            data-sick-footnote-link="https://en.wikipedia.org/wiki/Content_Security_Policy#/media/File:ContentSecurityPolicy3_diagram.png">
+            <img src="assets/ContentSecurityPolicy3_diagram.png"></figure>
+        </section>
+        <section data-sick-grid>
+          <p>CORS is a technique in browsers to allow browsers to load content from other origins</p>
+          <p><small><b>Important</b> this is not a security feature, other http client implementations are still able to
+              get content</small></p>
+        </section>
+        <section data-sick-grid="">
+          <p>with the <code class="inline">Access-Control-Allow-Origin</code> header your server can indicate from from which origins a fetch is allowed, this is important if your page ist hosted on a different host than your API endpoints</p>
+          <dl>
+            <dt>static.example.com</dt>
+            <dd>The static content for your application</dd>
+            <dt>api.example.com</dt>
+            <dd>The API endpoints for your applications</dd>
+          </dl>
+
+          </ul>
+        </section>
+        <section data-sick-grid>
+          <p>A good explanation for CORS, CSRF, etc can be found in this <a
+              href="https://www.youtube.com/watch?v=vfAHa5GBLio">HTTP 203 Episode</a></p>
+        </section>
       </section>
 
       <section>
-        <section data-background="var(--radial-background)">
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
           <h2>Web Sockets</h2>
         </section>
-        <section>
-          <h3>Websocket Object</h3>
+        <section data-sick-grid="">
+          <p>Web sockets open a persistent bidirectional communication channel to pass messages between a client and a
+            server</p>
+          <img src="assets/websockets.svg" style="height: 30%;">
+        </section>
+        <section data-sick-grid>
+          <p>Web sockets are opened by a http request with the URI-protocol <code class="inline">ws/wss</code></p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <h3>Request to open a web socket connection</h3>
+          <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            GET /chat HTTP/1.1
+            Host: server.example.com
+            Upgrade: websocket
+            Connection: Upgrade
+            Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==
+            Sec-WebSocket-Protocol: chat
+            Sec-WebSocket-Version: 13
+            Origin: http://example.com
+          </script></code></pre>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers="1"><script type="text/template">
+            GET /chat HTTP/1.1
+            Host: server.example.com
+            Upgrade: websocket
+            Connection: Upgrade
+            Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==
+            Sec-WebSocket-Protocol: chat
+            Sec-WebSocket-Version: 13
+            Origin: http://example.com
+          </script></code></pre>
+          <p>Request path</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers="2"><script type="text/template">
+            GET /chat HTTP/1.1
+            Host: server.example.com
+            Upgrade: websocket
+            Connection: Upgrade
+            Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==
+            Sec-WebSocket-Protocol: chat
+            Sec-WebSocket-Version: 13
+            Origin: http://example.com
+          </script></code></pre>
+          <p>Host where the request was send</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers="3,4"><script type="text/template">
+            GET /chat HTTP/1.1
+            Host: server.example.com
+            Upgrade: websocket
+            Connection: Upgrade
+            Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==
+            Sec-WebSocket-Protocol: chat
+            Sec-WebSocket-Version: 13
+            Origin: http://example.com
+          </script></code></pre>
+          <p>Upgrade header indicates the client wants to upgrade the connection to a web socket connection</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers="5,6,7"><script type="text/template">
+            GET /chat HTTP/1.1
+            Host: server.example.com
+            Upgrade: websocket
+            Connection: Upgrade
+            Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==
+            Sec-WebSocket-Protocol: chat
+            Sec-WebSocket-Version: 13
+            Origin: http://example.com
+          </script></code></pre>
+          <p>Web socket specific information</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <p>Server Response</p>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            HTTP/1.1 101 Switching Protocols
+            Upgrade: websocket
+            Connection: Upgrade
+            Sec-WebSocket-Accept: HSmrc0sMlYUkAGmm5OPpG2HaGWk=
+            Sec-WebSocket-Protocol: chat
+          </script></code></pre>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="1"><script type="text/template">
+            HTTP/1.1 101 Switching Protocols
+            Upgrade: websocket
+            Connection: Upgrade
+            Sec-WebSocket-Accept: HSmrc0sMlYUkAGmm5OPpG2HaGWk=
+            Sec-WebSocket-Protocol: chat
+          </script></code></pre>
+          <p>Server upgraded the connection and is switching protocols</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="2,3"><script type="text/template">
+            HTTP/1.1 101 Switching Protocols
+            Upgrade: websocket
+            Connection: Upgrade
+            Sec-WebSocket-Accept: HSmrc0sMlYUkAGmm5OPpG2HaGWk=
+            Sec-WebSocket-Protocol: chat
+          </script></code></pre>
+          <p>Upgrade information, switching to websocket protocol</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="4,5"><script type="text/template">
+            HTTP/1.1 101 Switching Protocols
+            Upgrade: websocket
+            Connection: Upgrade
+            Sec-WebSocket-Accept: HSmrc0sMlYUkAGmm5OPpG2HaGWk=
+            Sec-WebSocket-Protocol: chat
+          </script></code></pre>
+          <p>Websocket specific information and confirmation for the key send in the request</p>
+        </section>
+        <section data-sick-grid="">
+          <p>unlike HTTP requests, web sockets connections are <b>not</b> restricted to the same origin policy. You have
+            to manually verify the origin of the request</p>
+          <p><small>In browsers you're not able to add additional headers for example for authentication so you have to
+              rely on cookies or a custom token based protocol</small></p>
+        </section>
+        <section data-sick-grid="">
+          <p>The web socket protocol supports two different modes for data</p>
+          <dl>
+            <dt>text</dt>
+            <dd>UTF-8 encoded strings</dd>
+            <dt>binary</dt>
+            <dd>binary data</dd>
+          </dl>
+        </section>
+      </section>
+
+
+      <section>
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+          <h2>Authentication</h2>
+        </section>
+        <section data-sick-grid>
+          <h3>Cookies</h3>
+        </section>
+        <section data-sick-grid>
+          <h3>HTTP Authentication</h3>
+        </section>
+        <section data-sick-grid>
+          <h3>Token</h3>
         </section>
       </section>
 
 
 
       <section>
-        <section data-background="var(--radial-background)">
-          <h2>CORS</h2>
-        </section>
-      </section>
-
-
-
-      <section>
-        <section data-background="var(--radial-background)">
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
           <h2>REST, GraphQL</h2>
         </section>
-        <section>
+        <section data-sick-grid="">
+          <p>Besides serving static content HTTP is used to expose APIs on a host for services</p>
+        </section>
+        <section data-sick-grid>
           <h3>Communication Strategies</h3>
         </section>
-        <section>
+        <section data-sick-grid>
           <h3>Poll, Long Poll, Push</h3>
         </section>
       </section>
@@ -116,8 +612,11 @@
 
 
       <section>
-        <section data-background="var(--radial-background)">
-          <h2>WEBRTC</h2>
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+          <h2>WebRTC</h2>
+        </section>
+        <section data-sick-grid>
+          <img src="assets/webrtc.svg" style="height: 50%;">
         </section>
       </section>
     </div>
@@ -128,6 +627,8 @@
   <script src="plugin/markdown/markdown.js"></script>
   <script src="plugin/highlight/highlight.js"></script>
   <script src="plugin/chalkboard/plugin.js"></script>
+  <script src="plugin/externalcode/externalcode.js"></script>
+  <script src="plugin/sick/sick.js"></script>
   <script>
     // More info about initialization & config:
     // - https://revealjs.com/initialization/
@@ -138,15 +639,17 @@
       width: 1280,
       height: 720,
       // Learn about plugins: https://revealjs.com/plugins/
-      plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard],
+      plugins: [Externalcode, SickPlugin, RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard],
       chalkboard: {
         boardmarkerWidth: 3,
         chalkWidth: 3,
         chalkEffect: 0,
         theme: "whiteboard"
+      },
+      sickPlugin: {
+        footerText: `Mathis Zeiher | DOM API | ${new Date().getDate()}.${new Date().getMonth() + 1}.${new Date().getFullYear()}`
       }
     });
-
   </script>
 </body>
 
