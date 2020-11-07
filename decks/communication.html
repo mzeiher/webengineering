@@ -722,7 +722,113 @@
           <h2>REST, GraphQL</h2>
         </section>
         <section data-sick-grid="">
-          <p>Besides serving static content HTTP is often used to expose APIs for services</p>
+          <p>Besides serving static content HTTP is often used to expose APIs for services, there are two main pattern
+            to serve APIs</p>
+        </section>
+        <section data-sick-grid="">
+          <h3>REST</h3>
+          <p><small>Representational state transfer</small></p>
+        </section>
+        <section data-sick-grid="">
+          <p>REST defines are pattern to name your URL paths and makes semantically correct use of HTTP request methods
+          </p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code"><code data-trim data-line-numbers=""><script type="text/template">
+            GET /todos
+            GET /todos/:id
+            POST /todos
+            PUT /todos/:id
+            DELETE /todos/:id
+          </script></code></pre>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code"><code data-trim data-line-numbers="1"><script type="text/template">
+            GET /todos
+            GET /todos/:id
+            POST /todos
+            PUT /todos/:id
+            DELETE /todos/:id
+          </script></code></pre>
+          <p>Get a list with all todos</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code"><code data-trim data-line-numbers="2"><script type="text/template">
+            GET /todos
+            GET /todos/:id
+            POST /todos
+            PUT /todos/:id
+            DELETE /todos/:id
+          </script></code></pre>
+          <p>Get a specific todo</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code"><code data-trim data-line-numbers="3"><script type="text/template">
+            GET /todos
+            GET /todos/:id
+            POST /todos
+            PUT /todos/:id
+            DELETE /todos/:id
+          </script></code></pre>
+          <p>Add a new todo</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code"><code data-trim data-line-numbers="4"><script type="text/template">
+            GET /todos
+            GET /todos/:id
+            POST /todos
+            PUT /todos/:id
+            DELETE /todos/:id
+          </script></code></pre>
+          <p>Update a specific todo</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code"><code data-trim data-line-numbers="5"><script type="text/template">
+            GET /todos
+            GET /todos/:id
+            POST /todos
+            PUT /todos/:id
+            DELETE /todos/:id
+          </script></code></pre>
+          <p>Delete a todo</p>
+        </section>
+        <section data-sick-grid="">
+          <p>REST defines a fixed set of API paths with a defined structure of the objects you can request. To mitigate
+            this issue GraphQL was developed by facebook and can also be used in conjunction with REST</p>
+        </section>
+        <section data-sick-grid="">
+          <h3>GraphQL example request</h3>
+          <pre data-id="code"><code data-trim data-line-numbers=""><script type="text/template">
+            GET
+            {
+              todos(id: "<id>")
+            }
+          </script></code></pre>
+          <p>query a specific todo</p>
+        </section>
+        <section data-sick-grid="">
+          <pre data-id="code"><code data-trim data-line-numbers=""><script type="text/template">
+            GET
+            {
+              todos(id: "<id>") {
+                dueDate
+              }
+            }
+          </script></code></pre>
+          <p>query a specific todo and return only the due date</p>
+        </section>
+        <section data-sick-grid="">
+          <pre data-id="code"><code data-trim data-line-numbers=""><script type="text/template">
+            POST
+            {
+              mutation {
+                add-todo({content: '', dueDate: '2020-11-07T13:00:00'}) {
+                  id
+                }
+              }
+            }
+          </script></code></pre>
+          <p>add a new todo and return the id</p>
         </section>
       </section>
 
@@ -733,7 +839,14 @@
           <h2>WebRTC</h2>
         </section>
         <section data-sick-grid>
-          <img src="assets/webrtc.svg" style="height: 50%;">
+          <p>WebRTC enables fast peer to peer connection between multiple clients</p>
+          <img src="assets/webrtc.svg" style="height: 30%;">
+        </section>
+        <section data-sick-grid>
+          <p>WebRTC can be used to transfer video, audio or arbitrary data between multiple clients</p>
+        </section>
+        <section data-sick-grid>
+          <p>WebRTC can be used to transfer video, audio or arbitrary data between multiple clients with the help of a discovery server</p>
         </section>
       </section>
     </div>
