@@ -403,9 +403,11 @@
                 </div>
                 </script></code></pre>
               <pre style="" data-id="code2" class="language-javascript"><code class="language-javascript" data-line-numbers data-trim><script type="text/template">
-                    reference.children[0];
-                    reference.children[1];
+                    reference.children[0]; // first div
+                    reference.children[1]; // second div
                     reference.querySelectorAll(':scope > div')[0];
+                    reference.childNodes[0] // #text node
+                    reference.childNodes[1] // first div
                   </script></code></pre>
               <p>get children</p>
             </main>
@@ -825,6 +827,20 @@
               class="inline">iframes</code></p>
           <pre><code class="language-javascript" data-trim data-line-numbers=""><script type="text/template">
             document.querySelector('iframe').contentWindow.window.Array === window.Array // false
+          </script></code></pre>
+        </section>
+        <section data-sick-grid>
+          <p>You can share the data however message passed with <code class="inline">window.postMessage</code>/<code class="inline">window.onmessage</code> between windows or workers are cloned with the Structure Cloning Algorithm</p>
+          <p><small>Because of Meltdown/Spectre <code class="inline">SharedArrayBuffer</code> to share a byte range was disabled, but it can be used again with the appropriate CORS headers</small></p>
+          <pre><code class="language-javascript" data-trim data-line-numbers=""><script type="text/template">
+            // window 1
+            const arr = [1, 2, 3];
+            window.postMessage(arr, '*');
+
+            // window 2
+            window.addEventListener('message', (data) => {
+              // here you get a clone of the data
+            });
           </script></code></pre>
         </section>
         <section data-sick-grid>
