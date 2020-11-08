@@ -36,20 +36,217 @@
         </section>
         <section>
           <p><a href="https://wizardzines.com/comics/">Wizard Zines by Julia Evans</a></p>
-          <p><a href="https://tools.ietf.org/html/rfc2616">RFC2616 - HTTP/1.1</a></p>
-          <p><a href="https://tools.ietf.org/html/rfc6455">RFC6455 - WebSockets</a></p>
+          <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch API</a></p>
+          <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">WebSocket API</a></p>
         </section>
       </section>
 
       <section>
-        <section data-sick-title data-background="assets/javascript-bg.jpg" class="dark">
-          <h1>Browser Communication APIs</h1>
-        </section>
         <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
           <h2>fetch API</h2>
         </section>
         <section data-sick-grid="">
-          <p>The browser is able to load static content via http by browsing to a resource, often it is necessary to request additional data with javascript, this is where the <code class="inline">fetch</code> API comes into play</p>
+          <p>The browser is able to load static content via http by browsing to a resource, often it is necessary to
+            request additional data with javascript, this is where the <code class="inline">fetch</code> API comes into
+            play</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate>
+          <h3>Get Data</h3>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers><script type="text/template">
+            try {
+              const response = await fetch('/someUrl', { method: 'GET'});
+              if(response.ok) {
+                const content = await response.text();
+              }
+            } catch(e) {
+              // network error happened
+            }
+          </script></code></pre>
+        </section>
+        <section data-sick-grid="" data-auto-animate>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="2"><script type="text/template">
+            try {
+              const response = await fetch('/someUrl', { method: 'GET'});
+              if(response.ok) {
+                const content = await response.text();
+              }
+            } catch(e) {
+              // network error happened
+            }
+          </script></code></pre>
+          <p>execute a fetch request with a specific HTTP method</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="3"><script type="text/template">
+            try {
+              const response = await fetch('/someUrl', { method: 'GET'});
+              if(response.ok) {
+                const content = await response.text();
+              }
+            } catch(e) {
+              // network error happened
+            }
+          </script></code></pre>
+          <p>Check if request was successfull (200)</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="4"><script type="text/template">
+            try {
+              const response = await fetch('/someUrl', { method: 'GET'});
+              if(response.ok) {
+                const content = await response.text();
+              }
+            } catch(e) {
+              // network error happened
+            }
+          </script></code></pre>
+          <p>Get the response body as text (also json, arrayBuffer, blob are supported)</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate>
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="6-8"><script type="text/template">
+            try {
+              const response = await fetch('/someUrl', { method: 'GET'});
+              if(response.ok) {
+                const content = await response.text();
+              }
+            } catch(e) {
+              // network error happened
+            }
+          </script></code></pre>
+          <p>Catch block to handle network errors</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate>
+          <h3>Post Data</h3>
+          <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers><script type="text/template">
+            try {
+              const response = await fetch('/postSomething', { 
+                method: 'POST',
+                body: new Uint8Array(1024),
+                headers: {
+                  'Content-Type': 'application/octet-stream'
+                }
+              });
+              if(response.ok) {
+                // post successful
+              }
+            } catch(e) {
+              // network error happened
+            }
+          </script></code></pre>
+        </section>
+        <section data-sick-grid="" data-auto-animate>
+          <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers="2"><script type="text/template">
+            try {
+              const response = await fetch('/postSomething', { 
+                method: 'POST',
+                body: new Uint8Array(1024),
+                headers: {
+                  'Content-Type': 'application/octet-stream'
+                }
+              });
+              if(response.ok) {
+                // post successful
+              }
+            } catch(e) {
+              // network error happened
+            }
+          </script></code></pre>
+          <p>Prepare URL for post request</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate>
+          <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers="3"><script type="text/template">
+            try {
+              const response = await fetch('/postSomething', { 
+                method: 'POST',
+                body: new Uint8Array(1024),
+                headers: {
+                  'Content-Type': 'application/octet-stream'
+                }
+              });
+              if(response.ok) {
+                // post successful
+              }
+            } catch(e) {
+              // network error happened
+            }
+          </script></code></pre>
+          <p>set http method</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate>
+          <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers="4"><script type="text/template">
+            try {
+              const response = await fetch('/postSomething', { 
+                method: 'POST',
+                body: new Uint8Array(1024),
+                headers: {
+                  'Content-Type': 'application/octet-stream'
+                }
+              });
+              if(response.ok) {
+                // post successful
+              }
+            } catch(e) {
+              // network error happened
+            }
+          </script></code></pre>
+          <p>set request body</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate>
+          <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers="5-7"><script type="text/template">
+            try {
+              const response = await fetch('/postSomething', { 
+                method: 'POST',
+                body: new Uint8Array(1024),
+                headers: {
+                  'Content-Type': 'application/octet-stream'
+                }
+              });
+              if(response.ok) {
+                // post successful
+              }
+            } catch(e) {
+              // network error happened
+            }
+          </script></code></pre>
+          <p>set additional headers to match content</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate>
+          <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers="9-11"><script type="text/template">
+            try {
+              const response = await fetch('/postSomething', { 
+                method: 'POST',
+                body: new Uint8Array(1024),
+                headers: {
+                  'Content-Type': 'application/octet-stream'
+                }
+              });
+              if(response.ok) {
+                // post successful
+              }
+            } catch(e) {
+              // network error happened
+            }
+          </script></code></pre>
+          <p>check if request was true</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate>
+          <pre data-id="code2"><code data-trim class="language-javascript" data-line-numbers="12-14"><script type="text/template">
+            try {
+              const response = await fetch('/postSomething', { 
+                method: 'POST',
+                body: new Uint8Array(1024),
+                headers: {
+                  'Content-Type': 'application/octet-stream'
+                }
+              });
+              if(response.ok) {
+                // post successful
+              }
+            } catch(e) {
+              // network error happened
+            }
+          </script></code></pre>
+          <p>handle network errors</p>
         </section>
         <section data-sick-grid>
           <h3>Abort fetch requests</h3>
@@ -84,21 +281,193 @@
         <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
           <h2>Web Socket API</h2>
         </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            const ws = new WebSocket('ws://example.com/ws');
+            ws.on('error', (error) => {
+              // handler error
+            });
+            ws.on('close', () => {
+              // web socket closed
+            });
+            ws.on('open', () => {
+              // web socket opened
+              ws.send('hello');
+            });
+            ws.on('message', (message) => {
+              const content = message.data;
+            });
+          </script></code></pre>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="1"><script type="text/template">
+            const ws = new WebSocket('ws://example.com/ws');
+            ws.on('error', (error) => {
+              // handler error
+            });
+            ws.on('close', () => {
+              // web socket closed
+            });
+            ws.on('open', () => {
+              // web socket opened
+              ws.send('hello');
+            });
+            ws.on('message', (message) => {
+              const content = message.data;
+            });
+          </script></code></pre>
+          <p>create new web socket connection</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="2-4"><script type="text/template">
+            const ws = new WebSocket('ws://example.com/ws');
+            ws.on('error', (error) => {
+              // handler error
+            });
+            ws.on('close', () => {
+              // web socket closed
+            });
+            ws.on('open', () => {
+              // web socket opened
+              ws.send('hello');
+            });
+            ws.on('message', (message) => {
+              const content = message.data;
+            });
+          </script></code></pre>
+          <p>Add error callback</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="5-7"><script type="text/template">
+            const ws = new WebSocket('ws://example.com/ws');
+            ws.on('error', (error) => {
+              // handler error
+            });
+            ws.on('close', () => {
+              // web socket closed
+            });
+            ws.on('open', () => {
+              // web socket opened
+              ws.send('hello');
+            });
+            ws.on('message', (message) => {
+              const content = message.data;
+            });
+          </script></code></pre>
+          <p>Add close callback</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="8-11"><script type="text/template">
+            const ws = new WebSocket('ws://example.com/ws');
+            ws.on('error', (error) => {
+              // handler error
+            });
+            ws.on('close', () => {
+              // web socket closed
+            });
+            ws.on('open', () => {
+              // web socket opened
+              ws.send('hello');
+            });
+            ws.on('message', (message) => {
+              const content = message.data;
+            });
+          </script></code></pre>
+          <p>Add open callback</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="10"><script type="text/template">
+            const ws = new WebSocket('ws://example.com/ws');
+            ws.on('error', (error) => {
+              // handler error
+            });
+            ws.on('close', () => {
+              // web socket closed
+            });
+            ws.on('open', () => {
+              // web socket opened
+              ws.send('hello');
+            });
+            ws.on('message', (message) => {
+              const content = message.data;
+            });
+          </script></code></pre>
+          <p>Send a message to the server</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="12-14"><script type="text/template">
+            const ws = new WebSocket('ws://example.com/ws');
+            ws.on('error', (error) => {
+              // handler error
+            });
+            ws.on('close', () => {
+              // web socket closed
+            });
+            ws.on('open', () => {
+              // web socket opened
+              ws.send('hello');
+            });
+            ws.on('message', (message) => {
+              const content = message.data;
+            });
+          </script></code></pre>
+          <p>Add callback for messages</p>
+        </section>
       </section>
 
       <section>
         <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
           <h2>Server Sent Event API</h2>
         </section>
-      </section>
-
-
-      <section>
-        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
-          <h2>WebRTC API</h2>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers=""><script type="text/template">
+            const evtSource = new EventSource("//api.example.com/sse.php");
+            evtSource.addEventListener('message', (message) => {
+              // listen to messages
+            });
+            evtSource.addEventListener('custom', (message) => {
+              // listen to custom events
+            });
+          </script></code></pre>
         </section>
-        <section data-sick-grid>
-          <img src="assets/webrtc.svg" style="height: 50%;">
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="1"><script type="text/template">
+            const evtSource = new EventSource("//api.example.com/sse.php");
+            evtSource.addEventListener('message', (message) => {
+              // listen to messages
+              const content = message.data;
+            });
+            evtSource.addEventListener('custom', (message) => {
+              // listen to custom events
+            });
+          </script></code></pre>
+          <p>create new event source</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="2-5"><script type="text/template">
+            const evtSource = new EventSource("//api.example.com/sse.php");
+            evtSource.addEventListener('message', (message) => {
+              // listen to messages
+              const content = message.data;
+            });
+            evtSource.addEventListener('custom', (message) => {
+              // listen to custom events
+            });
+          </script></code></pre>
+          <p>listen to messages</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code data-trim class="language-javascript" data-line-numbers="6-8"><script type="text/template">
+            const evtSource = new EventSource("//api.example.com/sse.php");
+            evtSource.addEventListener('message', (message) => {
+              // listen to messages
+              const content = message.data;
+            });
+            evtSource.addEventListener('custom', (message) => {
+              // listen to custom events
+            });
+          </script></code></pre>
+          <p>listen to custom events</p>
         </section>
       </section>
     </div>
