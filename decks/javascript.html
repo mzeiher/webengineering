@@ -3655,7 +3655,10 @@
                   }
                 }
                 const closure = func();
+                closure() // will return 2
                 closure() // will return 3
+                closure() // will return 4
+                closure() // will return 5
               </script></code></pre>
               <p>The function returned when invoking test will retain its scope and all the variables accessible in it
                 in
@@ -3677,6 +3680,9 @@
                 const closure = func();
                 y = 5;
                 closure() // will return 7
+                closure() // will return 8
+                closure() // will return 9
+                closure() // will return 10
               </script></code></pre>
               <p>This can be used to hide implementation details or information, in this case the variable test is only
                 accessible via the function returned by <code class="inline">func</code></p>
