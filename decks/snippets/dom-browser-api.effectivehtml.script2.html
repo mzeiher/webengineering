@@ -1,0 +1,30 @@
+<ul id="todos">
+</ul>
+<form id="addform">
+  <input name="todotext" type="text"><button type="submit">Add</button>
+</form>
+<script>
+  document.querySelector('#addform').addEventListener('submit', (event) => {
+    event.preventDefault();
+    const form = event.target;
+    if (form.checkValidity()) {
+      const newTodo = form.elements['todotext'].value;
+      addToDo(newTodo);
+    }
+    return false;
+  });
+
+  function addToDo(text) {
+    const todolist = document.querySelector('#todos');
+
+    const todo = document.createElement('li');
+    const button = document.createElement('button');
+    button.textContent = 'X';
+    button.addEventListener('click', (event) => {
+      event.target.parentElement.remove();
+    });
+    todo.append(document.createTextNode(text));
+    todo.appendChild(button);
+    todolist.appendChild(todo);
+  }
+</script>

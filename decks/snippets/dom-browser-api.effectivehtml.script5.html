@@ -1,0 +1,31 @@
+<ul id="todos">
+</ul>
+<form id="addform">
+  <input name="todotext" type="text"><button type="submit">Add</button>
+</form>
+<script type="module">
+  import { html, render } from 'https://unpkg.com/lit-html@1.3.0/lit-html.js?module'
+
+  let todos = ['todo1', 'todo2', 'todo3'];
+  document.querySelector('#addform').addEventListener('submit', (event) => {
+    event.preventDefault();
+    const form = event.target;
+    if (form.checkValidity()) {
+      const newTodo = form.elements['todotext'].value;
+      todos = [...todos, newTodo];
+      sync();
+    }
+    return false;
+  });
+
+  function sync() {
+    render(todos.map((value, index) => {
+      return html`<li><span>${value}</span><button @click="${() => {
+        todos.splice(index, 1);
+        sync();
+      }}">X</button></li>`
+    }), document.querySelector('#todos'));
+  }
+
+  sync();
+</script>

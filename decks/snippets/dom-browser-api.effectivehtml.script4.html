@@ -1,0 +1,52 @@
+<ul id="todos">
+</ul>
+<form id="addform">
+  <input name="todotext" type="text"><button type="submit">Add</button>
+</form>
+<script>
+  let todos = ['todo1', 'todo2', 'todo3'];
+  document.querySelector('#addform').addEventListener('submit', (event) => {
+    event.preventDefault();
+    const form = event.target;
+    if (form.checkValidity()) {
+      const newTodo = form.elements['todotext'].value;
+      todos = [...todos, newTodo];
+      sync();
+    }
+    return false;
+  });
+
+  document.querySelector('#todos').addEventListener('remove', (event) => {
+    todos.splice(event.detail, 1);
+    sync();
+  });
+
+  function sync() {
+    const todolist = document.querySelector('#todos');
+
+    const nbrChildren = todolist.childElementCount;
+    for (let i = 0; i < todos.length; i++) {
+      if (i > nbrChildren - 1) { // if more todos than todo container append new node
+        const todo = document.createElement('li');
+        const text = document.createElement('span');
+        const button = document.createElement('button');
+        button.textContent = 'X';
+        button.addEventListener('click', (event) => {
+          event.target.dispatchEvent(new CustomEvent('remove', { bubbles: true, detail: event.target.getAttribute('data-id') }))
+        });
+        text.append(document.createTextNode(todos[i]));
+        todo.append(text);
+        todo.appendChild(button);
+        todolist.appendChild(todo);
+      } else if (todolist.children[i].querySelector('span').textContent !== todos[i]) {
+        todolist.children[i].querySelector('span').textContent = todos[i];
+      }
+      todolist.children[i].querySelector('button').setAttribute('data-id', i);
+    }
+    for (let i = todos.length; i < nbrChildren; i++) { // remove todo container which are not needed anymore
+      todolist.lastChild.remove();
+    }
+  }
+
+  sync();
+</script>

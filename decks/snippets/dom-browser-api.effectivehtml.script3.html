@@ -1,0 +1,37 @@
+<ul id="todos">
+</ul>
+<form id="addform">
+  <input name="todotext" type="text"><button type="submit">Add</button>
+</form>
+<script>
+  let todos = [];
+  document.querySelector('#addform').addEventListener('submit', (event) => {
+    event.preventDefault();
+    const form = event.target;
+    if (form.checkValidity()) {
+      const newTodo = form.elements['todotext'].value;
+      todos = [...todos, newTodo];
+      sync();
+    }
+    return false;
+  });
+
+  function sync() {
+    const todolist = document.querySelector('#todos');
+
+    todolist.innerHTML = ''; // clean todolist
+
+    for (let i = 0; i < todos.length; i++) {
+      const todo = document.createElement('li');
+      const button = document.createElement('button');
+      button.textContent = 'X';
+      button.addEventListener('click', (event) => {
+        todos.splice(i, 1);
+        sync();
+      });
+      todo.append(document.createTextNode(todos[i]));
+      todo.appendChild(button);
+      todolist.appendChild(todo);
+    }
+  }
+</script>

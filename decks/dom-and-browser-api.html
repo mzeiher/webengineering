@@ -585,7 +585,7 @@
           <div class="sick-grid">
             <main>
               <figure style="height: 90%;"
-                data-footnote-link="https://javascript.info/bubbling-and-capturing#stopping-bubbling"><img
+                data-sick-footnote-link="https://javascript.info/bubbling-and-capturing#stopping-bubbling"><img
                   style="height: 100%;" src="assets/bubble-capture.png" /></figure>
             </main>
           </div>
@@ -739,6 +739,14 @@
         <section>
           <div class="sick-grid">
             <main>
+              <pre
+                data-id="code"><code class="language-html" data-line-numbers="" data-trim style="max-height: unset" data-code="snippets/dom-browser-api.effectivehtml.html"></code></pre>
+            </main>
+          </div>
+        </section>
+        <section>
+          <div class="sick-grid">
+            <main>
               <pre data-id="code"><code class="language-javascript" data-line-numbers="" data-trim style="max-height: unset"><script type="text/template">
                 const element = document.createElement('div');
                 element.id = 'test';
@@ -807,6 +815,155 @@
         </section>
       </section>
 
+      <section>
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+          <h2>ToDo Example</h2>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers data-trim data-code="snippets/dom-browser-api.effectivehtml.html"></code></pre>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers  data-trim data-code="snippets/dom-browser-api.effectivehtml.script.html"></code></pre>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers="7-15"  data-trim data-code="snippets/dom-browser-api.effectivehtml.script.html"></code></pre>
+            <p>Add event listener to form to handle form submission in javascript</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers="8"  data-trim data-code="snippets/dom-browser-api.effectivehtml.script.html"></code></pre>
+            <p>Prevent the browser from executing the default action and send the form to an URL</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers="10-13"  data-trim data-code="snippets/dom-browser-api.effectivehtml.script.html"></code></pre>
+            <p>Check for form validity and call <code class="inline">addToDo</code> function with new text</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers="17-26"  data-trim data-code="snippets/dom-browser-api.effectivehtml.script.html"></code></pre>
+            <p>Function to handle adding of todos</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers="18"  data-trim data-code="snippets/dom-browser-api.effectivehtml.script.html"></code></pre>
+            <p>get the <code class="inline">#todo</code> element from the DOM</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers="20"  data-trim data-code="snippets/dom-browser-api.effectivehtml.script.html"></code></pre>
+            <p>create a new list item element...</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers="21"  data-trim data-code="snippets/dom-browser-api.effectivehtml.script.html"></code></pre>
+            <p>...set the content...</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers="22-24"  data-trim data-code="snippets/dom-browser-api.effectivehtml.script.html"></code></pre>
+            <p>...add an event listener to the delete button to handle deletion of todos...</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers="25"  data-trim data-code="snippets/dom-browser-api.effectivehtml.script.html"></code></pre>
+            <p>...and add the new todo to the list</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers="21"  data-trim data-code="snippets/dom-browser-api.effectivehtml.script.html"></code></pre>
+            <p>This line introduces a potential XSS security risk for injecting scripts...</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers="21-27"  data-trim data-code="snippets/dom-browser-api.effectivehtml.script2.html"></code></pre>
+            <p>...to mitigate this we set only text content and no html</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers="7"  data-trim data-code="snippets/dom-browser-api.effectivehtml.script3.html"></code></pre>
+            <p>It is always a good idea to separate the view from the underlying data model...</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers="13,14"  data-trim data-code="snippets/dom-browser-api.effectivehtml.script3.html"></code></pre>
+            <p>...so instead of adding a new todo to the dom, we add a todo to the data model and sync the dom...</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers="29,30"  data-trim data-code="snippets/dom-browser-api.effectivehtml.script3.html"></code></pre>
+            <p>...same for the deletion of todos...</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers="24-35"  data-trim data-code="snippets/dom-browser-api.effectivehtml.script3.html"></code></pre>
+            <p>...the sync function will iterate through the todos and create html elements accordingly...</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers="22"  data-trim data-code="snippets/dom-browser-api.effectivehtml.script3.html"></code></pre>
+            <p>...before each sync the previous content will be deleted</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers  data-trim data-code="snippets/dom-browser-api.effectivehtml.script4.html"></code></pre>
+            <p>Always re-creating all elements can have a bad performance impact...</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers="29-40" data-trim data-code="snippets/dom-browser-api.effectivehtml.script4.html"></code></pre>
+            <p>...so we only create new elements if new todos are added...</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers="41,42" data-trim data-code="snippets/dom-browser-api.effectivehtml.script4.html"></code></pre>
+            <p>...and update the other todos only if the text changed...</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers="46-48" data-trim data-code="snippets/dom-browser-api.effectivehtml.script4.html"></code></pre>
+            <p>...entries which are not longer needed will be removed...</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers="19-22" data-trim data-code="snippets/dom-browser-api.effectivehtml.script4.html"></code></pre>
+            <p>...because we need a reference to a event listener to remove it we have to refactor our remove event listeners...</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers="34-36,44" data-trim data-code="snippets/dom-browser-api.effectivehtml.script4.html"></code></pre>
+            <p>...and dispatch a remove event with the index which should be removed, the index is stored in a custom attribute on the button</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers="24" data-trim data-code="snippets/dom-browser-api.effectivehtml.script4.html"></code></pre>
+            <p>...this sync algorithm is 'unkeyed' because the entry in the list has no direct relation to a DOM node, the dom nodes are reused with new data</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers="7"  data-trim data-code="snippets/dom-browser-api.effectivehtml.script5.html"></code></pre>
+            <p>There are plenty of templating frameworks out there which will automate dom manipulation for you...</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre
+            data-id="code"><code class="language-html" data-line-numbers="21-28"  data-trim data-code="snippets/dom-browser-api.effectivehtml.script5.html"></code></pre>
+            <p>...so your code gets more readable and easier to use</p>
+        </section>
+        <section data-sick-grid="">
+          <h3>Templating Frameworks</h3>
+          <ul>
+            <li><a href="https://reactjs.org/">react</a></li>
+            <li><a href="https://preactjs.com/">preact</a></li>
+            <li><a href="https://lit-html.polymer-project.org/">lit-html</a></li>
+            <li><a href="https://github.com/WebReflection/uhtml#readme">µhtml</a></li>
+          </ul>
+          <p>Popular frameworks like Angular, Vue and Svelte also have their own template system. A more comprehensive list along with benchmarks for the different frameworks can be found on Stefan Krauses <a href="https://rawgit.com/krausest/js-framework-benchmark/master/webdriver-ts-results/table.html">github</a></p>
+        </section>
+      </section>
+
 
       <section>
         <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
@@ -830,8 +987,11 @@
           </script></code></pre>
         </section>
         <section data-sick-grid>
-          <p>You can share the data however message passed with <code class="inline">window.postMessage</code>/<code class="inline">window.onmessage</code> between windows or workers are cloned with the Structure Cloning Algorithm</p>
-          <p><small>Because of Meltdown/Spectre <code class="inline">SharedArrayBuffer</code> to share a byte range was disabled, but it can be used again with the appropriate CORS headers</small></p>
+          <p>You can share the data however message passed with <code class="inline">window.postMessage</code>/<code
+              class="inline">window.onmessage</code> between windows or workers are cloned with the Structure Cloning
+            Algorithm</p>
+          <p><small>Because of Meltdown/Spectre <code class="inline">SharedArrayBuffer</code> to share a byte range was
+              disabled, but it can be used again with the appropriate CORS headers</small></p>
           <pre><code class="language-javascript" data-trim data-line-numbers=""><script type="text/template">
             // window 1
             const arr = [1, 2, 3];

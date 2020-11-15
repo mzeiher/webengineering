@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>Node JS</title>
+  <title>custom elements</title>
 
   <link rel="stylesheet" href="dist/reset.css">
   <link rel="stylesheet" href="dist/reveal.css">
@@ -13,8 +13,9 @@
 
   <!-- Theme used for syntax highlighted code -->
   <link rel="stylesheet" href="plugin/highlight/tomorrow.css" id="highlight-theme">
-
   <link rel="stylesheet" href="common.css">
+
+  <link rel="stylesheet" href="plugin/sick/sick-design.css">
 
   <link rel="stylesheet" href="fontawesome/all.css">
 
@@ -23,28 +24,47 @@
 <body>
   <div class="reveal">
     <div class="slides">
-      <section>
-        <h1>NPM and NodeJS</h1>
+      <section data-sick-title data-background="assets/javascript-bg.jpg" class="dark">
+        <h1>Nodejs</h1>
       </section>
 
-
-      
       <section>
-        <section data-background="var(--radial-background)">
-          <h2>NodeJS</h2>
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+          <h2>nodejs</h2>
+        </section>
+        <section data-sick>
+          <p>lorem ipsum</p>
         </section>
       </section>
 
 
       <section>
-        <section data-background="var(--radial-background)">
-          <h2>NPM/Yarn</h2>
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+          <h2>nodejs module</h2>
         </section>
-        <section>
-          <h3>Websocket Object</h3>
+        <section data-sick>
+          <p>lorem ipsum</p>
         </section>
       </section>
 
+      <section>
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+          <h2>npm</h2>
+        </section>
+        <section data-sick>
+          <p>lorem ipsum</p>
+        </section>
+      </section>
+
+
+      <section>
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+          <h2>A simple Webserver with nodejs</h2>
+        </section>
+        <section data-sick>
+          <p>lorem ipsum</p>
+        </section>
+      </section>
     </div>
   </div>
 
@@ -53,6 +73,8 @@
   <script src="plugin/markdown/markdown.js"></script>
   <script src="plugin/highlight/highlight.js"></script>
   <script src="plugin/chalkboard/plugin.js"></script>
+  <script src="plugin/externalcode/externalcode.js"></script>
+  <script src="plugin/sick/sick.js"></script>
   <script>
     // More info about initialization & config:
     // - https://revealjs.com/initialization/
@@ -63,15 +85,17 @@
       width: 1280,
       height: 720,
       // Learn about plugins: https://revealjs.com/plugins/
-      plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard],
+      plugins: [Externalcode, SickPlugin, RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard],
       chalkboard: {
         boardmarkerWidth: 3,
         chalkWidth: 3,
         chalkEffect: 0,
         theme: "whiteboard"
+      },
+      sickPlugin: {
+        footerText: `Mathis Zeiher | nodejs | ${new Date().getDate()}.${new Date().getMonth() + 1}.${new Date().getFullYear()}`
       }
     });
-
   </script>
 </body>
 
