@@ -109,7 +109,7 @@
               <p>Attributes and children map to different properties on the DOM element</p>
               <p><small>An attribute does not always map to a property of the same name and properties can have a
                   different
-                  datatype then string</small></p>
+                  datatype than string</small></p>
             </main>
           </div>
         </section>
@@ -173,7 +173,7 @@
                 // backgroundColor: '#f0f', 
                 //   ...
                 // }
-                element.style.backgroundColor: '#f0f';
+                element.style.backgroundColor = '#f0f';
                 console.log(element.getAttribute('style'));
                 // return 'background-color: #f0f;'
                 element.setAttribute('style', 'background-color: #f0f;');
@@ -424,7 +424,7 @@
           <div class="sick-grid">
             <main>
               <pre style="" data-id="code" class="language-javascript"><code class="language-javascript" data-line-numbers="4,5" data-trim><script type="text/template">
-                const element.createElement('div');
+                const element = document.createElement('div');
                 element.id = 'one';
               </script></code></pre>
               <pre style="" data-id="code2" class="language-html"><code class="language-html" data-line-numbers data-trim><script type="text/template">
@@ -710,7 +710,7 @@
                 const listener = (event) => {} // event listener
                 element.addEventListener('custom-event', listener);
                 
-                element.dispatch(new CustomEvent('custom-event', { bubbles: true}));
+                element.dispatchEvent(new CustomEvent('custom-event', { bubbles: true}));
               </script></code></pre>
             </main>
           </div>
