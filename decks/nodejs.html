@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>custom elements</title>
+  <title>nodejs</title>
 
   <link rel="stylesheet" href="dist/reset.css">
   <link rel="stylesheet" href="dist/reveal.css">
@@ -25,44 +25,1006 @@
   <div class="reveal">
     <div class="slides">
       <section data-sick-title data-background="assets/javascript-bg.jpg" class="dark">
-        <h1>Nodejs</h1>
+        <h1>nodejs</h1>
       </section>
+
+      <section>
+        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+          <h2>Interesting Resources</h2>
+        </section>
+        <section data-sick>
+          <p><a href="https://nodejs.org/en/">node js</a></p>
+        </section>
+      </section>
+
 
       <section>
         <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
           <h2>nodejs</h2>
         </section>
-        <section data-sick>
-          <p>lorem ipsum</p>
+        <section data-sick-grid>
+          <blockquote>As an asynchronous event-driven JavaScript runtime, Node.js is designed to build scalable network
+            applications<sup data-sick-footnote-link="https://nodejs.org/en/about/"></sup></blockquote>
+        </section>
+        <section data-sick-grid="">
+          <p>nodejs is a javascript runtime which allows you to execute server side javascript scripts and applications
+          </p>
+        </section>
+        <section data-sick-grid="">
+          <pre><code class="language-javascript" data-line-numbers data-trim><script type="text/template">
+            // file: script.js
+            console.log('hello world');
+          </script></code></pre>
+          <p>The most basic javascript script</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate>
+          <pre><code class="language-bash" data-line-numbers data-trim><script type="text/template">
+            $ echo "console.log('hello-world');" > script.js
+            $ node script.js
+            hello-world
+            $
+          </script></code></pre>
+        </section>
+        <section data-sick-grid="" data-auto-animate>
+          <pre><code class="language-bash" data-line-numbers="1" data-trim><script type="text/template">
+            $ echo "console.log('hello-world');" > script.js
+            $ node script.js
+            hello-world
+            $
+          </script></code></pre>
+          <p>write script into file <code class="inline">script.js</code></p>
+        </section>
+        <section data-sick-grid="" data-auto-animate>
+          <pre><code class="language-bash" data-line-numbers="2" data-trim><script type="text/template">
+            $ echo "console.log('hello-world');" > script.js
+            $ node script.js
+            hello-world
+            $
+          </script></code></pre>
+          <p>execute script</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate>
+          <pre><code class="language-bash" data-line-numbers="3" data-trim><script type="text/template">
+            $ echo "console.log('hello-world');" > script.js
+            $ node script.js
+            hello-world
+            $
+          </script></code></pre>
+          <p>console output</p>
+        </section>
+        <section data-sick-grid>
+          <p>nodejs ships with a big standard library which covers a lot of filesystem, text processing and network
+            APIs<sup data-sick-footnote-link="https://nodejs.org/dist/latest-v15.x/docs/api/"></sup></p>
+        </section>
+        <section data-sick-grid="">
+          <p>In addition to the standard library nodejs ships with a built-in package management system which allow you
+            to install 3rd party packages to extend the functionality of the standard library</p>
+        </section>
+        <section data-sick-grid="">
+          <p>nodejs is based googles V8 javascript engine and thus has the same limitations regarding threading behavior
+            as the browser engine</p>
+        </section>
+        <section data-sick-grid="">
+          <p>Disclaimer: Just because of nodejs is capable of doing a task its not always the best tool<sup
+              data-sick-footnote-link="https://www.thoughtworks.com/radar/platforms/node-overload"></sup></p>
         </section>
       </section>
 
 
       <section>
         <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
-          <h2>nodejs module</h2>
+          <h2>nodejs packages</h2>
         </section>
-        <section data-sick>
-          <p>lorem ipsum</p>
+        <section data-sick-grid>
+          <p><b>Important:</b> because nodejs supports ES Modules, I will only use the ES module syntax and don't dive
+            into commonjs</p>
+        </section>
+        <section data-sick-grid>
+          <img src="assets/node-package.svg" style="height: 70%;">
+        </section>
+        <section data-sick-grid>
+          <p>A nodejs packages consists of a directory which has at least on file</p>
+          <ul>
+            <li><code class="inline">package.json</code> this file is mandatory and describes the package</li>
+            <li><code class="inline">&lt;filename&gt;.js</code> an arbitrary number of javascript modules</li>
+            <li><code class="inline">node_modules</code> folder for dependencies (only after installing)</li>
+          </ul>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code class="language-javascript" data-line-numbers data-trim><script type="text/template">
+            {
+              "name": "my-package",
+              "type": "module",
+              "version": "1.0.0",
+              "main": "index.js",
+              "description": "My first node package",
+              "dependencies": {
+              }
+            }
+          </script></code></pre>
+          <p>A simple package description</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code class="language-javascript" data-line-numbers="2" data-trim><script type="text/template">
+            {
+              "name": "my-package",
+              "type": "module",
+              "version": "1.0.0",
+              "main": "index.js",
+              "description": "My first node package",
+              "dependencies": {
+              }
+            }
+          </script></code></pre>
+          <p>name of the package</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code class="language-javascript" data-line-numbers="3" data-trim><script type="text/template">
+            {
+              "name": "my-package",
+              "type": "module",
+              "version": "1.0.0",
+              "main": "index.js",
+              "description": "My first node package",
+              "dependencies": {
+              }
+            }
+          </script></code></pre>
+          <p>type of the javascript files inside the package, in this case es modules</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code class="language-javascript" data-line-numbers="4" data-trim><script type="text/template">
+            {
+              "name": "my-package",
+              "type": "module",
+              "version": "1.0.0",
+              "main": "index.js",
+              "description": "My first node package",
+              "dependencies": {
+              }
+            }
+          </script></code></pre>
+          <p>version of the package, must comply semantic versioning standard<sup
+              data-sick-footnote-link="https://semver.org/"></sup></p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code class="language-javascript" data-line-numbers="5" data-trim><script type="text/template">
+            {
+              "name": "my-package",
+              "type": "module",
+              "version": "1.0.0",
+              "main": "index.js",
+              "description": "My first node package",
+              "dependencies": {
+              }
+            }
+          </script></code></pre>
+          <p>main entry point for bare imports</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code class="language-javascript" data-line-numbers="6" data-trim><script type="text/template">
+            {
+              "name": "my-package",
+              "type": "module",
+              "version": "1.0.0",
+              "main": "index.js",
+              "description": "My first node package",
+              "dependencies": {
+              }
+            }
+          </script></code></pre>
+          <p>description of the package</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code class="language-javascript" data-line-numbers="7,8" data-trim><script type="text/template">
+            {
+              "name": "my-package",
+              "type": "module",
+              "version": "1.0.0",
+              "main": "index.js",
+              "description": "My first node package",
+              "dependencies": {
+              }
+            }
+          </script></code></pre>
+          <p>object with a list of packages our package depends on</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code2"><code class="language-javascript" data-line-numbers="" data-trim><script type="text/template">
+            import { readFileSync } from 'fs';
+            import { helper } 'other-package';
+            import { func } from './other-module.js';
+
+            export function print() {
+              console.log('hello-world');
+            }
+          </script></code></pre>
+          <p>sample content of <code class="inline">index.js</code> file</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code2"><code class="language-javascript" data-line-numbers="1" data-trim><script type="text/template">
+            import { readFileSync } from 'fs';
+            import { helper } 'other-package';
+            import { func } from './other-module.js';
+
+            export function print() {
+              console.log('hello-world');
+            }
+          </script></code></pre>
+          <p>import a function provided by the standard library (built-in module)</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code2"><code class="language-javascript" data-line-numbers="2" data-trim><script type="text/template">
+            import { readFileSync } from 'fs';
+            import { helper } 'other-package';
+            import { func } from './other-module.js';
+
+            export function print() {
+              console.log('hello-world');
+            }
+          </script></code></pre>
+          <p>bare import a function provided by a third party packages (located in node_modules)</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code2"><code class="language-javascript" data-line-numbers="3" data-trim><script type="text/template">
+            import { readFileSync } from 'fs';
+            import { helper } 'other-package';
+            import { func } from './other-module.js';
+
+            export function print() {
+              console.log('hello-world');
+            }
+          </script></code></pre>
+          <p>relative import a function from a module of your package</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code2"><code class="language-javascript" data-line-numbers="5-7" data-trim><script type="text/template">
+            import { readFileSync } from 'fs';
+            import { helper } 'other-package';
+            import { func } from './other-module.js';
+
+            export function print() {
+              console.log('hello-world');
+            }
+          </script></code></pre>
+          <p>export a function to be used by other modules or packages</p>
+        </section>
+        <section data-sick-grid>
+          <pre><code class="language-bash" data-line-numbers data-trim><script type="text/template">
+            $ mkdir my-package
+            $ cd my-package
+            $ npm init
+          </script></code></pre>
+          <p>creation of new package, create a folder and run <code class="inline">npm init</code> within the folder and
+            follow the instructions</p>
+        </section>
+        <section data-sick-grid="">
+          <p>In general there are two types of packages, <b>library packages</b> which provides additional functionality
+            and only exports functions, constants, etc.. and <b>application packages</b> which contain an application
+            which can be run directly</p>
         </section>
       </section>
 
       <section>
         <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
-          <h2>npm</h2>
+          <h2>npm and dependencies</h2>
         </section>
-        <section data-sick>
-          <p>lorem ipsum</p>
+        <section data-sick-grid="">
+          <p>nodejs brings its own tool for managing packages and dependencies, also there is a global registry provided
+            under <a href="https://www.npmjs.com/">https://www.npmjs.com/</a> where you can publish your own packages
+            and get 3rd party packages</p>
+        </section>
+        <section data-sick-grid>
+          <p><code class="inline">npm</code> is the built in command line utility for node to manage and install
+            packages and dependencies</p>
+        </section>
+        <section data-sick-grid="">
+          <p>To install a new package you just have to execute <code
+              class="inline">npm install &lt;package&gt;@&lt;version&gt;</code> within your package where the
+            package.json file is located</p>
+          <p><small>the &lt;version&gt; path can be omitted if you want the latest published version</small></p>
+        </section>
+        <section data-sick-grid="">
+          <p>You can also manually edit the package.json file and add dependencies</p>
+        </section>
+        <section data-sick-grid="">
+          <p>packages which your package depends upon will be saved to the <code class="inline">node_modules</code>
+            folder next to your package.json. The node package resolution algorithm will scan this folder if you use a
+            bare import within your javascript</p>
+        </section>
+        <section data-sick-grid="" class="light">
+          <p>depending on the amount of your dependencies and transitive dependencies of your dependencies the folder
+            can get quite big</p>
+          <figure data-sick-footnote-link="https://dev.to/madza/how-do-you-deal-with-nodemodules-491j"
+            style="height: 70%;"><img style="height: 100%;" src="assets/node_modules.webp"></figure>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code2"><code class="language-javascript" data-line-numbers="" data-trim><script type="text/template">
+            // package.json
+            ...
+            dependencies: { ... };
+            devDependencies: { ... };
+            peerDependencies: { ... };
+            ...
+          </script></code></pre>
+          <p>node packages have three types depdendencies</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code2"><code class="language-javascript" data-line-numbers="3" data-trim><script type="text/template">
+            // package.json
+            ...
+            dependencies: { ... };
+            devDependencies: { ... };
+            peerDependencies: { ... };
+            ...
+          </script></code></pre>
+          <p>dependencies are runtime dependencies which are needed <b>during the execution</b> of your package</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code2"><code class="language-javascript" data-line-numbers="4" data-trim><script type="text/template">
+            // package.json
+            ...
+            dependencies: { ... };
+            devDependencies: { ... };
+            peerDependencies: { ... };
+            ...
+          </script></code></pre>
+          <p>devDependencies are dependencies which are needed only <b>during the development</b> of your package or for
+            building it</p>
+          <p><small>typescript, module bundler, linter, etc... for example</small></p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code2"><code class="language-javascript" data-line-numbers="5" data-trim><script type="text/template">
+            // package.json
+            ...
+            dependencies: { ... };
+            devDependencies: { ... };
+            peerDependencies: { ... };
+            ...
+          </script></code></pre>
+          <p>peerDependencies are dependencies which are provided by the consumer of your package</p>
+          <p><small>usually used if you write a plugin to a library, then the consumer must add the package your library
+              extends</small></p>
+        </section>
+        <section data-sick-grid>
+          <p>The dependency objects are key value pairs with the package name as key and the version as value</p>
+        </section>
+        <section data-sick-grid>
+          <pre data-id="code2"><code class="language-javascript" data-line-numbers="3-5" data-trim><script type="text/template">
+          // package.json
+          ...
+          "dependencies": {
+            "ws": "^7.3.1"
+          },
+          ...
+        </script></code></pre>
+          <p>In this case the package depends on the package <code class="inline">ws</code> with version [7.3.0, 8.0.0)
+          </p>
         </section>
       </section>
-
 
       <section>
         <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
           <h2>A simple Webserver with nodejs</h2>
         </section>
-        <section data-sick>
-          <p>lorem ipsum</p>
+        <section data-sick-grid="">
+          <pre><code class="language-bash" data-line-numbers data-trim><script type="text/template">
+            $ mkdir webserver
+            $ cd webserver
+            $ npm init -y
+          </script></code></pre>
+          <p>create a folder and a package.json file</p>
+        </section>
+        <section data-sick-grid>
+          <pre><code class="language-javascript" data-line-numbers data-trim><script type="text/template">
+            ...
+            "description": "",
+            "type": "module",
+            "main": "index.js",
+            ...
+          </script></code></pre>
+          <p>add <code class="inline">module</code> type to package.json</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code class="language-javascript" data-line-numbers data-trim><script type="text/template">
+            import { createServer } from 'http';
+
+            const hostname = '127.0.0.1';
+            const port = 3000;
+
+            const server = createServer((req, res) => {
+                res.statusCode = 200;
+                res.setHeader('Content-Type', 'text/plain');
+                res.end('Hello World');
+            });
+
+            server.listen(port, hostname, () => {
+                console.log(`Server running at http://${hostname}:${port}/`);
+            });
+          </script></code></pre>
+          <p>open index.js and create a new webserver</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code class="language-javascript" data-line-numbers="1" data-trim><script type="text/template">
+            import { createServer } from 'http';
+
+            const hostname = '127.0.0.1';
+            const port = 3000;
+
+            const server = createServer((req, res) => {
+                res.statusCode = 200;
+                res.setHeader('Content-Type', 'text/plain');
+                res.end('Hello World');
+            });
+
+            server.listen(port, hostname, () => {
+                console.log(`Server running at http://${hostname}:${port}/`);
+            });
+          </script></code></pre>
+          <p>import the <code class="inline">http</code> package from the standard library</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code class="language-javascript" data-line-numbers="3,4" data-trim><script type="text/template">
+            import { createServer } from 'http';
+
+            const hostname = '127.0.0.1';
+            const port = 3000;
+
+            const server = createServer((req, res) => {
+                res.statusCode = 200;
+                res.setHeader('Content-Type', 'text/plain');
+                res.end('Hello World');
+            });
+
+            server.listen(port, hostname, () => {
+                console.log(`Server running at http://${hostname}:${port}/`);
+            });
+          </script></code></pre>
+          <p>define the host on which the server listens and a port</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code class="language-javascript" data-line-numbers="6-10" data-trim><script type="text/template">
+            import { createServer } from 'http';
+
+            const hostname = '127.0.0.1';
+            const port = 3000;
+
+            const server = createServer((req, res) => {
+                res.statusCode = 200;
+                res.setHeader('Content-Type', 'text/plain');
+                res.end('Hello World');
+            });
+
+            server.listen(port, hostname, () => {
+                console.log(`Server running at http://${hostname}:${port}/`);
+            });
+          </script></code></pre>
+          <p>create a new server and listen to requests</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code class="language-javascript" data-line-numbers="7-9" data-trim><script type="text/template">
+            import { createServer } from 'http';
+
+            const hostname = '127.0.0.1';
+            const port = 3000;
+
+            const server = createServer((req, res) => {
+                res.statusCode = 200;
+                res.setHeader('Content-Type', 'text/plain');
+                res.end('Hello World');
+            });
+
+            server.listen(port, hostname, () => {
+                console.log(`Server running at http://${hostname}:${port}/`);
+            });
+          </script></code></pre>
+          <p>create a response to every requests which resturns 'hello world'</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code class="language-javascript" data-line-numbers="12-14" data-trim><script type="text/template">
+            import { createServer } from 'http';
+
+            const hostname = '127.0.0.1';
+            const port = 3000;
+
+            const server = createServer((req, res) => {
+                res.statusCode = 200;
+                res.setHeader('Content-Type', 'text/plain');
+                res.end('Hello World');
+            });
+
+            server.listen(port, hostname, () => {
+                console.log(`Server running at http://${hostname}:${port}/`);
+            });
+          </script></code></pre>
+          <p>start server</p>
+        </section>
+        <section data-sick-grid="">
+          <p>If we now start the server and try to access it we get 'hello world' as a response</p>
+          <pre><code class="language-bash" data-line-numbers data-trim><script type="text/template">
+            $ node index.js
+            Server running at http://127.0.0.1:3000
+            $ curl 127.0.0.1:3000
+            Hello World
+          </script></code></pre>
+        </section>
+        <section data-sick-grid="">
+          <p>Now we want top be able to serve static files</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code class="language-javascript" data-line-numbers="2,3" data-trim><script type="text/template">
+            import { createServer } from 'http';
+            import { readFile, stat } from 'fs/promises';
+            import { resolve } from 'path';
+
+            const hostname = '127.0.0.1';
+            const port = 3000;
+
+            const server = createServer(async (req, res) => {
+                if (req.url === '' || req.url === '/') {
+                    req.url = '/index.html';
+                }
+                if(req.url.startsWith('/')) {
+                    req.url = req.url.substr(1);
+                }
+                try {
+                    if ((await stat(resolve(process.cwd(), req.url))).isFile) {
+                        const content = await readFile(resolve(process.cwd(), req.url));
+                        res.setHeader('Content-Type', 'text/html');
+                        res.writeHead(200);
+                        res.write(content);
+                        res.end();
+
+                    } else {
+                        throw new Error('not found');
+                    }
+                } catch (e) {
+                    res.statusCode = 404;
+                    res.statusMessage = 'Not found';
+                    res.setHeader('Content-Type', 'text/plain');
+                    res.end('Not found');
+                }
+            });
+
+            server.listen(port, hostname, () => {
+                console.log(`Server running at http://${hostname}:${port}/`);
+            });
+          </script></code></pre>
+          <p>import helpers for file system access and path handling</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code class="language-javascript" data-line-numbers="9-14" data-trim><script type="text/template">
+            import { createServer } from 'http';
+            import { readFile, stat } from 'fs/promises';
+            import { resolve } from 'path';
+
+            const hostname = '127.0.0.1';
+            const port = 3000;
+
+            const server = createServer(async (req, res) => {
+                if (req.url === '' || req.url === '/') {
+                    req.url = '/index.html';
+                }
+                if(req.url.startsWith('/')) {
+                    req.url = req.url.substr(1);
+                }
+                try {
+                    if ((await stat(resolve(process.cwd(), req.url))).isFile) {
+                        const content = await readFile(resolve(process.cwd(), req.url));
+                        res.setHeader('Content-Type', 'text/html');
+                        res.writeHead(200);
+                        res.write(content);
+                        res.end();
+
+                    } else {
+                        throw new Error('not found');
+                    }
+                } catch (e) {
+                    res.statusCode = 404;
+                    res.statusMessage = 'Not found';
+                    res.setHeader('Content-Type', 'text/plain');
+                    res.end('Not found');
+                }
+            });
+
+            server.listen(port, hostname, () => {
+                console.log(`Server running at http://${hostname}:${port}/`);
+            });
+          </script></code></pre>
+          <p>we parse the provided url and rewrite it to "index.html" if no path provided</p>
+          <p><small>We need to make tha paths relative passed as an url, so we need to remove the leading /</small></p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code class="language-javascript" data-line-numbers="16-25" data-trim><script type="text/template">
+            import { createServer } from 'http';
+            import { readFile, stat } from 'fs/promises';
+            import { resolve } from 'path';
+
+            const hostname = '127.0.0.1';
+            const port = 3000;
+
+            const server = createServer(async (req, res) => {
+                if (req.url === '' || req.url === '/') {
+                    req.url = '/index.html';
+                }
+                if(req.url.startsWith('/')) {
+                    req.url = req.url.substr(1);
+                }
+                try {
+                    if ((await stat(resolve(process.cwd(), req.url))).isFile) {
+                        const content = await readFile(resolve(process.cwd(), req.url));
+                        res.setHeader('Content-Type', 'text/html');
+                        res.writeHead(200);
+                        res.write(content);
+                        res.end();
+
+                    } else {
+                        throw new Error('not found');
+                    }
+                } catch (e) {
+                    res.statusCode = 404;
+                    res.statusMessage = 'Not found';
+                    res.setHeader('Content-Type', 'text/plain');
+                    res.end('Not found');
+                }
+            });
+
+            server.listen(port, hostname, () => {
+                console.log(`Server running at http://${hostname}:${port}/`);
+            });
+          </script></code></pre>
+          <p>If the file exists we read it and return the content in the response</p>
+        </section>
+        <section data-sick-grid="">
+          <p>Now if we create a index.html within our project and navigate to <code
+              class="inline">http://127.0.0.1:3000</code> the index.html will be displayed in a browser</p>
+          <p><small>Until now we only support html files, we need to add a function to determine the right MIME-Type and
+              return it as Content-Type</small></p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code class="language-javascript" data-line-numbers="18" data-trim><script type="text/template">
+            import { createServer } from 'http';
+            import { readFile, stat } from 'fs/promises';
+            import { resolve, parse } from 'path';
+            
+            const hostname = '127.0.0.1';
+            const port = 3000;
+            
+            const server = createServer(async (req, res) => {
+                if (req.url === '' || req.url === '/') {
+                    req.url = '/index.html';
+                }
+                if (req.url.startsWith('/')) {
+                    req.url = req.url.substr(1);
+                }
+                try {
+                    if ((await stat(resolve(process.cwd(), req.url))).isFile) {
+                        const content = await readFile(resolve(process.cwd(), req.url));
+                        res.setHeader('Content-Type', getMimeType(req.url));
+                        res.writeHead(200);
+                        res.write(content);
+                        res.end();
+                    } else {
+                        throw new Error('not found');
+                    }
+                } catch (e) {
+                    res.statusCode = 404;
+                    res.statusMessage = 'Not found';
+                    res.setHeader('Content-Type', 'text/plain');
+                    res.end('Not found');
+                }
+            });
+            
+            server.listen(port, hostname, () => {
+                console.log(`Server running at http://${hostname}:${port}/`);
+            });
+            
+            function getMimeType(path) {
+                const extension = parse(path).ext;
+                switch (extension) {
+                    case '.html':
+                        return 'text/html';
+                    case '.js':
+                        return 'application/javascript';
+                    case '.css':
+                        return 'text/css';
+                    case '.png':
+                    case '.jpg':
+                    case '.jpeg':
+                    case '.gif':
+                        return `image/${extension.substr(1)}`;
+                    default:
+                        return 'application/octet-stream';
+                }
+            }
+            </script></code></pre>
+          <p>We need to determine the content type by the provided file extension</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code class="language-javascript" data-line-numbers="37-54" data-trim><script type="text/template">
+            import { createServer } from 'http';
+            import { readFile, stat } from 'fs/promises';
+            import { resolve, parse } from 'path';
+            
+            const hostname = '127.0.0.1';
+            const port = 3000;
+            
+            const server = createServer(async (req, res) => {
+                if (req.url === '' || req.url === '/') {
+                    req.url = '/index.html';
+                }
+                if (req.url.startsWith('/')) {
+                    req.url = req.url.substr(1);
+                }
+                try {
+                    if ((await stat(resolve(process.cwd(), req.url))).isFile) {
+                        const content = await readFile(resolve(process.cwd(), req.url));
+                        res.setHeader('Content-Type', getMimeType(req.url));
+                        res.writeHead(200);
+                        res.write(content);
+                        res.end();
+                    } else {
+                        throw new Error('not found');
+                    }
+                } catch (e) {
+                    res.statusCode = 404;
+                    res.statusMessage = 'Not found';
+                    res.setHeader('Content-Type', 'text/plain');
+                    res.end('Not found');
+                }
+            });
+            
+            server.listen(port, hostname, () => {
+                console.log(`Server running at http://${hostname}:${port}/`);
+            });
+            
+            function getMimeType(path) {
+                const extension = parse(path).ext;
+                switch (extension) {
+                    case '.html':
+                        return 'text/html';
+                    case '.js':
+                        return 'application/javascript';
+                    case '.css':
+                        return 'text/css';
+                    case '.png':
+                    case '.jpg':
+                    case '.jpeg':
+                    case '.gif':
+                        return `image/${extension.substr(1)}`;
+                    default:
+                        return 'application/octet-stream';
+                }
+            }
+            </script></code></pre>
+          <p>return the correct mime type for a specific file extension<sup data-sick-footnote-link="https://www.sitepoint.com/mime-types-complete-list/"></sup></p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code class="language-javascript" data-line-numbers="9-14" data-trim><script type="text/template">
+            import { createServer } from 'http';
+            import { readFile, stat } from 'fs/promises';
+            import { resolve, parse } from 'path';
+
+            const hostname = '127.0.0.1';
+            const port = 3000;
+
+            const server = createServer(async (req, res) => {
+                if (req.url === '/greeting' && req.method === 'GET') {
+                    res.statusCode = 200;
+                    res.setHeader('Content-Type', 'text/plain');
+                    res.end('Hello World');
+                    return;
+                }
+                if (req.url === '' || req.url === '/') {
+                    req.url = '/index.html';
+                }
+                if (req.url.startsWith('/')) {
+                    req.url = req.url.substr(1);
+                }
+                try {
+                    if ((await stat(resolve(process.cwd(), req.url))).isFile) {
+                        const content = await readFile(resolve(process.cwd(), req.url));
+                        res.setHeader('Content-Type', getMimeType(req.url));
+                        res.writeHead(200);
+                        res.write(content);
+                        res.end();
+                    } else {
+                        throw new Error('not found');
+                    }
+                } catch (e) {
+                    res.statusCode = 404;
+                    res.statusMessage = 'Not found';
+                    res.setHeader('Content-Type', 'text/plain');
+                    res.end('Not found');
+                }
+            });
+
+            server.listen(port, hostname, () => {
+                console.log(`Server running at http://${hostname}:${port}/`);
+            });
+
+            function getMimeType(path) {
+                const extension = parse(path).ext;
+                switch (extension) {
+                    case '.html':
+                        return 'text/html';
+                    case '.js':
+                        return 'application/javascript';
+                    case '.css':
+                        return 'text/css';
+                    case '.png':
+                    case '.jpg':
+                    case '.jpeg':
+                    case '.gif':
+                        return `image/${extension.substr(1)}`;
+                    default:
+                        return 'application/octet-stream';
+                }
+            }
+            </script></code></pre>
+          <p>we can also overwrite specific paths to return the greeting from the first example</p>
+        </section>
+        <section data-sick-grid="">
+          <p>unfortunately nodejs does not support websockets out of the box so we need to add a 3rd party library</p>
+          <pre><code class="language-bash" data-line-numbers data-trim><script type="text/template">
+            $ npm install ws
+          </script></code></pre>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code class="language-javascript" data-line-numbers="4, 9" data-trim><script type="text/template">
+            import { createServer } from 'http';
+            import { readFile, stat } from 'fs/promises';
+            import { resolve, parse } from 'path';
+            import * as ws from 'ws';
+
+            const hostname = '127.0.0.1';
+            const port = 3000;
+
+            const websocketServer = new ws.default.Server({ noServer: true });
+
+            const server = createServer(async (req, res) => {
+                if (req.url === '/greeting' && req.method === 'GET') {
+                    res.statusCode = 200;
+                    res.setHeader('Content-Type', 'text/plain');
+                    res.end('Hello World');
+                    return;
+                }
+                if (req.url === '' || req.url === '/') {
+                    req.url = '/index.html';
+                }
+                if (req.url.startsWith('/')) {
+                    req.url = req.url.substr(1);
+                }
+                try {
+                    if ((await stat(resolve(process.cwd(), req.url))).isFile) {
+                        const content = await readFile(resolve(process.cwd(), req.url));
+                        res.setHeader('Content-Type', getMimeType(req.url));
+                        res.writeHead(200);
+                        res.write(content);
+                        res.end();
+                    } else {
+                        throw new Error('not found');
+                    }
+                } catch (e) {
+                    res.statusCode = 404;
+                    res.statusMessage = 'Not found';
+                    res.setHeader('Content-Type', 'text/plain');
+                    res.end('Not found');
+                }
+            });
+
+            server.on('upgrade', (req, socket, head) => {
+                websocketServer.handleUpgrade(req, socket, head, (client) => {
+                    websocketServer.emit('connection', client, req);
+                    client.on('message', (data) => {
+                        client.send(data); // simple echo server
+                    });
+                });
+            });
+
+
+            server.listen(port, hostname, () => {
+                console.log(`Server running at http://${hostname}:${port}/`);
+            });
+
+            function getMimeType(path) {
+                const extension = parse(path).ext;
+                switch (extension) {
+                    case '.html':
+                        return 'text/html';
+                    case '.js':
+                        return 'application/javascript';
+                    case '.css':
+                        return 'text/css';
+                    case '.png':
+                    case '.jpg':
+                    case '.jpeg':
+                    case '.gif':
+                        return `image/${extension.substr(1)}`;
+                    default:
+                        return 'application/octet-stream';
+                }
+            }
+            </script></code></pre>
+          <p>because the <code class="inline">ws</code> package is a older commonjs module we can import it but we need to access the exports via the "default" property</p>
+        </section>
+        <section data-sick-grid data-auto-animate="">
+          <pre data-id="code"><code class="language-javascript" data-line-numbers="42-49" data-trim><script type="text/template">
+            import { createServer } from 'http';
+            import { readFile, stat } from 'fs/promises';
+            import { resolve, parse } from 'path';
+            import * as ws from 'ws';
+
+            const hostname = '127.0.0.1';
+            const port = 3000;
+
+            const websocketServer = new ws.default.Server({ noServer: true });
+
+            const server = createServer(async (req, res) => {
+                if (req.url === '/greeting' && req.method === 'GET') {
+                    res.statusCode = 200;
+                    res.setHeader('Content-Type', 'text/plain');
+                    res.end('Hello World');
+                    return;
+                }
+                if (req.url === '' || req.url === '/') {
+                    req.url = '/index.html';
+                }
+                if (req.url.startsWith('/')) {
+                    req.url = req.url.substr(1);
+                }
+                try {
+                    if ((await stat(resolve(process.cwd(), req.url))).isFile) {
+                        const content = await readFile(resolve(process.cwd(), req.url));
+                        res.setHeader('Content-Type', getMimeType(req.url));
+                        res.writeHead(200);
+                        res.write(content);
+                        res.end();
+                    } else {
+                        throw new Error('not found');
+                    }
+                } catch (e) {
+                    res.statusCode = 404;
+                    res.statusMessage = 'Not found';
+                    res.setHeader('Content-Type', 'text/plain');
+                    res.end('Not found');
+                }
+            });
+
+            server.on('upgrade', (req, socket, head) => {
+                websocketServer.handleUpgrade(req, socket, head, (client) => {
+                    websocketServer.emit('connection', client, req);
+                    client.on('message', (data) => {
+                        client.send(data); // simple echo server
+                    });
+                });
+            });
+
+
+            server.listen(port, hostname, () => {
+                console.log(`Server running at http://${hostname}:${port}/`);
+            });
+
+            function getMimeType(path) {
+                const extension = parse(path).ext;
+                switch (extension) {
+                    case '.html':
+                        return 'text/html';
+                    case '.js':
+                        return 'application/javascript';
+                    case '.css':
+                        return 'text/css';
+                    case '.png':
+                    case '.jpg':
+                    case '.jpeg':
+                    case '.gif':
+                        return `image/${extension.substr(1)}`;
+                    default:
+                        return 'application/octet-stream';
+                }
+            }
+            </script></code></pre>
+          <p>to establish a websocket connection we forward an "upgrade" request to our websocketServer which will create a small echo service</p>
         </section>
       </section>
     </div>
