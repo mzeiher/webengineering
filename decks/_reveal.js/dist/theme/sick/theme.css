@@ -42,6 +42,7 @@
         --radial-background: radial-gradient(circle, rgba(44,49,51,1) 0%, rgba(31,35,36,1) 80%, rgba(0,0,0,1) 100%);
     }
 
+    :root .has-light-background,
     :root section.light {
         --background-color: #fff;
         --background-color-80: rgba(255,255,255,0.8);
@@ -57,6 +58,8 @@
         --radial-background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(201,220,232,1) 80%, rgba(141,181,206,1) 100%);
     }
 }
+
+:root .has-dark-background,
 :root section.dark,
 :root.dark {
     --background-color: #141718;
@@ -69,6 +72,7 @@
     --radial-background: radial-gradient(circle, rgba(44,49,51,1) 0%, rgba(31,35,36,1) 80%, rgba(0,0,0,1) 100%);
 }
 :root.dark section.light,
+:root .has-light-background,
 :root.light {
     --background-color: #fff;
     --background-color-80: rgba(255,255,255,0.8);

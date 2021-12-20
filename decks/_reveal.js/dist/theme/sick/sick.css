@@ -321,7 +321,16 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
  * NAVIGATION CONTROLS
  *********************************************/
 .reveal .controls {
-  color: #007CC1; }
+  color: var(--link-color,#007CC1);
+}
+
+.reveal.has-light-background .controls {
+  color: var(--link-color,#007CC1);
+  
+}
+.reveal.has-dark-background .controls {
+  color: var(--link-color,#007CC1);
+}
 
 /*********************************************
  * PROGRESS BAR
@@ -331,6 +340,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   color: #007CC1; }
 
 
+.reveal .slides:not([data-sick-no-logo])::before,
 .reveal .slides:not(.no-logo)::before {
   content: '';
   position: absolute;
@@ -342,6 +352,18 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   width: 100px;
   height: 40px;
 }
+
+.reveal .slides:not([data-sick-no-footer])::after,
+.reveal .slides:not(.no-footer)::after {
+  font-size: 0.3em;
+  opacity: 0.5;
+  content: attr(data-footer-text);
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 /*********************************************
  * PRINT BACKGROUND
  *********************************************/

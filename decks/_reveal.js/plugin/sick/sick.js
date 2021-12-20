@@ -9,7 +9,16 @@ const SickPlugin = {
       } else {
         document.querySelector('.reveal > .slides').classList.remove('no-logo');
       }
+      if (event.currentSlide.hasAttribute('data-sick-no-footer')) {
+        document.querySelector('.reveal > .slides').classList.add('no-footer');
+      } else {
+        document.querySelector('.reveal > .slides').classList.remove('no-footer');
+      }
     });
+
+    reveal.on('ready', () => {
+      document.querySelector('.reveal.slide > .slides')?.setAttribute('data-footer-text', reveal.getConfig()?.sickPlugin?.footerText || '')
+    })
 
     document.querySelectorAll('section[data-sick-grid],section[data-sick-title],section[data-sick-chapter]').forEach((element) => {
       if (!element.querySelector('scope > .sick-grid')) { // ignore slides where a sick grid is already in place
@@ -58,17 +67,17 @@ const SickPlugin = {
     });
 
     // footer handling
-    const footerAutoanimateId = `id-${Number.parseInt(Math.random() * 1000)}`;
-    document.querySelectorAll('section:not([data-no-footer]) > .sick-grid').forEach((element) => {
-      if (element.querySelectorAll(':scope > footer').length === 0) {
-        const footer = document.createElement('footer');
-        footer.setAttribute('data-id', footerAutoanimateId);
-        element.appendChild(footer);
-      }
-    });
-    document.querySelectorAll('.sick-grid > footer').forEach((element) => {
-      element.textContent = reveal.getConfig()?.sickPlugin?.footerText || '';
-    });
+    // const footerAutoanimateId = `id-${Number.parseInt(Math.random() * 1000)}`;
+    // document.querySelectorAll('section:not([data-no-footer]) > .sick-grid').forEach((element) => {
+    //   if (element.querySelectorAll(':scope > footer').length === 0) {
+    //     const footer = document.createElement('footer');
+    //     footer.setAttribute('data-id', footerAutoanimateId);
+    //     element.appendChild(footer);
+    //   }
+    // });
+    // document.querySelectorAll('.sick-grid > footer').forEach((element) => {
+    //   element.textContent = reveal.getConfig()?.sickPlugin?.footerText || '';
+    // });
     // end footer handling
 
     // footnote handling
