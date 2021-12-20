@@ -7,18 +7,14 @@
 
   <title>web engineering</title>
 
-  <link rel="stylesheet" href="dist/reset.css">
-  <link rel="stylesheet" href="dist/reveal.css">
-  <link rel="stylesheet" href="dist/theme/sick/sick.css" id="theme">
+  <link rel="stylesheet" href="../_reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="../_reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="../_reveal.js/dist/theme/sick/sick.css" id="theme">
 
   <!-- Theme used for syntax highlighted code -->
-  <link rel="stylesheet" href="plugin/highlight/tomorrow.css" id="highlight-theme">
-  <link rel="stylesheet" href="common.css">
-
-  <link rel="stylesheet" href="plugin/sick/sick-design.css">
-
-
-  <link rel="stylesheet" href="fontawesome/all.css">
+  <link rel="stylesheet" href="../_reveal.js/plugin/highlight/tomorrow.css" id="highlight-theme">
+  <link rel="stylesheet" href="../_reveal.js/plugin/sick/sick-design.css">
+  <link rel="stylesheet" href="../_reveal.js/plugin/fontawesome/all.css">
 
 </head>
 
@@ -603,75 +599,72 @@
             <img src="assets/firefox_128x128.png" />
           </div>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>Trident/Chakra</h3>
           <p><small>Internet Explorer 11</small></p>
         </section>
-        <section>
-          <p>Still used to much in corporate environments</p>
-          <p>Only browser for older embedded Windows Systems or Scada Application</p>
-          <p>Available as embeddable Active X control (successor will be WebView2)</p>
+        <section data-sick-grid="">
+          <p>Still in use in corporate environments</p>
+          <p>Available as embeddable Active-X control (successor will be WebView2)</p>
+          <p>Only browser for older embedded Windows Systems or SCADA Applications</p>
           <p>On embedded systems only if you're lucky otherwise stripped down mshtml.dll</p>
           <p>MS will drop support fir IE11 in Teams on 30.11.2020 and for MS365 on 17.08.2021</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>EdgeHTML/Chakra core</h3>
           <p><small>Old MS Edge</small></p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p>No longer relevant, but still around in enterprise environments</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>Blink/V8</h3>
           <p><small>Google Chrome, MS Edge, Brave, Opera</small></p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p>Fork of WebKit</p>
           <p>Google Chrome usually ships with the latest experimental web APIs</p>
           <p>Current de-facto Standard</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>Webkit/Nitro</h3>
           <p><small>Safari</small></p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p>Used on all MacOS and iOS devices</li>
           <p>Used by all other browsers on iOS (apple does not allow to ship own engine)</li>
           <p>Webkit engine can be integrated in embedded devices (QTWebKit)</li>
           <p>
-            <span class="highlight"><i class="fas fa-comment-dots"></i>The new IE <sup>[1]</sup></span>
+            <span class="sick-highlight"><i class="fas fa-comment-dots"></i>The new IE <sup data-sick-footnote-link="">https://dev.to/nektro/safari-is-the-new-internet-explorer-1df0</sup></span>
           </p>
-          <ul class="sources">
-            <li>[1] https://dev.to/nektro/safari-is-the-new-internet-explorer-1df0</li>
-          </ul>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>Gecko, Quantum/Spidermonkey</h3>
           <p><small>Mozilla Firefox</small></p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p>Currently in some kind of niche</p>
           <p>Reason we have Rust today 🦀</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>Other implementations</h3>
           <p><small>honorable mentions</small></p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p>Flow Browser<br /><small>Only rendering Engine, uses Spidermonkey for JS</small></p>
           <p>Modabble XS<br /><small>Embeddable JS Engine</small></p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>Market Share</h3>
           <p>Warnign: the market share can be deciving, check depending on your target audience</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>market share - world</h3>
-          <img src="assets/marketshare.png" class="r-stretch" />
+          <img src="assets/marketshare.png" style="height: 100%;"/>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>market share - india</h3>
-          <img src="assets/marketshare-india.png" class="r-stretch" />
+          <img src="assets/marketshare-india.png" style="height: 100%;" />
         </section>
       </section>
 
@@ -680,22 +673,22 @@
         <section data-sick-chapter>
           <h2>history lesson</h2>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>a brief history of web</h3>
           <ul>
-            <li>All started with Tim Berners-Lee ~1989 [WWW](https://de.wikipedia.org/wiki/World_Wide_Web)</li>
-            <li>Basis HyperText ~1931<small><a
-                  href="https://people.ischool.berkeley.edu/~buckland/goldbush.html">[1]</a></small></li>
+            <li>All started with Tim Berners-Lee ~1989<sup data-sick-footnote-link="">https://de.wikipedia.org/wiki/World_Wide_Web</sup></li>
+            <li>Basis HyperText ~1931<sup data-sick-footnote-link="">
+                  https://people.ischool.berkeley.edu/~buckland/goldbush.html</sup></li>
             <li>Webserver - URL - <b>H</b>yper<b>T</b>ext<b>M</b>arkup<b>L</b>anguage</li>
             <li>Only 10 years later .com bubble burst</li>
             <li>only static content until 1995 Netscape Navigator (Brendan Eich) designed LiveScript</li>
             <li>styling came 1996 with CSS1 specification</li>
           </ul>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>the 90's</h3>
         </section>
-        <section>
+        <section data-sick-grid="">
           <ul>
             <li>1989 First Webserver/URL/HTML invented</li>
             <li>1995 LiveScript (which became ECMAScript)</li>
@@ -707,10 +700,10 @@
             <li>1999 ES3 Release</li>
           </ul>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>the 2000's</h3>
         </section>
-        <section>
+        <section data-sick-grid="">
           <ul>
             <li>2001 IE 6 (Trident Engine)</li>
             <li>2002 Mozilla (FireFox)</li>
@@ -724,10 +717,10 @@
           </ul>
           </script>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>the 2010's</h3>
         </section>
-        <section>
+        <section data-sick-grid="">
           <ul>
             <li>2012 starting of custom elements standard</li>
             <li>2013 IE 11</li>
@@ -737,6 +730,7 @@
             <li>2015 HTML5, since then living standard</li>
             <li>2015 ES6 (ES2015) start of the ES20XX naming</li>
             <li>2016 Custom Elements released</li>
+            <li>2019 First PWAs</li>
             <li>2020 Edgeium (only 3 engines left, WebKit, Blink, Quantum)</li>
           </ul>
         </section>
@@ -748,57 +742,49 @@
           <h2>oh boi...</h2>
           <h3>how things have changed</h3>
         </section>
-        <section>
+        <section data-sick-grid="">
           <ul>
-            <li>Google removed "don't be evil" from slogan <sup><a
-                  href="https://gizmodo.com/google-removes-nearly-all-mentions-of-dont-be-evil-from-1826153393">[1]</a></sup>
+            <li>Google removed "don't be evil" from slogan <sup data-sick-footnote-link="">https://gizmodo.com/google-removes-nearly-all-mentions-of-dont-be-evil-from-1826153393></sup>
             </li>
-            <li>A bookstore is one of the biggest cloud providers <sup><a
-                  href="https://www.channele2e.com/channel-partners/csps/cloud-market-share-2020-amazon-aws-microsoft-azure-google-ibm/">[2]</a></sup>
+            <li>A bookstore is the biggest cloud provider <sup data-sick-footnote-link="">https://www.channele2e.com/channel-partners/csps/cloud-market-share-2020-amazon-aws-microsoft-azure-google-ibm/</sup>
             </li>
-            <li>Microsoft has a decent browser <sup><a href="https://www.microsoft.com/en-us/edge">[3]</a></sup></li>
-            <li>Apple is the new Internet Explorer and built a walled garden <sup><a
-                  href="https://arstechnica.com/information-technology/2015/06/op-ed-safari-is-the-new-internet-explorer/">[4]</a><a
-                  href="https://arstechnica.com/gaming/2020/08/impending-apple-ban-an-existential-threat-to-the-unreal-engine-epic-says/">[5]</a></sup>
+            <li>Microsoft has a decent browser <sup data-sick-footnote-link="">https://www.microsoft.com/en-us/edge</sup></li>
+            <li>Apple is the new Internet Explorer and built a walled garden <sup data-sick-footnote-link="">https://arstechnica.com/information-technology/2015/06/op-ed-safari-is-the-new-internet-explorer/</sup><sup data-sick-footnote-link=""
+                  >https://arstechnica.com/gaming/2020/08/impending-apple-ban-an-existential-threat-to-the-unreal-engine-epic-says/</sup>
             </li>
-            <li>Mozilla struggles <sup><a
-                  href="https://thenextweb.com/insights/2020/08/11/mozilla-firefox-layoffs-250-employees/">[6]</a></sup>
+            <li>Mozilla struggles <sup data-sick-footnote-link="">https://thenextweb.com/insights/2020/08/11/mozilla-firefox-layoffs-250-employees/</sup>
             </li>
           </ul>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>the past... simple and robust</h3>
           <ul>
-            <li><span style="font-weight: bold">L</span>inux</li>
-            <li><span style="font-weight: bold">A</span>pache</li>
-            <li><span style="font-weight: bold">M</span>ySQL</li>
-            <li><span style="font-weight: bold">P</span>HP/Perl</li>
+            <li><span style="font-weight: bolder; text-decoration: underline;">L</span>inux</li>
+            <li><span style="font-weight: bolder; text-decoration: underline;">A</span>pache</li>
+            <li><span style="font-weight: bolder; text-decoration: underline;">M</span>ySQL</li>
+            <li><span style="font-weight: bolder; text-decoration: underline;">P</span>HP/Perl</li>
           </ul>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>All you needed</h3>
           <p>Texteditor/Netscape Composer/MS Frontpage</p>
           <p>Webspace</p>
           <p>FTP</p>
         </section>
-        <section>
-          <div class="r-stretch">
+        <section data-sick-grid="">
+          <figure data-sick-footnote-link="https://www.kuropixel.com/geocities-sites/" style="height: 100%;">
             <img style="height: 90%" src="assets/geocities.gif" />
-          </div>
-          <ul class="sources">
-            <li>https://www.kuropixel.com/geocities-sites/</li>
-          </ul>
+          </figure>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>What happened?</h3>
         </section>
-        <section>
-          <img class="r-stretch" src="assets/could-should.jpg" />
-          <ul class="sources">
-            <li>https://jennburke.com/2015/10/16/just-because-you-can-doesnt-mean-you-should/</li>
-          </ul>
+        <section data-sick-grid="">
+          <figure data-sick-footnote-link="https://jennburke.com/2015/10/16/just-because-you-can-doesnt-mean-you-should/" style="height: 80%;">
+            <img src="assets/could-should.jpg" style="height: 80%;"/>
+          </figure>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>modern web development</h3>
           <blockquote>
             "If you just spin up an instance of Golden Goose on Elastic Clownshoes, then clone the flugelhorn inside a
@@ -808,19 +794,16 @@
             <a href="https://twitter.com/brucel/status/1305820902903382016">@brucel</a>
           </blockquote>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>web development is an overengineered mess</h3>
         </section>
-        <section>
-          <div class="r-stretch">
-            <img class="" style="height: 90%" src="assets/tryingtoexplain.jpg" />
-          </div>
+        <section data-sick-grid="">
+          <figure style="height: 60%;" data-sick-footnote-link="https://dev.to/forsureitsme/comment/9kbc">
+            <img class="" style="height: 100%" src="assets/tryingtoexplain.jpg" />
+          </figure>
           <p>a typical web application</p>
-          <ul class="sources">
-            <li>https://dev.to/forsureitsme/comment/9kbc</li>
-          </ul>
         </section>
-        <section>
+        <section data-sick-grid="">
           <ul>
             <li>Serverless, AWS, Azure, GCP, Cloudflare, K8s, K3s, docker, Terraform</li>
             <li>Lambdas, Fargate, Elastic Lode Balancing</li>
@@ -830,25 +813,22 @@
             <li>(p)react, Angular, svelte, Vue</li>
           </ul>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>and for what?</h3>
         </section>
-        <section>
-          <div class="r-stretch">
+        <section data-sick-grid="">
+          <figure data-sick-footnote-link="https://www.kuropixel.com/geocities-sites/" style="height: 100%;">
             <img style="height: 90%" src="assets/geocities.gif" />
-          </div>
-          <ul class="sources">
-            <li>https://www.kuropixel.com/geocities-sites/</li>
-          </ul>
+          </figure>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>back to the course goals</h3>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p>Overview of existing technologies in webengineering</p>
           <p>Wild ride through heaps of technologies</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <blockquote>You should be able to make a differentiated assessment to provide a solution for the task hand -
             you're probably not netflix or uber</blockquote>
         </section>
@@ -856,13 +836,13 @@
     </div>
   </div>
 
-  <script src="dist/reveal.js"></script>
-  <script src="plugin/notes/notes.js"></script>
-  <script src="plugin/markdown/markdown.js"></script>
-  <script src="plugin/highlight/highlight.js"></script>
-  <script src="plugin/chalkboard/plugin.js"></script>
-  <script src="plugin/externalcode/externalcode.js"></script>
-  <script src="plugin/sick/sick.js"></script>
+  <script src="../_reveal.js/dist/reveal.js"></script>
+  <script src="../_reveal.js/plugin/notes/notes.js"></script>
+  <script src="../_reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="../_reveal.js/plugin/highlight/highlight.js"></script>
+  <script src="../_reveal.js/plugin/chalkboard/plugin.js"></script>
+  <script src="../_reveal.js/plugin/externalcode/externalcode.js"></script>
+  <script src="../_reveal.js/plugin/sick/sick.js"></script>
   <script>
     // More info about initialization & config:
     // - https://revealjs.com/initialization/
