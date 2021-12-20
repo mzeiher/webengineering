@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Nunito ExtraLight';
+    src: url('./Nunito-Italic-VariableFont_wght.ttf');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Nunito ExtraLight';
+    src: url('./Nunito-VariableFont_wght.ttf');
+    font-style: normal;
+}

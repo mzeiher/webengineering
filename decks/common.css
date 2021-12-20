@@ -2,10 +2,6 @@ code.inline {
     background-color: lightgrey;
 }
 
-.round {
-    border-radius: 100%;
-}
-
 .margin-10>* {
     margin: 10px;
 }
@@ -27,16 +23,6 @@ ul.sources {
 
 ul.sources>li {
     list-style: none;
-}
-
-span.highlight {
-    background-color: var(--highlight-background);
-    line-height: 1.5em;
-    white-space: nowrap;
-}
-
-span.highlight > i {
-    margin: 0 5px;
 }
 
 .warning {

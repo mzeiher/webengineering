@@ -1,9 +1,9 @@
 :root {
-    --main-font: Open Sans, Helvetica, sans-serif;
+    --main-font: "Nunito ExtraLight", Helvetica, sans-serif;
     --main-font-size: 14px;
     --block-margin: 20px;
     --heading-margin: 0 0 20px 0;
-    --heading-font: Open Sans, Helvetica, sans-serif;
+    --heading-font: "KG Second Chances Sketch", Helvetica, sans-serif;
     --heading-line-height: 1.2;
     --heading-letter-spacing: normal;
     --heading-text-transform: uppercase;

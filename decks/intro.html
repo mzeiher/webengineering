@@ -9,7 +9,7 @@
 
   <link rel="stylesheet" href="dist/reset.css">
   <link rel="stylesheet" href="dist/reveal.css">
-  <link rel="stylesheet" href="dist/theme/sick.css" id="theme">
+  <link rel="stylesheet" href="dist/theme/sick/sick.css" id="theme">
 
   <!-- Theme used for syntax highlighted code -->
   <link rel="stylesheet" href="plugin/highlight/tomorrow.css" id="highlight-theme">
@@ -29,16 +29,16 @@
         <h1>Web Engineering</h1>
       </section>
       <section data-sick-grid>
-        <h2>about me</h2>
-        <div class="sick-h-layout center">
-          <img src="assets/profile.jpg" height="200" class="round">
+        <h3>about <span class="emphasize">me</span></h3>
+        <div class="sick-h-layout sick-layout-gap center">
+          <img src="assets/profile.jpg" height="200" class="sick-round">
           <ul data-sick-no-decoration>
             <li>Mathis Zeiher</li>
             <li>Software Engineer <a href="http://www.sick.com">@SICK AG</a></li>
             <li>In the field for way too long...</li>
           </ul>
         </div>
-        <div class="sick-h-layout center" style="font-size: 2em;">
+        <div class="sick-h-layout sick-layout-gap center" style="font-size: 1.5em;">
           <a href="mailto:mathis@bitschubser.dev">
             <i class="fas fa-fw fa-at"></i>
           </a>
@@ -55,27 +55,24 @@
       </section>
 
       <section data-sick-grid>
-        <p>All the slides are available here: <a
+        <p>All the slides are available here: @<a
             href="https://mzeiher.github.io/webengineering/">https://mzeiher.github.io/webengineering/</a></p>
         <p><small>
             pull requests are highly appreciated 😀
-            <span class="highlight"><i class="fab fa-github" style="vertical-align: baseline;"></i><a
+            <span class="sick-highlight"><i class="fab fa-github"></i><a
                 href="https://github.com/mzeiher/webengineering">@mzeiher/webengineering</a></span>
           </small></p>
       </section>
 
 
-      <section data-sick-grid>
-        <h2>what about you?</h2>
+      <section data-sick-chapter>
+        <h2>what about <span class="emphasize">you</span>?</h2>
       </section>
 
 
       <section>
-        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
-          <h2>Goals</h2>
-        </section>
-        <section data-sick-grid>
-          <h3>Course Goals</h3>
+        <section data-sick-chapter>
+          <h2>Course Goals</h2>
         </section>
         <section data-sick-grid>
           <h3>professional expertise</h3>
@@ -98,7 +95,8 @@
             handeln</blockquote>
         </section>
         <section data-sick-grid>
-          <figure stlye="height:100%" data-sick-footnote-link="http://www.quickmeme.com/meme/3tnh3f"><img style="height: 100%;" src="assets/approximate_knowledge.jpg" /></figure>
+          <figure stlye="height:100%" data-sick-footnote-link="http://www.quickmeme.com/meme/3tnh3f"><img
+              style="height: 100%;" src="assets/approximate_knowledge.jpg" /></figure>
         </section>
         <section data-sick-grid>
           <p>Overview of existing technologies in webengineering</p>
@@ -120,11 +118,11 @@
           <h3>disclaimer</h3>
         </section>
         <section data-sick-grid>
-          <p><span class="highlight"><i class="fas fa-comment-dots"></i>Comments are highly subjective</span></p>
-          <p><span class="highlight"><i class="fab fa-twitter"></i>Interesting people to follow</span></p>
-          <p><span class="highlight"><i class="fas fa-play-circle"></i>Interesting videos to watch</span></p>
-          <p><span class="highlight"><i class="fas fa-link"></i>Interesting links to read</span></p>
-          <p><span class="highlight"><i class="fab fa-github"></i>Interesting repositories</span></p>
+          <p><span class="sick-highlight"><i class="fas fa-comment-dots"></i>Comments are highly subjective</span></p>
+          <p><span class="sick-highlight"><i class="fab fa-twitter"></i>Interesting people to follow</span></p>
+          <p><span class="sick-highlight"><i class="fas fa-play-circle"></i>Interesting videos to watch</span></p>
+          <p><span class="sick-highlight"><i class="fas fa-link"></i>Interesting links to read</span></p>
+          <p><span class="sick-highlight"><i class="fab fa-github"></i>Interesting repositories</span></p>
         </section>
         <section data-sick-grid>
           <h3>good resources</h3>
@@ -140,10 +138,10 @@
 
 
       <section>
-        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+        <section data-sick-chapter>
           <h2>what?</h2>
         </section>
-        <section data-sick-grid="">
+        <section data-sick-grid>
           <h3>introduction</h3>
           <p>Who is who (w3c, CSSWG, WHATWG, WICG, ES262, TC39 and others)</p>
           <p>History of webengineering</p>
@@ -169,12 +167,12 @@
           <h3>DOM/CSSOM</h3>
           <p>Document Object Model, DOM manipulation, EventTarget, ShadowDom, Custom Elements</p>
           <p>style attribute</p>
-          <p>CSS object model, Constructable StyleSheets</p>
+          <p>CSS object model, Constructable StyleSheets, CSS Modules</p>
         </section>
         <section data-sick-grid="">
           <h3>javascript</h3>
           <p>ES262 basics</p>
-          <p>Versions (es3, es5, es6, es2015-2019)</p>
+          <p>Editions (es3, es5, es6, es2015-2019)</p>
           <p>Module system (>=es6)</p>
           <p>JS object model, functions, class and prototype inheritance, "this" (scope
             and
@@ -198,7 +196,7 @@
           <p>WebRTC</p>
         </section>
         <section data-sick-grid="">
-          <h3>what: backend technologies and stacks</h3>
+          <h3>backend technologies and stacks</h3>
           <p>Node (JS) (Apollo for GraphQL, epxress)</p>
           <p>JavaEE (Spring Boot)</p>
           <p>Go/Rust</p>
@@ -211,7 +209,8 @@
           <h3>backend technologies and stacks</h3>
           <p>Databases NoSQL, SQL, Document Stores, Big Table</p>
           <p>"Serverless" Gatsby, Next, Zeit, </p>
-          <p>SSR (https://developers.google.com/web/updates/2019/02/rendering-on-the-web)</p>
+          <p>SSR <span
+              class="sick-hidden">(https://developers.google.com/web/updates/2019/02/rendering-on-the-web)</span></p>
         </section>
         <section data-sick-grid="">
           <h3>frameworks and libraries</h3>
@@ -244,7 +243,9 @@
         <section data-sick-grid="">
           <h3>advanced topics</h3>
           <p>Worklets (parallelism), ServiceWorker (PWA, notification triggers,
-            https://medium.com/@amberovsky/crdt-conflict-free-replicated-data-types-b4bfc8459d26), CSS Houdini
+            CRDTs <span
+              class="sick-hidden">https://medium.com/@amberovsky/crdt-conflict-free-replicated-data-types-b4bfc8459d26)</span>,
+            CSS Houdini
             (paintlets),
             Audiolets</p>
           <p>Rendering techniques (Server Side Rendering, Client Side Rendering and everything in between)</p>
@@ -262,7 +263,7 @@
 
 
       <section>
-        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+        <section data-sick-chapter>
           <h2>Tools needed</h2>
         </section>
         <section>
@@ -276,34 +277,34 @@
 
 
       <section data-sick-grid>
-        <h2>lets start...</h2>
+        <h3>lets start...</h3>
       </section>
 
 
       <section>
-        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+        <section data-sick-chapter>
           <h2>who is who</h2>
         </section>
-        <section>
-          <img src="assets/isoc.webp" class="r-stretch" />
+        <section data-sick-grid data-sick-no-logo="">
+          <img src="assets/isoc.webp" />
           <ul class="sources">
             <li>https://www.slideshare.net/PeterREgli/internet-organization</li>
           </ul>
         </section>
-        <section>
-          <img src="assets/whoiswho.idraw.png" class="r-stretch" />
+        <section data-sick-grid data-sick-no-logo="">
+          <img src="assets/whoiswho.idraw.png" />
         </section>
-        <section>
+        <section data-sick-grid>
           <h3>w3c</h3>
           <blockquote>The World Wide Web Consortium (W3C) is an international community that develops open
             standards to ensure the long-term growth of the Web.</blockquote>
         </section>
-        <section>
+        <section data-sick-grid>
           <p>WebRTC, Websocket Protocol API/IDL (Protcol itself by IETF)</p>
           <p>Publishes drafts which are agreed upon in the WICG</p>
           <p>Does a lot more... semantic web, web of things, etc</p>
         </section>
-        <section>
+        <section data-sick-grid>
           <h3>w3c - CSSWG</h3>
           <p><small>CSS Working Group</small></p>
           <p>Brings us all the nice things</p>
@@ -311,14 +312,14 @@
           <p>The how in a HTML page</p>
           <p>CSS Houdini</p>
         </section>
-        <section>
+        <section data-sick-grid>
           <h3>w3c - WHATWG</h3>
           <p><small>Web Hypertext Application Technology Working Group</small></p>
           <p>Advances the HTML specification</p>
           <p>The what in a HTML page</p>
           <p>Reason why we don't need jQuery anymore (DOM APIs)</p>
         </section>
-        <section>
+        <section data-sick-grid>
           <h3>w3c - WICG</h3>
           <p><small>Web Incubator Community Group</small></p>
           <p>Participation of implementors for new APIs/Technologies</p>
@@ -327,26 +328,26 @@
           <p>Warning! take it with a grain of <a
               href="https://twitter.com/BrendanEich/status/1146329506329743362">salt</a></p>
         </section>
-        <section>
+        <section data-sick-grid>
           <h3>ES262/ECMA International</h3>
           <p><small>European Computer Manufacturers Association</small></p>
           <p>Releases annual Language Specification</p>
           <p>Provides es262 test suite for js engine implementers</p>
           <p>Javascript is not the only implementation of ES262, Actionscript is also one</p>
         </section>
-        <section>
+        <section data-sick-grid>
           <h3>ECMA - TC39</h3>
           <p>Proposes/Specifies new Langauge features</p>
           <p>Consists of implementers, developers, academics...</p>
         </section>
-        <section>
+        <section data-sick-grid>
           <h3>ICANN</h3>
           <p><small>Internet Corporation for Assigned Names and Numbers</small></p>
           <p>Supports and maintains the databases for namespaces and numbers in the internet</p>
           <p>Introduces and manages top level domains</p>
           <p>Saved us from the .org sale (see ISOC)</p>
         </section>
-        <section>
+        <section data-sick-grid>
           <h3>ICANN - IANA</h3>
           <p><small>Internet Assigned Numbers Authority</small></p>
           <p>Manages DNS Root Zone</p>
@@ -354,7 +355,7 @@
             ports</p>
           <p>Delegates name registering to local registries (RIRs) (RIPE, ARIN, APNIC, etc)</p>
         </section>
-        <section>
+        <section data-sick-grid>
           <h3>IETF</h3>
           <p><small>Internet Engineering Task Force</small></p>
           <p>Responsible for the technical side of the internet</p>
@@ -362,12 +363,12 @@
           <p>TCP/IP</p>
           <p>Serializations like CBOR</p>
         </section>
-        <section>
+        <section data-sick-grid>
           <h3>ITU</h3>
           <p><small>International Telecommunication Union</small></p>
           <p>Brought us nice things like ASN.1, X509 (used in TLS/Certificates)</p>
         </section>
-        <section>
+        <section data-sick-grid>
           <h3>ISOC</h3>
           <p><small>Internet Society</small></p>
           <p>Tries to hold it all together</p>
@@ -379,48 +380,49 @@
 
 
       <section>
-        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+        <section data-sick-chapter>
           <h2>the internet</h2>
         </section>
-        <section data-background-color="#000">
-          <img src="assets/Internet_map_1024.jpg" class="r-stretch" />
-          <ul class="sources">
-            <li>https://en.wikipedia.org/wiki/Internet</li>
-          </ul>
+        <section data-sick-grid data-background-color="#000">
+          <figure data-sick-footnote-link="https://en.wikipedia.org/wiki/Internet" style="height: 100%;">
+            <img src="assets/Internet_map_1024.jpg" style="height: 100%;" />
+          </figure>
         </section>
-        <section>
+        <section data-sick-grid="">
           <blockquote>Internet is the global system of interconnected computer networks that uses the Internet
             protocol suite (TCP/IP) to communicate between networks and devices.
-            <b>It is a network of networks</b></blockquote>
-          <ul class="sources">
-            <li>https://en.wikipedia.org/wiki/Internet</li>
-          </ul>
+            <b>It is a network of networks</b>
+            <br />
+            - Wikipedia<sup data-sick-footnote-link="">https://en.wikipedia.org/wiki/Internet</sup>
+          </blockquote>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>what is the internet</h3>
           <p>IP based, package switched inter connected network</p>
           <p>Belongs to no-one, but governed by ISOC et all.</p>
           <p>The www is only an application on top of the internet</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>providers</h3>
           <p>Providers provide the access to the internet, maintain automated systems and are interconnected via IXP
             (e.g DE-CIX)</p>
         </section>
-        <section>
-          <img src="assets/Tier-1-vs-Tier-2-768x541.png" class="r-stretch" />
-          <ul class="sources">
-            <li>https://elite.net.uk/what-is-the-difference-between-a-tier-1-and-tier-2-provider/</li>
-          </ul>
+        <section data-sick-grid="">
+          <h2>providers</h2>
+          <figure style="height: 100%;"
+            data-sick-footnote-link="https://elite.net.uk/what-is-the-difference-between-a-tier-1-and-tier-2-provider/">
+            <img src="assets/Tier-1-vs-Tier-2-768x541.png" style="height: 100%;" />
+          </figure>
         </section>
-        <section>
+        <section data-sick-grid="">
+          <h2>providers</h2>
           <p>Tier 1<br /><small>AT&T, Century Link (Level3), Deutsche Telecom (Only exchange traffic with other Tier
               1
               providers)</small></p>
           <p>Tier 2<br /><small>Vodafone, Comcast, Local telcos (deliver internet traffic to end customers)</small></p>
           <p>Tier 3<br /><small>small and local ISPs</small></p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>osi</h3>
           <style>
             .osi-table {
@@ -503,33 +505,33 @@
             </tbody>
           </table>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>DNS</h3>
+          <p><small>Domain Name System</small></p>
+          <p>Translates domain names into IP addresses</p>
         </section>
-        <section>
+        <section data-sick-grid="">
+          <h2>DNS</h2>
           <p>http://www.google.com</p>
           <p>=</p>
           <p>v6/2a00:1450:4001:802::200e v4/172.217.18.174</p>
         </section>
-        <section>
-          <p>Domain Name System</p>
-          <p>Translates domain names into IP addresses</p>
-        </section>
-        <section>
+        <section data-sick-grid="">
           <h3>ip</h3>
+          <p><small>Internet Protocol</small></p>
         </section>
-        <section>
-          <img src="assets/routing-diagram.svg" class="r-stretch" />
-          <ul class="sources">
-            <li>
-              https://www.cloudflare.com/resources/images/slt3lc6tev37/5biqo5wm6nM8GSmiNyiAnl/b6b5c9befeda6ba99b4380d84953de18/routing-diagram.svg
-            </li>
-          </ul>
+        <section data-sick-grid="">
+          <h2>ip</h2>
+          <figure style="height: 100%; width: 100%;" data-sick-footnote-link="https://www.cloudflare.com/resources/images/slt3lc6tev37/5biqo5wm6nM8GSmiNyiAnl/b6b5c9befeda6ba99b4380d84953de18/routing-diagram.svg">
+            <img src="assets/routing-diagram.svg" style="height: 100%; width: 100%" />
+          </figure>
         </section>
-        <section>
+        <section data-sick-grid="">
+          <h2>ip</h2>
           <p>THE Protocol used for routing on the internet</p>
         </section>
-        <section>
+        <section data-sick-grid="">
+          <h2>ip</h2>
           <style>
             .ip-table {
               font-size: 0.7em;
@@ -565,13 +567,21 @@
             </tr>
           </table>
         </section>
-        <section>
-          <h3>ports</h3>
+        <section data-sick-grid="">
+          <h3>TCP/UDP</h3>
         </section>
-        <section>
-          <img src="assets/portmapping.svg" class="r-stretch" />
+        <section data-sick-grid="">
+          <h2>TCP/UDP</h2>
+          <p>Flow Control (TCP)</p>
+          <p>Statefull (TCP)/Stateless (UDP) Protocols</p>
+          <p>Unicast/Multicast</p>
         </section>
-        <section>
+        <section data-sick-grid="">
+          <h2>TCP/UDP - Port Multiplexing</h2>
+          <img src="assets/portmapping.svg" style="height: 100%; width: 100%;"/>
+        </section>
+        <section data-sick-grid="">
+          <h2>TCP/UDP - Port Multiplexing</h2>
           <ul>
             <li>Multiple endpoints on a single host</li>
             <li>16bit unsigned integer (Ranging from 0 to 65535)</li>
@@ -581,11 +591,11 @@
 
 
       <section>
-        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+        <section data-sick-chapter>
           <h2>engines</h2>
         </section>
-        <section>
-          <div class="r-hstack">
+        <section data-sick-grid="">
+          <div class="sick-h-layout sick-layout-gap center">
             <img src="assets/chrome_128x128.png" />
             <img src="assets/internet-explorer_128x128.png" />
             <img src="assets/edge_128x128.png" />
@@ -667,7 +677,7 @@
 
 
       <section>
-        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+        <section data-sick-chapter>
           <h2>history lesson</h2>
         </section>
         <section>
@@ -734,7 +744,7 @@
 
 
       <section>
-        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+        <section data-sick-chapter>
           <h2>oh boi...</h2>
           <h3>how things have changed</h3>
         </section>

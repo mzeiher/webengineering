@@ -12,39 +12,48 @@ const SickPlugin = {
     });
 
     document.querySelectorAll('section[data-sick-grid],section[data-sick-title],section[data-sick-chapter]').forEach((element) => {
-      if(!element.querySelector('scope > .sick-grid')) { // ignore slides where a sick grid is already in place
+      if (!element.querySelector('scope > .sick-grid')) { // ignore slides where a sick grid is already in place
         const h1 = element.querySelector(':scope > h1');
         const h2 = element.querySelector(':scope > h2');
         const h3 = element.querySelector(':scope > h3');
 
         const grid = document.createElement('div');
         grid.classList.add('sick-grid');
-        if(h1 || h2) {
+        if (element.hasAttribute('data-sick-title') && h1) {
           const header = document.createElement('header');
-          if(element.hasAttribute('data-sick-title') && h1) {
-            header.classList.add('title');
-            header.appendChild(h1);
-            if(h3) {
-              header.appendChild(h3);
-            }
-          } else if(element.hasAttribute('data-sick-chapter') && h2) {
-            header.classList.add('chapter');
-            header.appendChild(h2);
-            if(h3) {
-              header.appendChild(h3);
-            }
+          header.classList.add('title');
+          header.appendChild(h1)
+          if(h2) {
+            header.appendChild(h2)
           }
-          grid.appendChild(header);
+          grid.appendChild(header)
+        } else if (element.hasAttribute('data-sick-chapter') && h2) {
+          const header = document.createElement('header');
+          header.classList.add('chapter');
+          header.appendChild(h2)
+          if(h3) {
+            header.appendChild(h3)
+          }
+          grid.appendChild(header)
+        } else {
+          if (h2) {
+            const header = document.createElement('header');
+            header.appendChild(h2)
+            grid.appendChild(header)
+          }
         }
+
         const nodes = Array.from(element.childNodes);
-        const main = document.createElement('main');
-        main.append(...nodes);
-        grid.append(main);
+        if ((nodes.length > 0 && element.textContent.trim() != "") || element.children.length > 0) {
+          const main = document.createElement('main');
+          main.append(...nodes);
+          grid.append(main);
+        }
         element.appendChild(grid);
       }
     });
 
-    document.querySelectorAll('.sick-grid').forEach((element) => {
+    document.querySelectorAll('div.sick-grid').forEach((element) => {
       element.classList.add('r-stretch');
     });
 

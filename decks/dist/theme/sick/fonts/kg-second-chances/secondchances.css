@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'KG Second Chances Sketch';
+    src: url('./KGSecondChancesSketch.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'KG Second Chances Solid';
+    src: url('./KGSecondChancesSolid.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.kg-sketch {
+    font-family: 'KG Second Chances Sketch';
+}
+
+.kg-solid {
+    font-family: 'KG Second Chances Solid';
+}
