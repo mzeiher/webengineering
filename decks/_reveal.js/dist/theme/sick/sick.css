@@ -80,6 +80,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 
 .reveal h3 {
   font-size: 1.3em; 
+  margin-bottom: 0.5em;
   color: var(--heading3-color, var(--heading1-color,#737F85));
 }
 
@@ -114,7 +115,8 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 
 .reveal strong,
 .reveal b {
-  font-weight: bold; }
+  font-weight: 800; 
+}
 
 .reveal em {
   font-style: italic; }
@@ -337,7 +339,9 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
  *********************************************/
 .reveal .progress {
   background: rgba(0, 0, 0, 0.2);
-  color: #007CC1; }
+  color: var(--link-color,#007CC1); 
+  
+}
 
 
 .reveal .slides:not([data-sick-no-logo])::before,
@@ -364,9 +368,3 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   transform: translateX(-50%);
 }
 
-/*********************************************
- * PRINT BACKGROUND
- *********************************************/
-@media print {
-  .backgrounds {
-    background-color: var(--background-color, #fff); } }

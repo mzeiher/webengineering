@@ -16,9 +16,15 @@ const SickPlugin = {
       }
     });
 
+    const overlay = document.createElement('div');
+    overlay.classList.add('sick-overlay');
+    document.body.appendChild(overlay)
     reveal.on('ready', () => {
-      document.querySelector('.reveal.slide > .slides')?.setAttribute('data-footer-text', reveal.getConfig()?.sickPlugin?.footerText || '')
+      overlay.remove()
     })
+
+    // footer injection
+    document.querySelector('.reveal > .slides')?.setAttribute('data-footer-text', reveal.getConfig()?.sickPlugin?.footerText || '')
 
     document.querySelectorAll('section[data-sick-grid],section[data-sick-title],section[data-sick-chapter]').forEach((element) => {
       if (!element.querySelector('scope > .sick-grid')) { // ignore slides where a sick grid is already in place

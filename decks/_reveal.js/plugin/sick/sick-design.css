@@ -16,6 +16,27 @@ small i.fab {
     --magic-mint: #B5EAD7;
 }
 
+
+.sick-overlay {
+    z-index: 1000000000000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--background-color, #fff);
+    background-color: var(--background-color, #fff);
+}
+
+.sick-overlay::before {
+    content: "Loading";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bolder;
+}
+
 .sick-h-layout {
     display: flex;
     flex-direction: row;
@@ -184,4 +205,17 @@ span.sick-highlight > i {
 .sick-hidden {
     visibility: hidden;
     display: none;
+}
+
+.sick-code-frame {
+    box-shadow: 0 6px 30px rgba(0,0,0,0.3);
+    border-radius: 6px;
+    font-size: 0.8em;
+    font-family: monospace;
+}
+
+.sick-code-frame > code.hljs {
+    padding: 0.5em;
+    min-height: unset;
+    display: block;
 }

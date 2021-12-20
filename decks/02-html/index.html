@@ -5,63 +5,70 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>html</title>
+  <title>web engineering - html</title>
 
-  <link rel="stylesheet" href="dist/reset.css">
-  <link rel="stylesheet" href="dist/reveal.css">
-  <link rel="stylesheet" href="dist/theme/sick.css" id="theme">
+  <link rel="stylesheet" href="../_reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="../_reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="../_reveal.js/dist/theme/sick/sick.css" id="theme">
 
   <!-- Theme used for syntax highlighted code -->
-  <link rel="stylesheet" href="plugin/highlight/tomorrow.css" id="highlight-theme">
-
-  <link rel="stylesheet" href="common.css">
-
-  <link rel="stylesheet" href="fontawesome/all.css">
+  <link rel="stylesheet" href="../_reveal.js/plugin/highlight/a11y-dark.css" id="highlight-theme">
+  <link rel="stylesheet" href="../_reveal.js/plugin/sick/sick-design.css">
+  <link rel="stylesheet" href="../_reveal.js/plugin/fontawesome/all.css">
 
 </head>
 
 <body>
   <div class="reveal">
     <div class="slides">
-      <section>
-        <h1>html</h1>
+      <section data-sick-title>
+        <h1>HTML</h1>
       </section>
-      <section>
-        <div class="r-stretch r-stack">
-          <img style="position: absolute; left:50px; top: 100px; height: 400px;" class="box-shadow"
-            src="assets/website.webp" />
-          <img style="position: absolute; right:50px; top: 40px; height: 400px;" class="fragment box-shadow"
-            src="assets/website2.webp" />
-          <img style="position: absolute; left:200px; bottom: 100px; height: 400px;;" class="fragment box-shadow"
-            src="assets/website3.webp" />
-        </div>
+      <section data-sick-grid>
+        <img style="position: absolute; left:50px; top: 100px; height: 400px;" class="box-shadow"
+          src="assets/website.webp" />
+        <img style="position: absolute; right:50px; top: 40px; height: 400px;" class="fragment box-shadow"
+          src="assets/website2.webp" />
+        <img style="position: absolute; left:200px; bottom: 100px; height: 400px;;" class="fragment box-shadow"
+          src="assets/website3.webp" />
       </section>
       </section>
       <section>
-        <h2>resources</h2>
-        <ul>
-          <li><a href="https://html.spec.whatwg.org/multipage/"><span class="highlight"><i
-                  class="fas fa-link"></i>Current specification</span></a></li>
-          <li><a href="https://github.com/whatwg"><span class="highlight"><i class="fab fa-github"></i>WHATWG</span></a>
-          </li>
-          <li><a href="https://www.w3schools.com/"><span class="highlight"><i
-                  class="fas fa-link"></i>w3schools</span></a></li>
-          <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><span class="highlight"><i
-                  class="fas fa-link"></i>HTML on MDN</span></a></li>
-        </ul>
+        <section data-sick-chapter="">
+          <h2>Resources</h3>
+        </section>
+        <section data-sick-grid>
+          <p><a href="https://html.spec.whatwg.org/multipage/"><span class="sick-highlight"><i
+                  class="fas fa-link"></i>Current specification</span></a></p>
+          <p><a href="https://github.com/whatwg"><span class="sick-highlight"><i
+                  class="fab fa-github"></i>WHATWG</span></a>
+          </p>
+          <p><a href="https://www.w3schools.com/"><span class="sick-highlight"><i
+                  class="fas fa-link"></i>w3schools</span></a></p>
+          <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><span class="sick-highlight"><i
+                  class="fas fa-link"></i>HTML on MDN</span></a></p>
+        </section>
       </section>
 
 
       <section>
-        <section data-background="var(--radial-background)">
+        <section data-sick-chapter>
           <h2>what is html?</h2>
         </section>
-        <section>
-          <b>Hypertext</b> refers to the links that connect multiple web pages to one another
+        <section data-sick-grid="">
+          <p>
+            <b>H</b>yper <b>T</b>ext <b>M</b>arkup <b>L</b>anguage
+          </p>
         </section>
-        <section>
-          <b>Markup language</b> to describe the structure of a website, can be enhanced by CSS to describe appearance
-          and javascript to add functionality
+        <section data-sick-grid="">
+          <p>
+            <b>Hypertext</b>, because it is used to link multiple web pages
+          </p>
+        </section>
+        <section data-sick-grid="">
+          <p>
+            <b>Markup language</b>, because it is used to describe the structure of a web page
+          </p>
           <p>Other markup languages:</p>
           <ul>
             <li>YAML</li>
@@ -69,230 +76,273 @@
             <li>LaTex</li>
           </ul>
         </section>
-        <section>
-          Influenced by SGML, thus <b>NOT</b> XML
+        <section data-sick-grid="">
+          <p>
+            Influenced by SGML, and <b>NOT</b> XML
+          </p>
         </section>
-        <section>
-          Latest release HTML5.2 (now a living standard)
+        <section data-sick-grid="">
+          <p>
+            Latest release HTML5.2 (now a living standard)
+          </p>
         </section>
-        <section>
-          HTML5 was driven independently by the WHATWG and later merged into the w3c
+        <section data-sick-grid="">
+          <p>
+            HTML5 was driven independently by the WHATWG and later merged into the w3c
+          </p>
         </section>
-        <section>
-          MIME Type: text/html
+        <section data-sick-grid="">
+          <p>
+            MIME Type: text/html
+          </p>
         </section>
-        <section>
-          DOM is the data representation of the structure of HTML
+        <section data-sick-grid="">
+          <p>
+            DOM is the data representation of the structure of HTML
+          </p>
         </section>
       </section>
 
 
       <section>
-        <section data-background="var(--radial-background)">
+        <section data-sick-chapter="">
           <h2>distinction to xml</h2>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p>not all tags must be closed (e.g. link tag)</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p>some tags will auto close depending on which elements are nested</p>
           <p><small>this is called tag omission</small></p>
         </section>
-        <section>
-          HTML attributes and elements are not case sensitive (will be important later for custom elements)
+        <section data-sick-grid="">
+          <p>HTML attributes and elements are not case sensitive (will be important later for custom elements)</p>
         </section>
-        <section>
-          allows attribute minimization/shortening <code class="inline">&lt;option selected /&gt;</code> is valid and
-          does not need a value)
+        <section data-sick-grid="">
+          <p>allows attribute minimization/shortening <code class="inline">&lt;option selected /&gt;</code> is valid and
+            does not need a value)</p>
         </section>
-        <section>
-          The HTML parser supports foreign content, for example SVG, MathML but these must be valid XML bacause the HTML
-          parser switches to XML mode
+        <section data-sick-grid="">
+          <p>
+            The HTML parser supports foreign content, for example SVG, MathML but these must be valid XML bacause the
+            HTML
+            parser switches to XML mode
+          </p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>further reading</h3>
-          <a href="https://wiki.whatwg.org/wiki/HTML_vs._XHTML"><span class="highlight"><i
-                class="fas fa-link"></i>https://wiki.whatwg.org/wiki/HTML_vs._XHTML</span></a>
+          <p>
+            <a href="https://wiki.whatwg.org/wiki/HTML_vs._XHTML"><span class="sick-highlight"><i
+                  class="fas fa-link"></i>https://wiki.whatwg.org/wiki/HTML_vs._XHTML</span></a>
+          </p>
         </section>
       </section>
 
 
       <section>
-        <section data-background="var(--radial-background)">
+        <section data-sick-chapter="">
           <h2>&lt;!DOCTYPE&gt;</h2>
         </section>
-        <section>
-          Information for the html parser how to parse the document and for the browser to change the document mode
+        <section data-sick-grid="">
+          <p>
+            Information for the html parser how to parse the document and for the browser to change the document mode
+          </p>
         </section>
-        <section>
-          If the document should be parsed as XML/XHTML a <code
-            class="inline">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code> annotation should be used prior to
-          DOCTYPE
+        <section data-sick-grid="">
+          <p>
+            If the document should be parsed as XML/XHTML a <code
+              class="inline">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code> annotation should be used prior to
+            DOCTYPE
+          </p>
         </section>
-        <section>
-          <code class="inline">&lt;!DOCTYPE html&gt;</code> is usually the only one which should be used, all other are
-          legacy and should not be used anymore
+        <section data-sick-grid="">
+          <p><code class="inline">&lt;!DOCTYPE html&gt;</code> is usually the only one which should be used, all other
+            are
+            legacy and should not be used anymore</p>
         </section>
-        <section>
-          Important for IE11 document mode selection<sup><a
-              hreg="https://docs.microsoft.com/en-us/internet-explorer/ie11-deploy-guide/img-ie11-docmode-lg">[1]</a></sup>
+        <section data-sick-grid="">
+          <p>
+            Important for IE11 document mode selection<sup
+              data-sick-footnote-link>https://docs.microsoft.com/en-us/internet-explorer/ie11-deploy-guide/img-ie11-docmode-lg</sup>
+          </p>
         </section>
       </section>
 
 
       <section>
-        <section data-background="var(--radial-background)">
-          <h2>general structure</h2>
+        <section data-sick-chapter="">
+          <h2>General Structure</h2>
         </section>
-        <section data-auto-animate>
+        <section data-sick-grid data-auto-animate>
           <pre data-id="code"><code  class="hljs" data-line-numbers data-code="snippets/html.structure.html">
           </code></pre>
         </section>
-        <section data-auto-animate>
+        <section data-sick-grid data-auto-animate>
           <pre data-id="code"><code  class="hljs" data-line-numbers="1" data-code="snippets/html.structure.html">
           </code></pre>
-          DOCTYPE declaration
+          <p>DOCTYPE declaration</p>
         </section>
-        <section data-auto-animate>
+        <section data-sick-grid data-auto-animate>
+          <pre data-id="code"><code  class="hljs" data-line-numbers="2" data-code="snippets/html.structure.html">
+          </code></pre>
+          <p>html root node</p>
+        </section>
+        <section data-sick-grid data-auto-animate>
           <pre data-id="code"><code  class="hljs" data-line-numbers="3-16" data-code="snippets/html.structure.html">
           </code></pre>
-          html head section
+          <p>html head section</p>
         </section>
-        <section data-auto-animate>
+        <section data-sick-grid data-auto-animate>
           <pre data-id="code"><code  class="hljs" data-line-numbers="4" data-code="snippets/html.structure.html">
           </code></pre>
-          charset to use, will be pre-fetched by the parser
+          <p>charset to use, will be pre-fetched by the parser</p>
         </section>
-        <section data-auto-animate>
+        <section data-sick-grid data-auto-animate>
           <pre data-id="code"><code  class="hljs" data-line-numbers="5" data-code="snippets/html.structure.html">
           </code></pre>
-          meta information, can be used to describe your content for search engine optimization (SEO)
+          <p>meta information, can be used to describe your content for search engine optimization (SEO)</p>
         </section>
-        <section data-auto-animate>
+        <section data-sick-grid data-auto-animate>
           <pre data-id="code"><code  class="hljs" data-line-numbers="6" data-code="snippets/html.structure.html">
           </code></pre>
-          Title of the web page, will be displayed in the browsers tab
+          <p>Title of the web page, will be displayed in the browsers tab</p>
         </section>
-        <section data-auto-animate>
+        <section data-sick-grid data-auto-animate>
           <pre data-id="code"><code  class="hljs" data-line-numbers="7" data-code="snippets/html.structure.html">
           </code></pre>
-          Reference to an external stylesheet, notice that the tag is not closed
+          <p>Reference to an external stylesheet, notice that the tag is not closed</p>
         </section>
-        <section data-auto-animate>
+        <section data-sick-grid data-auto-animate>
           <pre data-id="code"><code  class="hljs" data-line-numbers="8-12" data-code="snippets/html.structure.html">
           </code></pre>
-          embedded CSS stylesheet declaration
+          <p>embedded CSS stylesheet declaration</p>
         </section>
-        <section data-auto-animate>
+        <section data-sick-grid data-auto-animate>
           <pre data-id="code" class="language-html"><code class="hljs" data-code="snippets/html.structure.html" data-line-numbers="13-15">
           </code></pre>
-          embedded Javascript declaration
+          <p>embedded Javascript declaration</p>
         </section>
-        <section data-auto-animate>
+        <section data-sick-grid data-auto-animate>
           <pre data-id="code" class="language-html"><code class="hljs" data-code="snippets/html.structure.html" data-line-numbers="17-22">
           </code></pre>
-          HTML body, the visible content of the html document starts here
+          <p>HTML body, the visible content of the html document starts here</p>
         </section>
-        <section data-auto-animate>
+        <section data-sick-grid data-auto-animate>
           <pre data-id="code" class="language-html"><code class="hljs" data-code="snippets/html.structure.html" data-line-numbers="18">
           </code></pre>
-          Comment node
+          <p>Comment node</p>
         </section>
-        <section data-auto-animate>
+        <section data-sick-grid data-auto-animate>
           <pre data-id="code" class="language-html"><code class="hljs" data-code="snippets/html.structure.html" data-line-numbers="19,21">
           </code></pre>
-          HTML <code class="inline">div</code> tag node
+          <p>HTML <code class="inline">div</code> tag node</p>
         </section>
-        <section data-auto-animate>
+        <section data-sick-grid data-auto-animate>
           <pre data-id="code" class="language-html"><code class="hljs" data-code="snippets/html.structure.html" data-line-numbers="20">
           </code></pre>
-          text content node
+          <p>text content node</p>
         </section>
-        <section data-auto-animate>
+        <section data-sick-grid data-auto-animate>
           <div class="r-hstack r-stretch">
             <pre style="width: 45%" data-id="code" class="language-html"><code class="hljs" data-code="snippets/html.structure.html" data-line-numbers>
             </code></pre>
             <img style="height: 90%" src="assets/html.structure.svg" />
           </div>
-          <p>HTML is hierarchically structured in a tree with the elements either as nodes or leaves all originating from the root html node</p>
+          <p>HTML is hierarchically structured in a tree with the elements either as nodes or leaves all originating
+            from the root html node</p>
         </section>
       </section>
 
 
       <section>
-        <section data-background="var(--radial-background)">
-          <h2>elements</h2>
+        <section data-sick-chapter="">
+          <h2>Elements</h2>
         </section>
-        <section>
-          Elements follow a semantic and should be used according to the semantic of the used tag
+        <section data-sick-grid="">
+          <p>
+            Elements follow a semantic and should be used according to the semantic of the used tag
+          </p>
         </section>
-        <section data-background-image="assets/htmlflowchart.png" data-background-size="contain">
+        <section data-sick-grid data-background-image="assets/htmlflowchart.png" data-background-size="contain" data-background-color="white">
         </section>
-        <section>
-          Tags follow a semantic and should be used according to the semantic of the used tag
+        <section data-sick-grid data-auto-animate>
+          <h3>Anatomy of an element</h3>
         </section>
-        <section data-auto-animate>
-          <h3>anatomy of an element</h3>
-          <div class="code-frame" data-id="code">
+        <section data-sick-grid data-auto-animate>
+          <div class="sick-code-frame" data-id="code">
             <code class="hljs">&lt;div id="test"&gt;text&lt;/div&gt;</code>
             <code class="hljs">&lt;img id="test"/&gt;</code>
           </div>
         </section>
-        <section data-auto-animate>
-          <div class="code-frame" data-id="code">
+        <section data-sick-grid data-auto-animate>
+          <div class="sick-code-frame" data-id="code">
+            <code class="hljs"><span class="hljs-tag">&lt;div id="test"&gt;text&lt;/div&gt;</span></code>
+            <code class="hljs">&lt;img id="test"/&gt;</code>
+          </div>
+          <p>Element <b>with</b> children</p>
+        </section>
+        <section data-sick-grid data-auto-animate>
+          <div class="sick-code-frame" data-id="code">
+            <code class="hljs">&lt;div id="test"&gt;text&lt;/div&gt;</code>
+            <code class="hljs"><span class="hljs-tag">&lt;img id="test"/&gt;</span></code>
+          </div>
+          <p>Element <b>without</b> children</p>
+        </section>
+        <section data-sick-grid data-auto-animate>
+          <div class="sick-code-frame" data-id="code">
             <code
-              class="hljs"><span class="hljs-keyword">&lt;</span>div id="test"<span class="hljs-keyword">&gt;</span>text&lt;/div&gt;</code>
-            <code class="hljs"><span class="hljs-keyword">&lt;</span>img id="test"/&gt;</code>
+              class="hljs"><span class="hljs-tag">&lt;div</span> id="test"<span class="hljs-tag">&gt;</span>text&lt;/div&gt;</code>
+            <code class="hljs"><span class="hljs-tag">&lt;img</span> id="test"/&gt;</code>
           </div>
           <p>start tag</p>
         </section>
-        <section data-auto-animate>
-          <div class="code-frame" data-id="code">
+        <section data-sick-grid data-auto-animate>
+          <div class="sick-code-frame" data-id="code">
             <code
-              class="hljs">&lt;div id="test"&gt;text<span class="hljs-keyword">&lt;/</span>div<span class="hljs-keyword">&gt;</span></code>
-            <code class="hljs">&lt;img id="test"<span class="hljs-keyword">/&gt;</span></code>
+              class="hljs">&lt;div id="test"&gt;text<span class="hljs-tag">&lt;/div&gt;</span></code>
+            <code class="hljs">&lt;img id="test"<span class="hljs-tag">/&gt;</span></code>
           </div>
           <p>end tag</p>
         </section>
-        <section data-auto-animate>
-          <div class="code-frame" data-id="code">
+        <section data-sick-grid data-auto-animate>
+          <div class="sick-code-frame" data-id="code">
             <code
-              class="hljs">&lt;<span class="hljs-keyword">div</span> id="test"&gt;text&lt;/<span class="hljs-keyword">div</span>&gt;</code>
-            <code class="hljs">&lt;<span class="hljs-keyword">img</span> id="test"/&gt;</code>
+              class="hljs">&lt;<span class="hljs-tag">div</span> id="test"&gt;text&lt;/<span class="hljs-tag">div</span>&gt;</code>
+            <code class="hljs">&lt;<span class="hljs-tag">img</span> id="test"/&gt;</code>
           </div>
           <p>tag name</p>
         </section>
-        <section data-auto-animate>
-          <div class="code-frame" data-id="code">
-            <code class="hljs">&lt;div <span class="hljs-keyword">id=</span>"test"&gt;text&lt;/div&gt;</code>
-            <code class="hljs">&lt;img <span class="hljs-keyword">id=</span>"test"/&gt;</code>
+        <section data-sick-grid data-auto-animate>
+          <div class="sick-code-frame" data-id="code">
+            <code class="hljs">&lt;div <span class="hljs-tag">id=</span>"test"&gt;text&lt;/div&gt;</code>
+            <code class="hljs">&lt;img <span class="hljs-tag">id=</span>"test"/&gt;</code>
           </div>
           <p>attribute</p>
         </section>
-        <section data-auto-animate>
-          <div class="code-frame" data-id="code">
-            <code class="hljs">&lt;div id=<span class="hljs-keyword">"test"</span>&gt;text&lt;/div&gt;</code>
-            <code class="hljs">&lt;img id=<span class="hljs-keyword">"test"</span>/&gt;</code>
+        <section data-sick-grid data-auto-animate>
+          <div class="sick-code-frame" data-id="code">
+            <code class="hljs">&lt;div id=<span class="hljs-tag">"test"</span>&gt;text&lt;/div&gt;</code>
+            <code class="hljs">&lt;img id=<span class="hljs-tag">"test"</span>/&gt;</code>
           </div>
           <p>attribute value</p>
         </section>
-        <section data-auto-animate>
-          <div class="code-frame" data-id="code">
-            <code class="hljs">&lt;div id="test"&gt;<span class="hljs-keyword">text</span>&lt;/div&gt;</code>
+        <section data-sick-grid data-auto-animate>
+          <div class="sick-code-frame" data-id="code">
+            <code class="hljs">&lt;div id="test"&gt;<span class="hljs-tag">text</span>&lt;/div&gt;</code>
             <code class="hljs">&lt;img id="test"/&gt;</code>
           </div>
           <p>content/children</p>keep in mind, not all tags can hold children
         </section>
-        <section>
+        <section data-sick-grid>
           <h3>Auto Closing and Tag omission</h3>
           <p>Some block level elements can't be nested and the html parser will auto close the tags before parsing the
             next block level element</p>
         </section>
-        <section>
+        <section data-sick-grid>
           <pre><code class="language-html" data-code="snippets/html.tag-omission.1.html"></code></pre>
           <p>this example...</p>
         </section>
-        <section>
+        <section data-sick-grid>
           <p>...after reading the standard...</p>
           <blockquote>
             <b>Tag omission</b><br />The start tag is required. The end tag may be omitted if the &lt;p&gt; element is
@@ -303,92 +353,108 @@
             the parent element and the parent element is not an &lt;a&gt; element.
           </blockquote>
         </section>
-        <section>
+        <section data-sick-grid>
           <p>...will be changed to this structure by the HTML parser</p>
           <pre data-id="code"><code class="language-html" data-code="snippets/html.tag-omission.2.html"></code></pre>
         </section>
-        <section>
-          <p>Some tags will be automatically closed depending the elements that follow</p>
+        <section data-sick-grid>
+          <p>Some tags will be automatically closed depending on the elements that follow</p>
           <p><small>If you're using HTML sanitizer for preventing XSS attacks you should check if the sanitizer works
-              according to the specification<sup><a
-                  href="https://research.securitum.com/mutation-xss-via-mathml-mutation-dompurify-2-0-17-bypass/">[1]</a></sup></small>
+              according to the specification<sup data-sick-footnote-link="">https://research.securitum.com/mutation-xss-via-mathml-mutation-dompurify-2-0-17-bypass/</sup></small>
           </p>
         </section>
-        <section>
+        <section data-sick-grid="">
+          <p>Some tags are self closing or the closing tag can be omitted</p>
+        </section>
+        <section data-sick-grid="">
+          <pre><code class="language-html" data-code="snippets/html.tag-omission.3.html"></code></pre>
+          <p>both <code class="inline">br</code> and <code class="inline">img</code> are self closing</p>
+        </section>
+        <section data-sick-grid="">
           <h3>There are different content categories for tags</h3>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>Structural elements</h3>
           <code class="inline">html, head, body</code>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>Metadata elements and Instructions</h3>
           <code class="inline">meta, link, title, etc...</code>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>Flow content elements</h3>
           <code class="inline">div, input, span, p, h1, etc...</code>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>Structuring content elements</h3>
           <code class="inline">main, nav, aside, etc...</code>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>Media/embedded content elements</h3>
           <code class="inline">img, object, video, script, style</code>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>Foreign content tags</h3>
           <code class="inline">svg, mathml</code>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>custom elements</h3>
           <p>all elements that have a <code class="inline">-</code> in the tag-name are treated as custom elements</p>
           <pre><code data-trim class="html">
             <my-customelement custom-attribute="test">content</my-customelement>
           </code></pre>
         </section>
-        <section data-background-image="assets/periodictable.png" data-background-size="contain"
+        <section data-background-image="assets/periodictable.png" data-background-size="contain" data-sick-grid=""
           data-background-color="black">
         </section>
-        <section>
+        <section data-sick-grid="">
           <p>A more complete list of available content categories can be found <a
               href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">here</a></p>
         </section>
-        <section data-auto-animate="">
-          <h3>Identifying elements in the tree</h3>
-          <code data-id="code" class="hljs">&lt;div id="test"&gt;text&lt;/div&gt;</code>
+        <section data-auto-animate="" data-sick-grid="">
+          <h3>Identifying elements in the DOM</h3>
+          <div class="sick-code-frame" data-id="code">
+            <code data-id="code" class="hljs">&lt;div id="test"&gt;text&lt;/div&gt;</code>
+          </div>
         </section>
-        <section data-auto-animate="">
-          <div class="code-frame" data-id="code">
-            <code class="hljs">&lt;div <span class="hljs-keyword">id="test"</span>&gt;text&lt;/div&gt;</code></div>
+        <section data-auto-animate="" data-sick-grid="">
+          <div class="sick-code-frame" data-id="code">
+            <code class="hljs">&lt;div <span class="hljs-tag">id="test"</span>&gt;text&lt;/div&gt;</code>
+          </div>
           <p>elements can be identified via the <code class="inline">id</code> attribute</p>
-          <p><code>&lt;label for="" /&gt;</code> and <code>&lt;a href="#id" /&gt;</code> use the id for reference</p>
+          <p><code class="inline">&lt;label for="" /&gt;</code> and <code class="inline">&lt;a href="#id" /&gt;</code> use the id for reference</p>
           <p class="warning"><i class="fas fa-exclamation-triangle"></i> the id must be unique within an html document
           </p>
         </section>
-        <section data-auto-animate="">
-          <div class="code-frame" data-id="code">
-            <code class="hljs">&lt;div <span class="hljs-keyword">class="test"</span>&gt;text&lt;/div&gt;</code>
+        <section data-auto-animate="" data-sick-grid="">
+          <div class="sick-code-frame" data-id="code">
+            <code class="hljs">&lt;div <span class="hljs-tag">id="test"</span>&gt;text&lt;/div&gt;</code>
+          </div>
+          <p>elements with an <code class="inline">id</code> attribute can be accessed by name in javascript on the global window object</p>
+        </section>
+        <section data-auto-animate="" data-sick-grid="">
+          <div class="sick-code-frame" data-id="code">
+            <code class="hljs">&lt;div <span class="hljs-tag">class="test"</span>&gt;text&lt;/div&gt;</code>
           </div>
           <p>elements can also be identified via the <code class="inline">class</code> attribute</p>
         </section>
-        <section data-auto-animate="">
-          <div class="code-frame" data-id="code">
-            <code class="hljs">&lt;<span class="hljs-keyword">div</span>&gt;text&lt;/div&gt;</code></div>
+        <section data-auto-animate="" data-sick-grid="">
+          <div class="sick-code-frame" data-id="code">
+            <code class="hljs">&lt;<span class="hljs-tag">div</span>&gt;text&lt;/div&gt;</code>
+          </div>
           <p>elements can be identified via the tag</p>
         </section>
-        <section data-auto-animate="">
+        <section data-auto-animate="" data-sick-grid="">
           <p>there are more ways which will be explained when we get to CSS queries</p>
         </section>
-        <section>
-          <h3>attributes</h3>
-          attributes are used to configure an element and can change its behaviour and appearance
+        <section data-sick-grid="">
+          <h3>Attributes</h3>
+          attributes are used to configure an element and can change its behavior and appearance
         </section>
-        <section data-auto-animate>
-          <div class="code-frame" data-id="code">
+        <section data-auto-animate data-sick-grid="">
+          <div class="sick-code-frame" data-id="code">
             <code class="hljs">
-            &lt;div <span class="hljs-keyword">attr="string value"</span>&gt;&lt;/div&gt;
+            &lt;div <span class="hljs-tag">attr="string value"</span>&gt;&lt;/div&gt;
           </code>
           </div>
           <p>attributes can only contain string values</p>
@@ -396,41 +462,41 @@
           <p><small>unfortunately the mapped property has not always the same name as the attribute. The <code
                 class="inline">for</code> attribute maps to the <code class="inline">htmlFor</code> property</small></p>
         </section>
-        <section data-auto-animate>
-          <div class="code-frame" data-id="code">
+        <section data-auto-animate data-sick-grid="">
+          <div class="sick-code-frame" data-id="code">
             <code class="hljs">
-            &lt;input type="checkbox" <span class="hljs-keyword">checked disabled</span> /&gt;
+            &lt;input type="checkbox" <span class="hljs-tag">checked disabled</span> /&gt;
           </code>
           </div>
           <p>the value can also be omitted</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>There are some attributes which will be handled in a special way</h3>
         </section>
-        <section data-auto-animate>
-          <div class="code-frame" data-id="code">
+        <section data-auto-animate data-sick-grid="">
+          <div class="sick-code-frame" data-id="code">
             <code class="hljs">
-            &lt;div <span class="hljs-keyword">style="color: #0f0"</span>&gt;&lt;/div&gt;
+            &lt;div <span class="hljs-tag">style="color: #0f0"</span>&gt;&lt;/div&gt;
           </code>
           </div>
           <p><code class="inline">style</code> lets you inline css for a specific element</p>
-          <p class="warning"><i class="fas fa-exclamation-triangle"></i> this should be used sparce, always try to use
+          <p class="warning"><i class="fas fa-exclamation-triangle"></i> this should be used sparsely, always try to use
             classes and style via css selectors</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>data attributes</h3>
-          <div class="code-frame" data-id="code">
+          <div class="sick-code-frame" data-id="code">
             <code data-id="code" class="hljs">&lt;div data-...="content"&gt;text&lt;/div&gt;</code>
           </div>
-          <p><code class="inline">data-</code> attributes can be used to add custom attributes to elements</p>
-          <p>later with custom elements you can also define your own attributes</p>
+          <p><code class="inline">data-</code> attributes can be used to add custom attributes to elements without clashing with existing attributes</p>
+          <p><small>later with custom elements you can also define your own attributes</small></p>
         </section>
       </section>
 
 
       <section>
-        <section data-background="var(--radial-background)">
-          <h2>layouts</h2>
+        <section data-sick-chapter="">
+          <h2>Layouts</h2>
         </section>
         <section>
           <h3>block elements</h3>
@@ -636,7 +702,8 @@
         </section>
         <section>
           <p>the content to which the link points is defined in the <code class="inline">href</code> attribute of the
-            <code class="inline">a</code> element</p>
+            <code class="inline">a</code> element
+          </p>
           <p><small>href stands for "hyper reference"</small></p>
         </section>
         <section>
@@ -1027,12 +1094,13 @@
     </div>
   </div>
 
-  <script src="dist/reveal.js"></script>
-  <script src="plugin/notes/notes.js"></script>
-  <script src="plugin/markdown/markdown.js"></script>
-  <script src="plugin/highlight/highlight.js"></script>
-  <script src="plugin/chalkboard/plugin.js"></script>
-  <script src="plugin/externalcode/externalcode.js"></script>
+  <script src="../_reveal.js/dist/reveal.js"></script>
+  <script src="../_reveal.js/plugin/notes/notes.js"></script>
+  <script src="../_reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="../_reveal.js/plugin/highlight/highlight.js"></script>
+  <script src="../_reveal.js/plugin/chalkboard/plugin.js"></script>
+  <script src="../_reveal.js/plugin/externalcode/externalcode.js"></script>
+  <script src="../_reveal.js/plugin/sick/sick.js"></script>
   <script>
     // More info about initialization & config:
     // - https://revealjs.com/initialization/
@@ -1043,12 +1111,15 @@
       width: 1280,
       height: 720,
       // Learn about plugins: https://revealjs.com/plugins/
-      plugins: [Externalcode, RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard],
+      plugins: [Externalcode, SickPlugin, RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard],
       chalkboard: {
         boardmarkerWidth: 3,
         chalkWidth: 3,
         chalkEffect: 0,
         theme: "whiteboard"
+      },
+      sickPlugin: {
+        footerText: `Mathis Zeiher | Web Engineering - HTML | ${new Date().getDate()}.${new Date().getMonth() + 1}.${new Date().getFullYear()}`
       }
     });
   </script>
