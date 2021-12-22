@@ -498,7 +498,10 @@
         <section data-sick-chapter="">
           <h2>Layouts</h2>
         </section>
-        <section>
+        <section data-sick-grid="">
+          <p>all html elements have a predefined layout behavior associated</p>
+        </section>
+        <section data-sick-grid="">
           <h3>block elements</h3>
           <div class="r-stack">
             <div style="border: 1px solid #000; width: 400px;">
@@ -511,11 +514,11 @@
             </div>
           </div>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p>takes up all available horizontal space given by parent element</p>
           <p>the next element will be layouted below the block scoped element</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>inline elements</h3>
           <div class="r-stack">
             <div style="border: 1px solid #000; padding: 10px; width: 400px; text-align: left;">
@@ -531,12 +534,12 @@
             </div>
           </div>
         </section>
-        <section>
-          <p>inline elements are vertically aligned to the middle</p>
+        <section data-sick-grid="">
+          <p>inline elements are vertically aligned to the baseline</p>
           <p>inline elements can not have a height or width set, unless they are defined as <code
               class="inline">inline-block</code> elements</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p>all whitespace characters between inline elements are trimmed to a single white space character</p>
           <pre><code class="html" ><span>one</span><span>two</span></code></pre>
           <p>is rendered as <span>one</span><span>two</span></p>
@@ -544,9 +547,9 @@
               <span>one</span>
               <span>two</span>
             </code></pre>
-          <p>is rendered as <span>one</span> <span>two</span></p>
+          <p>is also rendered as <span>one</span> <span>two</span></p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>table</h3>
           <style>
             table.table-sample {
@@ -604,7 +607,7 @@
             </tfoot>
           </table>
         </section>
-        <section data-auto-animate>
+        <section data-auto-animate data-sick-grid="">
           <pre data-id="code"><code class="html" data-trim data-code="snippets/html.table.html">
           </code></pre>
           <p>a table consists of multiple elements</p>
