@@ -256,7 +256,7 @@
 
       <section>
         <section data-sick-chapter="">
-          <h2>Elements</h2>
+          <h2>elements</h2>
         </section>
         <section data-sick-grid="">
           <p>
@@ -368,7 +368,7 @@
         </section>
         <section data-sick-grid="">
           <pre><code class="language-html" data-code="snippets/html.tag-omission.3.html"></code></pre>
-          <p>both <code class="inline">br</code> and <code class="inline">img</code> are self closing</p>
+          <p>both <code class="inline">br</code> and <code class="inline">img</code> are self closing and the end-tag can be omitted</p>
         </section>
         <section data-sick-grid="">
           <h3>There are different content categories for tags</h3>
@@ -516,7 +516,7 @@
         </section>
         <section data-sick-grid="">
           <p>takes up all available horizontal space given by parent element</p>
-          <p>the next element will be layouted below the block scoped element</p>
+          <p>the next element will be put below the block scoped element</p>
         </section>
         <section data-sick-grid="">
           <h3>inline elements</h3>
@@ -612,49 +612,54 @@
           </code></pre>
           <p>a table consists of multiple elements</p>
         </section>
-        <section data-auto-animate>
+        <section data-auto-animate data-sick-grid="">
           <pre data-id="code"><code class="html" data-trim data-code="snippets/html.table.html" data-line-numbers="2-6">
           </code></pre>
-          <p>a <code class="inline">thead</code> element (can be omitted)</p>
+          <p>a <code class="inline">thead</code> element (can be omitted) which indicates the table header</p>
         </section>
-        <section data-auto-animate>
+        <section data-auto-animate data-sick-grid="">
           <pre data-id="code"><code class="html" data-trim data-code="snippets/html.table.html" data-line-numbers="7-14">
           </code></pre>
           <p>a <code class="inline">tbody</code> element which contains the table body (can be omitted)</p>
         </section>
-        <section data-auto-animate>
+        <section data-auto-animate data-sick-grid="">
           <pre data-id="code"><code class="html" data-trim data-code="snippets/html.table.html" data-line-numbers="15-19">
           </code></pre>
           <p>a <code class="inline">tfoot</code> element (can be omitted)</p>
         </section>
-        <section data-auto-animate>
+        <section data-auto-animate data-sick-grid="">
           <pre data-id="code"><code class="html" data-trim data-code="snippets/html.table.html" data-line-numbers="3,5,8,10,11,13,16,18">
           </code></pre>
           <p>table rows</p>
         </section>
-        <section data-auto-animate>
+        <section data-auto-animate data-sick-grid="">
           <pre data-id="code"><code class="html" data-trim data-code="snippets/html.table.html" data-line-numbers="4">
           </code></pre>
           <p>table header cells</p>
         </section>
-        <section data-auto-animate>
+        <section data-auto-animate data-sick-grid="">
           <pre data-id="code"><code class="html" data-trim data-code="snippets/html.table.html" data-line-numbers="9,12,17">
           </code></pre>
           <p>table cells</p>
         </section>
+        <section data-auto-animate data-sick-grid="">
+          <pre data-id="code"><code class="html" data-trim data-code="snippets/html.table.html" data-line-numbers="12">
+          </code></pre>
+          <p>table cells can also span rows and columns</p>
+        </section>
         <section>
-          <p>more layouts later when we talk about CSS</p>
+          <p>There are more layout possibilities available with CSS, also there is a <code class="inline">grid</code> layout available with more layouting options for tables</p>
         </section>
       </section>
 
 
 
       <section>
-        <section data-background="var(--radial-background)">
-          <h2>text formatting</h2>
+        <section data-sick-chapter="">
+          <h2>Text Formatting</h2>
         </section>
-        <section>
-          <p>Text formatting is done via special inline tags</p>
+        <section data-sick-grid="">
+          <p>Text formatting can be done via special inline tags</p>
           <pre><code class="html" data-trim>
 <p>
   <i>Text</i><sub>is</sub><b>rendered</b><sup>like</sup> this
@@ -662,8 +667,8 @@
           </code></pre>
           <p><i style="font-style: italic;">Text</i><sub>is</sub><b>rendered</b><sup>like</sup> this</p>
         </section>
-        <section>
-          <h3><code>ruby</code> element</h3>
+        <section data-sick-grid="">
+          <h3><code class="inline">ruby</code> element</h3>
           <pre><code class="html" data-trim data-code="snippets/html.ruby.html"></code></pre>
           <p>Text formatting especially for east asian languages</p>
           <p>
@@ -679,9 +684,9 @@
           </p>
           <p>without ruby code: 漢 (kan) 字 (ji)</p>
         </section>
-        <section>
-          <h3><code>bdo</code> element</h3>
-          <p>Helpfull if you mix languages written in different directions</p>
+        <section data-sick-grid="">
+          <h3><code class="inline">bdo</code> element</h3>
+          <p>Helpful if you mix languages written in different directions</p>
           <pre><code class="html"><p>hello <bdo dir="rtl">hello</bdo></p></code></pre>
           <p>hello <bdo dir="rtl">hello</bdo></p>
         </section>
@@ -690,60 +695,60 @@
 
 
       <section>
-        <section data-background="var(--radial-background)">
-          <h2>links and the anchor element</h2>
+        <section data-sick-chapter="">
+          <h2>Links And The Anchor Element</h2>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p>the reason why its called <b>HyperText</b>MakupLanguage</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p>Links are defined with the <code class="inline">a</code> tag</p>
           <p><small>a stands for "anchor"</small></p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p>with links you can navigate to content within a web page or reference to external content</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p>the content to which the link points is defined in the <code class="inline">href</code> attribute of the
             <code class="inline">a</code> element
           </p>
           <p><small>href stands for "hyper reference"</small></p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>navigating within document</h3>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p>to navigate within a document to an element it needs to be referenceable by the <code
               class="inline">id</code> attribute</p>
         </section>
-        <section data-auto-animate>
+        <section data-auto-animate data-sick-grid="">
           <pre data-id="code"><code data-code="snippets/html.link.html" data-line-numbers="2"></code></pre>
           <p>define an unique <code class="inline">id</code> at an element</p>
         </section>
-        <section data-auto-animate>
+        <section data-auto-animate data-sick-grid="">
           <pre data-id="code"><code data-code="snippets/html.link2.html" data-line-numbers="2,5"></code></pre>
           <p>now you can link to this element by referencing to <code class="inline">#&lt;value of id&gt;</code>. The
             browser automatically scrolls to the referenced element once the link is clicked</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>link to external content</h3>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p>it is also possible to link to content either on the same host or somewhere else on the internet</p>
         </section>
-        <section data-auto-animate>
+        <section data-auto-animate data-sick-grid="">
           <pre data-id="code"><code data-code="snippets/html.link.external.html" data-line-numbers="1"></code></pre>
           <p>You can link to content on another server, in this case the browser will open a new window or load the web
             page in the same window depending on the content of the <code class="inline">target</code> attribute</p>
         </section>
-        <section data-auto-animate>
+        <section data-auto-animate data-sick-grid="">
           <pre data-id="code"><code data-code="snippets/html.link.external.html" data-line-numbers="2"></code></pre>
           <p>You can link to content which is relative to the current open web page location</p>
           <p><small>in this case, if your current location is <code
                 class="inline">https://example.com/info/info.html</code>
               the link will point to <code class="inline">https://example.com/info/about.html</code></small></p>
         </section>
-        <section data-auto-animate>
+        <section data-auto-animate data-sick-grid="">
           <pre data-id="code"><code data-code="snippets/html.link.external.html" data-line-numbers="3"></code></pre>
           <p>You can link to content which is relative to the current host</p>
           <p><small>in this case, if your current location is <code
@@ -754,21 +759,21 @@
 
 
       <section>
-        <section data-background="var(--radial-background)">
-          <h2>embedding content</h2>
+        <section data-sick-chapter="">
+          <h2>Embedding Content</h2>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p>same as with links you can embed content hosted somewhere on the internet or relative to your current
             location</p>
         </section>
-        <section data-auto-animate>
+        <section data-auto-animate data-sick-grid="">
           <pre
             data-id="code"><code class="html" data-code="snippets/html.embed.img.html" data-line-numbers="1"></code></pre>
           <p>You can link to content on another server, in this case the browser will load the image and display it</p>
           <p><small>the <code class="inline">alt</code> attribute should alway be set due to accessibility reasons, it
               describes the image</small></p>
         </section>
-        <section data-auto-animate>
+        <section data-auto-animate data-sick-grid="">
           <pre
             data-id="code"><code  class="html" data-code="snippets/html.embed.img.html" data-line-numbers="2"></code></pre>
           <p>You can display images which are relative to the current open web page location</p>
@@ -776,7 +781,7 @@
                 class="inline">https://example.com/info/info.html</code>
               the link will point to <code class="inline">https://example.com/info/image.png</code></small></p>
         </section>
-        <section data-auto-animate>
+        <section data-auto-animate data-sick-grid="">
           <pre
             data-id="code"><code  class="html" data-code="snippets/html.embed.img.html" data-line-numbers="3"></code></pre>
           <p>You can display images which are relative to the current host</p>
@@ -784,48 +789,48 @@
                 class="inline">https://example.com/info/info.html</code>
               the link will point to <code class="inline">https://example.com/assets/image.png</code></small></p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>Responsive images</h3>
         </section>
-        <section data-auto-animate>
+        <section data-auto-animate data-sick-grid="">
           <pre data-id="code"><code  class="html" data-code="snippets/html.responsive.img.html"></code></pre>
         </section>
-        <section data-auto-animate>
+        <section data-auto-animate data-sick-grid="">
           <pre
             data-id="code"><code  class="html" data-code="snippets/html.responsive.img.html" data-line-numbers="2"></code></pre>
           <p>If the available viewport is larger than 800px use the large images, for highdpi monitors use the
             large@2xjpg</p>
         </section>
-        <section data-auto-animate>
+        <section data-auto-animate data-sick-grid="">
           <pre
             data-id="code"><code  class="html" data-code="snippets/html.responsive.img.html" data-line-numbers="3"></code></pre>
           <p>If the available viewport is larger than 400px use the medium images, for highdpi monitors use the
             medium@2xjpg</p>
         </section>
-        <section data-auto-animate>
+        <section data-auto-animate data-sick-grid="">
           <pre
             data-id="code"><code  class="html" data-code="snippets/html.responsive.img.html" data-line-numbers="4"></code></pre>
           <p>otherwise use the small images, for highdpi monitors use the small@2xjpg</p>
         </section>
-        <section data-auto-animate>
+        <section data-auto-animate data-sick-grid="">
           <pre
             data-id="code"><code  class="html" data-code="snippets/html.responsive.img.html" data-line-numbers="5"></code></pre>
           <p>as a fallback or if <code class="inline">srcsets</code> are not supported use the fallback.jpg image</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>other content</h3>
         </section>
-        <section>
+        <section data-sick-grid="">
           <pre
             data-id="code"><code  class="html" data-code="snippets/html.embed.video.html" data-line-numbers=""></code></pre>
           <p>You can embed video content, also with <code class="inline">srcsets</code></p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <pre
             data-id="code"><code  class="html" data-code="snippets/html.embed.audio.html" data-line-numbers=""></code></pre>
           <p>You can embed audio content, also with <code class="inline">srcsets</code></p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <pre
             data-id="code"><code  class="html" data-code="snippets/html.embed.svg.html" data-line-numbers=""></code></pre>
           <p>You can embed <code class="inline">svg</code></p>
@@ -835,7 +840,7 @@
             </svg>
           </p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <pre><code data-trim>
             <iframe src="./content.html"></iframe>
           </code></pre>
@@ -848,10 +853,10 @@
 
 
       <section>
-        <section data-background="var(--radial-background)">
-          <h2>forms</h2>
+        <section data-sick-chapter="">
+          <h2>Forms</h2>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>form controls</h3>
           <style>
             div.form-sample {
@@ -881,7 +886,7 @@
             </div>
           </div>
         </section>
-        <section>
+        <section data-sick-grid="">
           <input type="button">
           <input type="reset">
           <input type="submit">
@@ -919,13 +924,13 @@
           </datalist>
           <p>there are plenty to choose from</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p>HTML supports a lot of form handling out of the box without the need of javascript</p>
         </section>
-        <section>
-          <h3><code>form</code> element</h3>
+        <section data-sick-grid="">
+          <h3><code class="inline">form</code> element</h3>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p>the <code class="inline">form</code> element acts as a wrapper around form controls, supports form
             validation and can execute a specified action</p>
           <p><small>form controls can also be bound with the <code class="inline">form</code> attribute to a specific
@@ -933,51 +938,51 @@
           <p><small>the <code class="inline">autocomplete</code> attribute tells the browser to fill out form elements
               with previous entered values</small></p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p>the <code class="inline">form</code> is able to perform the action specified in the attribute <code
               class="inline">action</code></p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p><code class="inline">&lt;input type="submit"&gt;</code> within a <code class="inline">form</code> can
-            trigger validation and if everything is valid the action</p>
+            trigger validation and if everything is valid the associated action</p>
           <p><code class="inline">&lt;input type="reset"&gt;</code> within a <code class="inline">form</code> can reset
-            the form</p>
+            the form values</p>
           <p><small>with the <code class="inline">type</code> attribute of the <code class="inline">button</code>
               element you can also specify what the button triggers</small></p>
         </section>
-        <section data-auto-animate="">
+        <section data-auto-animate="" data-sick-grid="">
           <pre data-id="code"><code data-code="snippets/html.form.html"></code></pre>
         </section>
-        <section data-auto-animate="">
+        <section data-auto-animate="" data-sick-grid="">
           <pre data-id="code"><code data-code="snippets/html.form.html" data-line-numbers="1"></code></pre>
           <p>you can set the URL which is called after a submit, method <code class="inline">GET</code> will send the
             form values as query parameters after the URL, <code class="inline">POST</code> will send send them in a
             form-data encoded POST body</p>
         </section>
-        <section data-auto-animate="">
+        <section data-auto-animate="" data-sick-grid="">
           <pre data-id="code"><code data-code="snippets/html.form.html" data-line-numbers="5,6"></code></pre>
           <p>radio button controls within a form are matched by name, if multiple controls with the same name exists the
             form value will be the value of the currently selected</p>
         </section>
-        <section data-auto-animate="">
+        <section data-auto-animate="" data-sick-grid="">
           <pre data-id="code"><code data-code="snippets/html.form.html" data-line-numbers="14,15"></code></pre>
           <p>labels can be associated with form controls via the form controls' id</p>
         </section>
-        <section data-auto-animate="">
+        <section data-auto-animate="" data-sick-grid="">
           <pre data-id="code"><code data-code="snippets/html.form.html" data-line-numbers="5,6"></code></pre>
           <p>form controls can be marked as required, thus preventing the form from submission if the controls have no
             valid value</p>
         </section>
-        <section data-auto-animate="">
+        <section data-auto-animate="" data-sick-grid="">
           <pre data-id="code"><code data-code="snippets/html.form.html" data-line-numbers="11,15"></code></pre>
           <p>some form controls can valdiate against a pattern or a specific value range</p>
           <p><small class="warning">an empty string is treated as a matching pattern unless the required attribute is
               set</small></p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <form action="/action.do" method="GET" style="font-size: 14px;">
             <p>
-            <fieldset>
+            <fieldset style="width: 300px;">
               <legend>What is better <abbr title="This field is mandatory" aria-label="required">*</abbr></legend>
               <input type="radio" required name="better" id="r1" value="one"><label for="r1">One</label>
               <input type="radio" required name="better" id="r2" value="two"><label for="r2">Two</label>
@@ -994,14 +999,14 @@
             <button type="submit">Submit</button><button type="reset">Reset</button>
           </form>
         </section>
-        <section>
+        <section data-sick-grid="">
           <h3>Encodings</h3>
           <p>There are different methods to encode the data you are sending with a form</p>
           <p>The encoding can be set with the <code class="inline">enctype</code> attribute</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p><code class="inline">application/x-www-form-urlencoded</code> is the default encoding</p>
-          <p><small>This is the only encoding which works for GET requests, for all others use POST or PUT</small></p>
+          <p><small>This is the default only encoding for GET requests</small></p>
           <pre><code class="language-html" data-trim>
             <form method="GET" action="/submit">
               <input name="firstname" value="hagbard" />
@@ -1014,7 +1019,7 @@
             GET /submit?firstname=hagbard&lastname=celine
           </code></pre>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p><code class="inline">multipart/form-data</code> should be used if you have more complex forms or values
             that can't be URL encoded like files</p>
           <pre><code class="language-html" data-trim>
@@ -1037,7 +1042,7 @@
             ...
           </code></pre>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p><code class="inline">text/plain</code> is new for html5 but not much used</p>
           <p><small>can be ignored for now</small></p>
           <blockquote>
@@ -1048,11 +1053,11 @@
                 href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#text/plain-encoding-algorithm">[1]</a></sup>
           </blockquote>
         </section>
-        <section>
+        <section data-sick-grid="">
           you can create own form associated custom elements <a
             href="https://web.dev/more-capable-form-controls/">https://web.dev/more-capable-form-controls/</a>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p>
             more on forms <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form">here</a>
           </p>
@@ -1062,11 +1067,11 @@
 
 
       <section>
-        <section data-background="var(--radial-background)">
+        <section data-sick-chapter="">
           <h2>aria</h2>
           <h3>Accessible Rich Internet Applications</h3>
         </section>
-        <section>
+        <section data-sick-grid="">
           <blockquote>
             Developers should prefer using the correct semantic HTML element over using ARIA. For instance, native
             elements have built-in keyboard accessibility, roles and states. However, if you choose to use ARIA, you are
@@ -1076,19 +1081,19 @@
             - <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA">MDN</a>
           </blockquote>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p>important if you implement your own widgets and want to keep you web application accessible</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <pre><code class="language-html" data-code="snippets/html.aria.form.html"></code></pre>
           <pre><code class="language-html" data-code="snippets/html.aria.image.html"></code></pre>
-          <p>comes out of the box for native elements</p>
+          <p>aria information are already set for native elements</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <pre><code class="language-html" data-code="snippets/html.aria.progressbar.html"></code></pre>
           <p>for custom widgets and custom elements you have to asign the appropriate aria tags yourself</p>
         </section>
-        <section>
+        <section data-sick-grid="">
           <p>More information on this <a
               href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles">MDN
               Article</a></p>

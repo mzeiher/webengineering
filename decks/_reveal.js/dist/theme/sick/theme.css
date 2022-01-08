@@ -30,7 +30,7 @@
     --radial-background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(201,220,232,1) 80%, rgba(141,181,206,1) 100%);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     :root {
         --background-color: rgb(20, 23, 24);
         --background-color-80: rgb(20, 23, 24, 0.8);
@@ -57,7 +57,7 @@
         --highlight-background: #E5F1F8;
         --radial-background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(201,220,232,1) 80%, rgba(141,181,206,1) 100%);
     }
-}
+} */
 
 :root .has-dark-background,
 :root section.dark,

@@ -2,8 +2,9 @@ import { createServer } from 'http';
 import { readFile, stat } from 'fs/promises';
 import { resolve, parse } from 'path';
 import * as ws from 'ws';
+import { Socket } from 'dgram';
 
-const hostname = '127.0.0.1';
+const hostname = '0.0.0.0';
 const port = 3000;
 
 const websocketServer = new ws.default.Server({ noServer: true });
@@ -13,6 +14,24 @@ const server = createServer(async (req, res) => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/plain');
         res.end('Hello World');
+        return;
+    }
+    if(req.url.startsWith('/get') && req.method === 'GET') {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'text/plain');
+        res.end(req.url.substring(req.url.indexOf('?')));
+        return;
+    }
+    if(req.url.startsWith('/post') && req.method === 'POST') {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'text/plain');
+        let data = ''
+        req.on('data', (chunk) => {
+            data += chunk;
+        })
+        req.on('end', () => {
+            res.end(data);
+        })
         return;
     }
     if (req.url === '' || req.url === '/') {
@@ -40,12 +59,16 @@ const server = createServer(async (req, res) => {
 });
 
 server.on('upgrade', (req, socket, head) => {
-    websocketServer.handleUpgrade(req, socket, head, (client) => {
-        websocketServer.emit('connection', client, req);
-        client.on('message', (data) => {
-            client.send(data); // simple echo server
+    if(req.url === '/ws') {
+        websocketServer.handleUpgrade(req, socket, head, (client) => {
+            websocketServer.emit('connection', client, req);
+            client.on('message', (data) => {
+                client.send(data); // simple echo server
+            });
         });
-    });
+    } else {
+        socket.destroy();
+    }
 });
 
 
