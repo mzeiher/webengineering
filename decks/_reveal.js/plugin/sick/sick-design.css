@@ -74,7 +74,6 @@ small i.fab {
 
 .sick-grid > header h2 {
     font-size: 0.8em;
-    font-weight: bold;
     margin: 0 0 0 0;
     text-align: left;
     text-transform: none;
@@ -99,7 +98,6 @@ small i.fab {
 }
 
 .sick-grid > header.title > h1 {
-    font-weight: bold;
     max-width: 75%;
     text-transform: none;
 
