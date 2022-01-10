@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="../_reveal.js/dist/theme/sick/sick.css" id="theme">
 
   <!-- Theme used for syntax highlighted code -->
-  <link rel="stylesheet" href="../_reveal.js/plugin/highlight/a11y-dark.css" id="highlight-theme">
+  <link rel="stylesheet" href="../_reveal.js/plugin/highlight/kary-pro-light.css" id="highlight-theme">
   <link rel="stylesheet" href="../_reveal.js/plugin/sick/sick-design.css">
   <link rel="stylesheet" href="../_reveal.js/plugin/fontawesome/all.css">
 
@@ -263,75 +263,75 @@
             Elements follow a semantic and should be used according to the semantic of the used tag
           </p>
         </section>
-        <section data-sick-grid data-background-image="assets/htmlflowchart.png" data-background-size="contain" data-background-color="white">
+        <section data-sick-grid data-background-image="assets/htmlflowchart.png" data-background-size="contain"
+          data-background-color="white">
         </section>
         <section data-sick-grid data-auto-animate>
           <h3>Anatomy of an element</h3>
         </section>
         <section data-sick-grid data-auto-animate>
           <div class="sick-code-frame" data-id="code">
-            <code class="hljs">&lt;div id="test"&gt;text&lt;/div&gt;</code>
-            <code class="hljs">&lt;img id="test"/&gt;</code>
+            <code class="hljs language-html">&lt;div id="test"&gt;text&lt;/div&gt;</code>
+            <code class="hljs language-html">&lt;img id="test"/&gt;</code>
           </div>
         </section>
         <section data-sick-grid data-auto-animate>
           <div class="sick-code-frame" data-id="code">
-            <code class="hljs"><span class="hljs-tag">&lt;div id="test"&gt;text&lt;/div&gt;</span></code>
-            <code class="hljs">&lt;img id="test"/&gt;</code>
+            <code class="hljs language-html"><span class="hljs-tag">&lt;div id="test"&gt;text&lt;/div&gt;</span></code>
+            <code class="hljs language-html">&lt;img id="test"/&gt;</code>
           </div>
           <p>Element <b>with</b> children</p>
         </section>
         <section data-sick-grid data-auto-animate>
           <div class="sick-code-frame" data-id="code">
-            <code class="hljs">&lt;div id="test"&gt;text&lt;/div&gt;</code>
-            <code class="hljs"><span class="hljs-tag">&lt;img id="test"/&gt;</span></code>
+            <code class="hljs language-html">&lt;div id="test"&gt;text&lt;/div&gt;</code>
+            <code class="hljs language-html"><span class="hljs-tag">&lt;img id="test"/&gt;</span></code>
           </div>
           <p>Element <b>without</b> children</p>
         </section>
         <section data-sick-grid data-auto-animate>
           <div class="sick-code-frame" data-id="code">
             <code
-              class="hljs"><span class="hljs-tag">&lt;div</span> id="test"<span class="hljs-tag">&gt;</span>text&lt;/div&gt;</code>
-            <code class="hljs"><span class="hljs-tag">&lt;img</span> id="test"/&gt;</code>
+              class="hljs language-html"><span class="hljs-tag">&lt;div</span> id="test"<span class="hljs-tag">&gt;</span>text&lt;/div&gt;</code>
+            <code class="hljs language-html"><span class="hljs-tag">&lt;img</span> id="test"/&gt;</code>
           </div>
           <p>start tag</p>
         </section>
         <section data-sick-grid data-auto-animate>
           <div class="sick-code-frame" data-id="code">
-            <code
-              class="hljs">&lt;div id="test"&gt;text<span class="hljs-tag">&lt;/div&gt;</span></code>
-            <code class="hljs">&lt;img id="test"<span class="hljs-tag">/&gt;</span></code>
+            <code class="hljs language-html">&lt;div id="test"&gt;text<span class="hljs-tag">&lt;/div&gt;</span></code>
+            <code class="hljs language-html">&lt;img id="test"<span class="hljs-tag">/&gt;</span></code>
           </div>
           <p>end tag</p>
         </section>
         <section data-sick-grid data-auto-animate>
           <div class="sick-code-frame" data-id="code">
             <code
-              class="hljs">&lt;<span class="hljs-tag">div</span> id="test"&gt;text&lt;/<span class="hljs-tag">div</span>&gt;</code>
-            <code class="hljs">&lt;<span class="hljs-tag">img</span> id="test"/&gt;</code>
+              class="hljs language-html">&lt;<span class="hljs-tag">div</span> id="test"&gt;text&lt;/<span class="hljs-tag">div</span>&gt;</code>
+            <code class="hljs language-html">&lt;<span class="hljs-tag">img</span> id="test"/&gt;</code>
           </div>
           <p>tag name</p>
         </section>
         <section data-sick-grid data-auto-animate>
           <div class="sick-code-frame" data-id="code">
-            <code class="hljs">&lt;div <span class="hljs-tag">id=</span>"test"&gt;text&lt;/div&gt;</code>
-            <code class="hljs">&lt;img <span class="hljs-tag">id=</span>"test"/&gt;</code>
+            <code class="hljs language-html">&lt;div <span class="hljs-tag">id=</span>"test"&gt;text&lt;/div&gt;</code>
+            <code class="hljs language-html">&lt;img <span class="hljs-tag">id=</span>"test"/&gt;</code>
           </div>
           <p>attribute</p>
         </section>
         <section data-sick-grid data-auto-animate>
           <div class="sick-code-frame" data-id="code">
-            <code class="hljs">&lt;div id=<span class="hljs-tag">"test"</span>&gt;text&lt;/div&gt;</code>
-            <code class="hljs">&lt;img id=<span class="hljs-tag">"test"</span>/&gt;</code>
+            <code class="hljs language-html">&lt;div id=<span class="hljs-tag">"test"</span>&gt;text&lt;/div&gt;</code>
+            <code class="hljs language-html">&lt;img id=<span class="hljs-tag">"test"</span>/&gt;</code>
           </div>
           <p>attribute value</p>
         </section>
         <section data-sick-grid data-auto-animate>
           <div class="sick-code-frame" data-id="code">
-            <code class="hljs">&lt;div id="test"&gt;<span class="hljs-tag">text</span>&lt;/div&gt;</code>
-            <code class="hljs">&lt;img id="test"/&gt;</code>
+            <code class="hljs language-html">&lt;div id="test"&gt;<span class="hljs-tag">text</span>&lt;/div&gt;</code>
+            <code class="hljs language-html">&lt;img id="test"/&gt;</code>
           </div>
-          <p>content/children</p>keep in mind, not all tags can hold children
+          <p>content/children</p>keep in mind, not all tags support child nodes
         </section>
         <section data-sick-grid>
           <h3>Auto Closing and Tag omission</h3>
@@ -360,7 +360,8 @@
         <section data-sick-grid>
           <p>Some tags will be automatically closed depending on the elements that follow</p>
           <p><small>If you're using HTML sanitizer for preventing XSS attacks you should check if the sanitizer works
-              according to the specification<sup data-sick-footnote-link="">https://research.securitum.com/mutation-xss-via-mathml-mutation-dompurify-2-0-17-bypass/</sup></small>
+              according to the specification<sup
+                data-sick-footnote-link="">https://research.securitum.com/mutation-xss-via-mathml-mutation-dompurify-2-0-17-bypass/</sup></small>
           </p>
         </section>
         <section data-sick-grid="">
@@ -368,7 +369,8 @@
         </section>
         <section data-sick-grid="">
           <pre><code class="language-html" data-code="snippets/html.tag-omission.3.html"></code></pre>
-          <p>both <code class="inline">br</code> and <code class="inline">img</code> are self closing and the end-tag can be omitted</p>
+          <p>both <code class="inline">br</code> and <code class="inline">img</code> are self closing and the end-tag
+            can be omitted</p>
         </section>
         <section data-sick-grid="">
           <h3>There are different content categories for tags</h3>
@@ -414,35 +416,25 @@
         <section data-auto-animate="" data-sick-grid="">
           <h3>Identifying elements in the DOM</h3>
           <div class="sick-code-frame" data-id="code">
-            <code data-id="code" class="hljs">&lt;div id="test"&gt;text&lt;/div&gt;</code>
+            <code data-id="code" class="hljs language-html">&lt;div id="test"&gt;text&lt;/div&gt;</code>
           </div>
         </section>
         <section data-auto-animate="" data-sick-grid="">
           <div class="sick-code-frame" data-id="code">
-            <code class="hljs">&lt;div <span class="hljs-tag">id="test"</span>&gt;text&lt;/div&gt;</code>
+            <code class="hljs language-html">&lt;div <span class="hljs-tag">id="test"</span>&gt;text&lt;/div&gt;</code>
           </div>
           <p>elements can be identified via the <code class="inline">id</code> attribute</p>
-          <p><code class="inline">&lt;label for="" /&gt;</code> and <code class="inline">&lt;a href="#id" /&gt;</code> use the id for reference</p>
+          <p><code class="inline">&lt;label for="" /&gt;</code> and <code class="inline">&lt;a href="#id" /&gt;</code>
+            use the id for reference</p>
           <p class="warning"><i class="fas fa-exclamation-triangle"></i> the id must be unique within an html document
           </p>
         </section>
         <section data-auto-animate="" data-sick-grid="">
           <div class="sick-code-frame" data-id="code">
-            <code class="hljs">&lt;div <span class="hljs-tag">id="test"</span>&gt;text&lt;/div&gt;</code>
+            <code class="hljs language-html">&lt;div <span class="hljs-tag">id="test"</span>&gt;text&lt;/div&gt;</code>
           </div>
-          <p>elements with an <code class="inline">id</code> attribute can be accessed by name in javascript on the global window object</p>
-        </section>
-        <section data-auto-animate="" data-sick-grid="">
-          <div class="sick-code-frame" data-id="code">
-            <code class="hljs">&lt;div <span class="hljs-tag">class="test"</span>&gt;text&lt;/div&gt;</code>
-          </div>
-          <p>elements can also be identified via the <code class="inline">class</code> attribute</p>
-        </section>
-        <section data-auto-animate="" data-sick-grid="">
-          <div class="sick-code-frame" data-id="code">
-            <code class="hljs">&lt;<span class="hljs-tag">div</span>&gt;text&lt;/div&gt;</code>
-          </div>
-          <p>elements can be identified via the tag</p>
+          <p>elements with an <code class="inline">id</code> attribute can be accessed by name in javascript on the
+            global window object</p>
         </section>
         <section data-auto-animate="" data-sick-grid="">
           <p>there are more ways which will be explained when we get to CSS queries</p>
@@ -452,43 +444,30 @@
           attributes are used to configure an element and can change its behavior and appearance
         </section>
         <section data-auto-animate data-sick-grid="">
-          <div class="sick-code-frame" data-id="code">
-            <code class="hljs">
-            &lt;div <span class="hljs-tag">attr="string value"</span>&gt;&lt;/div&gt;
-          </code>
-          </div>
+          <pre style="width: 400px;" data-id="code"><code>&lt;div attr="string value"&gt;&lt;/div&gt;</code></pre>
           <p>attributes can only contain string values</p>
           <p>every built-in attribute maps to a specific element property in the DOM API</p>
           <p><small>unfortunately the mapped property has not always the same name as the attribute. The <code
                 class="inline">for</code> attribute maps to the <code class="inline">htmlFor</code> property</small></p>
         </section>
         <section data-auto-animate data-sick-grid="">
-          <div class="sick-code-frame" data-id="code">
-            <code class="hljs">
-            &lt;input type="checkbox" <span class="hljs-tag">checked disabled</span> /&gt;
-          </code>
-          </div>
-          <p>the value can also be omitted</p>
+          <pre style="width: 500px;" data-id="code"><code>&lt;input type="checkbox" checked disabled/&gt;</code></pre>
+          <p>the values can also be omitted if attributes map to a binary type</p>
         </section>
         <section data-sick-grid="">
           <h3>There are some attributes which will be handled in a special way</h3>
         </section>
         <section data-auto-animate data-sick-grid="">
-          <div class="sick-code-frame" data-id="code">
-            <code class="hljs">
-            &lt;div <span class="hljs-tag">style="color: #0f0"</span>&gt;&lt;/div&gt;
-          </code>
-          </div>
+          <pre style="width: 400px;" data-id="code"><code>&lt;div style="color: #0f0"&gt;&lt;/div&gt;</code></pre>
           <p><code class="inline">style</code> lets you inline css for a specific element</p>
           <p class="warning"><i class="fas fa-exclamation-triangle"></i> this should be used sparsely, always try to use
             classes and style via css selectors</p>
         </section>
         <section data-sick-grid="">
           <h3>data attributes</h3>
-          <div class="sick-code-frame" data-id="code">
-            <code data-id="code" class="hljs">&lt;div data-...="content"&gt;text&lt;/div&gt;</code>
-          </div>
-          <p><code class="inline">data-</code> attributes can be used to add custom attributes to elements without clashing with existing attributes</p>
+          <pre style="width: 400px;" data-id="code"><code>&lt;div data-...="content"&gt;text&lt;/div&gt;</code></pre>
+          <p><code class="inline">data-</code> attributes can be used to add custom attributes to elements without
+            clashing with existing attributes</p>
           <p><small>later with custom elements you can also define your own attributes</small></p>
         </section>
       </section>
@@ -648,7 +627,8 @@
           <p>table cells can also span rows and columns</p>
         </section>
         <section>
-          <p>There are more layout possibilities available with CSS, also there is a <code class="inline">grid</code> layout available with more layouting options for tables</p>
+          <p>There are more layout possibilities available with CSS, also there is a <code class="inline">grid</code>
+            layout available with more layouting options for tables</p>
         </section>
       </section>
 

@@ -1,0 +1,118 @@
+.hljs {
+    --kary-color-comment: #c7c4c2;
+    --kary-color-gray: #1a1a1a;
+    --kary-color-darkgray: #9b9b9b;
+    --kary-color-blue: #3778b7;
+    --kary-color-green: #428226;
+    --kary-color-red: #c94824;
+    --kary-color-pink: #b052a1;
+    --kary-color-orange: #a56416;
+
+    --kary-color-background: #f7f7f7;
+    --kary-color-caret: #00bbec;
+    --kary-color-foreground: var(--kary-color-gray);
+    --kary-color-invisibles: #e4e4e4;
+    --kary-color-line-highlight: #f0f0f0;
+    --kary-color-selection: #e2eefa;
+
+    color: var(--kary-color-blue);
+    background: #ffffff;
+}
+
+.hljs-comment,
+.hljs-quote {
+    color: var(--kary-color-comment);
+}
+
+.hljs-doctag,
+.hljs-formula,
+.hljs-keyword {
+    color: var(--kary-color-pink);
+    font-weight: normal;
+}
+
+.hljs-property {
+    color: var(--kary-color-orange);
+}
+
+.hljs-deletion,
+.hljs-name,
+.hljs-section,
+.hljs-selector-tag,
+.hljs-subst {
+    color: #e06c75;
+}
+
+.hljs-literal {
+    color: var(--kary-color-pink);
+}
+
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string,
+.hljs-regexp,
+.hljs-string {
+    color: var(--kary-color-green);
+}
+
+.hljs-attr,
+.hljs-number,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-pseudo,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable {
+    color: var(--kary-color-blue);
+}
+
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-symbol,
+.hljs-title {
+    color: var(--kary-color-red);
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title,
+.hljs-title.class_ {
+    color: var(--kary-color-red);
+}
+
+.hljs.html,
+.hljs.xml,
+.hljs.language-html,
+.hljs.language-xml {
+    color: var(--kary-color-gray);
+}
+
+.hljs-tag,
+.hljs-tag .hljs-name {
+    color: var(--kary-color-blue);
+}
+
+.hljs-tag .hljs-attr {
+    color: var(--kary-color-pink);
+}
+
+.hljs-tag .hljs-string {
+    color: var(--kary-color-green);
+}
+
+.hljs-title {
+    font-weight: normal;
+}
+
+.hljs-emphasis {
+    font-style: italic;
+}
+
+.hljs-strong {
+    font-weight: 700;
+}
+
+.hljs-link {
+    text-decoration: underline;
+}
