@@ -25,7 +25,7 @@
         <h1>css</h1>
       </section>
       <section>
-        <section data-sick-chapter> 
+        <section data-sick-chapter>
           <h2>Interesting resources</h2>
         </section>
         <section data-sick-grid>
@@ -243,7 +243,9 @@
         </section>
         <section data-sick-grid="">
           <pre><code class="language-javascript" data-code="snippets/css.definition.4.js" data-line-numbers="5"></code></pre>
-          <p>In Javascript as a constructable stylesheet<sup data-sick-footnote-link>https://developers.google.com/web/updates/2019/02/constructable-stylesheets</sup></p>
+          <p>In Javascript as a constructable stylesheet<sup
+              data-sick-footnote-link>https://developers.google.com/web/updates/2019/02/constructable-stylesheets</sup>
+          </p>
           <p><small>This will be important later on when we discuss custom elements/web components</small></p>
         </section>
       </section>
@@ -369,7 +371,7 @@
 
 
       <section>
-        <section data-background="var(--radial-background)">
+        <section data-sick-chapter="">
           <h2>Selectors</h2>
         </section>
         <section>
@@ -484,7 +486,8 @@
         </section>
         <section>
           <p>Selectors can be combined with the operators <code class="inline">,</code>, <code class="inline">+</code>,
-            <code class="inline">~</code>, <code class="inline">&nbsp;</code>, <code class="inline">&gt;</code></p>
+            <code class="inline">~</code>, <code class="inline">&nbsp;</code>, <code class="inline">&gt;</code>
+          </p>
         </section>
         <section>
           <h3>concatenation or "logical and"</h3>
@@ -545,7 +548,7 @@
 
 
       <section>
-        <section data-background="var(--radial-background)">
+        <section data-sick-chapter="">
           <h2>Specificity and the Cascade</h2>
           <h3>or why the hell is my text not red?</h3>
         </section>
@@ -875,7 +878,7 @@
 
 
       <section>
-        <section data-background="var(--radial-background)">
+        <section data-sick-chapter="">
           <h2>Values, Units and Functions</h2>
         </section>
         <section>
@@ -997,7 +1000,8 @@
                 <td>Font size of the parent, in the case of typographical properties like
                   <code><a href="/en-US/docs/Web/CSS/font-size">font-size</a></code>, and font size of the element
                   itself, in the case of other properties like
-                  <code><a href="/en-US/docs/Web/CSS/width">width</a></code>.</td>
+                  <code><a href="/en-US/docs/Web/CSS/width">width</a></code>.
+                </td>
               </tr>
               <tr>
                 <td><code class="inline">ex</code></td>
@@ -1169,7 +1173,7 @@
 
 
       <section>
-        <section data-background="var(--radial-background)">
+        <section data-sick-chapter="">
           <h2>CSS Positioning and Layouts</h2>
         </section>
         <section>
@@ -1192,7 +1196,8 @@
         </section>
         <section>
           <p>the box model affects the layouting of an element and the calculated <code class="inline">width</code> or
-            <code class="inline">height</code> of an element</p>
+            <code class="inline">height</code> of an element
+          </p>
         </section>
         <section>
           <div style="background-color: var(--periwinkle); padding: 0em 1em 1em 1em; display: inline-block;">
@@ -1224,7 +1229,8 @@
           </div>
           <p>the sizes of the different box dimensions can be set with the css properties <code
               class="inline">margin</code>, <code class="inline">border</code>, <code class="inline">padding</code>,
-            <code class="inline">width</code> and <code class="inline">height</code></p>
+            <code class="inline">width</code> and <code class="inline">height</code>
+          </p>
         </section>
         <section>
           <div style="background-color: var(--periwinkle); padding: 0em 1em 1em 1em; display: inline-block;">
@@ -1707,7 +1713,9 @@
         <section>
           <p>But even the most experienced people need to look in the spec for a specific behavior</p>
           <img src="assets/flexboxjaffa.webp" class="r-stretch">
-          <p><span class="highlight"><i class="fab fa-twitter"></i><a href="https://twitter.com/jaffathecake/status/1316740664378490881">https://twitter.com/jaffathecake/status/1316740664378490881</a></span></p>
+          <p><span class="highlight"><i class="fab fa-twitter"></i><a
+                href="https://twitter.com/jaffathecake/status/1316740664378490881">https://twitter.com/jaffathecake/status/1316740664378490881</a></span>
+          </p>
         </section>
         <section>
           <h3>Grid Layout</h3>
@@ -2168,7 +2176,8 @@
         </section>
         <section>
           <p>The stacking context defines the order in which elements that overlap will be drawn and is defined by the
-            order and depth of the elements within the HTMLs DOM and can manually be created by the css properties <code class="inline">z-index, opacity, transform</code></p>
+            order and depth of the elements within the HTMLs DOM and can manually be created by the css properties <code
+              class="inline">z-index, opacity, transform</code></p>
         </section>
         <style>
           .stack-step-by-step {
@@ -2503,7 +2512,7 @@
 
 
       <section>
-        <section data-background="var(--radial-background)">
+        <section data-sick-chapter="">
           <h2>Animations and Transitions</h2>
         </section>
         <section>
@@ -2627,7 +2636,8 @@
           <p>The height will not be animated on hover because the origin properties do not contain a height property</p>
         </section>
         <section data-auto-animate="">
-          <pre data-id="code"><code data-code="snippets/transitionswithheight.html" data-line-numbers="5,11"></code></pre>
+          <pre
+            data-id="code"><code data-code="snippets/transitionswithheight.html" data-line-numbers="5,11"></code></pre>
           <p>We can fix this by adding a height property</p>
         </section>
         <section>
@@ -2653,15 +2663,19 @@
 
 
       <section>
-        <section data-background="var(--radial-background)">
+        <section data-sick-chapter="">
           <h2>Responsive Designs</h2>
         </section>
-        <section>
+        <section data-sick-grid>
+          <h3>@media queries</h3>
+        </section>
+        <section data-sick-grid>
           <p>The <code class="inline">@media {}</code> at-rule or the <code class="inline">media</code> attribute for
             <code class="inline">link</code> and <code class="inline">style</code> elements let you control what styles
-            should be applied depending on the screen type of the user, the viewport size or preferred color schemes</p>
+            should be applied depending on the screen type of the user, the viewport size or preferred color schemes
+          </p>
         </section>
-        <section data-auto-animate="">
+        <section data-sick-grid data-auto-animate="">
           <div class="sick-code-frame" style="text-align: left;" data-id="code">
             <code class="hljs" style="padding: 0;">@media screen and (min-width: 900px) {</code>
             <code class="hljs" style="padding: 0;">&nbsp;&nbsp;rule {}</code>
@@ -2669,7 +2683,7 @@
             <code class="hljs" style="padding: 0;">}</code>
           </div>
         </section>
-        <section data-auto-animate="">
+        <section data-sick-grid data-auto-animate="">
           <div class="sick-code-frame" style="text-align: left;" data-id="code">
             <code class="hljs"
               style="padding: 0;"><span class="hljs-keyword">@media</span> screen and (min-width: 900px) {</code>
@@ -2679,7 +2693,7 @@
           </div>
           <p><code class="inline">@media</code> at rule</p>
         </section>
-        <section data-auto-animate="">
+        <section data-sick-grid data-auto-animate="">
           <div class="sick-code-frame" style="text-align: left;" data-id="code">
             <code class="hljs"
               style="padding: 0;">@media <span class="hljs-keyword">screen and (min-width: 900px)</span> {</code>
@@ -2690,7 +2704,7 @@
           <p><code class="inline">@media</code> query list</p>
           <p><small>multiple conditions can be concatenated with and, or, not or only</small></p>
         </section>
-        <section data-auto-animate="">
+        <section data-sick-grid data-auto-animate="">
           <div class="sick-code-frame" style="text-align: left;" data-id="code">
             <code class="hljs" style="padding: 0;">@media screen and (min-width: 900px) {</code>
             <code class="hljs" style="padding: 0;">&nbsp;&nbsp;<span class="hljs-keyword">rule {}</span></code>
@@ -2699,25 +2713,46 @@
           </div>
           <p>CSS rules to apply if the condition matches</p>
         </section>
-        <section>
+        <section data-sick-grid>
           <p>With the help of media queries it is possible to provide different CSS styles and layouts for different
             viewport sizes (mobile, tablet, desktop) or for print without the need to change the structure of the HTML
           </p>
         </section>
-        <section>
+        <section data-sick-grid>
           <pre><code data-code="snippets/css.mediaquery.html"></code></pre>
         </section>
-        <section>
+        <section data-sick-grid>
           <p>The queries can be arbitrary complex and there are a lot of function to query</p>
           <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media"><span class="highlight"><i
                   class="fas fa-link"></i>List of media query conditions</span></a></p>
         </section>
-
+        <section data-sick-grid>
+          <h3>@container queries</h3>
+          <p><small><span class="sick-highlight"><i class="fas fa-exclamation-triangle"></i>experimental feature</span></small></p>
+        </section>
+        <section data-sick-grid="">
+          <p>since @media queries only work on the global viewport container queries where introduced to allow arbitrary elements as a reference for responsive design</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/css.containerquery.html"></code></pre>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/css.containerquery.html" data-line-numbers="2-4,14,19"></code></pre>
+          <p>define a container</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/css.containerquery.html" data-line-numbers="8-12,15-18"></code></pre>
+          <p>content will query the nearest container and its size</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <pre data-id="code"><code data-code="snippets/css.containerquery.named.html" data-line-numbers="4,9"></code></pre>
+          <p>containers can be named for scoping</p>
+        </section>
       </section>
 
 
       <section>
-        <section data-background="var(--radial-background)">
+        <section data-sick-chapter="">
           <h2>Scope</h2>
         </section>
         <section>
@@ -2731,7 +2766,8 @@
           <p>Currently there are some solutions involving CSSinJS (for example styled elements in react) or tooling like
             <a href="https://github.com/css-modules/css-modules"><i
                 class="fab fa-github"></i>https://github.com/css-modules/css-modules</a> which requires additional
-            tooling</p>
+            tooling
+          </p>
           <p>The only solution provided by the browser platform for scoped CSS is the use of Shadow DOM</p>
         </section>
       </section>

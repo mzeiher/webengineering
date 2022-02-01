@@ -1,0 +1,19 @@
+<style>
+.container {
+    container-type: inline-size;
+}
+.card {
+    display: flex;
+}
+@container (min-width: 500px) {
+    .card {
+        flex-direction: column;
+    }
+}
+</style>
+<div class="container">
+    <article class="card">
+        <aside>image</aside>
+        <main>content</main>
+    </article>
+</div>

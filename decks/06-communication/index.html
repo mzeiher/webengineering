@@ -7,31 +7,28 @@
 
   <title>Communication</title>
 
-  <link rel="stylesheet" href="dist/reset.css">
-  <link rel="stylesheet" href="dist/reveal.css">
-  <link rel="stylesheet" href="dist/theme/sick.css" id="theme">
+  <link rel="stylesheet" href="../_reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="../_reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="../_reveal.js/dist/theme/sick/sick.css" id="theme">
 
   <!-- Theme used for syntax highlighted code -->
-  <link rel="stylesheet" href="plugin/highlight/tomorrow.css" id="highlight-theme">
-  <link rel="stylesheet" href="common.css">
-
-  <link rel="stylesheet" href="plugin/sick/sick-design.css">
-
-  <link rel="stylesheet" href="fontawesome/all.css">
+  <link rel="stylesheet" href="../_reveal.js/plugin/highlight/kary-pro-light.css" id="highlight-theme">
+  <link rel="stylesheet" href="../_reveal.js/plugin/sick/sick-design.css">
+  <link rel="stylesheet" href="../_reveal.js/plugin/fontawesome/all.css">
 
 </head>
 
 <body>
   <div class="reveal">
     <div class="slides">
-      <section data-sick-title data-background="assets/javascript-bg.jpg" class="dark">
+      <section data-sick-title>
         <h1>communication protocols</h1>
       </section>
 
 
 
       <section>
-        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+        <section data-sick-chapter>
           <h2>Interesting Resources</h2>
         </section>
         <section>
@@ -44,7 +41,7 @@
 
 
       <section>
-        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+        <section data-sick-chapter>
           <h2>HTTP</h2>
         </section>
         <section data-sick-grid>
@@ -456,7 +453,7 @@
       </section>
 
       <section>
-        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+        <section data-sick-chapter>
           <h2>Web Sockets</h2>
         </section>
         <section data-sick-grid="">
@@ -597,7 +594,7 @@
 
 
       <section>
-        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+        <section data-sick-chapter>
           <h2>Securing the connection</h2>
         </section>
         <section data-sick-grid="">
@@ -619,7 +616,7 @@
       </section>
 
       <section>
-        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+        <section data-sick-chapter>
           <h2>Authentication</h2>
         </section>
         <section data-sick-grid>
@@ -719,7 +716,7 @@
 
 
       <section>
-        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+        <section data-sick-chapter>
           <h2>REST, GraphQL</h2>
         </section>
         <section data-sick-grid="">
@@ -836,7 +833,18 @@
 
 
       <section>
-        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+        <section data-sick-chapter>
+          <h2>gRPC</h2>
+        </section>
+        <section data-sick-grid>
+          <p>used a lot for service to service communication</p>
+        </section>
+      </section>
+
+
+
+      <section>
+        <section data-sick-chapter>
           <h2>WebRTC</h2>
         </section>
         <section data-sick-grid>
@@ -853,13 +861,13 @@
     </div>
   </div>
 
-  <script src="dist/reveal.js"></script>
-  <script src="plugin/notes/notes.js"></script>
-  <script src="plugin/markdown/markdown.js"></script>
-  <script src="plugin/highlight/highlight.js"></script>
-  <script src="plugin/chalkboard/plugin.js"></script>
-  <script src="plugin/externalcode/externalcode.js"></script>
-  <script src="plugin/sick/sick.js"></script>
+  <script src="../_reveal.js/dist/reveal.js"></script>
+  <script src="../_reveal.js/plugin/notes/notes.js"></script>
+  <script src="../_reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="../_reveal.js/plugin/highlight/highlight.js"></script>
+  <script src="../_reveal.js/plugin/chalkboard/plugin.js"></script>
+  <script src="../_reveal.js/plugin/externalcode/externalcode.js"></script>
+  <script src="../_reveal.js/plugin/sick/sick.js"></script>
   <script>
     // More info about initialization & config:
     // - https://revealjs.com/initialization/
@@ -878,7 +886,7 @@
         theme: "whiteboard"
       },
       sickPlugin: {
-        footerText: `Mathis Zeiher | DOM API | ${new Date().getDate()}.${new Date().getMonth() + 1}.${new Date().getFullYear()}`
+        footerText: `Mathis Zeiher | Web Engineering - communication | ${new Date().getDate()}.${new Date().getMonth() + 1}.${new Date().getFullYear()}`
       }
     });
   </script>

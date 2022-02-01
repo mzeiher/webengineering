@@ -5,35 +5,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="author" content="Mathis Zeiher">
+
   <title>Javascript</title>
 
-  <link rel="stylesheet" href="dist/reset.css">
-  <link rel="stylesheet" href="dist/reveal.css">
-  <link rel="stylesheet" href="dist/theme/sick.css" id="theme">
+  <link rel="stylesheet" href="../_reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="../_reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="../_reveal.js/dist/theme/sick/sick.css" id="theme">
 
   <!-- Theme used for syntax highlighted code -->
-  <link rel="stylesheet" href="plugin/highlight/tomorrow.css" id="highlight-theme">
-  <link rel="stylesheet" href="common.css">
-
-  <link rel="stylesheet" href="plugin/sick/sick-design.css">
-
-
-  <link rel="stylesheet" href="fontawesome/all.css">
+  <link rel="stylesheet" href="../_reveal.js/plugin/highlight/kary-pro-light.css" id="highlight-theme">
+  <link rel="stylesheet" href="../_reveal.js/plugin/sick/sick-design.css">
+  <link rel="stylesheet" href="../_reveal.js/plugin/fontawesome/all.css">
 
 </head>
 
 <body>
   <div class="reveal">
     <div class="slides">
-      <section data-background="assets/javascript-bg.jpg" class="dark">
-        <div class="sick-grid">
-          <header class="title">
+      <section data-sick-title>
             <h1>JavaScript</h1>
-          </header>
-        </div>
       </section>
       <section>
-        <section data-background="assets/javascript-bg.jpg" class="dark">
+        <section>
           <div class="sick-grid">
             <header class="chapter">
               <h2>Interesting resources</h2>
@@ -52,7 +45,7 @@
       </section>
 
       <section>
-        <section data-background="assets/javascript-bg.jpg" class="dark">
+        <section>
           <div class="sick-grid">
             <header class="chapter">
               <h2>Welcome to the world of javascript</h2>
@@ -92,7 +85,7 @@
       </section>
 
       <section>
-        <section data-background="assets/javascript-bg.jpg" class="dark">
+        <section>
           <div class="sick-grid">
             <header class="chapter">
               <h2>Anatomy of a modern Javascript file</h2>
@@ -207,7 +200,7 @@
       </section>
 
       <section>
-        <section data-background="assets/javascript-bg.jpg" class="dark">
+        <section>
           <div class="sick-grid">
             <header class="chapter">
               <h2>Loading Javascript</h2>
@@ -276,10 +269,10 @@
           <div class="sick-grid">
             <main>
               <pre data-id="code"><code class="language-bash" data-trim data-line-numbers="">
-                #> node ./myfile.js
-                #> node -e 'console.log("test");'
-                #> node --input-type=module myfile.js
-                #> node ./myfile.mjs
+                node ./myfile.js
+                node -e 'console.log("test");'
+                node --input-type=module myfile.js
+                node ./myfile.mjs
               </code></pre>
             </main>
 
@@ -289,10 +282,10 @@
           <div class="sick-grid">
             <main>
               <pre data-id="code"><code class="language-bash" data-trim data-line-numbers="1">
-                #> node ./myfile.js
-                #> node -e 'console.log("test");'
-                #> node --input-type=module myfile.js
-                #> node ./myfile.mjs
+                node ./myfile.js
+                node -e 'console.log("test");'
+                node --input-type=module myfile.js
+                node ./myfile.mjs
               </code></pre>
               <p>Load a javascript file from the filesystem</p>
               <p><small>Historically nodejs used its own module system called "commonjs" every js file is interpreted as
@@ -306,10 +299,10 @@
           <div class="sick-grid">
             <main>
               <pre data-id="code"><code class="language-bash" data-trim data-line-numbers="2">
-                #> node ./myfile.js
-                #> node -e 'console.log("test");'
-                #> node --input-type=module myfile.js
-                #> node ./myfile.mjs
+                node ./myfile.js
+                node -e 'console.log("test");'
+                node --input-type=module myfile.js
+                node ./myfile.mjs
               </code></pre>
               <p>evaluate the javascript passed in the argument</p>
             </main>
@@ -320,10 +313,10 @@
           <div class="sick-grid">
             <main>
               <pre data-id="code"><code class="language-bash" data-trim data-line-numbers="3">
-                #> node ./myfile.js
-                #> node -e 'console.log("test");'
-                #> node --input-type=module myfile.js
-                #> node ./myfile.mjs
+                node ./myfile.js
+                node -e 'console.log("test");'
+                node --input-type=module myfile.js
+                node ./myfile.mjs
               </code></pre>
               <p>Load a javascript file from the filesystem and interpret the file as a es module</p>
             </main>
@@ -334,10 +327,10 @@
           <div class="sick-grid">
             <main>
               <pre data-id="code"><code class="language-bash" data-trim data-line-numbers="4">
-                #> node ./myfile.js
-                #> node -e 'console.log("test");'
-                #> node --input-type=module myfile.js
-                #> node ./myfile.mjs
+                node ./myfile.js
+                node -e 'console.log("test");'
+                node --input-type=module myfile.js
+                node ./myfile.mjs
               </code></pre>
               <p>Load a javascript file from the filesystem and interpret the file as a es module</p>
               <p><small>On nodejs files with the <code class="inline">.mjs</code> extension are treated as module files,
@@ -350,7 +343,7 @@
       </section>
 
       <section>
-        <section data-background="assets/javascript-bg.jpg" class="dark">
+        <section>
           <div class="sick-grid">
             <header class="chapter">
               <h2>Primitive Data Types</h2>
@@ -396,7 +389,8 @@
             <main>
               <p>Javascript distinguishes between the primitive type <code class="inline">string</code> and the object
                 type
-                <code class="inline">String</code></p>
+                <code class="inline">String</code>
+              </p>
               <pre><code class="language-javascript" data-code="snippets/javascript.string.js"></code></pre>
             </main>
           </div>
@@ -404,7 +398,7 @@
         <section>
           <div class="sick-grid">
             <main>
-              <p>A string holds a sequence of characters, javascript supports utf-8 and utf-16 characters</p>
+              <p>A string holds a sequence of characters, javascript supports utf-8 and utf-16 characters. <code class="inline">.length</code> will return the number of characters in a string not the byte length</p>
               <pre><code class="language-javascript" data-code="snippets/javascript.string.utf8.js"></code></pre>
             </main>
           </div>
@@ -480,9 +474,10 @@
         <section>
           <div class="sick-grid">
             <main>
-              <p>The <code class="inline">Symbol</code> function can be used to create an unique symbol value which can be
-              used
-              as an property type on objects. For debugging purposes symbols can have a description</p>
+              <p>The <code class="inline">Symbol</code> function can be used to create an unique symbol value which can
+                be
+                used
+                as an property type on objects. For debugging purposes symbols can have a description</p>
             </main>
           </div>
         </section>
@@ -562,7 +557,8 @@
           <div class="sick-grid">
             <main>
               <p>In javascript there are two similar values describing "no value", <code class="inline">null</code> and
-                <code class="inline">undefined</code></p>
+                <code class="inline">undefined</code>
+              </p>
             </main>
           </div>
         </section>
@@ -757,7 +753,7 @@
       </section>
 
       <section>
-        <section data-background="assets/javascript-bg.jpg" class="dark">
+        <section>
           <div class="sick-grid">
             <header class="chapter">
               <h2>Variable declaration</h2>
@@ -864,7 +860,8 @@
             <main>
               <p>as a rule of thumb, always prefer <code class="inline">let</code> over <code class="inline">var</code>
                 and
-                <code class="inline">const</code> over <code class="inline">let</code></p>
+                <code class="inline">const</code> over <code class="inline">let</code>
+              </p>
             </main>
           </div>
         </section>
@@ -903,7 +900,7 @@
 
 
       <section>
-        <section data-background="assets/javascript-bg.jpg" class="dark">
+        <section>
           <div class="sick-grid">
             <header class="chapter">
               <h2>Hoisting</h2>
@@ -981,7 +978,7 @@
 
 
       <section>
-        <section data-background="assets/javascript-bg.jpg" class="dark">
+        <section>
           <div class="sick-grid">
             <header class="chapter">
               <h2>Operators</h2>
@@ -1281,7 +1278,7 @@
       </section>
 
       <section>
-        <section data-background="assets/javascript-bg.jpg" class="dark">
+        <section>
           <div class="sick-grid">
             <header class="chapter">
               <h2>Type Coercion and Comparison</h2>
@@ -1550,7 +1547,7 @@
       </section>
 
       <section>
-        <section data-background="assets/javascript-bg.jpg" class="dark">
+        <section>
           <div class="sick-grid">
             <header class="chapter">
               <h2>Control Flow</h2>
@@ -1884,7 +1881,8 @@
               <p>For loops can iterate over a specific number range, this loop will start at <code
                   class="inline">0</code>,
                 increment the identifier <code class="inline">i++</code> after every execution, and loop as long as
-                <code class="inline">i</code> is less than 100</p>
+                <code class="inline">i</code> is less than 100
+              </p>
             </main>
           </div>
         </section>
@@ -1995,7 +1993,8 @@
                 } while(<expression>)
             </script></code></pre>
               <p>a do while loop is the same as a while loop with the distinction that the expression is evaluated
-                <b>after</b> every loop round</p>
+                <b>after</b> every loop round
+              </p>
             </main>
           </div>
         </section>
@@ -2049,7 +2048,7 @@
       </section>
 
       <section>
-        <section data-background="assets/javascript-bg.jpg" class="dark">
+        <section>
           <div class="sick-grid">
             <header class="chapter">
               <h2>Objects</h2>
@@ -2385,7 +2384,7 @@
 
 
       <section>
-        <section data-background="assets/javascript-bg.jpg" class="dark">
+        <section>
           <div class="sick-grid">
             <header class="chapter">
               <h2>Arrays</h2>
@@ -2913,7 +2912,7 @@
       </section>
 
       <section>
-        <section data-background="assets/javascript-bg.jpg" class="dark">
+        <section>
           <div class="sick-grid">
             <header class="chapter">
               <h2>More built-in datatypes</h2>
@@ -3213,7 +3212,7 @@
 
 
       <section>
-        <section data-background="assets/javascript-bg.jpg" class="dark">
+        <section>
           <div class="sick-grid">
             <header class="chapter">
               <h2>Functions</h2>
@@ -3436,7 +3435,8 @@
                 obj1Func();
               </script></code></pre>
               <p>Create a new function reference of function <code class="inline">func</code> which is fixed bound to
-                <code class="inline">obj1</code></p>
+                <code class="inline">obj1</code>
+              </p>
             </main>
           </div>
         </section>
@@ -3712,7 +3712,7 @@
 
 
       <section>
-        <section data-background="assets/javascript-bg.jpg" class="dark">
+        <section>
           <div class="sick-grid">
             <header class="chapter">
               <h2>Classes and Prototypes</h2>
@@ -4010,7 +4010,7 @@
 
 
       <section>
-        <section data-background="assets/javascript-bg.jpg" class="dark">
+        <section>
           <div class="sick-grid">
             <header class="chapter">
               <h2>Iterators</h2>
@@ -4314,7 +4314,7 @@
 
 
       <section>
-        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+        <section data-sick-chapter>
           <h2>Exception Handling</h2>
         </section>
         <section data-sick-grid>
@@ -4391,7 +4391,7 @@
 
 
       <section>
-        <section data-sick-chapter data-background="assets/javascript-bg.jpg" class="dark">
+        <section data-sick-chapter>
           <h2>Promises, async/await</h2>
         </section>
         <section data-sick-grid>
@@ -4663,7 +4663,7 @@
 
 
       <section>
-        <section data-background="assets/javascript-bg.jpg" class="dark">
+        <section>
           <div class="sick-grid">
             <header class="chapter">
               <h2>Javascript Eventloop</h2>
@@ -4785,7 +4785,8 @@
             <li>FIFO queue</li>
             <li>Callbacks will run before the browser paints</li>
             <li>The browser tries to maintain 60fps and paints every ~16.6ms</li>
-            <li>All callbacks enqueued after the last rAF run will be executed, new callbacks that are enqueued during the execution will be run in the next round</li>
+            <li>All callbacks enqueued after the last rAF run will be executed, new callbacks that are enqueued during
+              the execution will be run in the next round</li>
             <li>Tasks can be enqueued with
               <ul>
                 <li><code class="inline">globalThis.requestAnimationFrame(cb)</code></li>
@@ -4794,8 +4795,11 @@
           </ul>
         </section>
         <section data-sick-grid="">
-          <p>Because there is only one eventloop, especially in the browser you should take care that the javascript execution time of all of your code within in round in loop does not exceed 16.6ms to maintain a stable 60fps</p>
-          <p><small>If you have work that needs a longer execution time try to split it or deffer it to Webworkers, <a href="https://github.com/GoogleChromeLabs/comlink">ComLink</a> is a good helper library</small></p>
+          <p>Because there is only one eventloop, especially in the browser you should take care that the javascript
+            execution time of all of your code within in round in loop does not exceed 16.6ms to maintain a stable 60fps
+          </p>
+          <p><small>If you have work that needs a longer execution time try to split it or deffer it to Webworkers, <a
+                href="https://github.com/GoogleChromeLabs/comlink">ComLink</a> is a good helper library</small></p>
         </section>
         <section>
           <div class="sick-grid">
@@ -4811,7 +4815,7 @@
       </section>
 
       <section>
-        <section data-background="assets/javascript-bg.jpg" class="dark">
+        <section>
           <div class="sick-grid">
             <header class="chapter">
               <h2>Module Systems and ES Modules</h2>
@@ -5150,7 +5154,8 @@
                 import { export1 } from 'my-module'
                 import { export2 } from './my-module.js'
               </code></pre>
-              <p>The browser does not support bare module imports until <a href="https://github.com/WICG/import-maps">Import
+              <p>The browser does not support bare module imports until <a
+                  href="https://github.com/WICG/import-maps">Import
                   Maps</a> are implemented</p>
             </main>
           </div>
@@ -5173,7 +5178,8 @@
                 import { export1 } from 'my-module'
                 import { export2 } from './my-module.js'
               </code></pre>
-              <p>nodejs supports bare module imports and imports without extensions, bare module imports will be resolved
+              <p>nodejs supports bare module imports and imports without extensions, bare module imports will be
+                resolved
                 according to the node module resolution algorithm</p>
             </main>
           </div>
@@ -5181,7 +5187,8 @@
         <section>
           <div class="sick-grid">
             <main>
-              <p>Before you can deploy your project and let it run on the web browser and if you used bare module imports you
+              <p>Before you can deploy your project and let it run on the web browser and if you used bare module
+                imports you
                 have to use module bundlers to post process your javascript code, common used bundlers are <a
                   href="https://webpack.js.org/">Webpack</a>, <a href="https://rollupjs.org/guide/en/">Rollup</a>, <a
                   href="https://esbuild.github.io/">esbuild</a> or <a href="https://www.snowpack.dev/">snowpack</a>
@@ -5195,7 +5202,7 @@
 
 
       <section>
-        <section data-background="assets/javascript-bg.jpg" class="dark">
+        <section>
           <div class="sick-grid">
             <header class="chapter">
               <h2>TC 39 and Javascript Editions</h2>
@@ -5273,13 +5280,13 @@
     </div>
   </div>
 
-  <script src="dist/reveal.js"></script>
-  <script src="plugin/notes/notes.js"></script>
-  <script src="plugin/markdown/markdown.js"></script>
-  <script src="plugin/highlight/highlight.js"></script>
-  <script src="plugin/chalkboard/plugin.js"></script>
-  <script src="plugin/externalcode/externalcode.js"></script>
-  <script src="plugin/sick/sick.js"></script>
+  <script src="../_reveal.js/dist/reveal.js"></script>
+  <script src="../_reveal.js/plugin/notes/notes.js"></script>
+  <script src="../_reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="../_reveal.js/plugin/highlight/highlight.js"></script>
+  <script src="../_reveal.js/plugin/chalkboard/plugin.js"></script>
+  <script src="../_reveal.js/plugin/externalcode/externalcode.js"></script>
+  <script src="../_reveal.js/plugin/sick/sick.js"></script>
   <script>
     // More info about initialization & config:
     // - https://revealjs.com/initialization/
@@ -5298,7 +5305,7 @@
         theme: "whiteboard"
       },
       sickPlugin: {
-        footerText: `Mathis Zeiher | Javascript | ${new Date().getDate()}.${new Date().getMonth() + 1}.${new Date().getFullYear()}`
+        footerText: `Mathis Zeiher | Web Engineering - javascript | ${new Date().getDate()}.${new Date().getMonth() + 1}.${new Date().getFullYear()}`
       }
     });
   </script>

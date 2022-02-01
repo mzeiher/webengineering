@@ -231,14 +231,17 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 }
 
 .reveal pre::before {
-  content: "";
+  content: attr(data-label);
+  text-align: center;
+  line-height: 2em;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='54' height='14' viewBox='0 0 54 14'%3E%3Cg fill='none' fill-rule='evenodd' transform='translate(1 1)'%3E%3Ccircle cx='6' cy='6' r='6' fill='%23FF5F56' stroke='%23E0443E' stroke-width='.5'%3E%3C/circle%3E%3Ccircle cx='26' cy='6' r='6' fill='%23FFBD2E' stroke='%23DEA123' stroke-width='.5'%3E%3C/circle%3E%3Ccircle cx='46' cy='6' r='6' fill='%2327C93F' stroke='%231AAB29' stroke-width='.5'%3E%3C/circle%3E%3C/g%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: 5px;
   border-radius: 4px 4px 0 0;
   height: 2em;
   display: block;
-  background-color: var(--code-frame-header-color);
+  color:  var(--code-frame-header-color);
+  background-color: var(--code-frame-header-background-color);
 }
 
 .reveal code.hljs {
