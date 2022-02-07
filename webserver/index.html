@@ -7,8 +7,27 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
+    <style>
+        
+    </style>
 </head>
 <body>
-    Hello World
+    <style>
+        .myrule {
+          animation: 5s keyframe-id;
+        }
+        @keyframes keyframe-id {
+          0% { /* will run at the beginning of the animation */
+            background-color: black;
+          }
+          50% {/* will run in the middle of the animation */
+            background-color: white;
+          }
+          100% {/* will run at the end of the animation */
+            background-color: black;
+          }
+        }
+      </style>
+      <div class="myrule" style="width: 100px; height: 100px;"></div>
 </body>
 </html>

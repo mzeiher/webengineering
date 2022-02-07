@@ -18,6 +18,7 @@
     --heading-color: #737F85;
     --heading1-color: #007CC1;
     --heading2-color: #007CC1;
+    --heading3-color: #737F85;
     --link-color: #007CC1;
     --link-color-hover: #009DF4;
     --selection-background-color: #98bdef;
@@ -60,7 +61,7 @@
         --highlight-background: #E5F1F8;
         --radial-background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(201,220,232,1) 80%, rgba(141,181,206,1) 100%);
     }
-} */
+}  */
 
 :root .has-dark-background,
 :root section.dark,

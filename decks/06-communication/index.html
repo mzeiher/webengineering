@@ -768,7 +768,7 @@
             PUT /todos/:id
             DELETE /todos/:id
           </script></code></pre>
-          <p>Add a new todo</p>
+          <p>Add a new todo (add operation)</p>
         </section>
         <section data-sick-grid="" data-auto-animate="">
           <pre data-id="code"><code data-trim data-line-numbers="4"><script type="text/template">
@@ -778,7 +778,7 @@
             PUT /todos/:id
             DELETE /todos/:id
           </script></code></pre>
-          <p>Update a specific todo</p>
+          <p>Update a specific todo (update operation)</p>
         </section>
         <section data-sick-grid="" data-auto-animate="">
           <pre data-id="code"><code data-trim data-line-numbers="5"><script type="text/template">
@@ -790,12 +790,100 @@
           </script></code></pre>
           <p>Delete a todo</p>
         </section>
+        <section data-sick-grid>
+          <h3>Parameters vs Body content</h3>
+        </section>
+        <section data-sick-grid>
+          <p>You can transfer data via http in two different ways, either as http query parameters or in the request body as content</p>
+        </section>
         <section data-sick-grid="">
-          <p>REST defines a fixed set of API paths with a defined structure of the objects you can request. To mitigate
+          <p><b>Important</b>: <code class="inline">GET, OPTIONS</code> and <code class="inline">DELETE</code> do usually not support content bodies</p>
+        </section>
+        <section data-sick-grid="">
+          <p>Binary data can only be transferred in the request body*</p>
+          <p><small>*except when encoding the data with base64</small></p>
+        </section>
+        <section data-sick-grid="">
+          <p>To design "good" REST APIs make use of the appropriate HTTP verbs and encode the information you want to transport in accordingly</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <div class="sick-code-frame" data-id="code" style="width: 80%; text-align: left;">
+            <code class="hljs" style="padding: 0;">GET /profile/234234234?format=json</code>
+          </div>
+          <p>Example for a <code class="inline">GET</code> request</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <div class="sick-code-frame" data-id="code" style="width: 80%; text-align: left;">
+            <code class="hljs" style="padding: 0;"><span class="hljs-keyword">GET</span> /profile/234234234?format=json</code>
+          </div>
+          <p>Verb, in this case <b>get</b> a specific resource</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <div class="sick-code-frame" data-id="code" style="width: 80%; text-align: left;">
+            <code class="hljs" style="padding: 0;">GET <span class="hljs-keyword">/profile/234234234</span>?format=json</code>
+          </div>
+          <p>API path</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <div class="sick-code-frame" data-id="code" style="width: 80%; text-align: left;">
+            <code class="hljs" style="padding: 0;">GET /profile/<span class="hljs-keyword">234234234</span>?format=json</code>
+          </div>
+          <p>explicit resource id</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <div class="sick-code-frame" data-id="code" style="width: 80%; text-align: left;">
+            <code class="hljs" style="padding: 0;">GET /profile/234234234<span class="hljs-keyword">?format=json</span></code>
+          </div>
+          <p>additional (optional) query parameters</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <div class="sick-code-frame" data-id="code" style="width: 80%; text-align: left; ">
+            <code class="hljs" style="padding: 0;">PUT /avatar</code>
+          </div>
+          <p>Example for a <code class="inline">PUT</code> request</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <div class="sick-code-frame" data-id="code" style="width: 80%; text-align: left; ">
+            <code class="hljs" style="padding: 0;">PUT /avatar</code>
+          </div>
+          <p>Now you have several possibilities to encode the appropriate user</p>
+          <p><small>The standalone path, which is not a sub path for user also indicates that the avatar service has its own lifecycle and is possibly a standalone microservice</small></p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <div class="sick-code-frame" data-id="code" style="width: 80%; text-align: left; ">
+            <code class="hljs" style="padding: 0;">PUT /avatar</code>
+            <code class="hljs" style="padding: 0;">Cookie: ...<span class="hljs-keyword">user=234234234</span>...</code>
+          </div>
+          <p>Since we're usually logged in, we have a context where we can extract the specific user</p>
+        </section>
+        <section data-sick-grid="" data-auto-animate="">
+          <div class="sick-code-frame" data-id="code" style="width: 80%; text-align: left; ">
+            <code class="hljs" style="padding: 0;">PUT /avatar?<span class="hljs-keyword">user=234234234</span></code>
+            <code class="hljs" style="padding: 0;">Cookie: ...<span class="hljs-keyword">user=admin</span>...</code>
+          </div>
+          <p>Additionally we can allow the user override with a query parameter</p>
+        </section>
+        <section data-sick-grid="">
+          <p>How you encode the paths in your API is actually up to you, there are some best practices which should be followed</p>
+        </section>
+        <section data-sick-grid="">
+          <p>Keep your REST API consistent and use the same principles for you complete API</p>
+        </section>
+        <section data-sick-grid="">
+          <p>Use verbs and paths accordingly, also try to encode primary ids in the path</p>
+          <p>follow the idempotent rule for specific verbs</p>
+        </section>
+        <section data-sick-grid="">
+          <p>A REST API defines a fixed set of API paths with a defined structure of the objects you can request. To mitigate
             this issue GraphQL was developed by facebook and can also be used in conjunction with REST</p>
         </section>
         <section data-sick-grid="">
-          <h3>GraphQL example request</h3>
+          <h3>GraphQL</h3>
+        </section>
+        <section data-sick-grid="">
+          <p>GraphQL works on REST and encodes the intent in a custom query language in the request body, it like SQL for REST</p>
+        </section>
+        <section data-sick-grid="">
           <pre data-id="code"><code data-trim data-line-numbers=""><script type="text/template">
             GET
             {
@@ -837,7 +925,10 @@
           <h2>gRPC</h2>
         </section>
         <section data-sick-grid>
-          <p>used a lot for service to service communication</p>
+          <p>Not used in the web, but used heavily for service to service communication</p>
+        </section>
+        <section data-sick-grid="">
+          <p>gRPC is a service to service protocol that uses HTTP/2 for transport and ProtoBuf for payload encoding</p>
         </section>
       </section>
 
