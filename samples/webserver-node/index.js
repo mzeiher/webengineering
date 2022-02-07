@@ -8,3 +8,10 @@ const server = createServer((req, res) => {
 server.listen(3000, () => {
 	console.log("listening on :3000");
 })
+
+process.on('SIGTERM', () => {
+	server.close();
+})
+process.on('SIGINT', () => {
+	server.close();
+})
