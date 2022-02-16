@@ -4,6 +4,14 @@ export interface ToDo {
     isDone: boolean;
 }
 
+export type DisconnectedEvent = {
+    readonly type: "disconnected";
+}
+
+export type ConnectedEvent = {
+    readonly type: "connected";
+}
+
 export type UpdateEvent = {
     readonly type: "update";
     todos: ToDo[];
@@ -13,7 +21,7 @@ export type ErrorEvent = {
     error: "Error";
 }
 
-export type StoreEvent = UpdateEvent | ErrorEvent;
+export type StoreEvent = UpdateEvent | ErrorEvent | DisconnectedEvent | ConnectedEvent;
 
 class ToDoStore extends EventTarget {
 
@@ -22,10 +30,31 @@ class ToDoStore extends EventTarget {
     constructor() {
         super();
 
-        const ws = new WebSocket(`ws:${this.host}/signal`);
-        ws.addEventListener('message', () => {
-            this.sync();
-        })
+        window.setTimeout(() => {
+            const websocketConnection = () => {
+                const ws = new WebSocket(`ws:${this.host}/signal`);
+                ws.addEventListener('message', () => {
+                    this.sync();
+                });
+                ws.addEventListener('error', (reason) => {
+                    this.dispatchEvent(Object.assign(new Event('error'), { error: reason }));
+                    this.dispatchEvent(new Event('disconnected'));
+                    window.setTimeout(() => {
+                        websocketConnection();
+                    }, 1000);
+                });
+                ws.addEventListener('close', () => {
+                    this.dispatchEvent(new Event('disconnected'));
+                    window.setTimeout(() => {
+                        websocketConnection();
+                    }, 1000);
+                });
+                ws.addEventListener('open', () => {
+                    this.dispatchEvent(new Event('connected'));
+                });
+            }
+            websocketConnection();
+        }, 0);
     }
 
     sync() {

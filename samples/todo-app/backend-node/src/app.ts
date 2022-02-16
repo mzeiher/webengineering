@@ -71,7 +71,7 @@ fastify.post('/todos', async (request, reply) => {
         } else {
             throw new Error('invalid parameters');
         }
-        notifyClients()
+        notifyClients();
     } catch (err) {
         reply.code(400).send();
     }
@@ -84,7 +84,7 @@ fastify.delete('/todos/:id', async (request, reply) => {
         }
         await DATABASE.remove(Number(request.params['id']));
         reply.code(200).send();
-        notifyClients()
+        notifyClients();
     } catch (err) {
         reply.code(400).send();
     }
@@ -101,7 +101,7 @@ fastify.put('/todos/:id', async (request, reply) => {
         }
         await DATABASE.updateTodo(Number(request.params['id']), todo.todo, todo.isDone);
         reply.code(200).send();
-        notifyClients()
+        notifyClients();
     } catch (err) {
         reply.code(400).send();
     }
@@ -127,8 +127,8 @@ function notifyClients() {
 // Run the server!
 fastify.listen(3000, "0.0.0.0", function (err, address) {
     if (err) {
-        console.error(err)
-        process.exit(1)
+        console.error(err);
+        process.exit(1);
     }
     console.log(`Listening on ${address}`);
 });

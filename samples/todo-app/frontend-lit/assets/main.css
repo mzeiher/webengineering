@@ -2,6 +2,44 @@ html, body {
     font-family: Helvetica, sans-serif;
 }
 
+body {
+    margin: 0 auto;
+    max-width: 400px;
+}
+
 .todo_list {
     list-style-type: none;
+    padding: 0;
+}
+
+.todo_list li.done label {
+    text-decoration: line-through;
+}
+
+.error {
+    background-color: red;
+    font-weight: bold;
+    color: white;
+}
+
+main.offline {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.todo_input,
+.todo_list li {
+    display: grid;
+    grid-template-columns: 1fr 2em;
+}
+
+
+.todo_input label,
+.todo_list input {
+    grid-column: 1 span 1;
+}
+
+.todo_input button,
+.todo_list button {
+    grid-column: 2 span 1;
 }

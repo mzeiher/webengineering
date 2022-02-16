@@ -1,11 +1,9 @@
 {
   "name": "backend-node",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A simple backend for TODO",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
   },
   "author": "",

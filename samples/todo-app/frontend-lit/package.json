@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "esbuild ./src/app.ts --bundle --sourcemap --platform=browser --outdir=./dist --target=es2021 && cp ./assets/* ./dist"
+    "build": "esbuild ./src/app.ts --bundle --sourcemap --platform=browser --outdir=./dist --target=es2021 && cp ./assets/* ./dist",
+    "start": "npm run build && npx http-server -p 8081"
   },
   "author": "",
   "license": "ISC",

@@ -1,9 +1,11 @@
-import { render, html } from 'lit';
+import { render, html, nothing } from 'lit';
 import { classMap } from 'lit/directives/class-map.js';
 import {map} from 'lit/directives/map.js';
 // import {repeat} from 'lit/directives/repeat.js';
 
 import { store, ToDo } from './store.js';
+
+let CONNECTED = false;
 
 const update = (todos: ToDo[]) => {
     render(app(todos), document.body);
@@ -12,7 +14,8 @@ const update = (todos: ToDo[]) => {
 const app = (todos: ToDo[]) => {
     return html`
     <header><h1>ToDo App</h1></header>
-    <main>
+    ${!CONNECTED ? html`<div class="error">DISCONNECTED</div>` : nothing}
+    <main class="${classMap({offline : !CONNECTED})}">
         ${todoList(todos)}
     </main>`;
 }
@@ -47,6 +50,16 @@ store.addEventListener('update', (evt) => {
     update(evt.todos);
 })
 
+store.addEventListener('disconnected', () => {
+    CONNECTED = false;
+    update([]);
+})
+store.addEventListener('connected', () => {
+    CONNECTED = true;
+    store.sync();
+})
+
 window.addEventListener('load', () => {
+    update([]);
     store.sync();
 });
