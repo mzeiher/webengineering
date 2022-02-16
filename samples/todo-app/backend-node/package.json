@@ -1,0 +1,26 @@
+{
+  "name": "backend-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^3.27.1",
+    "fastify-websocket": "^4.0.0",
+    "mime-types": "^2.1.34",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "@types/mime-types": "^2.1.1",
+    "@types/node": "^16.0.0",
+    "@types/sqlite3": "^3.1.8",
+    "@types/ws": "^8.2.2",
+    "typescript": "^4.5.5"
+  }
+}
