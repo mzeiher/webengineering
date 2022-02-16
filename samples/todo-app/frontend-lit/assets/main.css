@@ -1,0 +1,7 @@
+html, body {
+    font-family: Helvetica, sans-serif;
+}
+
+.todo_list {
+    list-style-type: none;
+}

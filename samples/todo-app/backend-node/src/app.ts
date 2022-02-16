@@ -1,5 +1,7 @@
 import Fastify from 'fastify';
-import FastifyWS from 'fastify-websocket';
+import FastifyWS, { SocketStream } from 'fastify-websocket';
+import FastifyCors from 'fastify-cors';
+
 import * as mime from 'mime-types';
 
 import * as path from 'path';
@@ -15,7 +17,17 @@ const DATABASE = await getDBConnection(path.resolve(DB_DIR, 'db.sqlite'));
 
 const fastify = Fastify();
 fastify.register(FastifyWS);
+fastify.register(FastifyCors);
 
+if (process.env.DEBUG) {
+    console.warn('DEBUG MODE');
+    fastify.addHook('preHandler', (_, reply, done) => {
+        reply.header('Access-Control-Allow-Origin', '*');
+        done();
+    });
+}
+
+const clients = new Set<SocketStream>();
 
 // default route for static content
 fastify.get('/*', async (request, reply) => {
@@ -59,6 +71,7 @@ fastify.post('/todos', async (request, reply) => {
         } else {
             throw new Error('invalid parameters');
         }
+        notifyClients()
     } catch (err) {
         reply.code(400).send();
     }
@@ -71,6 +84,7 @@ fastify.delete('/todos/:id', async (request, reply) => {
         }
         await DATABASE.remove(Number(request.params['id']));
         reply.code(200).send();
+        notifyClients()
     } catch (err) {
         reply.code(400).send();
     }
@@ -82,22 +96,33 @@ fastify.put('/todos/:id', async (request, reply) => {
             throw new Error('param is not a number');
         }
         const todo: Todo = JSON.parse(request.body as string);
-        if(typeof todo.todo !== 'string' || todo.isDone === undefined) {
+        if (typeof todo.todo !== 'string' || todo.isDone === undefined) {
             throw new Error('param missing in todo');
         }
         await DATABASE.updateTodo(Number(request.params['id']), todo.todo, todo.isDone);
         reply.code(200).send();
+        notifyClients()
     } catch (err) {
         reply.code(400).send();
     }
 });
 
 fastify.get('/signal', { websocket: true }, (connection /* SocketStream */, req /* FastifyRequest */) => {
-    connection.socket.on('message', message => {
-      // message.toString() === 'hi from client'
-      connection.socket.send('hi from server')
+    clients.add(connection);
+    connection.on('close', () => {
+        clients.delete(connection);
     })
-  })
+})
+
+function notifyClients() {
+    clients.forEach((client) => {
+        client.socket.send('update', (err) => {
+            if(err) {
+                clients.delete(client);
+            }
+        });
+    })
+}
 
 // Run the server!
 fastify.listen(3000, "0.0.0.0", function (err, address) {

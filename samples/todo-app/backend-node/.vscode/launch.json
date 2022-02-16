@@ -12,6 +12,9 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}/dist/app.js",
+            "env": {
+                "DEBUG": 1
+            },
             "outFiles": [
                 "${workspaceFolder}/dist/**/*.js"
             ]

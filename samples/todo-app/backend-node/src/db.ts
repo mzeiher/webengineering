@@ -77,14 +77,14 @@ export async function getDBConnection(dir: string): Promise<DB> {
         },
         async list() {
             const statement = new Promise<Todo[]>((resolve, reject) => {
-                db.all(`SELECT * FROM todos ORDER BY id ASC, isDone DESC`, [], (err, rows) => {
+                db.all(`SELECT * FROM todos ORDER BY id ASC, isDone ASC`, [], (err, rows) => {
                     if (err) {
                         reject(err);
                         return;
                     }
                     resolve(rows.map((value) => { 
                         return { id: value.id, todo: value.todo, isDone: value.isDone === 0 ? false : true } 
-                    }));
+                    }).sort((a,b) => (a.isDone === b.isDone) ? 0 : b.isDone ? -1 : 1));
                 })
             });
 

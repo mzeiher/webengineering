@@ -1,0 +1,19 @@
+{
+  "name": "frontend-lit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild ./src/app.ts --bundle --sourcemap --platform=browser --outdir=./dist --target=es2021 && cp ./assets/* ./dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.14.21",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "lit": "^2.1.4"
+  }
+}
