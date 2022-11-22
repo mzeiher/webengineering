@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>TicTacToe</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        #main {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+
+            
+        }
+
+        #main aside {
+            flex: 0 1 200px;
+        }
+
+        #main main {
+            flex: 1 1 0;
+        }
+
+        #main main {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+
+            gap: 10px;
+
+            aspect-ratio: 1/1;
+            width: 100%;
+            max-width: 60vh;
+
+            container: sidebar / inline-size;
+
+            background-color: grey;
+        }
+
+        #main main > div {
+            background-color: white;
+            font-size: 20cqw;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 600px) {
+            #main {
+                flex-direction: column;
+
+                width: 100%;
+                max-height: 60vh;
+            }
+
+            #main main {
+                flex: 0 1 auto;
+            }
+
+            #main aside {
+                flex: 1 1 auto;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <aside>
+            <div id="player1_indicator">❌ player 1</div>
+            <div id="player2_indicator">⭕ player 2</div>  
+        </aside>
+        <main>
+            
+            <div data-field="1">❌</div>
+            <div data-field="2"></div>
+            <div data-field="3"></div>
+            <div data-field="4"></div>
+            <div data-field="5"></div>
+            <div data-field="6"></div>
+            <div data-field="7"></div>
+            <div data-field="8"></div>
+            <div data-field="9"></div>
+            
+        </main>
+        <aside>
+            Previous Games
+            <ul id="result_list">
+
+            </ul>
+        </aside>
+    </div>
+
+    <script type="module">
+        window.addEventListener('load', () => {
+            main();
+        });
+
+        function main() {
+            const mainElement = document.querySelector("main");
+
+            mainElement.addEventListener('click', (event) => {
+                console.log(`clicked on field ${event.target.dataset.field}`);
+            });
+        }
+    </script>
+</body>
+
+</html>
