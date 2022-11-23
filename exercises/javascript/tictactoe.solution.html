@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>TicTacToe</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        #main {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+
+
+        }
+
+        #main aside {
+            flex: 0 1 200px;
+        }
+
+        #main main {
+            flex: 1 1 0;
+        }
+
+        #main main {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+
+            gap: 10px;
+
+            aspect-ratio: 1/1;
+            width: 100%;
+            max-width: 60vh;
+
+            container: sidebar / inline-size;
+
+            background-color: grey;
+        }
+
+        #main main>div {
+            background-color: white;
+            font-size: 20cqw;
+            text-align: center;
+            cursor: pointer;
+        }
+
+
+        .active {
+            background-color: rgba(104, 104, 232, 0.38);
+        }
+
+        @media screen and (max-width: 600px) {
+            #main {
+                flex-direction: column;
+
+                width: 100%;
+                max-height: 60vh;
+            }
+
+            #main main {
+                flex: 0 1 auto;
+            }
+
+            #main aside {
+                flex: 1 1 auto;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <aside>
+            <div id="player1_indicator" class="active">❌ player 1</div>
+            <div id="player2_indicator">⭕ player 2</div>
+        </aside>
+        <main>
+
+            <div data-field="1"></div>
+            <div data-field="2"></div>
+            <div data-field="3"></div>
+            <div data-field="4"></div>
+            <div data-field="5"></div>
+            <div data-field="6"></div>
+            <div data-field="7"></div>
+            <div data-field="8"></div>
+            <div data-field="9"></div>
+
+        </main>
+        <aside>
+            Previous Games
+            <ul id="result_list">
+
+            </ul>
+        </aside>
+    </div>
+
+    <script type="module">
+        window.addEventListener('load', () => {
+            main();
+        });
+
+        let field = [undefined, undefined, undefined,
+            undefined, undefined, undefined,
+            undefined, undefined, undefined];
+
+        function main() {
+            const mainElement = document.querySelector("main");
+
+
+            const player1Indicator = document.querySelector('#player1_indicator');
+            const player2Indicator = document.querySelector('#player2_indicator');
+
+            let currentPlayer = "❌";
+
+            mainElement.addEventListener('click', (event) => {
+                if(event.target.dataset.field === undefined) {
+                    return; // ignore clicks on the grid
+                }
+                const clickedField = parseInt(event.target.dataset.field) - 1;
+                if (checkFieldFree(clickedField)) {
+                    event.target.innerText = field[clickedField] = currentPlayer;
+                }
+                if (checkWinningCondition()) {
+                    // reset everything
+                    field = [undefined, undefined, undefined,
+                        undefined, undefined, undefined,
+                        undefined, undefined, undefined]
+
+                    const mainElement = document.querySelector("main");
+                    for (const child of mainElement.children) {
+                        child.innerText = ""; // reset all text entries
+                    }
+
+                    const resultList = document.querySelector("#result_list");
+                    const newEntry = document.createElement("li");
+                    newEntry.innerText = `Player ${currentPlayer} won`;
+
+                    resultList.appendChild(newEntry);
+
+                    currentPlayer = "❌";
+                } else {
+                    // next player
+                    currentPlayer = currentPlayer === "❌" ? "⭕" : "❌";
+                }
+
+                // change player
+                if (currentPlayer === "❌") {
+                    player1Indicator.classList.add("active");
+                    player2Indicator.classList.remove("active");
+                } else {
+                    player1Indicator.classList.remove("active");
+                    player2Indicator.classList.add("active");
+                }
+
+            });
+        }
+
+        function checkFieldFree(fieldNbr) {
+            return field[fieldNbr] === undefined;
+        }
+
+        function checkWinningCondition() { // check against all possible solutions
+            return (field[0] === field[1] && field[1] === field[2] && field[2] !== undefined) || // horizontal row 1
+                (field[3] === field[4] && field[4] === field[5] && field[5] !== undefined) || // horizontal row 1
+                (field[6] === field[7] && field[7] === field[8] && field[8] !== undefined) || // horizontal row 1
+                (field[0] === field[3] && field[3] === field[6] && field[6] !== undefined) || // vertical row 1
+                (field[1] === field[4] && field[4] === field[7] && field[7] !== undefined) || // vertical row 2
+                (field[2] === field[5] && field[5] === field[8] && field[8] !== undefined) || // vertical row 3 
+                (field[0] === field[4] && field[4] === field[8] && field[8] !== undefined) || // diagnoal 1
+                (field[2] === field[4] && field[4] === field[6] && field[6] !== undefined)// diagnoal 2
+        }
+    </script>
+</body>
+
+</html>
