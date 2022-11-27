@@ -136,6 +136,8 @@
                 const clickedField = parseInt(event.target.dataset.field) - 1;
                 if (checkFieldFree(clickedField)) {
                     event.target.innerText = field[clickedField] = currentPlayer;
+                } else {
+                    return;
                 }
                 if (checkWinningCondition()) {
                     // reset everything
