@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Client</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <form id="form">
+        <input name="message"><button type="submit">Send</button>
+    </form>
+    <ul id="list">
+
+    </ul>
+    <script type="module">
+        // creating websocket connection
+        const websocketConnection = new WebSocket(`ws://${location.hostname}:${location.port}`);
+        websocketConnection.addEventListener('message', message => {
+            // add event listener for new messages and append to list
+            const list = document.querySelector('#list');
+            const entry = document.createElement('li');
+            entry.innerText = message.data;
+            list.append(entry);
+        });
+
+        //get form
+        const form = document.querySelector('#form');
+        form.addEventListener('submit', (event) => {
+            //add event listener for form submit and prevent default action
+            event.preventDefault();
+            event.stopPropagation();
+            // convert form to FormData to access content by name
+            const data = new FormData(event.target);
+            // send on websocket connection
+            websocketConnection.send(data.get("message"));
+        });
+    </script>
+</body>
+</html>
