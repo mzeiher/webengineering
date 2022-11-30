@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^3.27.1",
+    "fastify": "^3.29.4",
     "fastify-cors": "^6.0.2",
     "fastify-websocket": "^4.0.0",
     "mime-types": "^2.1.34",
