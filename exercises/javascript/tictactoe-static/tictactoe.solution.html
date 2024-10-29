@@ -158,6 +158,24 @@
 
                     // reset player to X
                     currentPlayer = "❌";
+                } else if(checkDraw()) {
+                    field = [undefined, undefined, undefined,
+                        undefined, undefined, undefined,
+                        undefined, undefined, undefined]
+
+                    for (const child of mainElement.children) {
+                        child.innerText = ""; // reset all text entries
+                    }
+
+                    // append winning player to result list
+                    const resultList = document.querySelector("#result_list");
+                    const newEntry = document.createElement("li");
+                    newEntry.innerText = `draw`;
+
+                    resultList.appendChild(newEntry);
+
+                    // reset player to X
+                    currentPlayer = "❌";
                 } else {
                     // no win, next player
                     currentPlayer = currentPlayer === "❌" ? "⭕" : "❌";
@@ -188,6 +206,11 @@
                 (field[2] === field[5] && field[5] === field[8] && field[8] !== undefined) || // vertical row 3 
                 (field[0] === field[4] && field[4] === field[8] && field[8] !== undefined) || // diagonal 1
                 (field[2] === field[4] && field[4] === field[6] && field[6] !== undefined)// diagonal 2
+        }
+        function checkDraw() {
+            return field.every((val) => {
+                return val !== undefined
+            });
         }
     </script>
 </body>
