@@ -6,6 +6,7 @@ const wsServer = new WebSocketServer({ noServer: true });
 
 const wsClients = new Set();
 
+// save all todos here
 const todos = [];
 
 // logic goes here
@@ -21,12 +22,30 @@ const server = createServer((req, res) => {
     res.setHeader("content-type", "application/javascript");
     res.statusCode = 200;
     res.end(readFileSync("./client.js", { encoding: "utf8" }));
-  } else if (req.method === "POST" && req.url === "/add") {
-    res.statusCode = 501;
-    res.end("not implemented");
-  } else if (req.method === "DELETE") {
-    res.statusCode = 501;
-    res.end("not implemented");
+  } else if (req.method === "GET" && req.url === "/todos") {
+    res.statusCode = 200;
+    res.setHeader("content-type", "application/json");
+    res.end(JSON.stringify(todos));
+  } else if (req.method === "POST" && req.url === "/todos") {
+    // add todo to list and notify all clients for new todos
+    res.statusCode = 201;
+    parseBody(req).then((value) => {
+      todos.push(value);
+      res.end("success");
+      wsClients.forEach((client) => {
+        client.send(JSON.stringify(todos));
+      });
+    });
+  } else if (req.method === "DELETE" && /\/todos\/\d+$/.test(req.url)) {
+    // remove todo from list and notify all clients for new todos
+    // we use a regex to extrac the id from the rest path /todos/<number>
+    const id = /\/todos\/(\d+)$/.exec(req.url)[1];
+    res.statusCode = 200;
+    todos.splice(parseInt(id), 1);
+    wsClients.forEach((client) => {
+      client.send(JSON.stringify(todos));
+    });
+    res.end("");
   }
 });
 
@@ -69,7 +88,7 @@ function parseQuery(url) {
 
 /**
  * @param req { IncomingMessage }
- * @returns { Promise<{[name:string]:string}> }
+ * @returns { string }
  */
 function parseBody(req) {
   return new Promise((resolve) => {
