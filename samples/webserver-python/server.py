@@ -1,6 +1,5 @@
 # Python 3 server example
 from http.server import BaseHTTPRequestHandler, HTTPServer
-import time
 
 hostName = "0.0.0.0"
 serverPort = 3000

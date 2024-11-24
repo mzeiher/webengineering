@@ -4,7 +4,7 @@ let todos = [];
 
 const server = createServer((req, res) => {
   // handle get request
-  if (req.method === "GET") {
+  if (req.method === "GET" && req.url === "/index.html") {
     res.setHeader("Content-Type", "text/html");
     res.statusCode = 200;
     res.end(renderPage());
@@ -22,6 +22,9 @@ const server = createServer((req, res) => {
       res.statusCode = 200;
       res.end(renderPage());
     });
+  } else {
+    res.statusCode = 400;
+    res.end("invalid request");
   }
 });
 
