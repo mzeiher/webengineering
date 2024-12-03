@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
+    "bundle": "npx esbuild --bundle ./src/index.ts --platform=node --outfile=./dist/bundle.cjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -13,7 +14,8 @@
   "devDependencies": {
     "@types/express": "^5.0.0",
     "@types/node": "^22.9.3",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "esbuild": "0.24.0"
   },
   "dependencies": {
     "express": "^4.21.1"
